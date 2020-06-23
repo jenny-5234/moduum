@@ -70,13 +70,8 @@ public class BoardController {
     // 5. 게시글 수정
     @GetMapping(value = "/modify")
     public String update(HttpServletRequest request, Model model) {
-//        boardService.update(request);
-
-        BoardDto boardDto = boardService.update(request);
-        model.addAttribute("boardDto", boardDto);
-//        BoardDto board = boardService.pageSend(request);
-//        model.addAttribute("board", board);
-
+        boardService.update(request);
+        model.addAttribute(request);
         return "/board/modify";
     }
 

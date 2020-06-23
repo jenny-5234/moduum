@@ -20,6 +20,6 @@ public interface BoardService {
 //    public int update(int BoardId);
     public BoardDto update(HttpServletRequest request);
     //김영훈만듬
-    public BoardDto pageSend(HttpServletRequest request);
+//    public BoardDto getByKey(String BoardId);
 }
 

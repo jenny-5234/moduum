@@ -39,7 +39,7 @@
     </delete>
 
     <!--    게시글 수정-->
-    <update id="update" parameterType="int">
+    <update id="update">
         UPDATE Board
         SET B_Title = #{B_Title},
             B_Context = #{B_Context},

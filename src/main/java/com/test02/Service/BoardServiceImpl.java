@@ -65,6 +65,8 @@ public class BoardServiceImpl implements BoardService {
         return boardDto;
     }
 
+
+
 //
 //    @SneakyThrows
 //    @Override
@@ -75,7 +77,7 @@ public class BoardServiceImpl implements BoardService {
     // modify에 넘기기
     @SneakyThrows
     @Transactional(isolation = Isolation.READ_COMMITTED)
-    @Override
+
     public BoardDto pageSend(HttpServletRequest request) {
         String BoardId = request.getParameter("BoardId");
 
