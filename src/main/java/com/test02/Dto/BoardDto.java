@@ -14,4 +14,9 @@ public class BoardDto {
     private Date B_Date;
     private int B_Count;
 
+    public BoardDto(int boardId, String b_Title, String b_Context) {
+        BoardId = boardId;
+        B_Title = b_Title;
+        B_Context = b_Context;
+    }
 }

@@ -58,7 +58,8 @@ public class BoardController {
     }
 
     @PostMapping(value = "update.do")
-    public String updateDo(BoardDto boardDto) throws Exception {
+    public String updateDo(@RequestParam(value = "boardDto") BoardDto boardDto, Model model) throws Exception {
+        model.addAttribute(boardDto);
         boardService.update(boardDto);
         System.out.println(boardDto);
         return "redirect:/board/boardlist";
