@@ -42,8 +42,7 @@
     <update id="update">
         UPDATE Board
         SET B_Title = #{B_Title},
-            B_Context = #{B_Context},
-            B_Writer = #{B_Writer}
+            B_Context = #{B_Context}
         WHERE BoardId = #{BoardId}
     </update>
 </mapper>

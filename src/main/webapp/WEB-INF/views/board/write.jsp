@@ -13,7 +13,7 @@
 </head>
 <body>
 <form name="insert_Form" method="post" action="/board/insert.do">
-    <div>제목<input name="B_Title" id="B_Title" size="20" placeholder="글 제목 입력"></div>
+    <div>제목<input name="B_Title" id="B_Title" size="40" placeholder="글 제목 입력"></div>
     <div>비밀번호<input name="B_Password" id="B_Password" size="15" placeholder="비밀번호 입력"></div>
     <div>이름<input name="B_Writer" id="B_Writer" placeholder="이름 입력"></div>
     <div>내용<textarea name="B_Context" id="B_Context" rows="8" cols="80" placeholder="글 내용 입력"></textarea></div>

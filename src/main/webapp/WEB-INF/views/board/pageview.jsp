@@ -40,9 +40,7 @@
         </div>
         <td>
             <button type="button" onclick="location.href='/board/boardlist'">목록</button>
-
             <button type="button" onclick="location.href='delete.do?boardId=${boardDto.boardId}'">삭제</button>
-
             <button type="button" onclick="location.href='/board/modify?boardId=${boardDto.boardId}'">수정</button>
         </td>
 

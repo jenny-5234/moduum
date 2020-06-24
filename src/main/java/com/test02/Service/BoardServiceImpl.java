@@ -18,16 +18,17 @@ public class BoardServiceImpl implements BoardService {
     BoardDao boardDao;
 
     // 게시글 보기
+    @SneakyThrows
     @Override
     public List<BoardDto> getBoardList() {
-        List<BoardDto> list = boardDao.getBoardList();
-        return list;
+        return boardDao.getBoardList();
     }
 
     // 게시글 작성
     @SneakyThrows
     @Override
     public void insert(BoardDto boardDto) {
+
         boardDao.insert(boardDto);
     }
 
@@ -35,12 +36,16 @@ public class BoardServiceImpl implements BoardService {
     @SneakyThrows
     @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
-    public BoardDto pageDetail(HttpServletRequest request) {
-        String BoardId = request.getParameter("BoardId");
-
+    public BoardDto pageDetail(int BoardId) {
         //조회수 증가 메소드
-        boardDao.increaseCount((Integer.parseInt(BoardId)));
-        return boardDao.pageDetail(Integer.parseInt(BoardId));
+        boardDao.increaseCount(BoardId);
+        return boardDao.pageDetail(BoardId);
+    }
+
+    // 게시글 수정
+    @Override
+    public void update(BoardDto boardDto) throws Exception {
+        boardDao.update(boardDto);
     }
 
     // 게시글 삭제
@@ -49,23 +54,7 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.delete(BoardId);
     }
 
-    // 게시글 수정
-
-    @Override
-    public BoardDto update(HttpServletRequest request) {
-        String B_Title = request.getParameter("B_Title");
-        String B_Context = request.getParameter("B_Context");
-        String B_Writer = request.getParameter("B_Writer");
-
-        BoardDto boardDto = new BoardDto();
-        boardDto.setB_Title(B_Title);
-        boardDto.setB_Context(B_Context);
-        boardDto.setB_Writer(B_Writer);
-        boardDao.update(boardDto);
-        return boardDto;
-    }
-
-
+}
 
 //
 //    @SneakyThrows
@@ -74,13 +63,3 @@ public class BoardServiceImpl implements BoardService {
 //        return boardDao.update(BoardId);
 //    }
 
-    // modify에 넘기기
-    @SneakyThrows
-    @Transactional(isolation = Isolation.READ_COMMITTED)
-
-    public BoardDto pageSend(HttpServletRequest request) {
-        String BoardId = request.getParameter("BoardId");
-
-        return boardDao.pageDetail(Integer.parseInt(BoardId));
-    }
-}
