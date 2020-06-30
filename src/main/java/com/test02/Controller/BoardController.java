@@ -1,7 +1,9 @@
 package com.test02.Controller;
 
 
+import com.test02.Dao.BoardDao;
 import com.test02.Dto.BoardDto;
+import com.test02.Dto.Pagination;
 import com.test02.Service.BoardServiceImpl;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequestMapping("/board")
@@ -19,16 +23,45 @@ public class BoardController {
     BoardServiceImpl boardService;
 
     // 1. 게시글 목록
+//    @GetMapping("/boardlist")
+//    public String list(Model model) {
+//        List<BoardDto> board = boardService.getBoardList();
+//
+//        model.addAttribute("board", board);
+//
+//        return "/board/boardlist";
+//    }
     @GetMapping("/boardlist")
-    public String list(Model model) {
+    public String boardList(@ModelAttribute("boardDto") BoardDto boardDto,
+                            @RequestParam(defaultValue="1") int curPage,
+                            Model model) throws Exception{
+
+        int listCnt = boardService.getBoardListCnt(boardDto);
+
+        Pagination pagination = new Pagination(listCnt, curPage);
+
+        System.out.println(pagination);
+
+//        boardDto.setStartIndex(pagination.getStartIndex());
+//        boardDto.setCntPerPage(pagination.getPageSize());
+
+        int startIndex = pagination.getStartIndex();
+        int cntPerPage = pagination.getPageSize();
+
+
         List<BoardDto> board = boardService.getBoardList();
 
         model.addAttribute("board", board);
+        model.addAttribute("listCnt", listCnt);
+        model.addAttribute("startIndex", startIndex);
+        model.addAttribute("cntPerPage", cntPerPage);
+        model.addAttribute("pagination", pagination);
 
         return "/board/boardlist";
     }
 
     // 2. 게시글 작성
+
     @RequestMapping("/write")
     public String writeBoard() {
         return "/board/write";
@@ -43,7 +76,7 @@ public class BoardController {
 
     // 3. 게시글 상세보기
     @GetMapping(value = "/pageview")
-    public String pageDetail(@RequestParam int BoardId, Model model ) {
+    public String pageDetail(@RequestParam int BoardId, Model model) {
         BoardDto boardDto = boardService.pageDetail(BoardId);
         model.addAttribute("boardDto", boardDto);
         return "board/pageview";
@@ -52,16 +85,19 @@ public class BoardController {
     // 4. 게시글 수정
     @GetMapping(value = "/modify")
     public String update(@RequestParam(value = "boardId") int boardId, Model model) throws Exception {
-        BoardDto boardDto = boardService.pageDetail(boardId);
+        BoardDto boardDto = boardService.pagemodifyDetail(boardId);
         model.addAttribute("boardDto", boardDto);
         return "/board/modify";
     }
 
     @PostMapping(value = "update.do")
     public String updateDo(BoardDto boardDto, Model model, @RequestParam(value = "BoardId") int boardId) throws Exception {
+//        Pagination pagination = new Pagination();
         boardService.update(boardDto);
+
         model.addAttribute("board", boardService.getBoardList());
-        System.out.println(boardService.pageDetail(boardId));
+
+        System.out.println(boardService.pagemodifyDetail(boardId));
         return "redirect:/board/boardlist";
     }
 

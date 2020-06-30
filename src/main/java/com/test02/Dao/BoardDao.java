@@ -1,6 +1,8 @@
 package com.test02.Dao;
 
 import com.test02.Dto.BoardDto;
+import com.test02.Dto.Pagination;
+import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,13 @@ public class BoardDao {
     SqlSession sqlSession;
 
     private static String namespace = "board";
+
+
+    // 게시글 수 가져오기
+
+    public int getBoardListCnt(BoardDto boardDto) throws Exception{
+        return sqlSession.selectOne(  namespace + ".getBoardListCnt",boardDto);
+    }
 
     // 1. 게시글 목록 가져오기
     public List<BoardDto> getBoardList() throws Exception {
@@ -30,23 +39,21 @@ public class BoardDao {
         return sqlSession.selectOne(namespace + ".pageDetail", BoardId);
     }
 
-    // 6. 게시글 수정
-//    public int update(int BoardId) throws  Exception{
-    public void update(BoardDto boardDto) throws  Exception{
+    // 4. 게시글 수정
+    public void update(BoardDto boardDto) throws Exception {
         sqlSession.update(namespace + ".update", boardDto);
     }
 
-    // 4. 조회수 증가
+    // 5. 조회수 증가
     public void increaseCount(int BoardId) throws Exception {
         sqlSession.update(namespace + ".increaseCount", BoardId);
     }
 
-    // 5. 게시글 삭제
+    // 6. 게시글 삭제
     public int delete(int BoardId) {
         sqlSession.delete(namespace + ".delete", BoardId);
         return BoardId;
     }
-
 
 }
 

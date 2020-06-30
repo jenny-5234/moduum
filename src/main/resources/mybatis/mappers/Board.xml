@@ -8,9 +8,26 @@
     <!--  SQL 객체 -->
     <!--    게시글 목록 -->
     <select id="getBoardList" resultType="BoardDto">
-		SELECT BoardId, B_Writer, B_Password, B_Title, B_Date, B_Count
-        FROM Board
+select BoardId, B_Writer, B_Title, B_Date, B_Count
+from Board
+
 	</select>
+
+    <!--    페이징-->
+    <!-- 총 게시글 갯수 출력 -->
+    <select id="getBoardListCnt" resultType="int">
+	    SELECT COUNT(*)
+	    FROM BOARD
+    </select>
+
+    <!-- 페이징 처리 후 게시글 조회 -->
+    <select id="selectBoard" resultType="BoardDto">
+        DECLARE @RowsPerPage INT = 10, @PageNumber INT =1
+        SELECT Rownum, BoardId, B_Writer, B_Title, B_Date, B_Count
+        FROM (select BoardId, B_Writer, B_Title, B_Date, B_Count, row_number() over (ORDER BY BoardId DESC ) as Rownum
+            From Board) as bx
+        Where bx.Rownum BETWEEN  ((#{startIndex}-1)* #)+1 And @RowsPerPage*(@PageNumber)
+    </select>
 
     <!--    게시글 작성-->
     <insert id="insert" parameterType="BoardDto">

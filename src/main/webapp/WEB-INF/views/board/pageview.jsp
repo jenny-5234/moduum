@@ -13,6 +13,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <form name="viewForm" method="post">
@@ -39,20 +40,39 @@
             <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
         </div>
         <td>
-            <button type="button" onclick="location.href='/board/boardlist'">목록</button>
-            <button type="button" onclick="location.href='delete.do?boardId=${boardDto.boardId}'">삭제</button>
-            <button type="button" onclick="location.href='/board/modify?boardId=${boardDto.boardId}'">수정</button>
+            <button type="button" onclick="location.href='/board/boardlist?curPage=${pagination.curPage}'">목록</button>
+            <button type="button" id="d_btn">삭제</button>
+            <button type="button" id="m_btn">수정</button>
         </td>
 
     </div>
 </form>
 <script>
-    <%--function fn_update() {--%>
-    <%--    var form = document.getElementById("viewForm")--%>
+    $(function(){
+        $('#d_btn').click(function () {
+            var password = prompt("비밀번호")
 
-    <%--    form.action = "<c:url value="board/update.do"/>--%>
-    <%--    form.submit();--%>
-    <%--}--%>
+
+            if(password == ${boardDto.b_Password}){
+                location.href ='/board/delete.do?boardId=${boardDto.boardId}'
+            }else{
+                alert("다시 입력해주세요")
+            }
+        })
+    })
+
+    $(function(){
+        $('#m_btn').click(function () {
+            var password = prompt("비밀번호")
+
+
+            if(password == ${boardDto.b_Password}){
+                location.href ='/board/modify?boardId=${boardDto.boardId}'
+            }else{
+                alert("다시 입력해주세요")
+            }
+        })
+    })
 </script>
 </body>
 </html>

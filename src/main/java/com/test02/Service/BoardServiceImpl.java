@@ -2,6 +2,7 @@ package com.test02.Service;
 
 import com.test02.Dao.BoardDao;
 import com.test02.Dto.BoardDto;
+import com.test02.Dto.Pagination;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,15 @@ public class BoardServiceImpl implements BoardService {
     @SneakyThrows
     @Override
     public List<BoardDto> getBoardList() {
+
         return boardDao.getBoardList();
+    }
+
+    @SneakyThrows
+    @Override
+    public int getBoardListCnt(BoardDto boardDto) {
+
+        return boardDao.getBoardListCnt(boardDto);
     }
 
     // 게시글 작성
@@ -43,6 +52,13 @@ public class BoardServiceImpl implements BoardService {
     }
 
     // 게시글 수정
+    @SneakyThrows
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Override
+    public BoardDto pagemodifyDetail(int BoardId) {
+        return boardDao.pageDetail(BoardId);
+    }
+
     @Override
     public void update(BoardDto boardDto) throws Exception {
         boardDao.update(boardDto);
@@ -56,10 +72,4 @@ public class BoardServiceImpl implements BoardService {
 
 }
 
-//
-//    @SneakyThrows
-//    @Override
-//    public int update(int BoardId) {
-//        return boardDao.update(BoardId);
-//    }
 
