@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface BoardService {
     // 게시글 조회
-    public List<BoardDto> getBoardList();
+    public List<BoardDto> getBoardList(BoardDto boardDto);
 
     public int getBoardListCnt(BoardDto boardDto);
 
@@ -22,7 +22,7 @@ public interface BoardService {
     // 게시글 수정
     public void update(BoardDto boardDto) throws Exception;
 
-    public BoardDto pagemodifyDetail(int BoardId);
+    public BoardDto pageModifyDetail(int BoardId);
 
     // 게시글 삭제
     public int delete(int BoardId);

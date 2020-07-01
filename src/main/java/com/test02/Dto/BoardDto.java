@@ -13,6 +13,6 @@ public class BoardDto {
     private String B_Context;
     private Date B_Date;
     private int B_Count;
-//    private int startIndex;
-//    private int cntPerPage;
+    private int startIndex;
+    private int cntPerPage;
 }

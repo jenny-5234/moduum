@@ -21,9 +21,9 @@ public class BoardServiceImpl implements BoardService {
     // 게시글 보기
     @SneakyThrows
     @Override
-    public List<BoardDto> getBoardList() {
+    public List<BoardDto> getBoardList(BoardDto boardDto) {
 
-        return boardDao.getBoardList();
+        return boardDao.getBoardList(boardDto);
     }
 
     @SneakyThrows
@@ -55,7 +55,7 @@ public class BoardServiceImpl implements BoardService {
     @SneakyThrows
     @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
-    public BoardDto pagemodifyDetail(int BoardId) {
+    public BoardDto pageModifyDetail(int BoardId) {
         return boardDao.pageDetail(BoardId);
     }
 

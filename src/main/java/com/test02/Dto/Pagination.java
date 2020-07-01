@@ -15,7 +15,7 @@ public class Pagination {
     private int startPage = 1;
     private int endPage = 1;
 
-    private int startIndex = 0;
+    private int startIndex = 1;
 
     private int prevPage, nextPage;
 
@@ -59,11 +59,13 @@ public class Pagination {
     }
 
     public void setCurRange(int curPage) {
+
         this.curRange = (int) ((curPage - 1) / rangeSize) + 1;
     }
 
     public void setStartIndex(int curPage) {
-        this.startIndex = (curPage - 1) * pageSize;
+
+        this.startIndex = (curPage - 1) * pageSize + 1;
     }
 
 

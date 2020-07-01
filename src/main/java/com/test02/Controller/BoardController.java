@@ -34,6 +34,7 @@ public class BoardController {
     @GetMapping("/boardlist")
     public String boardList(@ModelAttribute("boardDto") BoardDto boardDto,
                             @RequestParam(defaultValue="1") int curPage,
+                            @RequestParam("startIndex") int startIndex,
                             Model model) throws Exception{
 
         int listCnt = boardService.getBoardListCnt(boardDto);
@@ -41,21 +42,19 @@ public class BoardController {
         Pagination pagination = new Pagination(listCnt, curPage);
 
         System.out.println(pagination);
-
-//        boardDto.setStartIndex(pagination.getStartIndex());
-//        boardDto.setCntPerPage(pagination.getPageSize());
-
-        int startIndex = pagination.getStartIndex();
-        int cntPerPage = pagination.getPageSize();
+        System.out.println(startIndex);
 
 
-        List<BoardDto> board = boardService.getBoardList();
+        boardDto.setStartIndex(pagination.getStartIndex());
+        boardDto.setCntPerPage(pagination.getPageSize());
+
+        List<BoardDto> board = boardService.getBoardList(boardDto);
 
         model.addAttribute("board", board);
         model.addAttribute("listCnt", listCnt);
         model.addAttribute("startIndex", startIndex);
-        model.addAttribute("cntPerPage", cntPerPage);
         model.addAttribute("pagination", pagination);
+
 
         return "/board/boardlist";
     }
@@ -85,19 +84,20 @@ public class BoardController {
     // 4. 게시글 수정
     @GetMapping(value = "/modify")
     public String update(@RequestParam(value = "boardId") int boardId, Model model) throws Exception {
-        BoardDto boardDto = boardService.pagemodifyDetail(boardId);
+        BoardDto boardDto = boardService.pageModifyDetail(boardId);
         model.addAttribute("boardDto", boardDto);
         return "/board/modify";
     }
 
     @PostMapping(value = "update.do")
-    public String updateDo(BoardDto boardDto, Model model, @RequestParam(value = "BoardId") int boardId) throws Exception {
+    public String updateDo(BoardDto boardDto, Model model,
+                           @RequestParam(value = "BoardId") int boardId) throws Exception {
 //        Pagination pagination = new Pagination();
         boardService.update(boardDto);
 
-        model.addAttribute("board", boardService.getBoardList());
+        model.addAttribute("board", boardService.getBoardList(boardDto));
 
-        System.out.println(boardService.pagemodifyDetail(boardId));
+        System.out.println(boardService.pageModifyDetail(boardId));
         return "redirect:/board/boardlist";
     }
 

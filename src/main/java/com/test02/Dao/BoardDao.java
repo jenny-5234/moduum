@@ -19,14 +19,13 @@ public class BoardDao {
 
 
     // 게시글 수 가져오기
-
     public int getBoardListCnt(BoardDto boardDto) throws Exception{
         return sqlSession.selectOne(  namespace + ".getBoardListCnt",boardDto);
     }
 
     // 1. 게시글 목록 가져오기
-    public List<BoardDto> getBoardList() throws Exception {
-        return sqlSession.selectList(namespace + ".getBoardList");
+    public List<BoardDto> getBoardList(BoardDto boardDto) throws Exception {
+        return sqlSession.selectList(namespace + ".selectBoard");
     }
 
     // 2. 게시글 쓰기
