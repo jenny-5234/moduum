@@ -25,7 +25,8 @@ public class BoardDao {
 
     // 1. 게시글 목록 가져오기
     public List<BoardDto> getBoardList(BoardDto boardDto) throws Exception {
-        return sqlSession.selectList(namespace + ".selectBoard");
+        //  boardDto 에 startIndex가 잘 담겨 있는가 확인
+        return sqlSession.selectList(namespace + ".selectBoard", boardDto); // 전달받은 dto를 매핑 파라미터로 전달
     }
 
     // 2. 게시글 쓰기

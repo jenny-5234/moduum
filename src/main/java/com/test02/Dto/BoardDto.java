@@ -14,5 +14,6 @@ public class BoardDto {
     private Date B_Date;
     private int B_Count;
     private int startIndex;
-    private int cntPerPage;
+    private int cntPerPage; //getPageSize
+    private int curPage;
 }

@@ -21,12 +21,13 @@
     </select>
 
     <!-- 페이징 처리 후 게시글 조회 -->
-    <select id="selectBoard" parameterType="java.lang.Integer" resultType="BoardDto">
-SELECT BoardId, B_Writer, B_Title, B_Date, B_Count
-FROM Board
-ORDER BY BoardId DESC
-OFFSET (${startIndex} -1) * 10 ROWS
-    FETCH NEXT 10 ROWS ONLY
+    <!-- 파라미터 타입 변경 -> dto로 -->
+    <select id="selectBoard" parameterType="BoardDto" resultType="BoardDto">
+        SELECT BoardId, B_Writer, B_Title, B_Date, B_Count
+        FROM Board
+        ORDER BY BoardId DESC
+        OFFSET (#{curPage} -1) * 10 ROWS
+        FETCH NEXT 10 ROWS ONLY
     </select>
 
     <!--    게시글 작성-->

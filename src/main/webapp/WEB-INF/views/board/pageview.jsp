@@ -40,7 +40,7 @@
             <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
         </div>
         <td>
-            <button type="button" onclick="location.href='/board/boardlist?curPage=${pagination.curPage}'">목록</button>
+            <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
             <button type="button" id="d_btn">삭제</button>
             <button type="button" id="m_btn">수정</button>
         </td>

@@ -34,7 +34,7 @@ public class BoardController {
     @GetMapping("/boardlist")
     public String boardList(@ModelAttribute("boardDto") BoardDto boardDto,
                             @RequestParam(defaultValue="1") int curPage,
-                            @RequestParam("startIndex") int startIndex,
+//                            @RequestParam("startIndex") int startIndex,
                             Model model) throws Exception{
 
         int listCnt = boardService.getBoardListCnt(boardDto);
@@ -42,19 +42,17 @@ public class BoardController {
         Pagination pagination = new Pagination(listCnt, curPage);
 
         System.out.println(pagination);
-        System.out.println(startIndex);
-
+        System.out.println(pagination.getStartIndex());
 
         boardDto.setStartIndex(pagination.getStartIndex());
         boardDto.setCntPerPage(pagination.getPageSize());
+        boardDto.setCurPage(pagination.getCurPage());
 
         List<BoardDto> board = boardService.getBoardList(boardDto);
 
         model.addAttribute("board", board);
         model.addAttribute("listCnt", listCnt);
-        model.addAttribute("startIndex", startIndex);
         model.addAttribute("pagination", pagination);
-
 
         return "/board/boardlist";
     }

@@ -23,8 +23,10 @@
             <td>날짜</td>
             <td>조회수</td>
         </tr>
+
         <c:forEach var="dto" items="${board}" varStatus="status">
             <tr>
+
                 <td>${status.index+1+(pagination.curPage-1)*10}</td>
 
                 <td><a href="/board/pageview?BoardId=${dto.boardId}">${dto.b_Title}</a></td>

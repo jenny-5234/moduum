@@ -6,16 +6,18 @@ import lombok.Data;
 public class Pagination {
     private int pageSize = 10;       // 한 페이지당 게시글 수
     private int rangeSize = 10;      // 한 블럭당 페이지 수
-    private int curPage = 1;         //page
-    private int curRange = 1;        //range
+    private int curPage = 1;         // 현재 페이지
+    private int curRange = 1;        // 현재 블럭
 
     // 총 게시글 수, 페이지 수, 블럭수
     private int listCnt, pageCnt, rangeCnt ;
 
+    // 시작페이지, 끝페이지
     private int startPage = 1;
     private int endPage = 1;
 
-    private int startIndex = 1;
+    // 시작 인덱스
+    private int startIndex = 0;
 
     private int prevPage, nextPage;
 
@@ -67,19 +69,6 @@ public class Pagination {
 
         this.startIndex = (curPage - 1) * pageSize + 1;
     }
-
-
-//    protected Arraylist<BoardDto> getAllBoardDtos(){
-//        return new ArrayList<BoardDto>() = 쿼리날려서 가져오는거
-//    }
-//
-//    protected HashMap<Integer, ArrayList<BoardDto>> makeHashMap( ArrayList<BoardDto> boardDtos){
-//        HashMap<Integer, ArrayList<BoardDto>> DDa = new HashMap<>();
-//        ArrayList<BoardDto>
-//        for (int i = 0; i < ; i++) {
-//
-//        }
-//    }
 
 }
 
