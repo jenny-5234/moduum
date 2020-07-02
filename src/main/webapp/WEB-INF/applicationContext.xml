@@ -32,7 +32,7 @@
         <!-- 설정한 DataSource의 id를 참조로 전달해야 한다 -->
         <property name="dataSource" ref="mssqlDatasource"/>
         <!-- MyBatis 설정 파일 위치 지정 -->
-<!--        <property name="mapperLocations" value="classpath*:mybatis/mappers/Notice.xml"/>-->
+        <!--        <property name="mapperLocations" value="classpath*:mybatis/mappers/Notice.xml"/>-->
         <property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"/>
     </bean>
 
@@ -41,8 +41,5 @@
         <!-- Bean 생성자 호출 -->
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
-
-
-
 
 </beans>

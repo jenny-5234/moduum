@@ -13,7 +13,11 @@ public class BoardDto {
     private String B_Context;
     private Date B_Date;
     private int B_Count;
+    private String B_Filename;
+
     private int startIndex;
     private int cntPerPage; //getPageSize
     private int curPage;
+
+
 }

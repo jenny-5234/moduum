@@ -42,9 +42,6 @@
     </table>
 
     <div class="links">
-        <c:if test="${pagination.curRange ne 1 }">
-            <a href="#" onClick="fn_paging(1)">[처음]</a>
-        </c:if>
         <c:if test="${pagination.curPage ne 1}">
             <a href="#" onClick="fn_paging('${pagination.prevPage }')">[이전]</a>
         </c:if>
@@ -61,9 +58,6 @@
         </c:forEach>
         <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
             <a href="#" onClick="fn_paging('${pagination.nextPage }')">[다음]</a>
-        </c:if>
-        <c:if test="${pagination.curRange ne pagination.rangeCnt && pagination.rangeCnt > 0}">
-            <a href="#" onClick="fn_paging('${pagination.pageCnt }')">[끝]</a>
         </c:if>
     </div>
     <div>

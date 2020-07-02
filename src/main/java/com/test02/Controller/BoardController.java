@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import java.io.File;
 import java.util.List;
 
 @RequestMapping("/board")
@@ -22,16 +25,16 @@ public class BoardController {
     // 1. 게시글 목록
     @GetMapping("/boardlist")
     public String boardList(@ModelAttribute("boardDto") BoardDto boardDto,
-                            @RequestParam(defaultValue = "1") int curPage,
+                            @RequestParam(required = false, defaultValue = "1") int curPage,
                             Model model) throws Exception {
 
-
+        // 전체 게시글 개수
         int listCnt = boardService.getBoardListCnt(boardDto);
 
         Pagination pagination = new Pagination(listCnt, curPage);
 
-        System.out.println(pagination);
-        System.out.println(pagination.getStartIndex());
+//        System.out.println(pagination);
+//        System.out.println(pagination.getStartIndex());
 
         boardDto.setStartIndex(pagination.getStartIndex());
         boardDto.setCntPerPage(pagination.getPageSize());
@@ -40,23 +43,32 @@ public class BoardController {
         List<BoardDto> board = boardService.getBoardList(boardDto);
 
         model.addAttribute("board", board);
-        model.addAttribute("listCnt", listCnt);
-        model.addAttribute("curPage", curPage);
         model.addAttribute("pagination", pagination);
 
         return "/board/boardlist";
     }
 
     // 2. 게시글 작성
-
     @RequestMapping("/write")
     public String writeBoard() {
         return "/board/write";
     }
 
     @PostMapping(value = "insert.do")
-    public String insert(BoardDto boardDto) throws Exception {
+    public String insert(BoardDto boardDto,
+                         MultipartHttpServletRequest request) throws Exception {
+
         System.out.println(boardDto);
+
+        MultipartFile file = request.getFile("board_file");
+        String path = request.getRealPath("src/main/webapp/WEB-INF/uploadFile");
+        String fileName = file.getOriginalFilename();
+        File uploadFile = new File(path+"//"+fileName);
+
+        file.transferTo(uploadFile);
+
+        boardDto.setB_Filename(fileName);
+
         boardService.insert(boardDto);
 
         return "redirect:/board/boardlist";
@@ -82,13 +94,10 @@ public class BoardController {
     public String updateDo(BoardDto boardDto, Model model,
                            @RequestParam(value = "BoardId") int boardId,
                            @RequestParam(defaultValue = "1") int curPage) throws Exception {
-//
+
         int listCnt = boardService.getBoardListCnt(boardDto);
 
         Pagination pagination = new Pagination(listCnt, curPage);
-
-        System.out.println(pagination);
-        System.out.println(pagination.getStartIndex());
 
         boardDto.setStartIndex(pagination.getStartIndex());
         boardDto.setCntPerPage(pagination.getPageSize());
@@ -97,8 +106,6 @@ public class BoardController {
         boardService.update(boardDto);
 
         model.addAttribute("board", boardService.getBoardList(boardDto));
-        model.addAttribute("listCnt", listCnt);
-        model.addAttribute("curPage", curPage);
         model.addAttribute("pagination", pagination);
 
         System.out.println(boardService.pageModifyDetail(boardId));

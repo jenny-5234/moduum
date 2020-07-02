@@ -22,7 +22,7 @@
 <%--    <input type="hidden" nema="boardId" value="${boardDto.boardId}">--%>
 <%--</form>--%>
 
-<form name="viewForm" method="post">
+<form name="viewForm" method="post" enctype="multipart/form-data">
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">상세보기</h3>
@@ -40,11 +40,13 @@
         <div>
             내용
             <textarea name="context" rows="5" readonly="readonly">${boardDto.b_Context}</textarea>
+<%--            <input name="context" rows="5" readonly="readonly">${boardDto.b_Context}</input>--%>
+                <img src="/WEB-INF/uploadFile/${boardDto.b_Filename}" width="300" />
         </div>
         <div>
             이름
             <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
-        </div>
+        </div>8
         <td>
             <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
             <button type="button" id="d_btn">삭제</button>
