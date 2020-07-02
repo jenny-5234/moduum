@@ -26,8 +26,8 @@
         SELECT BoardId, B_Writer, B_Title, B_Date, B_Count
         FROM Board
         ORDER BY BoardId DESC
-        OFFSET (#{curPage} -1) * 10 ROWS
-        FETCH NEXT 10 ROWS ONLY
+        OFFSET (#{curPage} -1) * 15 ROWS
+        FETCH NEXT 15 ROWS ONLY
     </select>
 
     <!--    게시글 작성-->

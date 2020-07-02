@@ -17,6 +17,11 @@
 <div class="box-header">
     <h3 class="box-title">게시판 수정</h3>
 </div>
+<%--<form role="form" method="post">--%>
+<%--    <input type="" name="page" value="${boardDto.curPage}">--%>
+<%--    <input type="" name="cntPerPage" value="${boardDto.cntPerPage}">--%>
+<%--    <input type="" nema="boardId" value="${boardDto.boardId}">--%>
+<%--</form>--%>
 <form name="modify-form" method="post" action="/board/update.do">
     <div class="box">
         <div>

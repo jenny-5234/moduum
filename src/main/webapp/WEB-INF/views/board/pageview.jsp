@@ -16,6 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<%--<form role="form" method="post">--%>
+<%--    <input type="" name="page" value="${boardDto.curPage}">--%>
+<%--    <input type="" name="cntPerPage" value="${boardDto.cntPerPage}">--%>
+<%--    <input type="hidden" nema="boardId" value="${boardDto.boardId}">--%>
+<%--</form>--%>
+
 <form name="viewForm" method="post">
     <div class="box">
         <div class="box-header">

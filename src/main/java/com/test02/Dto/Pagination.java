@@ -1,10 +1,12 @@
 package com.test02.Dto;
 
 import lombok.Data;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Data
 public class Pagination {
-    private int pageSize = 10;       // 한 페이지당 게시글 수
+    private int pageSize = 15;       // 한 페이지당 게시글 수
     private int rangeSize = 10;      // 한 블럭당 페이지 수
     private int curPage = 1;         // 현재 페이지
     private int curRange = 1;        // 현재 블럭

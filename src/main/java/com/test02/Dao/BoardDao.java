@@ -17,7 +17,6 @@ public class BoardDao {
 
     private static String namespace = "board";
 
-
     // 게시글 수 가져오기
     public int getBoardListCnt(BoardDto boardDto) throws Exception{
         return sqlSession.selectOne(  namespace + ".getBoardListCnt",boardDto);

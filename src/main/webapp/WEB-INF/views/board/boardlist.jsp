@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="/css/test.css"/>
 </head>
 <body>
+<%--<form id="paging" action="pageview.jsp" method="post">--%>
+<%--    <input type="" name="page" value="${boardDto.curPage}" readonly="readonly">--%>
+<%--    <input type="" name="cntPerPage" value="${boardDto.cntPerPage}" readonly="readonly">--%>
+<%--</form>--%>
 <section id="Board">
     <table>
         <tr>
@@ -26,7 +30,6 @@
 
         <c:forEach var="dto" items="${board}" varStatus="status">
             <tr>
-
                 <td>${status.index+1+(pagination.curPage-1)*10}</td>
 
                 <td><a href="/board/pageview?BoardId=${dto.boardId}">${dto.b_Title}</a></td>
@@ -74,6 +77,7 @@
     function fn_paging(curPage) {
         location.href = "/board/boardlist?curPage=" + curPage;
     }
+
 </script>
 </body>
 </html>
