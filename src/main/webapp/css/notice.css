@@ -1,0 +1,113 @@
+/*body{*/
+/*    margin: 0;*/
+/*    font-family: "Noto Sans KR", sans-serif !important;*/
+/*}*/
+/*.container{*/
+/*    width: 1380px;  !*1380px*!*/
+/*    margin: 0 auto;*/
+/*    background: #ffffff;*/
+/*}*/
+header {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.notice-board p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+table.board {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    /*border-left: 1px solid #ccc;*/
+    margin: 20px 10px;
+}
+
+table.board thead th {
+    padding: 10px;
+    font-weight: bold;
+    /*border-top: 1px solid #ccc;*/
+    /*border-right: 1px solid #ccc;*/
+    border-bottom: 2px solid #c00;
+    /*background: #dcdcd1;*/
+}
+
+table.board tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    /*border-right: 1px solid #ccc;*/
+    /*border-bottom: 1px solid #ccc;*/
+    /*background: #ececec;*/
+}
+
+table.board th #number{
+    width: 50px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+table.board th #text{
+    width: 400px;
+    padding: 10px;
+    vertical-align: top;
+    /*border-right: 1px solid #ccc;*/
+    /*border-bottom: 1px solid #ccc;*/
+}
+table.board td #writer{
+    width: 100px;
+    padding: 10px;
+    vertical-align: top;
+}
+table.board td #date{
+    width: 100px;
+    padding: 10px;
+    vertical-align: top;
+}
+table.board td #view-count{
+    width: 50px;
+    padding: 10px;
+    vertical-align: top;
+}
+.notice-board {
+    box-sizing: border-box;
+    width: 100%;
+    height: 80%;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 2px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+
+/* -----------Footer------------ */
+footer {
+    width: 100%;
+    background-color: transparent;
+    height: 150px;
+    float: left;
+    margin-top: 15px;
+    border-top: 2px solid dodgerblue;
+}
+
+.foo_div1 {
+    text-align: center;
+}
+
+.foo_div1 span {
+    font-size: 15px;
+    color: black;
+}
+
+.foo_div1 p {
+    margin-top: 5px;
+    color: black;
+}

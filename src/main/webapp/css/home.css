@@ -1,0 +1,182 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body{
+    width: 90%;
+    margin: 0 auto;
+    height: border-box;
+    font-family: "Noto Sans KR", sans-serif !important;
+}
+/*!*homecss*!*/
+/*.container{*/
+/*    width: 1360px;*/
+/*    margin: 0 auto;*/
+/*    background: #ffffff;*/
+/*}*/
+header{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.graphbox{
+    box-sizing:border-box;
+    width: 49%;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+.graph_insert{
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.mapbox{
+    box-sizing:border-box;
+    width: 49%;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+.map_button{
+    margin: 10px;
+    height: 50px;
+    overflow: hidden;
+    text-align: right;
+}
+#button_effect{
+    width:200px;
+    height: 40px;
+    background-color: #3296ff;
+    color:#ffffff;
+    text-align: center;
+    border: none;
+    border-radius: 2em;
+    font: 20px bold;
+}
+#button_effect:hover {
+    background-color: #74a3b0;
+}
+
+.bannerbox{
+    box-sizing:border-box;
+    width: 33%;
+    height: 350px;
+    margin-top: 20px;
+    margin-left: 11px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+.box_top_name{
+    height: 50px;
+    margin: 10px;
+    border-radius: 2em;
+}
+span{
+    margin-left: 10px;
+    font-weight: bold;
+}
+hr{
+    border: 1px solid blue;
+}
+.box_insert{
+    height: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.newsbox{
+    box-sizing:border-box;
+    width: 31%;
+    height: 350px;
+    margin-top: 20px;
+    margin-left: 11px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+.videobox{
+    box-sizing:border-box;
+    width: 33%;
+    height: 350px;
+    margin-top: 20px;
+    margin-left: 11px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+div{
+    display: block;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    background-color: transparent;
+    height: 150px;
+    float: left;
+    margin-top: 15px;
+    border-top: 2px solid dodgerblue;
+}
+.foo_div1{
+    text-align: center;
+}
+.foo_div1 span{
+    font-size: 15px;
+    color: black;
+}
+.foo_div1 p{
+    margin-top:  5px;
+    color: black;
+}
+
+
+/*@media (max-width: 1400px) {*/
+/*    .container {*/
+/*        width: 95%;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 768px) {*/
+/*    .container {*/
+/*        width: 95%;*/
+/*    }*/
+/*    .graphbox{float: none;}*/
+/*    .mapbox{float: none;}*/
+/*    .bannerboxbox{float: none;}*/
+/*    .newsbox{float: none;}*/
+/*    .videoboxbox{float: none;}*/
+/*}*/
+/*@media (max-width: 480px) {*/
+/*    .container{*/
+/*        width:95%;*/
+/*    }*/
+/*    .graphbox{float: none;}*/
+/*    .mapbox{float: none;}*/
+/*    .bannerboxbox{float: none;}*/
+/*    .newsbox{float: none;}*/
+/*    .videoboxbox{float: none;}*/
+/*    }*/
+
+#video{
+    width: 100%;
+    height: 100%;
+}

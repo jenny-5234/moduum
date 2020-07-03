@@ -15,6 +15,6 @@
   </head>
   <body>
 HOME
-<button type="button" onclick="location.href='/board/boardlist'">목록</button>
+<button type="button" onclick="location.href='/home'">메인</button>
   </body>
 </html>
