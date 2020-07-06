@@ -39,11 +39,6 @@
             vertical-align: top;
         }
 
-        #submit_btn {
-            text-align: right;
-
-        }
-
     </style>
 </head>
 <body>
@@ -74,10 +69,10 @@
                 <td> 파일 <input type="file" name="file" id="file"></td>
             </tr>
         </table>
+        <div>
+            <input type="submit" value="확인">
+        </div>
     </form>
-    <div id=submit_btn>
-        <input type="submit" value="확인">
-    </div>
 
 </div>
 </body>

@@ -62,12 +62,12 @@ public class BoardController {
     @PostMapping(value = "insert.do")
     public String insert(BoardDto boardDto) throws Exception {
 
+        MultipartFile mfile = boardDto.getFile();
+
         String realPath = servletContext.getRealPath("/");
         System.out.println("------------------" + realPath);
 
-        MultipartFile mfile = boardDto.getFile();
-
-        if (mfile != null) {
+        if (!mfile.isEmpty()) {
 
             String uploadPath = "src/main/webapp/image/uploadFile";
 
@@ -79,7 +79,7 @@ public class BoardController {
             boardDto.setB_FileName(saveName);
             boardDto.setB_FilePath("/image/uploadFile");
 
-            File file = new File(realPath + "/image/uploadFile"  + File.separator + saveName);
+            File file = new File(realPath + "/image/uploadFile" + File.separator + saveName);
             System.out.println(file.getPath());
 
             mfile.transferTo(file);
@@ -97,7 +97,6 @@ public class BoardController {
         model.addAttribute("boardDto", boardDto);
         return "board/pageview";
     }
-
 
 
     // 4. 게시글 수정
