@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<img id="video" src="/image/video.png"/>
+<img id="video" src="/image/homeImages/video.png"/>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">

@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,13 +41,14 @@
         <div>
             내용
             <textarea name="context" rows="5" readonly="readonly">${boardDto.b_Context}</textarea>
-<%--            <input name="context" rows="5" readonly="readonly">${boardDto.b_Context}</input>--%>
-                <img src="/WEB-INF/uploadFile/${boardDto.b_Filename}" width="300" />
+            <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/>
+
         </div>
+
         <div>
             이름
             <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
-        </div>8
+        </div>
         <td>
             <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
             <button type="button" id="d_btn">삭제</button>
@@ -56,27 +58,27 @@
     </div>
 </form>
 <script>
-    $(function(){
+    $(function () {
         $('#d_btn').click(function () {
             var password = prompt("비밀번호")
 
 
-            if(password == ${boardDto.b_Password}){
-                location.href ='/board/delete.do?boardId=${boardDto.boardId}'
-            }else{
+            if (password == ${boardDto.b_Password}) {
+                location.href = '/board/delete.do?boardId=${boardDto.boardId}'
+            } else {
                 alert("다시 입력해주세요")
             }
         })
     })
 
-    $(function(){
+    $(function () {
         $('#m_btn').click(function () {
             var password = prompt("비밀번호")
 
 
-            if(password == ${boardDto.b_Password}){
-                location.href ='/board/modify?boardId=${boardDto.boardId}'
-            }else{
+            if (password == ${boardDto.b_Password}) {
+                location.href = '/board/modify?boardId=${boardDto.boardId}'
+            } else {
                 alert("다시 입력해주세요")
             }
         })

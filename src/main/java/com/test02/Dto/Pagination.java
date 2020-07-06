@@ -1,8 +1,6 @@
 package com.test02.Dto;
 
 import lombok.Data;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
 @Data
 public class Pagination {

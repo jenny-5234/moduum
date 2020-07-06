@@ -10,13 +10,13 @@ public class HomeController {
     @RequestMapping(value = "/")
     public String index() {
 
-        return "index";
-    }
-
-    @GetMapping("/home")
-    public String home() {
         return "home";
     }
 
+//    @GetMapping("/home")
+//    public String home() {
+//        return "home";
+//    }
+//
 
 }

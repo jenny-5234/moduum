@@ -5,19 +5,24 @@ import com.test02.Dto.BoardDto;
 import com.test02.Dto.Pagination;
 import com.test02.Service.BoardServiceImpl;
 import lombok.SneakyThrows;
+//import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.ServletContext;
 import java.io.File;
-import java.util.List;
+import java.util.*;
 
 @RequestMapping("/board")
 @Controller
+//@Slf4j
 public class BoardController {
+
+    @Autowired
+    ServletContext servletContext;
 
     @Autowired
     BoardServiceImpl boardService;
@@ -55,19 +60,30 @@ public class BoardController {
     }
 
     @PostMapping(value = "insert.do")
-    public String insert(BoardDto boardDto,
-                         MultipartHttpServletRequest request) throws Exception {
+    public String insert(BoardDto boardDto) throws Exception {
 
-        System.out.println(boardDto);
+        String realPath = servletContext.getRealPath("/");
+        System.out.println("------------------" + realPath);
 
-        MultipartFile file = request.getFile("board_file");
-        String path = request.getRealPath("src/main/webapp/WEB-INF/uploadFile");
-        String fileName = file.getOriginalFilename();
-        File uploadFile = new File(path+"//"+fileName);
+        MultipartFile mfile = boardDto.getFile();
 
-        file.transferTo(uploadFile);
+        if (mfile != null) {
 
-        boardDto.setB_Filename(fileName);
+            String uploadPath = "src/main/webapp/image/uploadFile";
+
+            System.out.println(uploadPath);
+
+            String origName = mfile.getOriginalFilename();
+            String saveName = System.currentTimeMillis() + origName;
+
+            boardDto.setB_FileName(saveName);
+            boardDto.setB_FilePath("/image/uploadFile");
+
+            File file = new File(realPath + "/image/uploadFile"  + File.separator + saveName);
+            System.out.println(file.getPath());
+
+            mfile.transferTo(file);
+        }
 
         boardService.insert(boardDto);
 
@@ -81,6 +97,8 @@ public class BoardController {
         model.addAttribute("boardDto", boardDto);
         return "board/pageview";
     }
+
+
 
     // 4. 게시글 수정
     @GetMapping(value = "/modify")

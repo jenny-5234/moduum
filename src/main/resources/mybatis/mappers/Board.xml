@@ -32,8 +32,8 @@
 
     <!--    게시글 작성-->
     <insert id="insert" parameterType="BoardDto">
-        INSERT INTO Board(B_Writer, B_Password, B_Title, B_Context, B_Count, B_Filename)
-        VALUES (#{B_Writer}, #{B_Password}, #{B_Title}, #{B_Context}, 0, #{B_Filename})
+        INSERT INTO Board(B_Writer, B_Password, B_Title, B_Context, B_Count, B_FileName, B_FilePath )
+        VALUES (#{B_Writer}, #{B_Password}, #{B_Title}, #{B_Context}, 0, #{B_FileName}, #{B_FilePath})
 
     </insert>
 
@@ -61,8 +61,7 @@
     <update id="update" parameterType="BoardDto">
         UPDATE Board
         SET B_Title = #{B_Title},
-            B_Context = #{B_Context},
-            B_Filename = #{B_Filename}
+            B_Context = #{B_Context}
         WHERE BoardId = #{BoardId}
     </update>
 </mapper>

@@ -22,9 +22,9 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="/image/인천e음.png"></div>
-            <div class="swiper-slide"><img src="/image/경기지역화폐.png"></div>
-            <div class="swiper-slide"><img src="/image/제로페이1.jpg"></div>
+            <div class="swiper-slide"><img src="/image/homeImages/인천e음.png"></div>
+            <div class="swiper-slide"><img src="/image/homeImages/경기지역화폐.png"></div>
+            <div class="swiper-slide"><img src="/image/homeImages/제로페이1.jpg"></div>
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>

@@ -1,6 +1,7 @@
 package com.test02.Dto;
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 
@@ -13,7 +14,10 @@ public class BoardDto {
     private String B_Context;
     private Date B_Date;
     private int B_Count;
-    private String B_Filename;
+
+    private MultipartFile file;
+    private String B_FileName;
+    private String B_FilePath;
 
     private int startIndex;
     private int cntPerPage; //getPageSize

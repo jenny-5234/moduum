@@ -11,67 +11,148 @@
 <html>
 <head>
     <title>정보마당</title>
-    <link rel="stylesheet" href="/css/test.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        .container {
+            margin-top: 3%;
+            margin-bottom: 3%;
+            width: 80%;
+            height: auto;
+        }
+
+        .mainlist {
+            text-align: center;
+            font-size: 15px;
+            background: #ebf2f8;
+            font-weight: bold;
+        }
+
+        td[id="boardid"] {
+            width: 10%;
+        }
+
+        td[id="title"] {
+            width: 60%;
+        }
+
+        td[id="writer"] {
+            width: 10%;
+        }
+
+        td[id="date"] {
+            width: 10%;
+        }
+
+        td[id="count"] {
+            width: 10%;
+        }
+
+        tr[class="boardlist"] {
+            text-align: center;
+        }
+
+        tr[class="boardlist"] td[class="listTitle"] {
+            text-align: left;
+        }
+
+        .page {
+            margin: 0 auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        .pagination {
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .pagination li {
+            display: inline;
+            text-align: center;
+        }
+
+        .pagination a {
+            float: left;
+            display: block;
+            text-decoration: none;
+            padding: 5px 12px;
+        }
+
+        .pagination a:active {
+            outline: none;
+        }
+
+    </style>
 </head>
 <body>
-<%--<form id="paging" action="pageview.jsp" method="post">--%>
-<%--    <input type="" name="page" value="${boardDto.curPage}" readonly="readonly">--%>
-<%--    <input type="" name="cntPerPage" value="${boardDto.cntPerPage}" readonly="readonly">--%>
-<%--</form>--%>
-<section id="Board">
-    <table>
-        <tr>
-            <td>번호</td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>날짜</td>
-            <td>조회수</td>
-        </tr>
+<header>
+    <h1><a href="#">모둠전</a></h1>
+</header>
+<div class="menubar">
+    <%@include file="/WEB-INF/views/navbar.jsp" %>
+</div>
 
-        <c:forEach var="dto" items="${board}" varStatus="status">
-            <tr>
-                <td>${status.index+1+(pagination.curPage-1)*10}</td>
-
-                <td><a href="/board/pageview?BoardId=${dto.boardId}">${dto.b_Title}</a></td>
-
-                <td>${dto.b_Writer}</td>
-                <td>${dto.b_Date}</td>
-                <td>${dto.b_Count}</td>
+<div class="container">
+    <div align="left">
+        총 게시글 수 : ${pagination.listCnt }
+    </div>
+    <form id="Board">
+        <table class="table table-hover">
+            <tr class="mainlist">
+                <td id="boardid">번호</td>
+                <td id="title">제목</td>
+                <td id="writer">작성자</td>
+                <td id="date">날짜</td>
+                <td id="count">조회수</td>
             </tr>
-        </c:forEach>
-    </table>
 
-    <div class="links">
-        <c:if test="${pagination.curPage ne 1}">
-            <a href="#" onClick="fn_paging('${pagination.prevPage }')">[이전]</a>
-        </c:if>
-        <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
-            <c:choose>
-                <c:when test="${pageNum eq  pagination.curPage}">
-                    <span style="font-weight: bold;"><a href="#"
-                                                        onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
-                </c:when>
-                <c:otherwise>
-                    <a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
-        <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-            <a href="#" onClick="fn_paging('${pagination.nextPage }')">[다음]</a>
-        </c:if>
-    </div>
-    <div>
-        총 게시글 수 : ${pagination.listCnt } / 총 페이지 수 : ${pagination.pageCnt }
-        / 현재 페이지 : ${pagination.curPage } / 현재 블럭 : ${pagination.curRange } / 총 블럭 수 : ${pagination.rangeCnt }
-    </div>
+            <c:forEach var="dto" items="${board}" varStatus="status">
+                <tr class="boardlist">
+                    <td>${status.index+1+(pagination.curPage-1)*15}</td>
 
-</section>
-<a href="write">글쓰기</a>
+                    <td class="listTitle"
+                        onclick="location.href='/board/pageview?BoardId=${dto.boardId}';">${dto.b_Title}</td>
+
+                    <td>${dto.b_Writer}</td>
+                    <td>${dto.b_Date}</td>
+                    <td>${dto.b_Count}</td>
+                </tr>
+            </c:forEach>
+        </table>
+        <hr/>
+        <div class="page">
+            <ul class="pagination">
+                <c:if test="${pagination.curPage ne 1}">
+                    <li><a href="#" onClick="fn_paging('${pagination.prevPage }')">이전<<</a></li>
+                </c:if>
+                <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
+                    <c:choose>
+                        <c:when test="${pageNum eq  pagination.curPage}">
+
+                            <li><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
+                    <li><a href="#" onClick="fn_paging('${pagination.nextPage }')">>>다음</a></li>
+                </c:if>
+            </ul>
+        </div>
+
+    </form>
+    <div id="write_btn" align="right">
+        <a href="write" class="btn btn-success">글쓰기</a></div>
+</div>
 <script>
     function fn_paging(curPage) {
         location.href = "/board/boardlist?curPage=" + curPage;
     }
-
 </script>
+<script src="/js/bootstrap.js"/>
 </body>
 </html>
