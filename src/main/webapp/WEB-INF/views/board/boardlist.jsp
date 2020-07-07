@@ -12,6 +12,7 @@
 <head>
     <title>정보마당</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
+<%--    <script src="/js/bootstrap.js"/>--%>
     <style>
         .container {
             margin-top: 3%;
@@ -55,7 +56,7 @@
             text-align: left;
         }
 
-        .page {
+        .paging {
             margin: 0 auto;
             text-align: center;
             width: 50%;
@@ -68,22 +69,31 @@
             margin-top: 20px;
         }
 
-        .pagination li {
-            display: inline;
+        .pagelist {
+            color: black;
+            float: left;
+            display: block;
             text-align: center;
         }
 
-        .pagination a {
+        .pagelist a {
             float: left;
             display: block;
-            text-decoration: none;
             padding: 5px 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: aliceblue;
+            text-decoration: none;
         }
 
-        .pagination a:active {
+        .pagelist a:hover  {
             outline: none;
+            background: cornflowerblue;
         }
 
+        .pagelist a:active{
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -122,24 +132,23 @@
             </c:forEach>
         </table>
         <hr/>
-        <div class="page">
+        <div class="paging">
             <ul class="pagination">
                 <c:if test="${pagination.curPage ne 1}">
-                    <li><a href="#" onClick="fn_paging('${pagination.prevPage }')">이전<<</a></li>
+                    <li class="pagelist"><a onClick="fn_paging('${pagination.prevPage }')"><<</a></li>
                 </c:if>
                 <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
                     <c:choose>
                         <c:when test="${pageNum eq  pagination.curPage}">
-
-                            <li><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-                    <li><a href="#" onClick="fn_paging('${pagination.nextPage }')">>>다음</a></li>
+                    <li class="pagelist"><a href="#" onClick="fn_paging('${pagination.nextPage }')">>></a></li>
                 </c:if>
             </ul>
         </div>
@@ -153,6 +162,5 @@
         location.href = "/board/boardlist?curPage=" + curPage;
     }
 </script>
-<script src="/js/bootstrap.js"/>
 </body>
 </html>

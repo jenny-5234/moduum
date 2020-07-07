@@ -15,48 +15,66 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .container {
+            margin-top: 3%;
+            margin-bottom: 3%;
+            width: 80%;
+            height: auto;
+        }
+
+    </style>
 </head>
 <body>
-<%--<form role="form" method="post">--%>
-<%--    <input type="" name="page" value="${boardDto.curPage}">--%>
-<%--    <input type="" name="cntPerPage" value="${boardDto.cntPerPage}">--%>
-<%--    <input type="hidden" nema="boardId" value="${boardDto.boardId}">--%>
-<%--</form>--%>
+<header>
+    <h1><a href="#">모둠전</a></h1>
+</header>
+<div class="menubar">
+    <%@include file="/WEB-INF/views/navbar.jsp" %>
+</div>
+<div class="container">
+    <form name="viewForm" method="post" enctype="multipart/form-data">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">상세보기</h3>
+            </div>
+            <div>
+                작성일자 : <fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/>
+            </div>
+            <div>
+                조회수 : ${boardDto.b_Count}
+            </div>
+            <div>
+                제목
+                <input name="title" id="B_Title" value="${boardDto.b_Title}" readonly="readonly"/>
+            </div>
+            <div>
+                내용
+                <textarea name="context" rows="5" readonly="readonly">${boardDto.b_Context}</textarea>
+                <c:if test="${boardDto.b_FileName ne null} ">
+                    <div class="image">
+                        <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/></div>
+                </c:if>
+                <c:if test="${boardDto.b_FileName eq null} ">
+                    <div type="hidden">
+                        <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/></div>
+                </c:if>
 
-<form name="viewForm" method="post" enctype="multipart/form-data">
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">상세보기</h3>
-        </div>
-        <div>
-            작성일자 : <fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/>
-        </div>
-        <div>
-            조회수 : ${boardDto.b_Count}
-        </div>
-        <div>
-            제목
-            <input name="title" id="B_Title" value="${boardDto.b_Title}" readonly="readonly"/>
-        </div>
-        <div>
-            내용
-            <textarea name="context" rows="5" readonly="readonly">${boardDto.b_Context}</textarea>
-            <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/>
+            </div>
 
+            <div>
+                이름
+                <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
+            </div>
+            <td>
+                <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
+                <button type="button" id="d_btn">삭제</button>
+                <button type="button" id="m_btn">수정</button>
+            </td>
         </div>
-
-        <div>
-            이름
-            <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
-        </div>
-        <td>
-            <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
-            <button type="button" id="d_btn">삭제</button>
-            <button type="button" id="m_btn">수정</button>
-        </td>
-
-    </div>
-</form>
+    </form>
+</div>
 <script>
     $(function () {
         $('#d_btn').click(function () {
