@@ -20,62 +20,50 @@
             width: 80%;
             height: auto;
         }
-
         .mainlist {
             text-align: center;
             font-size: 15px;
             background: #ebf2f8;
             font-weight: bold;
         }
-
         td[id="boardid"] {
             width: 10%;
         }
-
         td[id="title"] {
             width: 60%;
         }
-
         td[id="writer"] {
             width: 10%;
         }
-
         td[id="date"] {
             width: 10%;
         }
-
         td[id="count"] {
             width: 10%;
         }
-
         tr[class="boardlist"] {
             text-align: center;
         }
-
         tr[class="boardlist"] td[class="listTitle"] {
             text-align: left;
         }
-
         .paging {
             margin: 0 auto;
             text-align: center;
             width: 50%;
         }
-
         .pagination {
             list-style: none;
             display: inline-block;
             padding: 0;
             margin-top: 20px;
         }
-
         .pagelist {
             color: black;
             float: left;
             display: block;
             text-align: center;
         }
-
         .pagelist a {
             float: left;
             display: block;
@@ -85,12 +73,10 @@
             background-color: aliceblue;
             text-decoration: none;
         }
-
         .pagelist a:hover  {
             outline: none;
             background: cornflowerblue;
         }
-
         .pagelist a:active{
             background-color: red;
         }

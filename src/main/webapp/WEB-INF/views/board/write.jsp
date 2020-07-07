@@ -17,12 +17,15 @@
 
     <title>글쓰기</title>
     <style>
-        .insert-form {
+        .container {
+            margin-top: 3%;
+            margin-bottom: 3%;
+            text-align: center;
+        }
+        #insert_Form {
             width: 100%;
-
         }
     </style>
-
 </head>
 <body>
 <header>
@@ -31,7 +34,6 @@
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
-
 <div class="container">
     <form id=insert_Form" method="post" enctype="multipart/form-data" action="/board/insert.do">
         <table class="insert-form">
