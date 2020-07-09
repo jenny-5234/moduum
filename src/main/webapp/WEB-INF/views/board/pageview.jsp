@@ -51,18 +51,9 @@
             </div>
             <div>
                 내용
-                <textarea name="context" rows="5" readonly="readonly">${boardDto.b_Context}</textarea>
-                <c:if test="${boardDto.b_FileName ne null} ">
-                    <div class="image">
-                        <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/></div>
-                </c:if>
-                <c:if test="${boardDto.b_FileName eq null} ">
-                    <div type="hidden">
-                        <img src="${boardDto.b_FilePath}/${boardDto.b_FileName}"/></div>
-                </c:if>
+               ${boardDto.b_Context}
 
             </div>
-
             <div>
                 이름
                 <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>

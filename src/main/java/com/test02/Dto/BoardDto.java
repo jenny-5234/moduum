@@ -16,6 +16,9 @@ public class BoardDto {
     private int B_Count;
 
     private MultipartFile file;
+    private String callback;
+    private String callback_func;
+
     private String B_FileName;
     private String B_FilePath;
 
