@@ -32,8 +32,8 @@
 
     <!--    게시글 작성-->
     <insert id="insert" parameterType="BoardDto">
-        INSERT INTO Board(B_Writer, B_Password, B_Title, B_Context, B_Count, B_FileName, B_FilePath )
-        VALUES (#{B_Writer}, #{B_Password}, #{B_Title}, #{B_Context}, 0, #{B_FileName}, #{B_FilePath})
+        INSERT INTO Board(B_Writer, B_Password, B_Title, B_Context, B_Count)
+        VALUES (#{B_Writer}, #{B_Password}, #{B_Title}, #{B_Context}, 0)
 
     </insert>
 

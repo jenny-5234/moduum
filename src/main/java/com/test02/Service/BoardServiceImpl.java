@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -39,8 +40,12 @@ public class BoardServiceImpl implements BoardService {
     // 게시글 작성
     @SneakyThrows
     @Override
+//    public void insert(Map<String, Object> map) {
+//
+//        boardDao.insert(map);
+//    }
     public void insert(BoardDto boardDto) {
-
+        System.out.println(boardDto.getFiledata());
         boardDao.insert(boardDto);
 
     }

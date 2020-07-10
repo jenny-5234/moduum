@@ -18,6 +18,7 @@
 
     <style>
         .container {
+            margin: 0 auto;
             margin-top: 3%;
             margin-bottom: 3%;
             width: 80%;
@@ -66,11 +67,11 @@
         </div>
     </form>
 </div>
+
 <script>
     $(function () {
         $('#d_btn').click(function () {
             var password = prompt("비밀번호")
-
 
             if (password == ${boardDto.b_Password}) {
                 location.href = '/board/delete.do?boardId=${boardDto.boardId}'
