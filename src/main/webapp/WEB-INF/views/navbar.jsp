@@ -5,6 +5,9 @@
     <title>CSS Tips | Dropdown Menu</title>
     <link rel="stylesheet" href="/css/navbar.css">
 </head>
+<header>
+    <h1><a href="../">모둠전</a></h1>
+</header>
 <body>
 <div class="logo">
 

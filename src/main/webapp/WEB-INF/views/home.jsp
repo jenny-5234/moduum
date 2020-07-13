@@ -18,61 +18,61 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+
+<div class="menubar">
+    <%@include file="navbar.jsp" %>
+</div>
+
 <div class="container">
-    <header>
-        <h1><a href="#">모둠전</a></h1>
-    </header>
-    <div class="menubar">
-        <%@include file="navbar.jsp" %>
+
+    <div class="graphbox">
+        <div class="box_top_name">
+            <span>현황</span>
+            <hr>
+        </div>
+        <div class="graph_insert">
+            <img src="/image/homeImages/testgraph1.png"/>&nbsp;
+        </div>
     </div>
-</div>
-<div class="graphbox">
-    <div class="box_top_name">
-        <span>현황</span>
-        <hr>
+    <div class="mapbox">
+        <div class="box_top_name">
+            <span>가맹점 위치</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <img src="/image/homeImages/map1.jpg"/>
+        </div>
+        <div class="map_button">
+            <button id="button_effect">가맹점 찾기</button>
+        </div>
     </div>
-    <div class="graph_insert">
-        <img src="/image/homeImages/testgraph1.png"/>&nbsp;
+    <div class="bannerbox">
+        <div class="box_top_name">
+            <span>토탈 지역화폐</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <%@include file="banner.jsp" %>
+        </div>
     </div>
-</div>
-<div class="mapbox">
-    <div class="box_top_name">
-        <span>가맹점 위치</span>
-        <hr>
+    <div class="newsbox">
+        <div class="box_top_name">
+            <span>뉴스 및 이슈</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <span>뉴스api크롤링</span>
+        </div>
     </div>
-    <div class="box_insert">
-        <img src="/image/homeImages/map1.jpg"/>
-    </div>
-    <div class="map_button">
-        <button id="button_effect">가맹점 찾기</button>
-    </div>
-</div>
-<div class="bannerbox">
-    <div class="box_top_name">
-        <span>토탈 지역화폐</span>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <%@include file="banner.jsp" %>
-    </div>
-</div>
-<div class="newsbox">
-    <div class="box_top_name">
-        <span>뉴스 및 이슈</span>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <span>뉴스api크롤링</span>
-    </div>
-</div>
-<div class="videobox">
-    <div class="box_top_name">
-        <span>팝업존</span>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <%--                <span>YouTube 팝업 삽입</span>--%>
-        <jsp:include page="popup.jsp"/>
+    <div class="videobox">
+        <div class="box_top_name">
+            <span>팝업존</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <%--                <span>YouTube 팝업 삽입</span>--%>
+            <jsp:include page="popup.jsp"/>
+        </div>
     </div>
 </div>
 <footer>
