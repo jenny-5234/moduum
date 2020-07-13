@@ -2,6 +2,7 @@
 var pagegroup = 1;
 // 마지막 페이지
 var lastPage = 5;
+
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces2(places) {
     var listEl = document.getElementById('placesList'),     // id가 placeList인 것을 가져와서 저장
@@ -46,17 +47,16 @@ function displayPlaces2(places) {
                     LoadingWithMask();
                 }
                 setTimeout(function () {
-                // x좌표나 y좌표가 없을 때때
-                if (x && y) {
-                    displayInfowindow(marker, place_name, road_address_name, address_name, phone, place_url, id, x, y);
-                    // map.setBounds(bounds);      // 선택한 위치로 지도를 이동
-                    map.setCenter(new kakao.maps.LatLng(y, x));
-                    map.setLevel(3);
-                }
-                else {
-                    console.log("없어");
-                }
-                closeLoadingWithMask();
+                    // x좌표나 y좌표가 없을 때때
+                    if (x && y) {
+                        displayInfowindow(marker, place_name, road_address_name, address_name, phone, place_url, id, x, y);
+                        // map.setBounds(bounds);      // 선택한 위치로 지도를 이동
+                        map.setCenter(new kakao.maps.LatLng(y, x));
+                        map.setLevel(3);
+                    } else {
+                        console.log("없어");
+                    }
+                    closeLoadingWithMask();
                 }, 1);
             };
 
@@ -84,7 +84,7 @@ function displayPlaces2(places) {
 }
 
 // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
-function displayPagination2(pagination, totalPage, current) {
+function displayPagination2(pagination, totalPage, current, data) {
     console.log("페이지:" + current);
     console.log("totalPage:" + totalPage);
     var paginationEl = document.getElementById('pagination'),
@@ -138,7 +138,7 @@ function displayPagination2(pagination, totalPage, current) {
             pagegroup = 1;
             current = 1;
             lastPage = 5;
-            SelectedDataPaging(pagination, current);
+            SelectedDataPaging(data, current, pagination);
         });
         // 이전 페이지를 눌렀을 때
         prevPage.onclick = (function () {
@@ -155,7 +155,7 @@ function displayPagination2(pagination, totalPage, current) {
                 pagegroup -= 5;
                 console.log("이전");
                 current = pagegroup;
-                SelectedDataPaging(pagination, current);
+                SelectedDataPaging(data, current, pagination);
             } else {
                 console.log("이전 페이지 없음");
             }
@@ -188,7 +188,7 @@ function displayPagination2(pagination, totalPage, current) {
                 console.log("다음페이지 없음");
             }
             current = pagegroup;
-            SelectedDataPaging(pagination, current);
+            SelectedDataPaging(data, current, pagination);
         });
         // 마지막 페이지를 눌렀을 때
         endPage.onclick = (function () {
@@ -212,19 +212,19 @@ function displayPagination2(pagination, totalPage, current) {
             // pagegroup + 4 가 총 페이지보다 작은 경우
             if (pagegroup + 4 < totalPage) {
                 console.log("마지막");
-                SelectedDataPaging(pagination, current);
+                SelectedDataPaging(data, current, pagination);
             } else {
                 lastPage = totalPage;
                 current = totalPage;
                 console.log("걸렸네");
-                SelectedDataPaging(pagination, current);
+                SelectedDataPaging(data, current, pagination);
             }
         });
         // 페이지를 클릭하면 클릭한 페이지로 이동
         el.onclick = (function (i) {
             return function () {
                 current = i;
-                SelectedDataPaging(pagination, current);
+                SelectedDataPaging(data, current, pagination);
             }
         })(i);
         elementfragment.appendChild(el);
@@ -250,21 +250,18 @@ function displayPagination2(pagination, totalPage, current) {
     }
 }
 
-
-function SelectedDataPaging(jsonPath, current) {
+function SelectedDataPaging(data, current, jsonPath) {
     // 페이지를 바꾸기전 열려있는 오버레이를 닫음
     closeOverlay();
     // json 데이터 불러오기
-    $.get(jsonPath, function (data) {
-        for (var i = current * 15 - 15; i < current * 15; i++) {
-            // data에 값이 존재하면 itemE에 push 함
-            if (data[i] != null) {
-                itemE.push(data[i]);
-            } else {
-                console.log("없음");
-            }
+    for (var i = current * 15 - 15; i < current * 15; i++) {
+        // data에 값이 존재하면 itemE에 push 함
+        if (data[i] != null) {
+            itemE.push(data[i]);
+        } else {
+            console.log("없음");
         }
-        displayPlaces2(itemE);
-        displayPagination2(jsonPath, Math.ceil(data.length / 15), current);
-    });
+    }
+    displayPlaces2(itemE);
+    displayPagination2(jsonPath, Math.ceil(data.length / 15), current, data);
 }

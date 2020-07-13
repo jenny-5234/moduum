@@ -46,17 +46,18 @@ $(document).ready(function () {
             $("#clustercleared").prop("disabled", true);
         }
     });
-    // TODO: 메뉴 접기 버튼 이벤트 만들기
-    /*$("#shadowclose").click(function (e) {
-        console.log("닫");
-        $("#menu_wrap").hide();
-        $("#shadowclose").attr('id','shadowopen');
+
+    $("#shadowclose").click(function () {
+        $("#menu_wrap").toggle();
+        if ($("#menu_wrap").css("display") == "none") {
+            $("#shadowclose").css("margin","340px 0px 0px 0px");
+            $(this).val('>');
+        }
+        else {
+            $("#shadowclose").css("margin","340px 0px 0px 360px");
+            $(this).val('<');
+        }
     });
-    $("#shadowopen").click(function (e) {
-        console.log("열");
-        $("#menu_wrap").show();
-        $("#shadowopen").attr('id','shadowclose');
-    });*/
 });
 
 function regionSelection() {

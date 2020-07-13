@@ -30,6 +30,8 @@
 <div class="map_wrap">
     <%-- 지도의 크기 지정 height:500px --%>
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+        <%--     TODO: 메뉴 접기 버튼 만들기   --%>
+        <input type="button" id="shadowclose" class="toggle" value="<"/>
     <%-- 검색 창 관련 --%>
     <div id="menu_wrap" class="bg_white">
         <div class="option">
@@ -60,7 +62,6 @@
                         </select>
                         <button type="submit">선택</button>
                         <input type="button" onclick="clus();" value="테스트"/>
-                        <input type="button" onclick="ch();" value="체크"/>
                         <label for="clustercleared" class="clustercleared"><input type="checkbox" id="clustercleared"
                                                                                   class="clustercleared" disabled/>클러스터</label>
                     </form>
@@ -78,8 +79,6 @@
         <%-- 페이지 표시 부분 --%>
         <div id="pagination"></div>
     </div>
-<%--     TODO: 메뉴 접기 버튼 만들기   --%>
-<%--    <input type="button" id="shadowclose" class="toggle" value="닫기"/>--%>
 </div>
 <%--<div id="loading"><img id="loading-image" src="/js/Spinner.gif" alt="Loading..." hidden/></div>--%>
 <script src="../../../js/kakao_api_polygon.js" type="text/javascript"></script>

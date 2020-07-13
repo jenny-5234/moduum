@@ -371,19 +371,22 @@ html, body {
     z-index: 100;
 }
 
-#shadow {
-    /*overflow: hidden;
+#shadowclose {
+    overflow: hidden;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    margin: auto;
-    width: 22px;
+    /*margin: 340px 0px 0px 215px;*/
+    margin: 340px 0px 0px 360px;
+    width: 23px;
     height: 54px;
-    font-size: 0;
-    line-height: 0;*/
-    background: url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/shadow/img_navi.png) no-repeat 0 0;
-    /*text-indent: -9999px;
-    cursor: pointer;*/
+    /*font-size: 10px;*/
+    /*line-height: 0;*/
+    /*background: url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/shadow/img_navi.png) no-repeat 0 0;*/
+    /*text-indent: -9999px;*/
+    cursor: pointer;
+    overflow-y: auto;
+    z-index: 1;
 }
 /*커스텀 오버레이 종료*/

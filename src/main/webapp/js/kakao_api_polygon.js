@@ -264,11 +264,10 @@ function displayArea(coordinates, name, city, tname) {
     }
     tempPath = [];  // 다음 값을 위해 초기화
 }
-
 // 클러스터 생성
-var test = "";
 function makecluster(path, x, y, maplevel) {
-    SelectedDataPaging(path, 1);
+    var tmpd = getCityMarkJson(path);
+    console.log(tmpd);
     if (clustercheck) {
         // 클러스터로 보여줄 때 mouseover, mouseout 이벤트에서 색상 변경 안함
         checkedClusterPolygonEvent = true;
@@ -304,67 +303,72 @@ function makecluster(path, x, y, maplevel) {
                     })(marker, each.place_name, each.road_address_name, each.address_name, each.phone, each.place_url, each.id, each.x, each.y);
                     return marker;
                 });
-                // test = Object.entries(Object.entries(markers));
-                // 클러스터러에 마커들을 추가합니다
-                // download("test", test);
                 clusterer.addMarkers(markers);
-
-                // console.log(stringified);
-                // var test = JSON.stringify(markers, tui(markers));
-                // console.log(JSON.parse(test));
-                /*const replacer = (key, value) =>
-                    typeof value === 'function' ? value.toString() : value;*/
-                // const stringified = JSON.stringify(markers, stringifyWithFunctions);
-                // console.log(JSON.parse(serialized));
-
-                /* 클러스터 미리 저장
-                switch (path) {
-                    case("city_mark_info/kimpo.json"): clusterer.addMarkers(kimp); console.log("김포"); break;
-                    case("city_mark_info/gapyeong.json"): clusterer.addMarkers(gapyeong); console.log("가평"); break;
-                    case("city_mark_info/ansan.json"): clusterer.addMarkers(ansan); break;
-                    case("city_mark_info/anseong.json"): clusterer.addMarkers(anseong); break;
-                    case("city_mark_info/anyang.json"): clusterer.addMarkers(anyang); break;
-                    case("city_mark_info/bucheon.json"): clusterer.addMarkers(bucheon); break;
-                    case("city_mark_info/dongducheon.json"): clusterer.addMarkers(dongducheon); break;
-                    case("city_mark_info/goyang.json"): clusterer.addMarkers(goyang); break;
-                    case("city_mark_info/gunpo.json"): clusterer.addMarkers(gunpo); break;
-                    case("city_mark_info/guri.json"): clusterer.addMarkers(guri); break;
-                    case("city_mark_info/gwacheon.json"): clusterer.addMarkers(gwacheon); break;
-                    case("city_mark_info/gwangju.json"): clusterer.addMarkers(gwangju); break;
-                    case("city_mark_info/gwangmyeong.json"): clusterer.addMarkers(gwangmyeong); break;
-                    case("city_mark_info/hanam.json"): clusterer.addMarkers(hanam); break;
-                    case("city_mark_info/hwaseong.json"): clusterer.addMarkers(hwaseong); break;
-                    case("city_mark_info/icheon.json"): clusterer.addMarkers(icheon); break;
-                    case("city_mark_info/namyangju.json"): clusterer.addMarkers(namyangju); break;
-                    case("city_mark_info/osan.json"): clusterer.addMarkers(osan); break;
-                    case("city_mark_info/paju.json"): clusterer.addMarkers(paju); break;
-                    case("city_mark_info/pocheon.json"): clusterer.addMarkers(pocheon); break;
-                    case("city_mark_info/pyeongtaek.json"): clusterer.addMarkers(pyeongtaek); break;
-                    case("city_mark_info/seongnam.json"): clusterer.addMarkers(seongnam); break;
-                    case("city_mark_info/siheung.json"): clusterer.addMarkers(siheung); break;
-                    case("city_mark_info/suwon.json"): clusterer.addMarkers(suwon); break;
-                    case("city_mark_info/uijeongbu.json"): clusterer.addMarkers(uijeongbu); break;
-                    case("city_mark_info/uiwang.json"): clusterer.addMarkers(uiwang); break;
-                    case("city_mark_info/yangju.json"): clusterer.addMarkers(yangju); break;
-                    case("city_mark_info/yangpyeong.json"): clusterer.addMarkers(yangpyeong); break;
-                    case("city_mark_info/yeoju.json"): clusterer.addMarkers(yeoju); break;
-                    case("city_mark_info/yeoncheon.json"): clusterer.addMarkers(yeoncheon); break;
-                    case("city_mark_info/yongin.json"): clusterer.addMarkers(yongin); break;
+                // 클러스터 미리 저장
+                /*switch (path) {
+                    case("../../../city_mark_info/kimpo.json"): clusterer.addMarkers(kimp); console.log("김포"); break;
+                    case("../../../city_mark_info/gapyeong.json"): clusterer.addMarkers(gapyeong); console.log("가평"); break;
+                    case("../../../city_mark_info/ansan.json"): clusterer.addMarkers(ansan); break;
+                    case("../../../city_mark_info/anseong.json"): clusterer.addMarkers(anseong); break;
+                    case("../../../city_mark_info/anyang.json"): clusterer.addMarkers(anyang); break;
+                    case("../../../city_mark_info/bucheon.json"): clusterer.addMarkers(bucheon); break;
+                    case("../../../city_mark_info/dongducheon.json"): clusterer.addMarkers(dongducheon); break;
+                    case("../../../city_mark_info/goyang.json"): clusterer.addMarkers(goyang); break;
+                    case("../../../city_mark_info/gunpo.json"): clusterer.addMarkers(gunpo); break;
+                    case("../../../city_mark_info/guri.json"): clusterer.addMarkers(guri); break;
+                    case("../../../city_mark_info/gwacheon.json"): clusterer.addMarkers(gwacheon); break;
+                    case("../../../city_mark_info/gwangju.json"): clusterer.addMarkers(gwangju); break;
+                    case("../../../city_mark_info/gwangmyeong.json"): clusterer.addMarkers(gwangmyeong); break;
+                    case("../../../city_mark_info/hanam.json"): clusterer.addMarkers(hanam); break;
+                    case("../../../city_mark_info/hwaseong.json"): clusterer.addMarkers(hwaseong); break;
+                    case("../../../city_mark_info/icheon.json"): clusterer.addMarkers(icheon); break;
+                    case("../../../city_mark_info/namyangju.json"): clusterer.addMarkers(namyangju); break;
+                    case("../../../city_mark_info/osan.json"): clusterer.addMarkers(osan); break;
+                    case("../../../city_mark_info/paju.json"): clusterer.addMarkers(paju); break;
+                    case("../../../city_mark_info/pocheon.json"): clusterer.addMarkers(pocheon); break;
+                    case("../../../city_mark_info/pyeongtaek.json"): clusterer.addMarkers(pyeongtaek); break;
+                    case("../../../city_mark_info/seongnam.json"): clusterer.addMarkers(seongnam); break;
+                    case("../../../city_mark_info/siheung.json"): clusterer.addMarkers(siheung); break;
+                    case("../../../city_mark_info/suwon.json"): clusterer.addMarkers(suwon); break;
+                    case("../../../city_mark_info/uijeongbu.json"): clusterer.addMarkers(uijeongbu); break;
+                    case("../../../city_mark_info/uiwang.json"): clusterer.addMarkers(uiwang); break;
+                    case("../../../city_mark_info/yangju.json"): clusterer.addMarkers(yangju); break;
+                    case("../../../city_mark_info/yangpyeong.json"): clusterer.addMarkers(yangpyeong); break;
+                    case("../../../city_mark_info/yeoju.json"): clusterer.addMarkers(yeoju); break;
+                    case("../../../city_mark_info/yeoncheon.json"): clusterer.addMarkers(yeoncheon); break;
+                    case("../../../city_mark_info/yongin.json"): clusterer.addMarkers(yongin); break;
                 }*/
                 // 로딩 화면 종료
                 closeLoadingWithMask();
                 console.log("로딩 완료");
+                SelectedDataPaging(data, 1, path);
             });
         }, 1000);
     }
+    else {
+        $.get(path, function (data) {
+            SelectedDataPaging(data, 1, path);
+        });
+
+    }
+}
+
+// TODO:왜 리턴을 못받냐
+function getCityMarkJson(path) {
+    var tempd='';
+    $.get(path, function (data) {
+        tempd = data;
+        console.log(tempd);
+    });
+    return tempd;
 }
 
 // TODO: 클러스터 json을 미리 준비해놓은 상태로 실행시 시간이 줄어들까?
 // 파일로 저장 실패, 데이터베이스에 저장하는 방법을 생각 했으나 또 다시 JSON.stringify 로 인해 실패
 // 6초 -> 3초 20초-> 12초로 줄어드는 것은 확인은 했지만 markers를 json으로 변환하는것을 못함
 // JSON.stringify를 사용하면 함수가 사라지는 문제때문에 안됨
-var kimp = "";
-/*var gapyeong = "";
+/*var kimp = "";
+var gapyeong = "";
 var ansan = "";
 var anseong = "";
 var anyang = "";
@@ -412,42 +416,37 @@ function ch() {
 
 function clus() {
     console.log("눌렀");
-    /*$.get("cluster/tecluster.json", function (data) {
-        console.log(data);
-        clusterer.addMarkers(data);
-    });*/
-    // clusterer.addMarkers(marktemp);
-    tras("city_mark_info/kimpo.json");
-    // tras("city_mark_info/gapyeong.json");
-    // tras("city_mark_info/ansan.json");
-    // tras("city_mark_info/anseong.json");
-    // tras("city_mark_info/anyang.json");
-    // tras("city_mark_info/bucheon.json");
-    // tras("city_mark_info/dongducheon.json");
-    // tras("city_mark_info/goyang.json");
-    // tras("city_mark_info/gunpo.json");
-    // tras("city_mark_info/guri.json");
-    // tras("city_mark_info/gwacheon.json");
-    // tras("city_mark_info/gwangju.json");
-    // tras("city_mark_info/gwangmyeong.json");
-    // tras("city_mark_info/hanam.json");
-    // tras("city_mark_info/hwaseong.json");
-    // tras("city_mark_info/icheon.json");
-    // tras("city_mark_info/namyangju.json");
-    // tras("city_mark_info/osan.json");
-    // tras("city_mark_info/paju.json");
-    // tras("city_mark_info/pocheon.json");
-    // tras("city_mark_info/pyeongtaek.json");
-    // tras("city_mark_info/seongnam.json");
-    // tras("city_mark_info/siheung.json");
-    // tras("city_mark_info/suwon.json");
-    // tras("city_mark_info/uijeongbu.json");
-    // tras("city_mark_info/uiwang.json");
-    // tras("city_mark_info/yangju.json");
-    // tras("city_mark_info/yangpyeong.json");
-    // tras("city_mark_info/yeoju.json");
-    // tras("city_mark_info/yeoncheon.json");
-    // tras("city_mark_info/yongin.json");
+    /*tras("../../../city_mark_info/kimpo.json");
+    tras("../../../city_mark_info/gapyeong.json");
+    tras("../../../city_mark_info/ansan.json");
+    tras("../../../city_mark_info/anseong.json");
+    tras("../../../city_mark_info/anyang.json");
+    tras("../../../city_mark_info/bucheon.json");
+    tras("../../../city_mark_info/dongducheon.json");
+    tras("../../../city_mark_info/goyang.json");
+    tras("../../../city_mark_info/gunpo.json");
+    tras("../../../city_mark_info/guri.json");
+    tras("../../../city_mark_info/gwacheon.json");
+    tras("../../../city_mark_info/gwangju.json");
+    tras("../../../city_mark_info/gwangmyeong.json");
+    tras("../../../city_mark_info/hanam.json");
+    tras("../../../city_mark_info/hwaseong.json");
+    tras("../../../city_mark_info/icheon.json");
+    tras("../../../city_mark_info/namyangju.json");
+    tras("../../../city_mark_info/osan.json");
+    tras("../../../city_mark_info/paju.json");
+    tras("../../../city_mark_info/pocheon.json");
+    tras("../../../city_mark_info/pyeongtaek.json");
+    tras("../../../city_mark_info/seongnam.json");
+    tras("../../../city_mark_info/siheung.json");
+    tras("../../../city_mark_info/suwon.json");
+    tras("../../../city_mark_info/uijeongbu.json");
+    tras("../../../city_mark_info/uiwang.json");
+    tras("../../../city_mark_info/yangju.json");
+    tras("../../../city_mark_info/yangpyeong.json");
+    tras("../../../city_mark_info/yeoju.json");
+    tras("../../../city_mark_info/yeoncheon.json");
+    tras("../../../city_mark_info/yongin.json");*/
 }
 
 function tras(path) {
@@ -471,53 +470,39 @@ function tras(path) {
             return marker;
         });
         switch (path) {
-            case("city_mark_info/kimpo.json"): kimp = markers; console.log("김포저장완료"); break;
-            case("city_mark_info/gapyeong.json"): gapyeong= markers; console.log("가평"); break;
-            case("city_mark_info/ansan.json"): ansan= markers; console.log("안산"); break;
-            case("city_mark_info/anseong.json"): anseong= markers; console.log("안성"); break;
-            case("city_mark_info/anyang.json"): anyang= markers; console.log("안양"); break;
-            case("city_mark_info/bucheon.json"): bucheon= markers; console.log("부천"); break;
-            case("city_mark_info/dongducheon.json"): dongducheon= markers; console.log("동두천"); break;
-            case("city_mark_info/goyang.json"): goyang= markers; console.log("고양"); break;
-            case("city_mark_info/gunpo.json"): gunpo = markers; console.log("군포"); break;
-            case("city_mark_info/guri.json"): guri= markers; console.log("구리"); break;
-            case("city_mark_info/gwacheon.json"): gwacheon= markers; console.log("과천"); break;
-            case("city_mark_info/gwangju.json"): gwangju= markers; console.log("광주"); break;
-            case("city_mark_info/gwangmyeong.json"): gwangmyeong= markers; console.log("광명"); break;
-            case("city_mark_info/hanam.json"): hanam= markers; console.log("하남"); break;
-            case("city_mark_info/hwaseong.json"): hwaseong= markers; console.log("화성"); break;
-            case("city_mark_info/icheon.json"): icheon= markers; console.log("이천"); break;
-            case("city_mark_info/namyangju.json"): namyangju= markers; console.log("남양주"); break;
-            case("city_mark_info/osan.json"): osan= markers; console.log("오산"); break;
-            case("city_mark_info/paju.json"): paju= markers; console.log("파주"); break;
-            case("city_mark_info/pocheon.json"): pocheon= markers; console.log("포천"); break;
-            case("city_mark_info/pyeongtaek.json"): pyeongtaek= markers; console.log("평택"); break;
-            case("city_mark_info/seongnam.json"): seongnam= markers; console.log("성남"); break;
-            case("city_mark_info/siheung.json"): siheung= markers; console.log("시흥"); break;
-            case("city_mark_info/suwon.json"): suwon= markers; console.log("수원"); break;
-            case("city_mark_info/uijeongbu.json"): uijeongbu= markers; console.log("의정부"); break;
-            case("city_mark_info/uiwang.json"): uiwang= markers; console.log("의왕"); break;
-            case("city_mark_info/yangju.json"): yangju= markers; console.log("양주"); break;
-            case("city_mark_info/yangpyeong.json"): yangpyeong= markers; console.log("양평"); break;
-            case("city_mark_info/yeoju.json"): yeoju= markers; console.log("여주"); break;
-            case("city_mark_info/yeoncheon.json"): yeoncheon= markers; console.log("연천"); break;
-            case("city_mark_info/yongin.json"): yongin= markers; console.log("용인"); break;
+            case("../../../city_mark_info/kimpo.json"): kimp = markers; console.log("김포저장완료"); break;
+            case("../../../city_mark_info/gapyeong.json"): gapyeong= markers; console.log("가평"); break;
+            case("../../../city_mark_info/ansan.json"): ansan= markers; console.log("안산"); break;
+            case("../../../city_mark_info/anseong.json"): anseong= markers; console.log("안성"); break;
+            case("../../../city_mark_info/anyang.json"): anyang= markers; console.log("안양"); break;
+            case("../../../city_mark_info/bucheon.json"): bucheon= markers; console.log("부천"); break;
+            case("../../../city_mark_info/dongducheon.json"): dongducheon= markers; console.log("동두천"); break;
+            case("../../../city_mark_info/goyang.json"): goyang= markers; console.log("고양"); break;
+            case("../../../city_mark_info/gunpo.json"): gunpo = markers; console.log("군포"); break;
+            case("../../../city_mark_info/guri.json"): guri= markers; console.log("구리"); break;
+            case("../../../city_mark_info/gwacheon.json"): gwacheon= markers; console.log("과천"); break;
+            case("../../../city_mark_info/gwangju.json"): gwangju= markers; console.log("광주"); break;
+            case("../../../city_mark_info/gwangmyeong.json"): gwangmyeong= markers; console.log("광명"); break;
+            case("../../../city_mark_info/hanam.json"): hanam= markers; console.log("하남"); break;
+            case("../../../city_mark_info/hwaseong.json"): hwaseong= markers; console.log("화성"); break;
+            case("../../../city_mark_info/icheon.json"): icheon= markers; console.log("이천"); break;
+            case("../../../city_mark_info/namyangju.json"): namyangju= markers; console.log("남양주"); break;
+            case("../../../city_mark_info/osan.json"): osan= markers; console.log("오산"); break;
+            case("../../../city_mark_info/paju.json"): paju= markers; console.log("파주"); break;
+            case("../../../city_mark_info/pocheon.json"): pocheon= markers; console.log("포천"); break;
+            case("../../../city_mark_info/pyeongtaek.json"): pyeongtaek= markers; console.log("평택"); break;
+            case("../../../city_mark_info/seongnam.json"): seongnam= markers; console.log("성남"); break;
+            case("../../../city_mark_info/siheung.json"): siheung= markers; console.log("시흥"); break;
+            case("../../../city_mark_info/suwon.json"): suwon= markers; console.log("수원"); break;
+            case("../../../city_mark_info/uijeongbu.json"): uijeongbu= markers; console.log("의정부"); break;
+            case("../../../city_mark_info/uiwang.json"): uiwang= markers; console.log("의왕"); break;
+            case("../../../city_mark_info/yangju.json"): yangju= markers; console.log("양주"); break;
+            case("../../../city_mark_info/yangpyeong.json"): yangpyeong= markers; console.log("양평"); break;
+            case("../../../city_mark_info/yeoju.json"): yeoju= markers; console.log("여주"); break;
+            case("../../../city_mark_info/yeoncheon.json"): yeoncheon= markers; console.log("연천"); break;
+            case("../../../city_mark_info/yongin.json"): yongin= markers; console.log("용인"); break;
         }
     });
-}
-
-function download(filename, text) {
-    var pom = document.createElement('a');
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    pom.setAttribute('download', filename);
-
-    if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        pom.dispatchEvent(event);
-    } else {
-        pom.click();
-    }
 }
 
 // 지도 위 표시되고 있는 폴리곤 제거
@@ -593,51 +578,3 @@ function closeLoadingWithMask() {
     $('#mask, #loading-image').hide();
     $('#mask, #loading-image').empty();
 }
-
-// 지도에 마커와 인포윈도우를 표시하는 함수입니다
-/*function displayMarker(locPosition, message) {
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: locPosition
-    });
-
-    var iwContent = message // 인포윈도우에 표시할 내용
-
-    // 인포윈도우를 생성합니다
-    var infowindow2 = new kakao.maps.InfoWindow({
-        content : iwContent
-    });
-
-    // 인포윈도우를 마커위에 표시합니다
-    infowindow2.open(map, marker);
-
-    // 지도 중심좌표를 접속위치로 변경합니다
-    map.setCenter(locPosition);
-}*/
-
-// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
-/*if (navigator.geolocation) {
-
-    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-    navigator.geolocation.getCurrentPosition(function(position) {
-
-        var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-
-        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-
-        // 마커와 인포윈도우를 표시합니다
-        displayMarker(locPosition, message);
-
-    });
-
-} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-
-    var locPosition = new kakao.maps.LatLng(37.49461890613009, 127.02760319558533),
-        message = 'geolocation을 사용할수 없어요..'
-
-    displayMarker(locPosition, message);
-}*/
