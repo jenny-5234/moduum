@@ -27,7 +27,7 @@
         </li>
         <li><span><a class="main-menu">가맹점 찾기</a></span>
             <ul class="dept01">
-                <li><a class="sub-menu" href="#">sub01</a></li>
+                <li><a class="sub-menu" href="/map/mapsearch">sub01</a></li>
                 <li><a class="sub-menu" href="#">sub02</a></li>
                 <li><a class="sub-menu" href="#">sub03</a></li>
             </ul>

@@ -10,10 +10,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
-    <%--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../../smarteditor2/sample/photo_uploader/jindo.min.js"></script>
+<%--    <script type="text/javascript" src="../../../smarteditor2/sample/photo_uploader/jindo.fileuploader.js"></script>--%>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="../../../smarteditor2/sample/photo_uploader/attach_photo.js"></script>
 
     <title>글쓰기</title>
@@ -81,7 +82,7 @@
         nhn.husky.EZCreator.createInIFrame({
             oAppRef: oEditors,
             elPlaceHolder: "smartEditor", //저는 textarea의 id와 똑같이 적어줬습니다.
-            sSkinURI: "/smarteditor2/SmartEditor2Skin.html", //경로를 꼭 맞춰주세요!
+            sSkinURI: "../../../smarteditor2/SmartEditor2Skin.html", //경로를 꼭 맞춰주세요!
             fCreator: "createSEditor2",
             htParams: {
                 bUseToolbar: true,
