@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>글쓰기</title>
-
     <style>
         .container {
             margin: 0 auto;
@@ -64,7 +62,9 @@
     </style>
 </head>
 <body>
-
+<header>
+    <h1><a href="#">모둠전</a></h1>
+</header>
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
