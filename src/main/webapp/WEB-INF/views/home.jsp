@@ -65,7 +65,7 @@
         <hr>
     </div>
     <div class="box_insert">
-        <span>뉴스api크롤링</span>
+        <%@include file="news/newslist.jsp" %>
     </div>
 </div>
 <div class="videobox">
