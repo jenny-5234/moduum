@@ -24,7 +24,7 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 // 행정구역 구분
 // polygonPath : json 경로 city : 선택한 시 이름
 function getjson(polygonPath, city) {
-    // 선택했을 때 마커, 폴리곤, itemElement, page, 클러스터를 초기화
+    // 초기화 함수
     initialization();
     // jquery를 이용해서 json 가져오기
     $.getJSON(polygonPath, function (geojson) {
@@ -267,7 +267,7 @@ function displayArea(coordinates, name, city, tname) {
 
 // 클러스터 생성
 function makecluster(path, x, y, maplevel) {
-    if (clustercheck) {
+    if (clusterchecked) {
         // 클러스터로 보여줄 때 mouseover, mouseout 이벤트에서 색상 변경 안함
         checkedClusterPolygonEvent = true;
 
@@ -279,7 +279,6 @@ function makecluster(path, x, y, maplevel) {
             anchor: new kakao.maps.LatLng(x, y)
         });
         // 이동하면서 불러오면 렉이 발생하므로 지도를 이동한뒤 1초후에 클러스터를 생성
-        // LoadingWithMask();   // 클러스터 미리 생성할 시 활성화
         setTimeout(function () {
             // 로딩 화면 보여줌
             LoadingWithMask();

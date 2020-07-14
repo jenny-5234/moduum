@@ -81,10 +81,10 @@
     </div>
 </div>
 <%--<div id="loading"><img id="loading-image" src="/js/Spinner.gif" alt="Loading..." hidden/></div>--%>
-<script src="../../../js/kakao_api_polygon.js" type="text/javascript"></script>
-<script src="../../../js/kakao_api_search.js" type="text/javascript"></script>
-<script src="../../../js/kakao_api_loaddata.js" type="text/javascript"></script>
-<script src="../../../js/pagechange.js" type="text/javascript"></script>
-<script src="../../../js/tempjs.js" type="text/javascript"></script>
+<script src="../../../js/kakao/kakao_api_polygon.js" type="text/javascript"></script>
+<script src="../../../js/kakao/kakao_api_search.js" type="text/javascript"></script>
+<script src="../../../js/kakao/kakao_api_loaddata.js" type="text/javascript"></script>
+<script src="../../../js/kakao/kakao_api_pagechange.js" type="text/javascript"></script>
+<script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>
 </body>
 </html>

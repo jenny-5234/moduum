@@ -43,7 +43,7 @@ function displayPlaces2(places) {
             });
             // Element를 클릭 했을 때 상호명, 도로명 주소, 지번 주소, 전화번호, url을 displayInfowindow에 전달
             itemEl.onclick = function () {
-                if (clustercheck) {
+                if (clusterchecked) {
                     LoadingWithMask();
                 }
                 setTimeout(function () {
