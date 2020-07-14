@@ -1,20 +1,3 @@
-// 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
-function setMarkers(map) {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
-    }
-}
-
-// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
-function showMarkers() {
-    setMarkers(map)
-}
-
-// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
-function hideMarkers() {
-    setMarkers(null);
-}
-
 // 페이지가 로딩되었을 때
 $(document).ready(function () {
     // 체크박스가 변경될 때
@@ -23,17 +6,17 @@ $(document).ready(function () {
         if ($("#clustercleared").is(":checked")) {
             // alert 창을 띄우고 확인 버튼을 누를경우
             if (confirm("클러스터를 활성화 하는 경우 로딩시간이 길어질 수 있습니다.") == true) {
-                clustercheck = true;
+                clusterchecked = true;
             }
             // 취소 버튼을 누를 경우
             else {
                 $("#clustercleared").prop("checked", false);
-                clustercheck = false;
+                clusterchecked = false;
             }
         }
         // 체크박스가 해제된 경우
         else {
-            clustercheck = false;
+            clusterchecked = false;
         }
     });
     $("#area").change(function () {
@@ -42,7 +25,7 @@ $(document).ready(function () {
         }
         else {
             $("#clustercleared").prop("checked", false);
-            clustercheck = false;
+            clusterchecked = false;
             $("#clustercleared").prop("disabled", true);
         }
     });

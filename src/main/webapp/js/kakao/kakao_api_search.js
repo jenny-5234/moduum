@@ -8,7 +8,7 @@ var ps = new kakao.maps.services.Places();
 var itemE = [];
 
 // 클러스터 체크박스 체크상태
-var clustercheck = false;
+var clusterchecked = false;
 
 // 폴리곤을 클릭했을 때 똑같은걸 다시 클릭했는지 체크하기 위한 변수 및 선택한 폴리곤에서 검색을 위함
 var polygonSelectCheck = "";
@@ -289,7 +289,7 @@ function closeOverlay() {
     infowindow.setMap(null);
 }
 
-// 페이지 초기화 함수입니다.
+// 초기화 함수입니다.
 function initialization() {
     // 오버레이 닫기
     closeOverlay();
