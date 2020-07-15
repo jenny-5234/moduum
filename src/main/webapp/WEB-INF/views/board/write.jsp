@@ -13,16 +13,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
 
     <title>글쓰기</title>
 
     <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+        }
         .container {
             margin: 0 auto;
             margin-top: 3%;
             margin-bottom: 3%;
             text-align: center;
-            width: 80%;
+            width: 70%;
+        }
+
+        .box-title {
+            font-size: 1.5em;
+            margin: 3%;
         }
 
         .formTable {
@@ -30,12 +40,10 @@
         }
 
         .label {
-            background-color: lightgray;
+            border-radius: 10px;
+            background-color: rgba(153, 197, 243, 0.5);
             width: 20%;
-        }
-
-        .contents {
-            width: 100%;
+            padding: 7px;
         }
 
         .button {
@@ -44,7 +52,7 @@
         }
 
         #saveBtn {
-            width: 60px;
+            padding: 2px;
             font-size: 15px;
             background-color: white;
             color: black;
@@ -61,6 +69,7 @@
             width: 100%;
 
         }
+
     </style>
 </head>
 <body>
@@ -70,25 +79,28 @@
 </div>
 
 <div class="container">
-    <form id="insert_Form" method="post" enctype="multipart/form-data" action="/board/insert.do">
+    <div class="box-header">
+        <h3 class="box-title">글 작성하기</h3>
+    </div>
+    <form id="insert_Form" name="insert_Form" method="post" enctype="multipart/form-data" action="/board/insert.do">
         <table class="formTable">
             <tr>
                 <td class="label">이름</td>
-                <td class="contents"><input name="B_Writer" id="B_Writer" style="width: 100%;" placeholder="이름 입력"></td>
+                <td><input class="form-control" maxlength="30" name="B_Writer" id="B_Writer" style="width: 100%;" placeholder="이름 입력"></td>
             </tr>
             <tr>
                 <td class="label">비밀번호</td>
-                <td class="contents"><input name="B_Password" id="B_Password" style="width: 100%;"
-                                            placeholder="비밀번호 입력"></td>
+                <td><input class="form-control" name="B_Password" id="B_Password" style="width: 100%;"
+                           placeholder="비밀번호 입력"></td>
             </tr>
             <tr>
                 <td class="label">제목</td>
-                <td class="contents"><input name="B_Title" id="B_Title" style="width: 100%;" placeholder="글 제목 입력"></td>
+                <td><input class="form-control" name="B_Title" id="B_Title" style="width: 100%;" placeholder="글 제목 입력"></td>
             </tr>
         </table>
         <tr class="textbox">
                     <textarea name="B_Context" id="smartEditor" rows="10" cols="100"
-                              style="width:100%; height:412px;">
+                              style="width:100%; height:500px;">
 
                     </textarea>
         </tr>
@@ -121,6 +133,29 @@
         $("#saveBtn").click(function () {
             oEditors.getById["smartEditor"].exec("UPDATE_CONTENTS_FIELD", []);
 
+            // 폼 유효성 검사
+            var form = document.insert_Form;
+
+            if (!form.B_Writer.value) {
+                alert("이름을 입력해주세요");
+                form.B_Writer.focus();
+                return;
+            }
+            if (!form.B_Password.value) {
+                alert("비밀번호를 입력해주세요");
+                form.B_Password.focus();
+                return;
+            }
+            if (!form.B_Title.value) {
+                alert("제목을 입력해주세요");
+                form.B_Title.focus();
+                return;
+            }
+            if (!form.B_Context.value) {
+                alert("내용을 입력해주세요");
+                form.B_Context.focus();
+                return;
+            }
             $("#insert_Form").submit();
         });
     });

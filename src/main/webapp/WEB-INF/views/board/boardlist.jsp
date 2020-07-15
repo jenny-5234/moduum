@@ -12,58 +12,74 @@
 <head>
     <title>정보마당</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
-<%--    <script src="/js/bootstrap.js"/>--%>
+    <%--    <script src="/js/bootstrap.js"/>--%>
     <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+        }
         .container {
-            margin-top: 3%;
+            margin-top: 5%;
             margin-bottom: 3%;
-            width: 80%;
+            width: 70%;
             height: auto;
         }
+
         .mainlist {
             text-align: center;
             font-size: 15px;
             background: #ebf2f8;
             font-weight: bold;
         }
+
         td[id="boardid"] {
             width: 10%;
         }
+
         td[id="title"] {
             width: 60%;
         }
+
         td[id="writer"] {
             width: 10%;
         }
+
         td[id="date"] {
             width: 10%;
         }
+
         td[id="count"] {
             width: 10%;
         }
+
         tr[class="boardlist"] {
             text-align: center;
         }
+
         tr[class="boardlist"] td[class="listTitle"] {
             text-align: left;
         }
+
         .paging {
             margin: 0 auto;
             text-align: center;
             width: 50%;
         }
+
         .pagination {
             list-style: none;
             display: inline-block;
             padding: 0;
             margin-top: 20px;
         }
+
         .pagelist {
             color: black;
             float: left;
             display: block;
             text-align: center;
         }
+
         .pagelist a {
             float: left;
             display: block;
@@ -73,13 +89,34 @@
             background-color: aliceblue;
             text-decoration: none;
         }
-        .pagelist a:hover  {
+
+        .pagelist a:hover {
             outline: none;
             background: cornflowerblue;
         }
-        .pagelist a:active{
+
+        .pagelist a:active {
             background-color: red;
         }
+        .button {
+            text-align: right;
+            margin: 10px;
+        }
+
+        #write_btn {
+            padding: 2px;
+            font-size: 15px;
+            background-color: white;
+            color: black;
+            border: 2px solid dodgerblue;
+            transition-duration: 0.4s;
+        }
+
+        #write_btn:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -115,7 +152,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <hr/>
+
         <div class="paging">
             <ul class="pagination">
                 <c:if test="${pagination.curPage ne 1}">
@@ -138,8 +175,9 @@
         </div>
 
     </form>
-    <div id="write_btn" align="right">
-        <a href="write" class="btn btn-success">글쓰기</a></div>
+    <div class="button">
+        <button type="button" id="write_btn" onclick="location.href='/board/write'">글쓰기</button>
+    </div>
 </div>
 <script>
     function fn_paging(curPage) {

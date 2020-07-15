@@ -15,13 +15,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+        }
         .container {
             margin: 0 auto;
             margin-top: 3%;
             margin-bottom: 3%;
-            width: 80%;
+            width: 70%;
             height: auto;
         }
 
@@ -33,21 +37,19 @@
             width: 100%;
         }
 
-        .label {
-            background-color: lightgray;
-            width: 20%;
-        }
 
-        .contents {
-            border: 1px solid gray;
-            width: 100%;
+        .label {
+            border-radius: 10px;
+            background-color: rgba(153, 197, 243, 0.5);
+            width: 20%;
+            padding: 7px;
         }
 
         .textbox {
             max-height: fit-content;
             height: 400px;
             overflow: auto;
-            border: 1px solid gray;
+            border: 1px solid lightgray;
         }
 
         .buttons {
@@ -56,7 +58,7 @@
         }
 
         button {
-            width: 60px;
+            padding: 2px;
             font-size: 15px;
             background-color: white;
             color: black;
@@ -68,6 +70,7 @@
             background-color: dodgerblue;
             color: white;
         }
+
     </style>
 </head>
 <body>
@@ -75,6 +78,9 @@
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
+
+
+
 <div class="container">
     <div class="box-header">
         <h3 class="box-title">상세보기</h3>
@@ -83,24 +89,24 @@
         <table class="view">
             <tr>
                 <td class="label">글 번호</td>
-                <td class="contents"> ${boardDto.boardId} </td>
+                <td class="form-control"> ${boardDto.boardId} </td>
                 <input type="hidden" name="BoardId" id="BoardId" value="${boardDto.boardId}"/>
             </tr>
             <tr>
                 <td class="label">작성일자</td>
-                <td class="contents"><fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/></td>
+                <td class="form-control"><fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/></td>
             </tr>
             <tr>
                 <td class="label">조회수</td>
-                <td class="contents"> ${boardDto.b_Count} </td>
+                <td class="form-control"> ${boardDto.b_Count} </td>
             </tr>
             <tr>
                 <td class="label">이름</td>
-                <td class="contents"> ${boardDto.b_Writer} </td>
+                <td class="form-control"> ${boardDto.b_Writer} </td>
             </tr>
             <tr>
                 <td class="label">제목</td>
-                <td class="contents"> ${boardDto.b_Title}</td>
+                <td class="form-control"> ${boardDto.b_Title}</td>
             </tr>
         </table>
     </form>
