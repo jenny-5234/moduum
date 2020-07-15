@@ -27,10 +27,10 @@
     <input type="submit" class="chat" value="전송"/>    <!--전송 영역 -->
 </form>
 
-<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="http://14.32.18.180:3000/socket.io/socket.io.js"></script>
 <script>
     $(document).ready(function () {
-        var socket = io("http://localhost:3000");
+        var socket = io("http://14.32.18.180:3000");
 
         $('#chat').on('submit', function(e){
             socket.emit('send message', $('#name').val(), $('#message').val());

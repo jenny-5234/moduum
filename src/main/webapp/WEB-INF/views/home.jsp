@@ -21,9 +21,9 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="#">모둠전</a></h1>
-    </header>
+<%--    <header>--%>
+<%--        <h1><a href="#">모둠전</a></h1>--%>
+<%--    </header>--%>
     <div class="menubar">
         <%@include file="navbar.jsp" %>
     </div>
@@ -65,7 +65,7 @@
         <hr>
     </div>
     <div class="box_insert">
-        <%@include file="news/newslist.jsp" %>
+<%--        <%@include file="news/newslist.jsp" %>--%>
     </div>
 </div>
 <div class="videobox">
