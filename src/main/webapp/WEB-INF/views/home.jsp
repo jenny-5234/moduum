@@ -24,7 +24,6 @@
 </div>
 
 <div class="container">
-
     <div class="graphbox">
         <div class="box_top_name">
             <span>현황</span>

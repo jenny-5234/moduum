@@ -18,11 +18,10 @@
     <title>글쓰기</title>
 
     <style>
-        body {
+        body{
             width: 90%;
             margin: 0 auto;
         }
-
         .container {
             margin: 0 auto;
             margin-top: 3%;
@@ -83,27 +82,24 @@
     <div class="box-header">
         <h3 class="box-title">글 작성하기</h3>
     </div>
-    <form id="insert_Form" name="insert_Form" method="post" enctype="multipart/form-data" action="/board/insert.do">
+    <form id="insert_Form" name="insert_Form" method="post" enctype="multipart/form-data" action="/notice/insert.do">
         <table class="formTable">
             <tr>
                 <td class="label">작성자</td>
-                <td><input class="form-control" maxlength="30" name="B_Writer" id="B_Writer" style="width: 100%;"
-                           placeholder="이름 입력"></td>
+                <td><input class="form-control" maxlength="30" name="N_Writer" id="N_Writer" style="width: 100%;" placeholder="이름 입력"></td>
             </tr>
             <tr>
                 <td class="label">비밀번호</td>
-                <td><input type="password" class="form-control" name="B_Password" id="B_Password" style="width: 100%;"
-                           maxlength="15"
+                <td><input class="form-control" name="N_Password" id="N_Password" style="width: 100%;" maxlength="15"
                            placeholder="비밀번호 입력"></td>
             </tr>
             <tr>
                 <td class="label">제목</td>
-                <td><input class="form-control" name="B_Title" id="B_Title" style="width: 100%;" maxlength="100"
-                           placeholder="글 제목 입력"></td>
+                <td><input class="form-control" name="N_Title" id="N_Title" style="width: 100%;" maxlength="100" placeholder="글 제목 입력"></td>
             </tr>
         </table>
         <tr class="textbox">
-                    <textarea name="B_Context" id="smartEditor" rows="10" cols="100"
+                    <textarea name="N_Context" id="smartEditor" rows="10" cols="100"
                               style="width:100%; height:600px;">
 
                     </textarea>
@@ -140,24 +136,24 @@
             // 폼 유효성 검사
             var form = document.insert_Form;
 
-            if (!form.B_Writer.value) {
+            if (!form.N_Writer.value) {
                 alert("이름을 입력해주세요");
-                form.B_Writer.focus();
+                form.N_Writer.focus();
                 return;
             }
-            if (!form.B_Password.value) {
+            if (!form.N_Password.value) {
                 alert("비밀번호를 입력해주세요");
-                form.B_Password.focus();
+                form.N_Password.focus();
                 return;
             }
-            if (!form.B_Title.value) {
+            if (!form.N_Title.value) {
                 alert("제목을 입력해주세요");
-                form.B_Title.focus();
+                form.N_Title.focus();
                 return;
             }
-            if (!form.B_Context.value) {
+            if (!form.N_Context.value) {
                 alert("내용을 입력해주세요");
-                form.B_Context.focus();
+                form.N_Context.focus();
                 return;
             }
             $("#insert_Form").submit();

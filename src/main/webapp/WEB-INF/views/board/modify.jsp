@@ -101,7 +101,7 @@
                 <td class="form-control">${boardDto.b_Count}</td>
             </tr>
             <tr>
-                <td class="label">이름</td>
+                <td class="label">작성자</td>
                 <td class="form-control">${boardDto.b_Writer}</td>
             </tr>
             <tr>
@@ -112,7 +112,7 @@
         </table>
         <tr class="textbox">
        <textarea name="B_Context" id="smartEditor" rows="10" cols="100"
-                 style="width:100%; height:412px;"> ${boardDto.b_Context} </textarea>
+                 style="width:100%; height:600px;"> ${boardDto.b_Context} </textarea>
         </tr>
         <div class="button">
             <input type="submit" id="modifyBtn" value="수정하기"/>
