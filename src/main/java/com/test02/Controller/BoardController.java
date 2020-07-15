@@ -5,7 +5,6 @@ import com.test02.Dto.Pagination;
 import com.test02.Service.BoardServiceImpl;
 import lombok.SneakyThrows;
 //import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +15,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.io.*;
 import java.util.*;
 
 @RequestMapping("/board")
@@ -65,76 +62,70 @@ public class BoardController {
     }
 
     @PostMapping(value = "insert.do")
-    public String insert(BoardDto boardDto, HttpServletRequest request) throws Exception {
-
-//
-//        MultipartFile mfile = boardDto.getFile();
-//
-//        String realPath = servletContext.getRealPath("/");
-//        System.out.println("------------------" + realPath);
-//
-//        if (!mfile.isEmpty()) {
-//
-//            String uploadPath = "src/main/webapp/image/uploadFile";
-//
-//            System.out.println(uploadPath);
-//
-//            String origName = mfile.getOriginalFilename();
-//            String saveName = System.currentTimeMillis() + origName;
-//
-//            boardDto.setB_FileName(saveName);
-//            boardDto.setB_FilePath("/image/uploadFile");
-//
-//            File file = new File(realPath + "/image/uploadFile" + File.separator + saveName);
-//            System.out.println(file.getPath());
-//
-//            mfile.transferTo(file);
-//        }
+    public String insert(BoardDto boardDto) throws Exception {
 
         boardService.insert(boardDto);
 
         return "redirect:/board/boardlist";
     }
 
+    //스마트 에디터 이미지 파일 업로드 기능
     @SneakyThrows
-    @PostMapping(value = "/singleImageUploader.do")
-    public String simpleImageUploader(HttpServletRequest req, BoardDto boardDto) {
-        String callback = boardDto.getCallback();
-        System.out.println("---------------------" + callback);
-        String callback_func = boardDto.getCallback_func();
-        System.out.println("---------------------" + callback_func);
-        String file_result = "";
-        String result = "";
-        MultipartFile multiFile = boardDto.getFile();
+    @PostMapping(value = "/fileupload.do")
+    public String simpleImageUploader(HttpServletRequest request, BoardDto boardDto) {
+        System.out.println("FileUploadController");
+        String return1 = request.getParameter("callback");
+        String return2 = "?callback_func=" + request.getParameter("callback_func");
+        System.out.println(return1);
+        System.out.println(return2);
+        String return3 = "";
+        String name = "";
+
         try {
-            if (multiFile != null && multiFile.getSize() > 0
-                    && StringUtils.isNoneBlank(multiFile.getName())) {
-                if (multiFile.getContentType().toLowerCase().startsWith("image/")) {
-                    String oriName = multiFile.getName();
-                    System.out.println("---------------------" + oriName);
-                    String uploadPath = req.getServletContext().getRealPath("/img");
-                    System.out.println("---------------------" + uploadPath);
-                    String path = uploadPath + "/smarteditor/";
-                    System.out.println("---------------------" + path);
-                    File file = new File(path);
+            if (boardDto.getFiledata() != null && boardDto.getFiledata().getOriginalFilename() != null && !boardDto.getFiledata().getOriginalFilename().equals("")) {
+                name = boardDto.getFiledata().getOriginalFilename().substring(boardDto.getFiledata().getOriginalFilename().lastIndexOf(File.separator) + 1);
+                System.out.println(name);
+                String file_ext = name.substring(name.lastIndexOf(".") + 1);
+                System.out.println(file_ext);
+                String[] allow_file = {"jpg", "png", "bmp", "gif"};
+                int cnt = 0;
+                for (int i = 0; i < allow_file.length; i++) {
+                    if (file_ext.equals(allow_file[i])) {
+                        cnt++;
+                    }
+                }
+                if (cnt == 0) {
+                    return3 = "&errstr=" + name;
+                } else {
+                    // 기본 파일경로
+                    String dfFilePath = request.getSession().getServletContext().getRealPath("/");
+                    System.out.println(dfFilePath);
+                    // 파일 상세경로
+                    String filePath = dfFilePath + "image/uploadFile" + File.separator;
+                    System.out.println(filePath);
+                    File file = new File(filePath);
                     if (!file.exists()) {
                         file.mkdirs();
                     }
-                    String fileName = UUID.randomUUID().toString();
-                    System.out.println("---------------------" + fileName);
-                    boardDto.getFile().transferTo(new File(path + fileName));
-                    file_result += "&bNewLine=true&sFileName=" + oriName + "$sFileURL=/img/smarteditor/" + fileName;
-                } else {
-                    file_result += "&errstr=error";
+                    String realFilename = "";
+                    realFilename = UUID.randomUUID().toString() + name.substring(name.lastIndexOf("."));
+                    System.out.println(realFilename);
+                    String servFilename = filePath + realFilename;
+                    // 서버에 파일쓰기
+                    System.out.println(servFilename);
+                    boardDto.getFiledata().transferTo(new File(servFilename));
+
+                    return3 += "&bNewLine=true";
+                    return3 += "&sFileName=" + name;
+                    return3 += "&sFileURL=/image/uploadFile/" + realFilename;
                 }
             } else {
-                file_result += "&errstr=error";
+                return3 += "&errstr=error";
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        result = "redirect:" + callback + "?callback_func=" + callback_func + file_result;
-        return result;
+        return "redirect:" + return1 + return2 + return3;
     }
 
 

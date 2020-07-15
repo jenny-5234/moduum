@@ -5,6 +5,9 @@
     <title>CSS Tips | Dropdown Menu</title>
     <link rel="stylesheet" href="/css/navbar.css">
 </head>
+<header>
+    <h1><a href="../">모둠전</a></h1>
+</header>
 <body>
 <div class="logo">
 
@@ -48,8 +51,8 @@
         </li>
     </ul>
 </div>
-<div class="none">
-</div>
+
+<hr class="top_hr">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/navbar.js"></script>

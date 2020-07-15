@@ -15,62 +15,115 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <style>
+        body{
+            width: 90%;
+            margin: 0 auto;
+        }
         .container {
+            margin: 0 auto;
             margin-top: 3%;
             margin-bottom: 3%;
-            width: 80%;
+            width: 70%;
             height: auto;
+        }
+
+        .box-header {
+            margin: 10px;
+        }
+
+        .view {
+            width: 100%;
+        }
+
+
+        .label {
+            border-radius: 10px;
+            background-color: rgba(153, 197, 243, 0.5);
+            width: 20%;
+            padding: 7px;
+        }
+
+        .textbox {
+            max-height: fit-content;
+            height: 400px;
+            overflow: auto;
+            border: 1px solid lightgray;
+        }
+
+        .buttons {
+            text-align: right;
+            margin: 10px;
+        }
+
+        button {
+            padding: 2px;
+            font-size: 15px;
+            background-color: white;
+            color: black;
+            border: 2px solid dodgerblue;
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            background-color: dodgerblue;
+            color: white;
         }
 
     </style>
 </head>
 <body>
-<header>
-    <h1><a href="#">모둠전</a></h1>
-</header>
+
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
-<div class="container">
-    <form name="viewForm" method="post" enctype="multipart/form-data">
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">상세보기</h3>
-            </div>
-            <div>
-                작성일자 : <fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/>
-            </div>
-            <div>
-                조회수 : ${boardDto.b_Count}
-            </div>
-            <div>
-                제목
-                <input name="title" id="B_Title" value="${boardDto.b_Title}" readonly="readonly"/>
-            </div>
-            <div>
-                내용
-               ${boardDto.b_Context}
 
-            </div>
-            <div>
-                이름
-                <input name="writer" id="B_Writer" value="${boardDto.b_Writer}" readonly="readonly"/>
-            </div>
-            <td>
-                <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
-                <button type="button" id="d_btn">삭제</button>
-                <button type="button" id="m_btn">수정</button>
-            </td>
-        </div>
+
+
+<div class="container">
+    <div class="box-header">
+        <h3 class="box-title">상세보기</h3>
+    </div>
+    <form name="viewForm" method="post" enctype="multipart/form-data">
+        <table class="view">
+            <tr>
+                <td class="label">글 번호</td>
+                <td class="form-control"> ${boardDto.boardId} </td>
+                <input type="hidden" name="BoardId" id="BoardId" value="${boardDto.boardId}"/>
+            </tr>
+            <tr>
+                <td class="label">작성일자</td>
+                <td class="form-control"><fmt:formatDate value="${boardDto.b_Date}" pattern="yyyy-MM-dd"/></td>
+            </tr>
+            <tr>
+                <td class="label">조회수</td>
+                <td class="form-control"> ${boardDto.b_Count} </td>
+            </tr>
+            <tr>
+                <td class="label">이름</td>
+                <td class="form-control"> ${boardDto.b_Writer} </td>
+            </tr>
+            <tr>
+                <td class="label">제목</td>
+                <td class="form-control"> ${boardDto.b_Title}</td>
+            </tr>
+        </table>
     </form>
+    <div class="textbox">
+        ${boardDto.b_Context}
+    </div>
+    <div class="buttons">
+        <button type="button" name="curPage" onclick="location.href='/board/boardlist?curPage=1'">목록</button>
+        <button type="button" id="d_btn">삭제</button>
+        <button type="button" id="m_btn">수정</button>
+    </div>
 </div>
+
 <script>
     $(function () {
         $('#d_btn').click(function () {
             var password = prompt("비밀번호")
-
 
             if (password == ${boardDto.b_Password}) {
                 location.href = '/board/delete.do?boardId=${boardDto.boardId}'
@@ -83,7 +136,6 @@
     $(function () {
         $('#m_btn').click(function () {
             var password = prompt("비밀번호")
-
 
             if (password == ${boardDto.b_Password}) {
                 location.href = '/board/modify?boardId=${boardDto.boardId}'

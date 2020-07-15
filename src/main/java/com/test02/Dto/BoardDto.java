@@ -15,13 +15,12 @@ public class BoardDto {
     private Date B_Date;
     private int B_Count;
 
-    private MultipartFile file;
+    // 스마트에디터 파일 업로드
+    private MultipartFile filedata;
     private String callback;
     private String callback_func;
 
-    private String B_FileName;
-    private String B_FilePath;
-
+    // Pagination
     private int startIndex;
     private int cntPerPage; //getPageSize
     private int curPage;
