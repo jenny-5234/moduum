@@ -43,7 +43,7 @@
             <img src="/image/homeImages/map1.jpg"/>
         </div>
         <div class="map_button">
-            <button id="button_effect">가맹점 찾기</button>
+            <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>
         </div>
     </div>
     <div class="bannerbox">
