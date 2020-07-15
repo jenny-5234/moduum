@@ -15,6 +15,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
@@ -40,7 +42,8 @@
             <hr>
         </div>
         <div class="box_insert">
-            <img src="/image/homeImages/map1.jpg"/>
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+            <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
         </div>
         <div class="map_button">
             <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>

@@ -24,8 +24,8 @@
 <%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>--%>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
 <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
-    <link rel="stylesheet" type="text/css" href="../../../css/kakao_api_polygon.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/kakao_api_search.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 </head>
 
 <body>
