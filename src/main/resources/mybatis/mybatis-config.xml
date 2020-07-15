@@ -11,6 +11,8 @@
                    type="com.test02.Dto.NoticeDto"/>
         <typeAlias alias="BoardDto"
                    type="com.test02.Dto.BoardDto"/>
+        <typeAlias alias="NewsDto"
+                   type="com.test02.Dto.NewsDto"/>
     </typeAliases>
 
     <!-- SQL과 매핑을 위한 매핑정보 xml -->
@@ -18,5 +20,6 @@
         <!--  매퍼 등록 -->
         <mapper resource="mybatis/mappers/Board.xml"/>
         <mapper resource="mybatis/mappers/Notice.xml"/>
+        <mapper resource="mybatis/mappers/News.xml"/>
     </mappers>
 </configuration>

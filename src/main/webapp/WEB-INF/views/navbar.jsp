@@ -37,7 +37,7 @@
         </li>
         <li><span><a class="main-menu">뉴스 및 이슈</a></span>
             <ul class="dept01">
-                <li><a class="sub-menu" href="#">sub01</a></li>
+                <li><a class="sub-menu" href="/news/newslist">최신뉴스</a></li>
                 <li><a class="sub-menu" href="#">sub02</a></li>
                 <li><a class="sub-menu" href="#">sub03</a></li>
             </ul>
