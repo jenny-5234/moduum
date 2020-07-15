@@ -11,8 +11,19 @@
     <%-- 카카오맵 API 사용을 위한 키 및 라이브러리 --%>
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+<%--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>--%>
+
+    <!-- Latest compiled JavaScript -->
+<%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>--%>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
     <link rel="stylesheet" type="text/css" href="../../../css/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao_api_search.css">
 </head>
@@ -60,8 +71,8 @@
                             <option value="제주도">제주도</option>
                             <option value="울릉군">울릉군</option>
                         </select>
-                        <button type="submit">선택</button>
-                        <input type="button" onclick="clus();" value="테스트"/>
+                        <button type="submit" class="">선택</button>
+<%--                        <input type="button" onclick="clus();" value="테스트"/>--%>
                         <label for="clustercleared" class="clustercleared"><input type="checkbox" id="clustercleared"
                                                                                   class="clustercleared" disabled/>클러스터</label>
                     </form>

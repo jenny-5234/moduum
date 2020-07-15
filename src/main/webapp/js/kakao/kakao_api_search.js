@@ -15,9 +15,10 @@ var polygonSelectCheck = "";
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
+    console.log("왜 안닫혀");
     closeOverlay();     // 검색을 했을 때 마커의 정보 오버레이가 열려있는걸 닫는다.
     var keyword = document.getElementById('keyword').value;     // 검색 텍스트 박스에 입력된 값을 keyword에 저장한다.
-    console.clear(); // 데이터 넣을 때 필요한 콘솔 초기화
+    // console.clear(); // 데이터 넣을 때 필요한 콘솔 초기화
     // 키워드 앞뒤가 공백인 경우
     if (!keyword.replace(/^\s+|\s+$/g, '')) {
         alert('키워드를 입력해주세요!');
@@ -69,7 +70,7 @@ function displayPlaces(places) {
 
     // 지도에 표시되고 있는 마커를 제거합니다
     removeMarker();
-    // 클러스터 ㅔㅈ거
+    // 클러스터 제거
     clusterer.clear();
     // makejson(places);
     for (var i = 0; i < places.length; i++) {
@@ -196,6 +197,7 @@ function displayPagination(pagination) {
         } else {
             // 페이지를 클릭하면 클릭한 페이지로 이동
             el.onclick = (function (i) {
+                closeOverlay();
                 return function () {
                     pagination.gotoPage(i);
                 }

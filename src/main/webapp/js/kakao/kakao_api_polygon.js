@@ -316,19 +316,6 @@ function makecluster(path, x, y, maplevel) {
 
     }
 }
-// TODO:왜 리턴을 못받냐
-/*function getCityMarkJson(path) {
-    var tempk = [];
-    $.get(path, function (data) {
-        tempk = data;
-        return tempk;
-    });
-    return tempk;
-}
-
-function clus() {
-    console.log(tempd);
-}*/
 
 // 지도 위 표시되고 있는 폴리곤 제거
 function deletePolygon(polygons) {
