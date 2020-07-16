@@ -12,7 +12,7 @@
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://14.32.18.226:1433;database=YL</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://14.32.18.226:1433;database=YL2</jdbc-url>
     </data-source>
   </component>
 </project>
