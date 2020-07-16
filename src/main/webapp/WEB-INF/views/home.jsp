@@ -68,11 +68,11 @@
         </div>
         <div class="box_insert">
             <h4 class="tit1">최신 브리핑</h4>
+            <ul class="m_text_list">
             <c:forEach var="dto" items="${newstop5}" varStatus="status">
-                <ul class="m_text_list">
-                    <li><a href="${dto.originallink}" target="_blank">${dto.title}</a></li>
-                </ul>
+                    <li><a href="${dto.originallink}" target="_blank" class="news_top5_hyper">${dto.title}</a></li>
             </c:forEach>
+            </ul>
         </div>
     </div>
     <div class="videobox">

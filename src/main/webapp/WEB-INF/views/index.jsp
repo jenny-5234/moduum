@@ -14,7 +14,7 @@
     <title> DB List Test</title>
   </head>
   <body>
-HOME
+HOME123
 <button type="button" onclick="location.href='/home'">메인</button>
   </body>
 </html>
