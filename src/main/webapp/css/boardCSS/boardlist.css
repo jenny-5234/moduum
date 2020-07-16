@@ -13,8 +13,9 @@ body{
 .mainlist {
     text-align: center;
     font-size: 15px;
-    background: #f4cb0b;
+    /*background: #f4cb0b;*/
     font-weight: bold;
+    background: #f7df96;
 }
 
 td[id="boardid"] {
@@ -71,18 +72,18 @@ tr[class="boardlist"] td[class="listTitle"] {
     padding: 5px 12px;
     border-radius: 50%;
     margin: 0 5px;
-    background-color: aliceblue;
+    background-color: #f4cb0b;
     text-decoration: none;
 }
 
 .pagelist a:hover {
     outline: none;
-    background: cornflowerblue;
+    background: #f4cb0b;
 }
 
-.pagelist a:active {
-    background-color: red;
-}
+/*.pagelist a:active {*/
+/*    background-color: red;*/
+/*}*/
 .button {
     text-align: right;
     margin: 10px;
@@ -93,11 +94,11 @@ tr[class="boardlist"] td[class="listTitle"] {
     font-size: 15px;
     background-color: white;
     color: black;
-    border: 2px solid dodgerblue;
+    border: 2px solid #f4cb0b;
     transition-duration: 0.4s;
 }
 
 #write_btn:hover {
-    background-color: dodgerblue;
+    background-color: #f4cb0b;
     color: white;
 }

@@ -30,9 +30,9 @@
 <%--                <li><a class="sub-menu" href="#">예측</a></li>--%>
             </ul>
         </li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu">가맹점 찾기</a></span>
+        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/map/mapsearch">가맹점 찾기</a></span>
             <ul class="dept01" style="width: 16%">
-                <li><a href="../"> <img src="/image/homeImages/map01.png" class="mapImage"/></a></li>
+                <li><a href="/map/mapsearch"> <img src="/image/homeImages/map01.png" class="mapImage"/></a></li>
             </ul>
         </li>
         <li class="top-menu" style="width: 16%"><span><a class="main-menu">뉴스 및 이슈</a></span>
