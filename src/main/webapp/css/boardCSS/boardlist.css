@@ -1,0 +1,103 @@
+
+body{
+    width: 90%;
+    margin: 0 auto;
+}
+.container {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    width: 70%;
+    height: auto;
+}
+
+.mainlist {
+    text-align: center;
+    font-size: 15px;
+    background: #f4cb0b;
+    font-weight: bold;
+}
+
+td[id="boardid"] {
+    width: 10%;
+}
+
+td[id="title"] {
+    width: 60%;
+}
+
+td[id="writer"] {
+    width: 10%;
+}
+
+td[id="date"] {
+    width: 10%;
+}
+
+td[id="count"] {
+    width: 10%;
+}
+
+tr[class="boardlist"] {
+    text-align: center;
+}
+
+tr[class="boardlist"] td[class="listTitle"] {
+    text-align: left;
+}
+
+.paging {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+}
+
+.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.pagelist {
+    color: black;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+.pagelist a {
+    float: left;
+    display: block;
+    padding: 5px 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+.pagelist a:hover {
+    outline: none;
+    background: cornflowerblue;
+}
+
+.pagelist a:active {
+    background-color: red;
+}
+.button {
+    text-align: right;
+    margin: 10px;
+}
+
+#write_btn {
+    padding: 2px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border: 2px solid dodgerblue;
+    transition-duration: 0.4s;
+}
+
+#write_btn:hover {
+    background-color: dodgerblue;
+    color: white;
+}
