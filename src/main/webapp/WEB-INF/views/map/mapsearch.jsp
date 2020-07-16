@@ -29,10 +29,7 @@
 </head>
 
 <body>
-<div class="container">
-    <header>
-        <h1><a href="#">모둠전</a></h1>
-    </header>
+<div class="nav_container">
     <div class="menubar">
         <%@include file="../navbar.jsp" %>
     </div>
