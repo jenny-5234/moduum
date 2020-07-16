@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<div class="container">
+<div class="nav_container">
     <div class="menubar">
         <%@include file="../navbar.jsp" %>
     </div>

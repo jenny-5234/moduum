@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-
-<div class="menubar">
-    <%@include file="navbar.jsp" %>
+<div class="nav_container">
+    <div class="menubar">
+        <%@include file="navbar.jsp" %>
+    </div>
 </div>
-
 <div class="container">
 
     <div class="graphbox">

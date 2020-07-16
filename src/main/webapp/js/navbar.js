@@ -6,6 +6,6 @@
 //         $('.dept01').slideUp(200);
 //     }
 // });
-$(".Menu").hover(function() {
+$(".navbar_Menu").hover(function() {
     $(this).find(".dept01").stop().fadeToggle(200);
 });
