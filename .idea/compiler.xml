@@ -10,8 +10,8 @@
         <module name="modum" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="modum" target="1.8" />
+    <bytecodeTargetLevel target="11">
+      <module name="modum" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
