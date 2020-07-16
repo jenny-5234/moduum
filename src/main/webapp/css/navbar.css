@@ -4,7 +4,7 @@
 /*    padding: 0;*/
 /*}*/
 
-li {
+.top-menu1, .top-menu, .dept01_li, .menu01 {
     list-style: none;
 }
 
@@ -31,6 +31,7 @@ li {
     height: 100px;
     margin-top: 2.5%;
 }
+
 .top-menu, .top-menu1 {
     font-size: 25px;
 }
@@ -38,11 +39,12 @@ li {
 .logoImage {
     width: 25%;
 }
+
 .mapImage {
     width: 65%;
 }
 
-.menu01 > li {
+.top-menu1, .top-menu {
     float: left;
     width: 15%;
     line-height: 40px;
@@ -76,12 +78,12 @@ li {
     border-bottom: 1px solid #f4cb0b;
 }
 
-.dept01 > li {
+.dept01_li {
     width: 70%;
     margin: 0 auto;
 }
 
-.dept01 > li:hover {
+.dept01_li:hover {
     background-color: #f4cb0b;
     font-weight: bold;
 }
