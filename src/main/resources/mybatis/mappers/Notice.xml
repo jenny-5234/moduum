@@ -6,8 +6,46 @@
 <!--  SQL Mapping 설정 -->
 <mapper namespace="notice">
     <!--  SQL 객체 -->
+    <!--공지사항 목록-->
     <select id="getNoticeList" resultType="NoticeDto">
 		SELECT NoticeId, N_Writer, N_Title, N_Date, N_Count
 		FROM  Notice
-		</select>
+	</select>
+
+    <!--	페이징-->
+    <!--총 게시글 갯수 출력-->
+	<select id="getNoticeListCnt" parameterType="int" resultType="int">
+	    SELECT COUNT(*)
+	    FROM Notice
+    </select>
+
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<!-- 파라미터 타입 변경 -> dto로 -->
+	<select id="selectNotice" parameterType="NoticeDto" resultType="NoticeDto">
+        SELECT NoticeId, N_Writer, N_Title, N_Date, N_Count
+        FROM Notice
+        ORDER BY NoticeId DESC
+        OFFSET (#{curPage} -1) * 15 ROWS
+        FETCH NEXT 15 ROWS ONLY
+    </select>
+
+    <!--    게시글 작성-->
+    <insert id="insert" parameterType="NoticeDto">
+        INSERT INTO Notice(N_Writer, N_Password,N_Title, N_Context, N_Count)
+        VALUES (#{N_Writer}, #{N_Password}, #{N_Title}, #{N_Context}, 0)
+
+    </insert>
+	<!--    게시글 상세보기-->
+	<select id="pageDetail" resultType="NoticeDto">
+        SELECT *
+        FROM Notice
+        WHERE NoticeId = #{NoticeId}
+    </select>
+
+	<!--    조회수 증가-->
+	<update id="increaseCount" parameterType="java.lang.Integer">
+        UPDATE Notice
+        SET N_Count = N_Count + 1
+        WHERE NoticeId = #{NoticeId}
+    </update>
 </mapper>

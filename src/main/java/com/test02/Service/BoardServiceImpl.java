@@ -40,10 +40,6 @@ public class BoardServiceImpl implements BoardService {
     // 게시글 작성
     @SneakyThrows
     @Override
-//    public void insert(Map<String, Object> map) {
-//
-//        boardDao.insert(map);
-//    }
     public void insert(BoardDto boardDto) {
         System.out.println(boardDto.getFiledata());
         boardDao.insert(boardDto);
@@ -52,7 +48,7 @@ public class BoardServiceImpl implements BoardService {
 
     // 게시글 상세보기
     @SneakyThrows
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+//    @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public BoardDto pageDetail(int BoardId) {
         //조회수 증가 메소드

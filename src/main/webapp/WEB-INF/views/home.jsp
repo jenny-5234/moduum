@@ -21,69 +21,69 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+
+<div class="menubar">
+    <%@include file="navbar.jsp" %>
+</div>
+
 <div class="container">
-<%--    <header>--%>
-<%--        <h1><a href="#">모둠전</a></h1>--%>
-<%--    </header>--%>
-    <div class="menubar">
-        <%@include file="navbar.jsp" %>
+
+    <div class="graphbox">
+        <div class="box_top_name">
+            <span>현황</span>
+            <hr>
+        </div>
+        <div class="graph_insert">
+            <img src="/image/homeImages/testgraph1.png"/>&nbsp;
+        </div>
     </div>
-</div>
-<div class="graphbox">
-    <div class="box_top_name">
-        <span>현황</span>
-        <hr>
+    <div class="mapbox">
+        <div class="box_top_name">
+            <span>가맹점 위치</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden; "></div>
+            <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
+        </div>
+        <div class="map_button">
+            <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>
+        </div>
     </div>
-    <div class="graph_insert">
-        <img src="/image/homeImages/testgraph1.png"/>&nbsp;
+    <div class="bannerbox">
+        <div class="box_top_name">
+            <span>토탈 지역화폐</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <%@include file="banner.jsp" %>
+        </div>
     </div>
-</div>
-<div class="mapbox">
-    <div class="box_top_name">
-        <span>가맹점 위치</span>
-        <hr>
+    <div class="newsbox">
+        <div class="box_top_name">
+            <h3>뉴스 & 이슈
+                <a href="/news/newslist" class="more">더보기</a>
+            </h3>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <h4 class="tit1">최신 브리핑</h4>
+            <c:forEach var="dto" items="${newstop5}" varStatus="status">
+                <ul class="m_text_list">
+                    <li><a href="${dto.originallink}" target="_blank">${dto.title}</a></li>
+                </ul>
+            </c:forEach>
+        </div>
     </div>
-    <div class="box_insert">
-        <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden; "></div>
-        <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
-    </div>
-    <div class="map_button">
-        <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>
-    </div>
-</div>
-<div class="bannerbox">
-    <div class="box_top_name">
-        <span>토탈 지역화폐</span>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <%@include file="banner.jsp" %>
-    </div>
-</div>
-<div class="newsbox">
-    <div class="box_top_name">
-        <h3>뉴스 & 이슈
-            <a href="/news/newslist" class="more">더보기</a>
-        </h3>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <h4 class="tit1">최신 브리핑</h4>
-        <c:forEach var="dto" items="${newstop5}" varStatus="status">
-            <ul class="m_text_list">
-                <li><a href="${dto.originallink}" target="_blank">${dto.title}</a></li>
-            </ul>
-        </c:forEach>
-    </div>
-</div>
-<div class="videobox">
-    <div class="box_top_name">
-        <span>팝업존</span>
-        <hr>
-    </div>
-    <div class="box_insert">
-        <%--                <span>YouTube 팝업 삽입</span>--%>
-        <jsp:include page="popup.jsp"/>
+    <div class="videobox">
+        <div class="box_top_name">
+            <span>팝업존</span>
+            <hr>
+        </div>
+        <div class="box_insert">
+            <%--                <span>YouTube 팝업 삽입</span>--%>
+            <jsp:include page="popup.jsp"/>
+        </div>
     </div>
 </div>
 <footer>
