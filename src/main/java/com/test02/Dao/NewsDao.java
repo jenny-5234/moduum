@@ -30,4 +30,9 @@ public class NewsDao {
     public NewsDto newsDetail(int newsId) throws Exception{
         return sqlSession.selectOne(namespace + ".newsDetail", newsId);
     }
+
+    // 3. 뉴스 5개 가져오기
+    public List<NewsDto> selecttop5(NewsDto newsDto) throws Exception{
+        return sqlSession.selectList(namespace + ".selecttop5", newsDto);
+    }
 }

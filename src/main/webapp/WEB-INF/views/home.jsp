@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -61,11 +62,18 @@
 </div>
 <div class="newsbox">
     <div class="box_top_name">
-        <span>뉴스 및 이슈</span>
+        <h3>뉴스 & 이슈
+        <a href="/news/newslist" class="more">더보기</a>
+        </h3>
         <hr>
     </div>
     <div class="box_insert">
-<%--        <%@include file="news/newslist.jsp" %>--%>
+        <h4 class="tit1">최신 브리핑</h4>
+        <c:forEach var="dto" items="${newstop5}" varStatus="status">
+        <ul class="m_text_list">
+            <li><a href="${dto.originallink}" target="_blank">${dto.title}</a></li>
+        </ul>
+        </c:forEach>
     </div>
 </div>
 <div class="videobox">
