@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>정보마당</title>
-    <link rel="stylesheet" href="/css/boardCSS/boardlist.css"/>"/>
+    <link rel="stylesheet" href="/css/boardlist.css"/>
     <link rel="stylesheet" href="/css/bootstrap.css"/>
     <%--    <script src="/js/bootstrap.js"/>--%>
 
