@@ -13,4 +13,7 @@ public interface NewsService {
 
     // 뉴스 상세보기
     public NewsDto newsDetail(int newsId) throws Exception;
+
+    // 뉴스 5개 조회
+    public List<NewsDto> selecttop5(NewsDto newsDto);
 }

@@ -46,7 +46,7 @@
             <ul class="dept01">
                 <li><a class="sub-menu" href="/notice/noticeList">공지사항</a></li>
                 <li><a class="sub-menu" href="/board/boardlist">정보마당</a></li>
-                <li><a class="sub-menu" href="#">피드백</a></li>
+                <li><a class="sub-menu" href="/mail/mailForm">피드백</a></li>
             </ul>
         </li>
     </ul>

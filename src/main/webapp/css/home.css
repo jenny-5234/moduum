@@ -112,6 +112,34 @@ hr{
     overflow: hidden;
     border-radius: 2em;
 }
+.more{
+    display: inline-block;
+    margin-bottom: -3px;
+    margin-left: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #fff;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 12px;
+    background-color: #009fd1;
+    vertical-align: bottom;
+}
+.tit1{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0 3px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: #164068;
+    letter-spacing: -0.05em;
+}
+.m_text_list{
+    width: 100%;
+    padding: 4px 7px;
+}
 .videobox{
     box-sizing:border-box;
     width: 33%;
