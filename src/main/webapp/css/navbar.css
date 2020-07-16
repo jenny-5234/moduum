@@ -8,14 +8,7 @@ li {
     list-style: none;
 }
 
-.logo {
-    margin: 50px 0;
-    font-size: 30px;
-    text-align: center;
-    font-family: 'Nanum Brush Script', cursive;
-}
-
-.topMenu {
+.Menu {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
@@ -23,42 +16,59 @@ li {
     height: 40px;
 }
 
-.topMenu:after {
+.Menu:after {
     content: "";
     display: block;
     clear: both;
     text-align: center;
 }
 
+.top-menu1 {
+    height: 50px;
+}
+
+.top-menu {
+    height: 100px;
+    margin-top: 2.5%;
+}
+.top-menu, .top-menu1 {
+    font-size: 25px;
+}
+
+.logoImage {
+    width: 25%;
+}
+
 .menu01 > li {
     float: left;
-    width: 20%;
+    width: 15%;
     line-height: 40px;
 }
 
-.main-menu{
+.main-menu {
     color: black;
     text-decoration: none;
 }
 
-.main-menu:hover{
+.main-menu:hover {
     color: #f4cb0b;
 }
 
 .menu01 span {
-    font-size: 22px;
+    font-size: 27px;
     font-weight: bold;
 }
 
 .dept01 {
+    font-size: 20px;
     position: absolute;
-    top: 40px;
+    top: 100px;
     display: none;
-    width: 20%;
+    /*width: 20%;*/
     padding: 20px 0;
     /*border-bottom: 1px solid #ccc;*/
     background: #fff;
-    border-bottom: 1px solid  #f4cb0b;
+    border-bottom: 1px solid #f4cb0b;
 }
 
 .dept01 > li {
@@ -72,12 +82,19 @@ li {
 }
 
 ul {
+    height: 120px;
     z-index: 999;
 }
-.sub-menu{
+
+.sub-menu {
     width: 100%;
 }
+
 .sub-menu:link, .sub-menu:visited {
     color: black;
     text-decoration: none;
+}
+
+.mapImage {
+    width: 65%;
 }
