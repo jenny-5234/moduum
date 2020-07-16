@@ -37,7 +37,7 @@
                     <td>${status.index+1+(pagination.curPage-1)*15}</td>
 
                     <td class="listTitle"
-                        onclick="location.href='${dto.originallink}';">${dto.title}</td>
+                        onclick="window.open('${dto.originallink}');">${dto.title}</td>
 
 <%--                    <td>${dto.description}</td>--%>
 <%--                    <td>${dto.originallink}</td>--%>

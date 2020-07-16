@@ -37,4 +37,11 @@ public class NewsServiceImpl implements NewsService{
     public NewsDto newsDetail(int newsId){
         return newsDao.newsDetail(newsId);
     }
+
+    // 뉴스 5개 보기
+    @SneakyThrows
+    @Override
+    public List<NewsDto> selecttop5(NewsDto newsDto){
+        return newsDao.selecttop5(newsDto);
+    }
 }

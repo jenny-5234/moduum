@@ -49,4 +49,9 @@
         )
         )
     </select>
+
+    <select id="selecttop5" resultType="newsDto">
+        SELECT TOP 5 *
+        FROM news
+    </select>
 </mapper>
