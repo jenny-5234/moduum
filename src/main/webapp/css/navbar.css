@@ -42,7 +42,7 @@ li {
 }
 
 .main-menu:hover{
-    color: dodgerblue;
+    color: #f4cb0b;
 }
 
 .menu01 span {
@@ -58,30 +58,26 @@ li {
     padding: 20px 0;
     /*border-bottom: 1px solid #ccc;*/
     background: #fff;
-    border-bottom: 1px solid dodgerblue;
+    border-bottom: 1px solid  #f4cb0b;
+}
+
+.dept01 > li {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.dept01 > li:hover {
+    background-color: #f4cb0b;
+    font-weight: bold;
 }
 
 ul {
     z-index: 999;
 }
-
+.sub-menu{
+    width: 100%;
+}
 .sub-menu:link, .sub-menu:visited {
     color: black;
     text-decoration: none;
-}
-
-.sub-menu:hover{
-    /*background-color: dodgerblue;*/
-    color: dodgerblue;
-    font-size: 17px;
-    font-weight: bold;
-    /*padding: 13px 20px 13px 10px;*/
-    text-decoration: none;
-    background-repeat: no-repeat;
-
-}
-
-.top_hr {
-    border-bottom : 2px dashed orange;
-    margin: 50px 50px 50px 50px;
 }

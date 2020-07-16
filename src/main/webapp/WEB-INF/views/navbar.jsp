@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/navbar.css">
 </head>
 <header>
-    <h1><a href="../">모둠전</a></h1>
+    <h1><a href="../"><img src="/image/homeImages/modum-logo.png" style="width:400px; height: auto; margin-top:3px"></a></h1>
 </header>
 <body>
 <div class="logo">
@@ -24,8 +24,8 @@
         <li><span><a class="main-menu">현황</a></span>
             <ul class="dept01">
                 <li><a class="sub-menu" href="#">현황</a></li>
-                <li><a class="sub-menu" href="#">분석 및 예측</a></li>
-                <li><a class="sub-menu" href="#"> sub</a></li>
+                <li><a class="sub-menu" href="#">분석</a></li>
+                <li><a class="sub-menu" href="#">예측</a></li>
             </ul>
         </li>
         <li><span><a class="main-menu">가맹점 찾기</a></span>
@@ -37,7 +37,7 @@
         </li>
         <li><span><a class="main-menu">뉴스 및 이슈</a></span>
             <ul class="dept01">
-                <li><a class="sub-menu" href="#">sub01</a></li>
+                <li><a class="sub-menu" href="#">뉴스</a></li>
                 <li><a class="sub-menu" href="#">sub02</a></li>
                 <li><a class="sub-menu" href="#">sub03</a></li>
             </ul>

@@ -16,7 +16,7 @@
 
     <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" id="close">x</span>
         <div class="youtube">
             <iframe src="http://www.youtube.com/embed/yIezazDM1QY" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -25,10 +25,16 @@
     </div>
 
 </div>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/popup.js"></script>
+<script>
+    $(function () {
+        $('#close').click(function () {
+            location.reload()
+        })
+    })
+</script>
 
 </body>
+
 </html>
