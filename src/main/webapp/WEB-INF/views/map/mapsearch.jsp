@@ -24,28 +24,28 @@
 <%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>--%>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
 <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
-    <link rel="stylesheet" href="../../../css/home.css">
-<%--    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">--%>
-<%--    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">--%>
+<%--    <link rel="stylesheet" href="../../../css/navbar.css">--%>
+    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 </head>
 <body>
-<div class="nav_container">
+<%--<div class="nav_container">
     <div class="menubar">
         <%@include file="../navbar.jsp" %>
     </div>
-</div>
+</div>--%>
 <%-- 카카오맵 API를 이용해 지도 부분을 만들기 --%>
-<%--<div class="map_wrap">
-    &lt;%&ndash; 지도의 크기 지정 height:500px &ndash;%&gt;
-    <div id="map" style="width:100%;height:365px;position:relative;overflow:hidden;"></div>
-        &lt;%&ndash;     TODO: 메뉴 접기 버튼 만들기   &ndash;%&gt;
+<div class="map_wrap">
+    <%-- 지도의 크기 지정 height:500px --%>
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+        <%--     TODO: 메뉴 접기 버튼 만들기   --%>
         <input type="button" id="shadowclose" class="toggle" value="<"/>
-    &lt;%&ndash; 검색 창 관련 &ndash;%&gt;
+    <%-- 검색 창 관련 --%>
     <div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
                 <div>
-                    &lt;%&ndash; 선택한 지역을 regionSelection()에 전달 &ndash;%&gt;
+                    <%-- 선택한 지역을 regionSelection()에 전달 --%>
                     <form onsubmit="regionSelection(); return false;">
                         <select id="area">
                             <option value="none">===선택===</option>
@@ -69,12 +69,12 @@
                             <option value="울릉군">울릉군</option>
                         </select>
                         <button type="submit" class="">선택</button>
-&lt;%&ndash;                        <input type="button" onclick="clus();" value="테스트"/>&ndash;%&gt;
+<%--                        <input type="button" onclick="clus();" value="테스트"/>--%>
                         <label for="clustercleared" class="clustercleared"><input type="checkbox" id="clustercleared"
                                                                                   class="clustercleared" disabled/>클러스터</label>
                     </form>
                 </div>
-                &lt;%&ndash; 검색 keyword를 searchPlaces()에 전달 &ndash;%&gt;
+                <%-- 검색 keyword를 searchPlaces()에 전달 --%>
                 <form onsubmit="searchPlaces(); return false;">
                     키워드 : <input type="text" placeholder="지역화폐" value="" id="keyword" size="15">
                     <button type="submit">검색</button>
@@ -82,17 +82,16 @@
             </div>
         </div>
         <hr>
-        &lt;%&ndash; 검색된 결과 item 출력부분 &ndash;%&gt;
+        <%-- 검색된 결과 item 출력부분 --%>
         <ul id="placesList"></ul>
-        &lt;%&ndash; 페이지 표시 부분 &ndash;%&gt;
+        <%-- 페이지 표시 부분 --%>
         <div id="pagination"></div>
     </div>
-</div>--%>
-<%--<div id="loading"><img id="loading-image" src="/js/Spinner.gif" alt="Loading..." hidden/></div>--%>
-<%--<script src="../../../js/kakao/kakao_api_polygon.js" type="text/javascript"></script>
+</div>
+<script src="../../../js/kakao/kakao_api_polygon.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_search.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_loaddata.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_pagechange.js" type="text/javascript"></script>
-<script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>--%>
+<script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>
 </body>
 </html>

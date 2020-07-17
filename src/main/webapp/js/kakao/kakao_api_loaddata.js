@@ -33,11 +33,11 @@ $(document).ready(function () {
     $("#shadowclose").click(function () {
         $("#menu_wrap").toggle();
         if ($("#menu_wrap").css("display") == "none") {
-            $("#shadowclose").css("margin","340px 0px 0px 0px");
+            $("#shadowclose").css("left","0px");
             $(this).val('>');
         }
         else {
-            $("#shadowclose").css("margin","340px 0px 0px 360px");
+            $("#shadowclose").css("left","363px");
             $(this).val('<');
         }
     });

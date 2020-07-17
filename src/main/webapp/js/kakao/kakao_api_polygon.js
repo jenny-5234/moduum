@@ -365,7 +365,7 @@ function LoadingWithMask() {
     var loadingImg = '';
 
     loadingImg += "<div id='loading-image'>";
-    loadingImg += " <img src='/css/kakao/Rippleslow.gif'/>";
+    loadingImg += " <img src='../../css/kakao/Rippleslow.gif'/>";
     loadingImg += "</div>";
 
     //화면에 레이어 추가
