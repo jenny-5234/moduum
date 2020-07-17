@@ -16,7 +16,7 @@
 
 <%--node.js 서버 포트 열고 난후 실행--%>
 
-<div>
+<div class="chatting_size">
     <div id="chatLog" class="chat_log" readonly>
         <!-- 채팅 메시지 영역 -->
     </div>
@@ -24,7 +24,7 @@
 <form id="chat">
     <input id="name" class="name" type="text">  <!--nickname 영역 -->
     <input id="message" class="message" type="text">    <!--message입력 영역 -->
-    <input type="submit" class="chat" value="전송"/>    <!--전송 영역 -->
+    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->
 </form>
 
 <script src="http://14.32.18.180:3000/socket.io/socket.io.js"></script>
