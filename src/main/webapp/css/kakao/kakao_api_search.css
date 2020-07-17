@@ -1,5 +1,12 @@
 /*검색 css 시작*/
 
+#map {
+    width: 100%;
+    height: 365px;
+    position: relative;
+    overflow: hidden;
+}
+
 .map_wrap, .map_wrap * {
     margin: 0;
     padding: 0;
