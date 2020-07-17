@@ -31,17 +31,12 @@
     height: 100px;
     margin-top: 2.5%;
 }
-
 .top-menu, .top-menu1 {
     font-size: 25px;
 }
 
 .logoImage {
     width: 25%;
-}
-
-.mapImage {
-    width: 65%;
 }
 
 .top-menu1, .top-menu {
@@ -95,4 +90,8 @@
 .sub-menu:link, .sub-menu:visited {
     color: black;
     text-decoration: none;
+}
+
+.mapImage {
+    width: 65%;
 }
