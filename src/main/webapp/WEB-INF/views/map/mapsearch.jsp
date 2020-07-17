@@ -12,8 +12,8 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -24,20 +24,20 @@
 <%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>--%>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
 <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+<%--    <link rel="stylesheet" href="../../../css/navbar.css">--%>
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 </head>
-
 <body>
-<div class="nav_container">
+<%--<div class="nav_container">
     <div class="menubar">
         <%@include file="../navbar.jsp" %>
     </div>
-</div>
+</div>--%>
 <%-- 카카오맵 API를 이용해 지도 부분을 만들기 --%>
 <div class="map_wrap">
     <%-- 지도의 크기 지정 height:500px --%>
-    <div id="map" style="width:100%;height:365px;position:relative;overflow:hidden;"></div>
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
         <%--     TODO: 메뉴 접기 버튼 만들기   --%>
         <input type="button" id="shadowclose" class="toggle" value="<"/>
     <%-- 검색 창 관련 --%>
@@ -88,7 +88,6 @@
         <div id="pagination"></div>
     </div>
 </div>
-<%--<div id="loading"><img id="loading-image" src="/js/Spinner.gif" alt="Loading..." hidden/></div>--%>
 <script src="../../../js/kakao/kakao_api_polygon.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_search.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_loaddata.js" type="text/javascript"></script>
