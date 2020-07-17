@@ -22,9 +22,10 @@
     </div>
 </div>
 <form id="chat">
-    <input id="name" class="name" type="text">  <!--nickname 영역 -->
-    <input id="message" class="message" type="text">    <!--message입력 영역 -->
-    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->
+    <input id="name" class="name" type="text"/>  <!--nickname 영역 -->
+    <input id="message" class="message" type="text"/>    <!--message입력 영역 -->
+<%--    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->--%>
+    <input type="submit" class="chat_button" value="전송"/>
 </form>
 
 <script src="http://14.32.18.180:3000/socket.io/socket.io.js"></script>
