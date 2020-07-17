@@ -1,6 +1,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 body{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     height: border-box;
     font-family: "Noto Sans KR", sans-serif !important;
@@ -18,10 +18,10 @@ header{
 }
 .graphbox{
     box-sizing:border-box;
-    width: 49%;
-    height: 400px;
+    width: 33%;
+    height: 800px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -38,10 +38,10 @@ header{
 
 .mapbox{
     box-sizing:border-box;
-    width: 49%;
-    height: 400px;
+    width: 35%;
+    height: 800px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -53,6 +53,18 @@ header{
     height: 50px;
     overflow: hidden;
     text-align: right;
+}
+.livechattinbox{
+    box-sizing:border-box;
+    width: 31%;
+    height: 800px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
 }
 #button_effect{
     width:200px;
@@ -73,7 +85,7 @@ header{
     width: 33%;
     height: 350px;
     margin-top: 20px;
-    margin-left: 11px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -93,19 +105,25 @@ hr{
     border: 1px solid blue;
 }
 .box_insert{
-    height: 250px;
+    height: 80%;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 2em;
     overflow: hidden;
 }
+.chatting_box_insert{
+    height: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
 
 .newsbox{
     box-sizing:border-box;
-    width: 31%;
+    width: 33%;
     height: 350px;
     margin-top: 20px;
-    margin-left: 11px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -161,7 +179,7 @@ hr{
     width: 33%;
     height: 350px;
     margin-top: 20px;
-    margin-left: 11px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
