@@ -10,17 +10,15 @@
 <!DOCTYPE html>
 
 <html>
-
-<meta charset="utf-8"/>
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
-
 <head>
-<%--    <script type="text/javascript" src="/js/scrollTop.js" />--%>
-    <link rel="stylesheet" href="/css/intro.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
+    <script src="/js/scrollTop.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <title>Title</title>
 
 
@@ -116,7 +114,7 @@
     </div>
 </section>
 <div class="button_div">
-    <button type="button" id="up_button" onclick="goTop()">
+    <button type="button" id="up_button">
         <img src="/image/introImages/up-arrow.png" class="button_img"/>
     </button>
 </div>
