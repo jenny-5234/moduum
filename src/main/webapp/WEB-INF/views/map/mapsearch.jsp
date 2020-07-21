@@ -13,20 +13,21 @@
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<%--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
-<%--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>--%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-<%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>--%>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
 <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
     <link rel="stylesheet" href="../../../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
+<%--    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">--%>
 </head>
 <body>
 <%--<div class="nav_container">
@@ -47,8 +48,8 @@
                 <div>
                     <%-- 선택한 지역을 regionSelection()에 전달 --%>
                     <form onsubmit="regionSelection(); return false;">
-                        <select id="area">
-                            <option value="none">===선택===</option>
+                        <select id="area" class="custom-select">
+                            <option value="none" selected>===선택===</option>
                             <option value="서울">서울</option>
                             <option value="경기도">경기도</option>
                             <option value="인천">인천</option>
@@ -68,14 +69,23 @@
                             <option value="제주도">제주도</option>
                             <option value="울릉군">울릉군</option>
                         </select>
-                        <button type="submit" class="">선택</button>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="clustercleared" name="clustercleared">
+                            <label class="custom-control-label" for="clustercleared">클러스터</label>
+                            <img src="../../../css/kakao/KakaoTalk_20200720_170423777.png" style="width: 15px; height: 15px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다"></img>
+                            <%--                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">?</a>--%>
+                        </div>
+<%--                        <button type="submit" class="">선택</button>--%>
 <%--                        <input type="button" onclick="clus();" value="테스트"/>--%>
-                        <label for="clustercleared" class="clustercleared"><input type="checkbox" id="clustercleared"
-                                                                                  class="clustercleared" disabled/>클러스터</label>
+                        <%--<div class="custom-control custom-switch">
+                        <label for="clustercleared" class="custom-control-label"><input type="checkbox" id="clustercleared"
+                                                                                  class="custom-control-input" />클러스터</label>
+                        </div>--%>
                     </form>
                 </div>
+                <br>
                 <%-- 검색 keyword를 searchPlaces()에 전달 --%>
-                <form onsubmit="searchPlaces(); return false;">
+                <form onsubmit="searchPlaces(); return false;" class="keysearch">
                     키워드 : <input type="text" placeholder="지역화폐" value="" id="keyword" size="15">
                     <button type="submit">검색</button>
                 </form>

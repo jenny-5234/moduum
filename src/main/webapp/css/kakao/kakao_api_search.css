@@ -57,7 +57,7 @@ html, body {
 }
 
 #menu_wrap .option {
-    text-align: center;
+    /*text-align: center;*/
 }
 
 #menu_wrap .option p {
@@ -390,4 +390,18 @@ html, body {
     overflow-y: auto;
     z-index: 1;
 }
+
+#area {
+    float: left;
+    width: 100px;
+    height: 20px;
+    margin-right: 40px;
+}
 /*커스텀 오버레이 종료*/
+.custom-control {
+    float: left;
+}
+
+.keysearch {
+    clear: both;
+}

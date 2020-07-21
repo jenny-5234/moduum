@@ -1,33 +1,52 @@
 // 페이지가 로딩되었을 때
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
     // 체크박스가 변경될 때
     $("#clustercleared").change(function () {
         // 체크박스가 체크된경우
         if ($("#clustercleared").is(":checked")) {
-            // alert 창을 띄우고 확인 버튼을 누를경우
-            if (confirm("클러스터를 활성화 하는 경우 로딩시간이 길어질 수 있습니다.") == true) {
-                clusterchecked = true;
-            }
-            // 취소 버튼을 누를 경우
-            else {
+            if ($("#area option:selected").val() == "경기도") {
+                // alert 창을 띄우고 확인 버튼을 누를경우
+                if (confirm("클러스터를 활성화 하는 경우 로딩시간이 길어질 수 있습니다.") == true) {
+                    clusterchecked = true;
+                }
+                // 취소 버튼을 누를 경우
+                else {
+                    $("#clustercleared").prop("checked", false);
+                    clusterchecked = false;
+                }
+            } else {
+                alert("경기도에서만 사용 가능 합니다")
                 $("#clustercleared").prop("checked", false);
                 clusterchecked = false;
             }
         }
         // 체크박스가 해제된 경우
         else {
+            $("#clustercleared").prop("checked", false);
             clusterchecked = false;
+            // $("#clustercleared").prop("disabled", true);
         }
     });
+    /*$("#area").change(function () {
+        if ($("#area option:selected").val() != "경기도") {
+            $("#clustercleared").prop("checked", false);
+            clusterchecked = false;
+        }
+    });*/
+    /*$("#area").change(function () {
+        regionSelection($("#area").val());
+    });*/
     $("#area").change(function () {
-        if ($("#area option:selected").val() == "경기도") {
+        regionSelection($("#area").val());
+        /*if ($("#area option:selected").val() == "경기도") {
             $("#clustercleared").prop("disabled", false);
         }
         else {
             $("#clustercleared").prop("checked", false);
             clusterchecked = false;
             $("#clustercleared").prop("disabled", true);
-        }
+        }*/
     });
 
     $("#shadowclose").click(function () {
@@ -41,8 +60,8 @@ $(document).ready(function () {
             $(this).val('<');
         }
     });
-});
 
+});
 function regionSelection() {
     var selectedCity = document.getElementById('area').value;
 

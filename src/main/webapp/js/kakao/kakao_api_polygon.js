@@ -117,6 +117,7 @@ function displayArea(coordinates, name, city, tname) {
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             // 선택했던 폴리곤과 선택한 폴리곤의 이름이 다른 경우
+            $("#area").prop("value", "none");
             if (polygonSelectCheck != name) {
                 if (city == "경기도") {
                     polygon.setOptions({fillColor: '#fff'});
