@@ -15,11 +15,11 @@
             </ul>
         </li>
         <li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/index.jsp">지역화폐란?</a></span>
+        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/intro">지역화폐란?</a></span>
             <ul class="dept01" style="width: 16%">
-                <li class="dept01_li"><a class="sub-menu" href="/index.jsp">지역화폐 소개</a></li>
-                <li class="dept01_li"><a class="sub-menu" href="/index.jsp">지역화폐 장점</a></li>
-                <li class="dept01_li"><a class="sub-menu" href="/index.jsp">지역화폐 발급</a></li>
+                <li class="dept01_li"><a class="sub-menu" href="/intro">지역화폐 소개</a></li>
+                <li class="dept01_li"><a class="sub-menu" href="/intro">지역화폐 장점</a></li>
+                <li class="dept01_li"><a class="sub-menu" href="/intro">지역화폐 발급</a></li>
             </ul>
         </li>
         <li class="top-menu" style="width: 16%"><span><a class="main-menu">현황</a></span>
