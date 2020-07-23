@@ -15,7 +15,6 @@ var polygonSelectCheck = "";
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
-    console.log("왜 안닫혀");
     closeOverlay();     // 검색을 했을 때 마커의 정보 오버레이가 열려있는걸 닫는다.
     var keyword = document.getElementById('keyword').value;     // 검색 텍스트 박스에 입력된 값을 keyword에 저장한다.
     // console.clear(); // 데이터 넣을 때 필요한 콘솔 초기화
