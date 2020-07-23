@@ -27,7 +27,7 @@
         <%@include file="navbar.jsp" %>
     </div>
 </div>
-<div class="container">
+<div class="main_container">
 
     <div class="graphbox">
         <div class="box_top_name">
@@ -44,11 +44,21 @@
             <hr>
         </div>
         <div class="box_insert">
-            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;" onclick="location.href='/map/mapsearch'"></div>
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"
+                 onclick="location.href='/map/mapsearch'"></div>
             <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
         </div>
         <div class="map_button">
             <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>
+        </div>
+    </div>
+    <div class="livechattinbox">
+        <div class="box_top_name">
+            <span>실시간 채팅</span>
+            <hr>
+        </div>
+        <div class="chatting_box_insert">
+            <jsp:include page="chatting.jsp"/>
         </div>
     </div>
     <div class="bannerbox">
@@ -62,17 +72,17 @@
     </div>
     <div class="newsbox">
         <div class="box_top_name">
-            <h3>뉴스 & 이슈
+            <span>뉴스 & 이슈
                 <a href="/news/newslist" class="more">더보기</a>
-            </h3>
+            </span>
             <hr>
         </div>
         <div class="box_insert">
             <h4 class="tit1">최신 브리핑</h4>
             <ul class="m_text_list">
-            <c:forEach var="dto" items="${newstop5}" varStatus="status">
+                <c:forEach var="dto" items="${newstop5}" varStatus="status">
                     <li><a href="${dto.originallink}" target="_blank" class="news_top5_hyper">${dto.title}</a></li>
-            </c:forEach>
+                </c:forEach>
             </ul>
         </div>
     </div>
