@@ -50,27 +50,32 @@
             </c:forEach>
         </table>
 
-        <div class="paging">
-            <ul class="pagination">
+        <div class="wrapper">
+            <ul class="pager">
                 <c:if test="${pagination.curPage ne 1}">
-                    <li class="pagelist"><a onClick="fn_paging('${pagination.prevPage }')"><<</a></li>
+                    <li class="pager__item pager__item--prev"><a class="pager__link" href="#"
+                                                                 onClick="fn_paging('${pagination.prevPage }')">
+                        <<</a></li>
                 </c:if>
                 <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
                     <c:choose>
                         <c:when test="${pageNum eq  pagination.curPage}">
-                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pager__item active"><a class="pager__link" href="#"
+                                                              onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pager__item"><a class="pager__link" href="#"
+                                                       onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-                    <li class="pagelist"><a href="#" onClick="fn_paging('${pagination.nextPage }')">>></a></li>
+                    <li class="pager__item pager__item--next"><a class="pager__link" href="#"
+                                                                 onClick="fn_paging('${pagination.nextPage }')">
+                        >></a></li>
                 </c:if>
             </ul>
         </div>
-
     </form>
     <div class="button">
         <button type="button" id="write_btn" onclick="location.href='/board/write'">글쓰기</button>

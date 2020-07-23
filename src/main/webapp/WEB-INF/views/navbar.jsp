@@ -15,7 +15,7 @@
             </ul>
         </li>
         <li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/index.jsp">지역화폐란?</a></span>
+        <li class="top-menu" style="width: 16%" ><span><a class="main-menu" href="/index.jsp">지역화폐란?</a></span>
             <ul class="dept01" style="width: 16%">
                 <li class="dept01_li"><a class="sub-menu" href="/index.jsp">지역화폐 소개</a></li>
                 <li class="dept01_li"><a class="sub-menu" href="/index.jsp">지역화폐 장점</a></li>
@@ -35,13 +35,13 @@
                                                                      class="mapImage"/></a></li>
             </ul>
         </li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu">뉴스 및 이슈</a></span>
+        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/news/newslist">뉴스 및 이슈</a></span>
             <ul class="dept01" style="width: 16%">
                 <li class="dept01_li"><a class="sub-menu" href="/news/newslist">뉴스</a></li>
 
             </ul>
         </li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/notice/noticeList">고객지원</a></span>
+        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/notice/noticeList" style="width: 100%">고객지원</a></span>
             <ul class="dept01" style="width: 16%">
                 <li class="dept01_li"><a class="sub-menu" href="/notice/noticeList">공지사항</a></li>
                 <li class="dept01_li"><a class="sub-menu" href="/board/boardlist">정보마당</a></li>

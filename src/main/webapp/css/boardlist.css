@@ -46,41 +46,67 @@ tr[class="boardlist"] td[class="listTitle"] {
     text-align: left;
 }
 
-.paging {
-    margin: 0 auto;
-    text-align: center;
-    width: 50%;
+/*.paging {*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*    width: 50%;*/
+/*}*/
+
+/*.pagination {*/
+/*    list-style: none;*/
+/*    display: inline-block;*/
+/*    padding: 0;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.pagelist {*/
+/*    color: black;*/
+/*    float: left;*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.pagelist a {*/
+/*    float: left;*/
+/*    display: block;*/
+/*    padding: 5px 12px;*/
+/*    border-radius: 50%;*/
+/*    margin: 0 5px;*/
+/*    background-color: #f4cb0b;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.pagelist a:hover {*/
+/*    outline: none;*/
+/*    background: #f4cb0b;*/
+/*}*/
+/* ------------------------------ PAGINTION BEGIN ------------------------------ */
+.wrapper {
+    width: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 4px;
 }
 
-.pagination {
-    list-style: none;
+.pager {
+    margin: 0 0 3.75rem;
+    font-size: 0;
+    text-align: center;
+}
+.pager__item {
     display: inline-block;
-    padding: 0;
-    margin-top: 20px;
+    vertical-align: top;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0 2px;
 }
-
-.pagelist {
-    color: black;
-    float: left;
-    display: block;
-    text-align: center;
-}
-
-.pagelist a {
-    float: left;
-    display: block;
-    padding: 5px 12px;
-    border-radius: 50%;
-    margin: 0 5px;
-    background-color: #f4cb0b;
+.pager__item.active .pager__link {
+    background-color: #ffb74d;
+    border-color: #ffb74d;
+    color: #fff;
     text-decoration: none;
 }
-
-.pagelist a:hover {
-    outline: none;
-    background: #f4cb0b;
-}
-
 /*.pagelist a:active {*/
 /*    background-color: red;*/
 /*}*/

@@ -9,11 +9,11 @@ html {
   -ms-overflow-style: scrollbar;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+/**,*/
+/**::before,*/
+/**::after {*/
+/*  box-sizing: inherit;*/
+/*}*/
 
 .container {
   width: 100%;

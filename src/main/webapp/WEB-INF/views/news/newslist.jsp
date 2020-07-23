@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/news.css">
 </head>
 <body>
-<div class="menubar">
+<div class="menubar" style="width: 90%; margin: 0 auto;">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
 <div class="container">
