@@ -45,7 +45,7 @@
             <ul class="dept01" style="width: 16%">
                 <li class="dept01_li"><a class="sub-menu" href="/notice/noticeList">공지사항</a></li>
                 <li class="dept01_li"><a class="sub-menu" href="/board/boardlist">정보마당</a></li>
-                <li class="dept01_li"><a class="sub-menu" href="#">피드백</a></li>
+                <li class="dept01_li"><a class="sub-menu" href="#">문의사항</a></li>
             </ul>
         </li>
         </li>

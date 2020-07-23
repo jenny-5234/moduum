@@ -18,6 +18,12 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <script src="/js/scrollTop.js"></script>
+    <script>
+        function fnMove(seq){
+            var offset = $("#div" + seq).offset();
+            $('html, body').animate({scrollTop : offset.top}, 400);
+        }
+    </script>
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <title>Title</title>
 
@@ -25,12 +31,9 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="menubar">
-        <%@include file="navbar.jsp" %>
-    </div>
+<div class="menubar">
+    <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
-
 
 <section class="description_intro">
     <div class="eun">
@@ -40,13 +43,13 @@
                     <p>지역화폐 소개</p>
                 </h2>
                 <ul class="nav_ul">
-                    <li class="nav_li">
+                    <li class="nav_li" onclick="fnMove('1')">
                         지역화폐 소개
                     </li>
-                    <li class="nav_li">
+                    <li class="nav_li" onclick="fnMove('2')">
                         지역화폐 혜택
                     </li>
-                    <li class="nav_li">
+                    <li class="nav_li" onclick="fnMove('3')">
                         발급 방법
                     </li>
                 </ul>
@@ -57,7 +60,7 @@
                 </div>
                 <hr class="hr">
                 <div>
-                    <h5 class="Dda1">
+                    <h5 class="Dda1" id="div1">
                         <span>지역화폐란 무엇인가요?</span>
                     </h5>
                     <p class="left">
@@ -78,7 +81,7 @@
                 </div>
                 <hr class="hr">
                 <div>
-                    <h5 class="Dda1">
+                    <h5 class="Dda1" id="div2">
                         <span>무슨 혜택이 있나요?</span>
                     </h5>
 
@@ -97,26 +100,26 @@
                     <p class="left">
                         <%--                    <td>${intro.get("intro4")}</td>--%>
                     <div class="purchase">
-                        <div class="purchase-list">
+                        <div class="purchase-list"  >
                             <div class="image_div">
                                 <img src="/image/introImages/creditcard.png" class="pcl_image"/>
                             </div>
                             <h3 class="pcl-name">카드</h3>
-                            <span> 모바일 앱 다운로드를 통한 온라인 구매 <br/> 각 시·군 판매대행점에서 오프라인 구매 </span>
+                            <span> 모바일 앱 다운로드를 통한 온라인 구매 <br/> 각 지자체 판매대행점에서 오프라인 구매 </span>
                         </div>
                         <div class="purchase-list">
                             <div class="image_div">
                                 <img src="/image/introImages/money.png" class="pcl_image"/>
                             </div>
                             <h3 class="pcl-name">상품권</h3>
-                            <span> 각 시·군 판매대행점에서 <br/> 오프라인 구매</span>
+                            <span> 각 지자체 판매대행점에서 <br/> 오프라인 구매</span>
                         </div>
                         <div class="purchase-list">
                             <div class="image_div">
                                 <img src="/image/introImages/phone.png" class="pcl_image"/>
                             </div>
                             <h3 class="pcl-name">모바일</h3>
-                            <span> 모바일 앱 등을 통한 온라인 구매 </span>
+                            <span> 모바일 앱을 통한 온라인 구매 </span>
 
                         </div>
                     </div>
@@ -125,7 +128,7 @@
 
                 <hr class="hr">
                 <div>
-                    <h5 class="Dda1">
+                    <h5 class="Dda1" id="div3">
                         <span>지역화폐 발급</span>
                     </h5>
                     <p class="left">
