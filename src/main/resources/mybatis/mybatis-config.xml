@@ -24,6 +24,5 @@
         <mapper resource="mybatis/mappers/Notice.xml"/>
         <mapper resource="mybatis/mappers/News.xml"/>
         <mapper resource="mybatis/mappers/Intro.xml"/>
-        <mapper resource="mybatis/mappers/Ajax.xml"/>
     </mappers>
 </configuration>

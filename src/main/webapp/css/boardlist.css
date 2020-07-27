@@ -3,7 +3,7 @@
 body{
     font-family: "Noto Sans KR", sans-serif !important;
     width: 90%;
-    height: auto;
+    /*height: auto;*/
     margin: 0 auto !important;
     padding: 0 !important;
 }
@@ -15,7 +15,7 @@ body{
 }
 
 .YL{
-    width:1700px;
+    width:1400px;
     height: auto;
     margin: 0 auto;
 }
@@ -47,10 +47,8 @@ body{
     color: #000;
     background-image: url("../image/introImages/side_navbar.png");
     background-repeat: no-repeat;
-    font-weight: 800;
     font-family: 'Noto Sans KR';
     font-weight: 600;
-    margin-bottom: 0;
 
 }
 
@@ -62,13 +60,11 @@ body{
     position: relative;
     color: #000;
     background-color: #fff;
-    font-weight: 800;
     font-family: 'Noto Sans KR';
     font-weight: 600;
     border: 5px solid #f3c36d;
     border-radius: 10px;
 }
-
 .nav_ul {
     color: #333;
     font-size: 1.3rem;
@@ -100,12 +96,6 @@ body{
     background-position: 225px center;
     background-repeat: no-repeat;
     background-image: none;
-    /*display: block;*/
-    /*padding: 3px;*/
-    /*padding-left: 20px;*/
-    /*border: 2px solid #f7df71;*/
-    /*!*border-radius: 10px;*!*/
-    /*border-top: 0;*/
 }
 
 .nav_li:hover {
@@ -115,7 +105,9 @@ body{
 }
 .board-section{
     float: left;
+    margin-top: 30px;
     margin-left: 50px;
+    width: 70%;
 }
 .mainlist {
     text-align: center;
@@ -130,7 +122,7 @@ td[id="boardid"] {
 }
 
 td[id="title"] {
-    width: 60%;
+    width: 55%;
 }
 
 td[id="writer"] {
@@ -138,7 +130,7 @@ td[id="writer"] {
 }
 
 td[id="date"] {
-    width: 10%;
+    width: 15%;
 }
 
 td[id="count"] {
@@ -151,42 +143,9 @@ tr[class="boardlist"] {
 
 tr[class="boardlist"] td[class="listTitle"] {
     text-align: left;
+    cursor: pointer;
 }
 
-/*.paging {*/
-/*    margin: 0 auto;*/
-/*    text-align: center;*/
-/*    width: 50%;*/
-/*}*/
-
-/*.pagination {*/
-/*    list-style: none;*/
-/*    display: inline-block;*/
-/*    padding: 0;*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/*.pagelist {*/
-/*    color: black;*/
-/*    float: left;*/
-/*    display: block;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.pagelist a {*/
-/*    float: left;*/
-/*    display: block;*/
-/*    padding: 5px 12px;*/
-/*    border-radius: 50%;*/
-/*    margin: 0 5px;*/
-/*    background-color: #f4cb0b;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.pagelist a:hover {*/
-/*    outline: none;*/
-/*    background: #f4cb0b;*/
-/*}*/
 /* ------------------------------ PAGINTION BEGIN ------------------------------ */
 .wrapper {
     width: 400px;
@@ -255,16 +214,7 @@ tr[class="boardlist"] td[class="listTitle"] {
     color: #fff;
     text-decoration: none;
 }
-/*.pager__item--prev svg, .pager__item--next svg {*/
-/*    width: 8px;*/
-/*    height: 12px;*/
-/*}*/
-/*.pager__item--next .pager__link svg {*/
-/*    -webkit-transform: rotate(180deg);*/
-/*    transform: rotate(180deg);*/
-/*    -webkit-transform-origin: center center;*/
-/*    transform-origin: center center;*/
-/*}*/
+
 .pager__link {
     position: relative;
     border-radius: 4px;

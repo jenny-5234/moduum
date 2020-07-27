@@ -70,6 +70,14 @@
         </div>
     </form>
 </div>
+
+<footer>
+    <div class="foo_div1">
+        <span>모둠전</span> <span>|</span>
+        <span>대표 : 영웅다영</span> <span>|</span>
+        <p>주소 : 비트교육센터</p>
+    </div>
+</footer>
 <script>
     function fn_paging(curPage) {
         location.href = "/news/newslist?curPage=" + curPage;

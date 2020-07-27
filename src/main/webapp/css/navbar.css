@@ -1,4 +1,13 @@
 @charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*body{*/
+/*    width: 90%;*/
+/*    margin: 0 auto;*/
+/*}*/
 .top-menu1, .top-menu, .dept01_li, .menu01 {
     list-style: none;
 }
@@ -6,7 +15,6 @@
 .navbar_Menu {
     margin: auto;
     position: relative;
-    width: 90%;
     margin-bottom: 20px;
     text-align: center;
     height: 40px;
@@ -26,9 +34,6 @@
 .top-menu {
     height: 100px;
     margin-top: 2.5%;
-}
-.top-menu, .top-menu1 {
-    font-size: 25px;
 }
 
 .logoImage {

@@ -1,4 +1,5 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 body{
     width: 90%;
     margin: 0 auto;
@@ -15,7 +16,7 @@ body{
     padding-top: 5px;
     padding-bottom: 10px;
     overflow: hidden;
-    background-color: #eeefef;
+    /*background-color: #eeefef;*/
 }
 
 ul {
