@@ -13,8 +13,8 @@
                    type="com.test02.Dto.BoardDto"/>
         <typeAlias alias="NewsDto"
                    type="com.test02.Dto.NewsDto"/>
-        <typeAlias alias="KakaoMapDto"
-                   type="com.test02.Dto.KakaoMapDto"/>
+        <typeAlias alias="IntroDto"
+                   type="com.test02.Dto.IntroDto"/>
     </typeAliases>
 
     <!-- SQL과 매핑을 위한 매핑정보 xml -->
@@ -23,6 +23,6 @@
         <mapper resource="mybatis/mappers/Board.xml"/>
         <mapper resource="mybatis/mappers/Notice.xml"/>
         <mapper resource="mybatis/mappers/News.xml"/>
-        <mapper resource="mybatis/mappers/KakaoMap.xml"/>
+        <mapper resource="mybatis/mappers/Intro.xml"/>
     </mappers>
 </configuration>

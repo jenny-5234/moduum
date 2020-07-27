@@ -1,3 +1,16 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: "Noto Sans KR", sans-serif !important;
+    width: 90%;
+    margin: 0 auto;
+}
+.container {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    width: 80%;
+    height: auto;
+}
 .wrapper {
     width: 400px;
     padding: 20px;
@@ -107,3 +120,28 @@ h1 {
     }
 }
 /* ------------------------------ PAGINTION END ------------------------------ */
+
+
+/*--------footer--------*/
+footer {
+    width: 100%;
+    background-color: transparent;
+    height: 150px;
+    float: left;
+    margin-top: 15px;
+    border-top: 2px solid #f4cb0b;;
+}
+
+.foo_div1 {
+    text-align: center;
+}
+
+.foo_div1 span {
+    font-size: 15px;
+    color: black;
+}
+
+.foo_div1 p {
+    margin-top: 5px;
+    color: black;
+}

@@ -119,6 +119,31 @@
             color: white;
         }
 
+
+        /*--------footer--------*/
+        footer {
+            width: 100%;
+            background-color: transparent;
+            height: 150px;
+            float: left;
+            margin-top: 15px;
+            border-top: 2px solid #f4cb0b;;
+        }
+
+        .foo_div1 {
+            text-align: center;
+        }
+
+        .foo_div1 span {
+            font-size: 15px;
+            color: black;
+        }
+
+        .foo_div1 p {
+            margin-top: 5px;
+            color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -155,23 +180,31 @@
             </c:forEach>
         </table>
 
-        <div class="paging">
-            <ul class="pagination">
+        <div class="wrapper">
+            <ul class="pager">
                 <c:if test="${pagination.curPage ne 1}">
-                    <li class="pagelist"><a onClick="fn_paging('${pagination.prevPage }')"><<</a></li>
+                    <li class="pager__item pager__item--prev"><a class="pager__link" href="#"
+                                                                 onClick="fn_paging('${pagination.prevPage }')">
+                        <<</a></li>
                 </c:if>
                 <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
                     <c:choose>
                         <c:when test="${pageNum eq  pagination.curPage}">
-                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pager__item active"><a class="pager__link" href="#"
+                                                              onClick="fn_paging('${pageNum }')">${pageNum }</a>
+                            </li>
                         </c:when>
                         <c:otherwise>
-                            <li class="pagelist"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></li>
+                            <li class="pager__item"><a class="pager__link" href="#"
+                                                       onClick="fn_paging('${pageNum }')">${pageNum }</a>
+                            </li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-                    <li class="pagelist"><a href="#" onClick="fn_paging('${pagination.nextPage }')">>></a></li>
+                    <li class="pager__item pager__item--next"><a class="pager__link" href="#"
+                                                                 onClick="fn_paging('${pagination.nextPage }')">
+                        >></a></li>
                 </c:if>
             </ul>
         </div>
@@ -181,6 +214,14 @@
         <button type="button" id="write_btn">글쓰기</button>
     </div>
 </div>
+
+<footer>
+    <div class="foo_div1">
+        <span>모둠전</span> <span>|</span>
+        <span>대표 : 영웅다영</span> <span>|</span>
+        <p>주소 : 비트교육센터</p>
+    </div>
+</footer>
 <script>
     function fn_paging(curPage) {
         location.href = "/notice/noticeList?curPage=" + curPage;

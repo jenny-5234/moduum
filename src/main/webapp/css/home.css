@@ -1,27 +1,66 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 body{
     width: 90%;
     margin: 0 auto;
     height: border-box;
-    font-family: "Noto Sans KR", sans-serif !important;
+    /*font-family: "Noto Sans KR", sans-serif !important;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    letter-spacing: -0.024em;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    /*background-color: #eeefef;*/
 }
+
+ul {
+    margin-bottom: 1rem;
+}
+
+div {
+    display: block;
+}
+
+span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+hr {
+    border: 1px solid blue;
+}
+
+.box_top_name {
+    height: 50px;
+    margin: 10px;
+    border-radius: 2em;
+}
+
 /*!*homecss*!
 .container{
     width: 1360px;
     margin: 0 auto;
     background: #ffffff;
 }*/
-header{
-    width: 100%;
-    height: 100px;
-    text-align: center;
-}
-.graphbox{
-    box-sizing:border-box;
-    width: 49%;
-    height: 400px;
+/*header {*/
+/*    width: 100%;*/
+/*    height: 100px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*--------그래프 --------*/
+.graphbox {
+    box-sizing: border-box;
+    width: 33%;
+    height: 800px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -36,12 +75,13 @@ header{
     overflow: hidden;
 }
 
-.mapbox{
-    box-sizing:border-box;
-    width: 49%;
-    height: 400px;
+/*--------지도--------*/
+.mapbox {
+    box-sizing: border-box;
+    width: 33%;
+    height: 800px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
@@ -68,8 +108,30 @@ header{
     background-color: #74a3b0;
 }
 
-.bannerbox{
-    box-sizing:border-box;
+/*--------채팅--------*/
+.livechattinbox {
+    box-sizing: border-box;
+    width: 33%;
+    height: 800px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: 1px solid #eaeaea;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2em;
+}
+
+.chatting_box_insert {
+    height: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+/*--------배너--------*/
+.bannerbox {
+    box-sizing: border-box;
     width: 33%;
     height: 350px;
     margin-top: 20px;
@@ -86,7 +148,7 @@ header{
     border-radius: 2em;
 }
 span{
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     font-weight: bold;
 }
 hr{
@@ -100,19 +162,21 @@ hr{
     overflow: hidden;
 }
 
-.newsbox{
-    box-sizing:border-box;
-    width: 31%;
+/*--------뉴스--------*/
+.newsbox {
+    box-sizing: border-box;
+    width: 33%;
     height: 350px;
     margin-top: 20px;
-    margin-left: 11px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
     overflow: hidden;
     border-radius: 2em;
 }
-.more{
+
+.more {
     color: white;
     display: inline-block;
     margin-bottom: 3px;
@@ -125,11 +189,13 @@ hr{
     background-color: #009fd1;
     vertical-align: bottom;
 }
-.more:link{
+
+.more:link {
     color: white;
     text-decoration: none;
 }
-.tit1{
+
+.tit1 {
     display: inline-block;
     margin-left: 5px;
     padding: 0 3px;
@@ -156,40 +222,48 @@ hr{
     color: black;
     text-decoration: none;
 }
-.videobox{
-    box-sizing:border-box;
+
+/*--------비디오--------*/
+.videobox {
+    box-sizing: border-box;
     width: 33%;
     height: 350px;
     margin-top: 20px;
-    margin-left: 11px;
+    margin-left: 5px;
     border: 1px solid #eaeaea;
     float: left;
     background: #fff;
     overflow: hidden;
     border-radius: 2em;
 }
-div{
-    display: block;
+
+#video {
+    width: 100%;
+    height: 100%;
 }
 
-/*footer*/
-footer{
+
+/*--------footer--------*/
+footer {
     width: 100%;
     background-color: transparent;
     height: 150px;
     float: left;
     margin-top: 15px;
-    border-top: 2px solid dodgerblue;
+    border-top: 2px solid #f4cb0b;;
 }
-.foo_div1{
+
+.foo_div1 {
     text-align: center;
 }
-.foo_div1 span{
+
+.foo_div1 span {
     font-size: 15px;
     color: black;
 }
-.foo_div1 p{
-    margin-top:  5px;
+
+.foo_div1 p {
+    margin-top: 5px;
     color: black;
 }
 

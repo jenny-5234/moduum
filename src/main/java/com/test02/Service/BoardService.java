@@ -3,7 +3,6 @@ package com.test02.Service;
 import com.test02.Dto.BoardDto;
 import com.test02.Dto.Pagination;
 import org.springframework.stereotype.Service;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
