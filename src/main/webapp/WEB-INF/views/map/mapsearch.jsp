@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,8 +72,8 @@
                         </select>
                         <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="clustercleared" name="clustercleared">
-                            <label class="custom-control-label" for="clustercleared">클러스터</label>
-                            <img src="../../../css/kakao/KakaoTalk_20200720_170423777.png" style="width: 15px; height: 15px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다"></img>
+                            <label class="custom-control-label" for="clustercleared" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">클러스터</label>
+                            <img src="../../../css/kakao/KakaoTalk_20200720_170423777.png" style="width: 15px; height: 15px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">
                             <%--                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">?</a>--%>
                         </div>
 <%--                        <button type="submit" class="">선택</button>--%>
@@ -88,6 +89,9 @@
                 <form onsubmit="searchPlaces(); return false;" class="keysearch">
                     키워드 : <input type="text" placeholder="지역화폐" value="" id="keyword" size="15">
                     <button type="submit">검색</button>
+                    <%--<div>
+                       값 : ${kakaoc}
+                    </div>--%>
                 </form>
             </div>
         </div>
