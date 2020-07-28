@@ -27,7 +27,7 @@ public class FindMapController {
     public String writeBoard(Model model) throws Exception {
 
 //        log.info("@@@@@@@@@@@@@@@@@@@@@@@"+kakaocount);
-        model.addAttribute("kakaoc", kakaoMapService.getcount());
+//        model.addAttribute("kakaoc", kakaoMapService.getcount());
         return "map/mapsearch";
     }
 }

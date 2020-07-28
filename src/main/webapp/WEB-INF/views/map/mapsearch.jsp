@@ -25,7 +25,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <%-- json 파일을 자바스크립트에서 불러오기 위한 jquery 사용 --%>
 <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
-    <link rel="stylesheet" href="../../../css/navbar.css">
+<%--    <link rel="stylesheet" href="../../../css/navbar.css">--%>
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 <%--    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">--%>
@@ -50,7 +50,7 @@
                     <%-- 선택한 지역을 regionSelection()에 전달 --%>
                     <form onsubmit="regionSelection(); return false;">
                         <select id="area" class="custom-select">
-                            <option value="none" selected>===선택===</option>
+                            <option value="none" selected>지역선택</option>
                             <option value="서울">서울</option>
                             <option value="경기도">경기도</option>
                             <option value="인천">인천</option>
@@ -89,9 +89,6 @@
                 <form onsubmit="searchPlaces(); return false;" class="keysearch">
                     키워드 : <input type="text" placeholder="지역화폐" value="" id="keyword" size="15">
                     <button type="submit">검색</button>
-                    <%--<div>
-                       값 : ${kakaoc}
-                    </div>--%>
                 </form>
             </div>
         </div>
