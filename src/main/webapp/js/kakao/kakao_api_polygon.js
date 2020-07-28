@@ -284,9 +284,9 @@ function makecluster(path, x, y, maplevel) {
             // 로딩 화면 보여줌
             LoadingWithMask();
             // 클러스터를 생성할 json을 jquery를 이용해 불러온다
-            $.get(path, function (data) {
+            $.getJSON(path, function (data) {
                 // 전에 있던 Element와 페이지를 지운다
-                var listEl = document.getElementById('placesList');
+                // var listEl = document.getElementById('placesList');
 
                 // 가져온 json 파일을 이용해 마커 생성
                 var markers = data.map(function (each) {
@@ -311,7 +311,7 @@ function makecluster(path, x, y, maplevel) {
         }, 1000);
     }
     else {
-        $.get(path, function (data) {
+        $.getJSON(path, function (data) {
             SelectedDataPaging(data, 1, path);
         });
 

@@ -34,7 +34,7 @@ html, body {
     bottom: 0;
     width: 340px;
     /*height: 365px;*/
-    margin: 50px 0 30px 10px;
+    margin: 10px 0 30px 10px;
     padding: 5px;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.7);
@@ -202,6 +202,7 @@ html, body {
 
 /* 현재 페이지 번호 색깔 */
 #pagination .on {
+    pointer-events: none;
     font-weight: bold;
     cursor: default;
     color: #777;
@@ -393,7 +394,7 @@ html, body {
 
 #area {
     float: left;
-    width: 100px;
+    width: 120px;
     height: 20px;
     margin-right: 40px;
 }

@@ -39,14 +39,10 @@ $(document).ready(function () {
     });*/
     $("#area").change(function () {
         regionSelection($("#area").val());
-        /*if ($("#area option:selected").val() == "경기도") {
-            $("#clustercleared").prop("disabled", false);
-        }
-        else {
+        if ($("#area option:selected").val() != "경기도") {
             $("#clustercleared").prop("checked", false);
             clusterchecked = false;
-            $("#clustercleared").prop("disabled", true);
-        }*/
+        }
     });
 
     $("#shadowclose").click(function () {
