@@ -39,6 +39,7 @@ tr[class="newslist"] {
 }
 tr[class="newslist"] td[class="listTitle"] {
     text-align: left;
+    cursor: pointer;
 }
 h1 {
     font-size: 20px;

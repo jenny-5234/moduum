@@ -7,5 +7,5 @@
 //     }
 // });
 $(".navbar_Menu").hover(function() {
-    $(this).find(".dept01").stop().fadeToggle(200);
+    $(this).find(".navbar_dept01").stop().fadeToggle(200);
 });

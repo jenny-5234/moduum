@@ -1,30 +1,37 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-body{
+body {
     font-family: "Noto Sans KR", sans-serif !important;
-    width: 90%;
+    /*width: 90%;*/
     /*height: auto;*/
     margin: 0 auto !important;
     padding: 0 !important;
 }
+
+.menubar{
+    width: 90%;
+    margin: 0 auto;
+}
 .container {
-    margin-top: 5%;
-    margin-bottom: 3%;
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
     width: 70%;
-    height: auto;
 }
 
-.YL{
-    width:1400px;
+.YL {
+    width: 1400px;
     height: auto;
     margin: 0 auto;
 }
+
 .description_intro {
     width: 100%;
     height: 1000px;
 
 }
-.description_intro_auto{
+
+.description_intro_auto {
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -34,7 +41,7 @@ body{
     width: 260px;
     float: left;
     padding-bottom: 40px;
-    padding-left: 90px;
+    padding-left: 50px;
     margin-top: 30px;
 }
 
@@ -45,7 +52,7 @@ body{
     font-size: 26px;
     position: relative;
     color: #000;
-    background-image: url("../image/introImages/side_navbar.png");
+    background-image: url("../../image/introImages/side_navbar.png");
     background-repeat: no-repeat;
     font-family: 'Noto Sans KR';
     font-weight: 600;
@@ -65,6 +72,7 @@ body{
     border: 5px solid #f3c36d;
     border-radius: 10px;
 }
+
 .nav_ul {
     color: #333;
     font-size: 1.3rem;
@@ -103,7 +111,8 @@ body{
     color: black;
     font-weight: bold;
 }
-.board-section{
+
+.board-section {
     float: left;
     margin-top: 30px;
     margin-left: 50px;
@@ -112,12 +121,11 @@ body{
 .mainlist {
     text-align: center;
     font-size: 15px;
-    /*background: #f4cb0b;*/
     font-weight: bold;
     background: #f7df96;
 }
 
-td[id="boardid"] {
+td[id="noticeid"] {
     width: 10%;
 }
 
@@ -137,67 +145,17 @@ td[id="count"] {
     width: 10%;
 }
 
-tr[class="boardlist"] {
+tr[class="noticelist"] {
     text-align: center;
 }
 
-tr[class="boardlist"] td[class="listTitle"] {
+tr[class="noticelist"] td[class="listTitle"] {
     text-align: left;
     cursor: pointer;
 }
 
 /* ------------------------------ PAGINTION BEGIN ------------------------------ */
-.wrapper {
-    width: 400px;
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 4px;
-}
-
 .pager {
-    margin: 0 0 3.75rem;
-    font-size: 0;
-    text-align: center;
-}
-.pager__item {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin: 0 2px;
-}
-.pager__item.active .pager__link {
-    background-color: #ffb74d;
-    border-color: #ffb74d;
-    color: #fff;
-    text-decoration: none;
-}
-/*.pagelist a:active {*/
-/*    background-color: red;*/
-/*}*/
-.button {
-    text-align: right;
-    margin: 10px;
-}
-
-#write_btn {
-    padding: 2px;
-    font-size: 15px;
-    background-color: white;
-    color: black;
-    border: 2px solid #f4cb0b;
-    transition-duration: 0.4s;
-}
-
-#write_btn:hover {
-    background-color: #f4cb0b;
-    color: white;
-}
-
-/* ------------------------------ PAGINTION BEGIN ------------------------------ */
-.pager {
-    margin: 0 0 3.75rem;
     font-size: 0;
     text-align: center;
 }
@@ -259,15 +217,36 @@ tr[class="boardlist"] td[class="listTitle"] {
         left: initial;
     }
 }
+/* ------------------------------ PAGINTION END ------------------------------ */
 
-/*footer*/
+/*.button {*/
+/*    text-align: right;*/
+/*    margin: 10px;*/
+/*}*/
+
+/*#write_btn {*/
+/*    padding: 2px;*/
+/*    font-size: 15px;*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    border: 2px solid dodgerblue;*/
+/*    transition-duration: 0.4s;*/
+/*}*/
+
+/*#write_btn:hover {*/
+/*    background-color: dodgerblue;*/
+/*    color: white;*/
+/*}*/
+
+
+/*--------footer--------*/
 footer {
     width: 100%;
     background-color: transparent;
     height: 150px;
     float: left;
     margin-top: 15px;
-    border-top: 2px solid #f3c36d;
+    border-top: 2px solid #f4cb0b;;
 }
 
 .foo_div1 {

@@ -3,12 +3,12 @@
 body{
     width: 90%;
     margin: 0 auto;
-    height: border-box;
+    /*height: border-box;*/
+    height: auto;
     /*font-family: "Noto Sans KR", sans-serif !important;*/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: -0.024em;
     box-sizing: inherit;
-    margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
@@ -243,14 +243,14 @@ hr{
 }
 
 
-/*--------footer--------*/
+/*footer*/
 footer {
     width: 100%;
-    background-color: transparent;
+    background-color:#e8c687bf;
     height: 150px;
     float: left;
     margin-top: 15px;
-    border-top: 2px solid #f4cb0b;;
+    border-top: 3px solid #f3c36d;
 }
 
 .foo_div1 {

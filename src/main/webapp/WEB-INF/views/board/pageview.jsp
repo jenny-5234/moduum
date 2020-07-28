@@ -15,63 +15,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/board/pageview.css" >
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <style>
-        body{
-            width: 90%;
-            margin: 0 auto;
-        }
-        .container {
-            margin: 0 auto;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            width: 70%;
-            height: auto;
-        }
 
-        .box-header {
-            margin: 10px;
-        }
-
-        .view {
-            width: 100%;
-        }
-
-
-        .label {
-            border-radius: 10px;
-            background-color: rgba(153, 197, 243, 0.5);
-            width: 20%;
-            padding: 7px;
-        }
-
-        .textbox {
-            max-height: fit-content;
-            height: 600px;
-            overflow: auto;
-            border: 1px solid lightgray;
-        }
-
-        .buttons {
-            text-align: right;
-            margin: 10px;
-        }
-
-        button {
-            padding: 2px;
-            font-size: 15px;
-            background-color: white;
-            color: black;
-            border: 2px solid dodgerblue;
-            transition-duration: 0.4s;
-        }
-
-        button:hover {
-            background-color: dodgerblue;
-            color: white;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -85,6 +31,8 @@
     <div class="box-header">
         <h3 class="box-title">상세보기</h3>
     </div>
+    <hr class="hr">
+
     <form name="viewForm" method="post" enctype="multipart/form-data">
         <table class="view">
             <tr>

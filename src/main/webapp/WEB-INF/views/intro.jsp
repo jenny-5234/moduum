@@ -185,5 +185,13 @@
 </footer>
 
 </body>
+<%--<script type="text/javascript">--%>
+<%--    $(function () {--%>
+<%--        $('.nav_li').click(function () {--%>
+<%--            $('.nav_li').removeClass();--%>
+<%--            $(this).addClass('on');--%>
+<%--        })--%>
+<%--    })--%>
+<%--</script>--%>
 </html>
 

@@ -11,15 +11,10 @@
 <html style="margin: 0 !important; padding: 0 !important;">
 <head>
     <title>정보마당</title>
-    <link rel="stylesheet" href="/css/boardlist.css">
+    <link rel="stylesheet" href="/css/board/boardlist.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <%--    <script src="/js/bootstrap.js"></script>--%>
-    <style>
-        div {
-            margin: 0px;
-            padding: 0px;
-        }
-    </style>
+
 </head>
 <body>
 
@@ -49,7 +44,27 @@
             </nav>
 
             <div class="board-section">
-                <div style="text-align: right; padding-bottom: 3px;">
+
+                <div class="search_box" style="align : right">
+                    <div class="form-group row justify-content-center">
+                        <div class="w100" style="padding-right:10px">
+                            <select class="form-control form-control-sm" name="searchType" id="searchType">
+
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="writer">작성자</option>
+                            </select>
+                        </div>
+                        <div class="w300" style="padding-right:10px">
+                            <input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: left; padding-bottom: 3px;">
                     총 게시글 수 : ${pagination.listCnt }
                 </div>
                 <form id="Board">
@@ -126,5 +141,14 @@
     function fn_paging(curPage) {
         location.href = "/board/boardlist?curPage=" + curPage;
     }
+
+    $(document).on('click', '#btnSearch', function (e) {
+        e.preventDefault();
+        var url = "${pageContext.request.contextPath}/board/boardlist";
+        url = url + "?searchType=" + $('#searchType').val();
+        url = url + "&keyword=" + $('#keyword').val();
+        location.href = url;
+        console.log(url);
+    });
 </script>
 </html>

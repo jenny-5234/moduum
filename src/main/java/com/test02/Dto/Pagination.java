@@ -9,8 +9,12 @@ public class Pagination {
     private int curPage = 1;         // 현재 페이지
     private int curRange = 1;        // 현재 블럭
 
+    private String search_option;
+    private String keyword;
+
+
     // 총 게시글 수, 페이지 수, 블럭수
-    private int listCnt, pageCnt, rangeCnt ;
+    private int listCnt, pageCnt, rangeCnt;
 
     // 시작페이지, 끝페이지
     private int startPage = 1;

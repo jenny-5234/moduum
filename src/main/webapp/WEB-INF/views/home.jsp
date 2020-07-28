@@ -52,15 +52,15 @@
             <button id="button_effect" onclick="location.href='/map/mapsearch'">가맹점 찾기</button>
         </div>
     </div>
-    <div class="livechattinbox">
-        <div class="box_top_name">
-            <span>실시간 채팅</span>
-            <hr>
-        </div>
-        <div class="chatting_box_insert">
-            <jsp:include page="chatting.jsp"/>
-        </div>
-    </div>
+<%--    <div class="livechattinbox">--%>
+<%--        <div class="box_top_name">--%>
+<%--            <span>실시간 채팅</span>--%>
+<%--            <hr>--%>
+<%--        </div>--%>
+<%--        <div class="chatting_box_insert">--%>
+<%--&lt;%&ndash;            <jsp:include page="chatting.jsp"/>&ndash;%&gt;--%>
+<%--        </div>--%>
+<%--    </div>--%>
     <div class="bannerbox">
         <div class="box_top_name">
             <span>토탈 지역화폐</span>

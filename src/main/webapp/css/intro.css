@@ -2,7 +2,7 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif !important;
-    width: 90%;
+    /*width: 90%;*/
     margin: 0 auto;
 }
 
@@ -10,7 +10,10 @@ body {
 /*    width: 100%;*/
 /*    margin: 0 auto;*/
 /*}*/
-
+.menubar {
+    width: 90%;
+    margin: 0 auto;
+}
 .description_intro {
     width: 100%;
     margin: 0 auto;
@@ -21,7 +24,7 @@ body {
     width: 260px;
     float: left;
     padding-bottom: 40px;
-    padding-left: 90px;
+    padding-left: 50px;
     margin-top: 30px;
 }
 
@@ -91,6 +94,12 @@ body {
     color: black;
     font-weight: bold;
 }
+
+/*.nav_li.on{*/
+/*    background: #f7df71;*/
+/*    !*color: black;*!*/
+/*    !*font-weight: bold;*!*/
+/*}*/
 
 .intorduce {
     width: 900px;
@@ -188,7 +197,7 @@ body {
     height: auto;
     float: left;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .image_div {
@@ -234,7 +243,7 @@ body {
     border-radius: 10px;
     background-color: #f18f18;
     border: none;
-    color: #FFFFFF;
+    color: black;
     text-align: center;
     font-size: 18px;
     padding: 10px;
@@ -242,6 +251,7 @@ body {
     transition: all 0.5s;
     cursor: pointer;
     margin: 10px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 .url-button span {
@@ -282,11 +292,12 @@ body {
     width: 30px;
     height: 30px;
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 70px;
+    bottom: 70px;
     z-index: 1000;
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
 
 #up_button:focus {
@@ -302,11 +313,11 @@ body {
 /*footer*/
 footer {
     width: 100%;
-    background-color: transparent;
+    background-color:#e8c687bf;
     height: 150px;
     float: left;
     margin-top: 15px;
-    border-top: 2px solid #f3c36d;
+    border-top: 3px solid #f3c36d;
 }
 
 .foo_div1 {
