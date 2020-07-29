@@ -19,6 +19,7 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../css/kakao/kakao_api_polygon.css">
 </head>
 
 <body>
@@ -44,8 +45,7 @@
             <hr>
         </div>
         <div class="box_insert">
-            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"
-                 onclick="location.href='/map/mapsearch'"></div>
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
             <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
         </div>
         <div class="map_button">
