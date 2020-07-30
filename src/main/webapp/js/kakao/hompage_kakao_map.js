@@ -1,7 +1,7 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
-        center: new kakao.maps.LatLng(37.49461890613009, 127.02760319558533), // 지도의 중심좌표 37.49461890613009, 127.02760319558533
-        level: 12 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(35.84422370300031, 127.66131429456038), // 지도의 중심좌표 37.49461890613009, 127.02760319558533
+        level: 13 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption),
@@ -10,11 +10,23 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
     // 닫을 수 있는 인포윈도우 객체 생성
     infowindow = new kakao.maps.InfoWindow({zIndex: 1});
 
-// map.setDraggable(false);
-// map.setZoomable(false);
+map.setDraggable(false);
+map.setZoomable(false);
+
+$.getJSON('../../../location/allv3.json', function (geojson) {
+    var data = geojson.features;
+    var coordinates = [];    // 좌표 저장할 배열
+    var name = '';            // 행정 구 이름
+    // 폴리곤 length 만큼 반복
+    $.each(data, function (index, val) {
+        coordinates = val.geometry.coordinates;     // coordinates 에 좌표 저장
+        name = val.properties.SIG_KOR_NM;
+        displayArea2(coordinates, name);       // displayArea 에 좌표, 시 이름, 도시 이름, 다음 시 이름을 전달
+    });
+});
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker(locPosition, message) {
+/*function displayMarker(locPosition, message) {
 
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
@@ -34,7 +46,7 @@ function displayMarker(locPosition, message) {
     infowindow.open(map, marker);
 
     // 지도 중심좌표를 접속위치로 변경합니다
-    map.setCenter(locPosition);
+    // map.setCenter(locPosition);
 
     $.getJSON('../../../location/allv3.json', function (geojson) {
         var data = geojson.features;
@@ -47,8 +59,8 @@ function displayMarker(locPosition, message) {
             displayArea2(coordinates, name);       // displayArea 에 좌표, 시 이름, 도시 이름, 다음 시 이름을 전달
         });
     });
-}
-var locPosition = '';
+}*/
+/*var locPosition = '';
 var message = '';
 
 function getGeoLocation() {
@@ -76,7 +88,7 @@ function getGeoLocation() {
 
         displayMarker(locPosition, message);
     }
-}
+}*/
 
 var polygons = [];
 var tempPath = [];          // 임시로 폴리곤을 넣어둘 변수(다중 폴리곤)
@@ -140,13 +152,32 @@ function displayArea2(coordinates, name) {
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
     kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
         console.log(name);
+        abc(name);
     });
 }
 
-window.addEventListener("load", getGeoLocation);
+// function abc(name) {
+//     switch (name) {
+//         case(??): break;
+//     }
+// }
+
+/*window.addEventListener("load", getGeoLocation);
 // window.addEventListener("resize", getGeoLocation);
 window.onresize = function (event) {
     if (locPosition) {
         displayMarker(locPosition, message);
     }
-}
+}*/
+
+/*
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+    // 클릭한 위도, 경도 정보를 가져옵니다
+    // var latlng = mouseEvent.latLng;
+    var latlng = map.getCenter();
+    console.log(latlng);
+    // console.log(latlng.getLat());
+    // console.log(latlng.getLng());
+
+});*/

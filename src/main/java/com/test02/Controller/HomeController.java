@@ -31,12 +31,14 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping(value = "/mainhome")
+    public String index1(@ModelAttribute("newsDto") NewsDto newsDto,
+                        Model model) throws Exception{
+        List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
 
+        model.addAttribute("newstop5", newstop5);
 
-//    @GetMapping("/home")
-//    public String home() {
-//        return "home";
-//    }
-//
+        return "mainhome";
+    }
 
 }

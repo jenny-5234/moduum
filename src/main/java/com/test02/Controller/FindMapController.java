@@ -31,3 +31,4 @@ public class FindMapController {
         return "map/mapsearch";
     }
 }
+

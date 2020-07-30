@@ -37,14 +37,15 @@ $(document).ready(function () {
     /*$("#area").change(function () {
         regionSelection($("#area").val());
     });*/
-    $("#area").change(function () {
-        regionSelection($("#area").val());
-        if ($("#area option:selected").val() != "경기도") {
-            $("#clustercleared").prop("checked", false);
-            clusterchecked = false;
-        }
-    });
-
+        console.log("테스트 완료" + toto);
+            regionSelection(toto);
+        $("#area").change(function () {
+            // regionSelection($("#area").val());
+            if ($("#area option:selected").val() != "경기도") {
+                $("#clustercleared").prop("checked", false);
+                clusterchecked = false;
+            }
+        });
     $("#shadowclose").click(function () {
         $("#menu_wrap").toggle();
         if ($("#menu_wrap").css("display") == "none") {
@@ -59,7 +60,8 @@ $(document).ready(function () {
 
 });
 function regionSelection() {
-    var selectedCity = document.getElementById('area').value;
+    // var selectedCity = document.getElementById('area').value;
+    var selectedCity = toto;
 
     switch (selectedCity) {
         case("none"):

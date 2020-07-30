@@ -29,7 +29,16 @@
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 <%--    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">--%>
+
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String location = request.getParameter("location");
+
+    %>
 </head>
+<script>
+    var toto = <%=location%>;
+</script>
 <body>
 <%--<div class="nav_container">
     <div class="menubar">
