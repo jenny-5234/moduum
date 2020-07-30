@@ -12,7 +12,7 @@ var clusterchecked = false;
 
 // 폴리곤을 클릭했을 때 똑같은걸 다시 클릭했는지 체크하기 위한 변수 및 선택한 폴리곤에서 검색을 위함
 var polygonSelectCheck = "";
-
+var cityName = "";
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
     $("#area").prop("value", "none");
@@ -27,7 +27,7 @@ function searchPlaces() {
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
     // 폴리곤을 선택한 경우 그 지역을 기준으로 검색
     if (polygonSelectCheck) {
-        ps.keywordSearch(polygonSelectCheck + keyword + "긴급재난지원금", placesSearchCB, {});
+            ps.keywordSearch(cityName + polygonSelectCheck + keyword + "긴급재난지원금", placesSearchCB, {});
     } else {
         deletePolygon(polygons);        // 지도에 표시한 폴리곤을 제거한다
         polygons = [];       // 폴리곤 초기화

@@ -49,7 +49,7 @@ var tempPath = [];          // 임시로 폴리곤을 넣어둘 변수(다중 �
 var path = [];            // 폴리곤 그려줄 path
 
 // 행정구역 폴리곤 지도에 표시
-function displayArea(coordinates, name, city, tname) {
+function displayArea(coordinates, name, city, nextValname) {
     var points = [];        // 중심좌표 구하기 위한 지역구 좌표들
 
     // 좌표 length 만큼 반복
@@ -71,7 +71,7 @@ function displayArea(coordinates, name, city, tname) {
     path.push(tempPath);        // path 에 임시로 저장한 좌표를 푸쉬한다
 
     // 현재 시 이름이 다음 시이름과 다르면
-    if (name != tname) {
+    if (name != nextValname) {
         // 다각형을 생성합니다
         var polygon = new kakao.maps.Polygon({
             map: map, // 다각형을 표시할 지도 객체
@@ -253,6 +253,7 @@ function displayArea(coordinates, name, city, tname) {
                 }
                 // 선택한 폴리곤의 이름을 저장한다
                 polygonSelectCheck = name;
+                cityName = city;
             }
             // 선택했던 폴리곤과 선택한 폴리곤의 이름이 같은 경우
             else {

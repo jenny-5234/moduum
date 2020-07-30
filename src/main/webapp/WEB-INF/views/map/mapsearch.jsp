@@ -77,7 +77,6 @@
                             <option value="광주광역시">광주광역시</option>
                             <option value="전라남도">전라남도</option>
                             <option value="제주도">제주도</option>
-                            <option value="울릉군">울릉군</option>
                         </select>
                         <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="clustercleared" name="clustercleared">
