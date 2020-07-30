@@ -39,8 +39,6 @@
                     <img src="/image/homeImages/testgraph1.png"/>
                 </div>
                 <div class="banner_box">
-                    <h4>배너</h4>
-                    <hr>
                     <div class="banner_view">
                         <jsp:include page="banner.jsp"/>
                     </div>
@@ -53,9 +51,9 @@
                 <section class="map_container">
                     <div>
                         <div class="map_box">
-                            <h4>지도 검색</h4>
-                            <hr>
-                            <div id="map" style="width:100%;height:580px;position:relative;overflow:hidden;"></div>
+<%--                            <h4>지도 검색</h4>--%>
+<%--                            <hr>--%>
+                            <div id="map" style="width:100%;height:630px;position:relative;overflow:hidden;"></div>
                             <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
                         </div>
                         <div class="mapinfo_box">

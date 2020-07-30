@@ -40,5 +40,13 @@ public class HomeController {
 
         return "mainhome";
     }
+    @RequestMapping(value = "/testhome")
+    public String index2(@ModelAttribute("newsDto") NewsDto newsDto,
+                         Model model) throws Exception{
+        List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
 
+        model.addAttribute("newstop5", newstop5);
+
+        return "testhome";
+    }
 }
