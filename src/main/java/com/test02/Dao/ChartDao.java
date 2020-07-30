@@ -20,5 +20,4 @@ public class ChartDao {
     public List<ChartDto> getChartValue(ChartDto chartDto) throws Exception{
         return sqlSession.selectList( namespace + ".getChartValue", chartDto);
     }
-
 }

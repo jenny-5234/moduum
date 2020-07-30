@@ -15,6 +15,8 @@
                    type="com.test02.Dto.NewsDto"/>
         <typeAlias alias="ChartDto"
                    type="com.test02.Dto.ChartDto"/>
+        <typeAlias alias="Chart2Dto"
+                   type="com.test02.Dto.Chart2Dto"/>
     </typeAliases>
 
     <!-- SQL과 매핑을 위한 매핑정보 xml -->
@@ -24,5 +26,6 @@
         <mapper resource="mybatis/mappers/Notice.xml"/>
         <mapper resource="mybatis/mappers/News.xml"/>
         <mapper resource="mybatis/mappers/Chart.xml"/>
+        <mapper resource="mybatis/mappers/Chart2.xml"/>
     </mappers>
 </configuration>
