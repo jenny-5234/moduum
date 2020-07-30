@@ -134,10 +134,6 @@ function regionSelection() {
             getjson('../../../location/jeju.json', '제주도');
             panTo(33.48892014636885, 126.49822643823065);
             break;
-        case("울릉군"):
-            getjson('../../../location/ulleungdo.json', '울릉군');
-            panTo(37.484448241659884, 130.905715980063);
-            break;
         default:
             alert("오류가 발생하였습니다. 관리자에게 문의해주세요.");
     }
