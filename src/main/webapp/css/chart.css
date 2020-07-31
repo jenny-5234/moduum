@@ -1,0 +1,65 @@
+.charts_box{
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.lineChartDiv{
+    float: left;
+    width: 50%;
+    height: 40%;
+}
+
+.lineChartDiv2{
+    float: left;
+    width: 50%;
+    height: 40%;
+}
+
+.columnchart{
+    float: left;
+    width: 50%;
+    height: 60%;
+}
+
+#lineChart{
+    width: 100%;
+    height: 100%;
+}
+
+#lineChart2{
+    width: 100%;
+    height: 100%;
+}
+
+#ColumnChart1{
+    width: 100%;
+    height: 80%;
+}
+
+.charts_button{
+    height: 20%;
+    text-align: center;
+}
+.charts_button button{
+    border: 1px solid skyblue;
+    color:white;
+    background-color: skyblue;
+    padding: 5px;
+}
+#b1{
+    margin-right: -6px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#b2{
+    margin-right: -7px;
+}
+#b3{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.charts_button button:hover{
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+}

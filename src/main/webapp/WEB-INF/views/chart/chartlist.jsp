@@ -18,6 +18,7 @@
     <!-- google chart script-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <%--    <script type="text/javascript" src="ajax-sample.js"></script>--%>
+    <link rel="stylesheet" href="/css/chart.css">
     <script type="text/javascript">
         // google.load("visualization", "1", {packages:["corechart"]});
         // google.charts.load('current',{'packages':['corechart']});
@@ -43,8 +44,8 @@
                 title: '지역화폐 사용량',
                 pointSize: 3,
                 backgroundColor: 'white',
-                width: 800,
-                height: 600,
+                // width: 800,
+                // height: 600,
                 animation: {startup: true, duration: 1000, easing: 'in'},
                 titleTextStyle:{
                     color: "#BDBDBD"
@@ -109,7 +110,7 @@
                 pointSize: 3,
                 backgroundColor: 'white',
                 // width: 800,
-                // height: 900,
+                // height: 600,
                 titleTextStyle:{
                     color: "#BDBDBD"
                 },
@@ -172,9 +173,6 @@
             chart2.draw(data2, google.charts.Line.convertOptions(options2));
         }
 
-        $(document).ready(function(){
-            drawChart3();
-        });
         function drawChart3(){
             var data3 = google.visualization.arrayToDataTable([
                 ['날짜', '10대 사용','20대 사용', '30대사용', '40대사용', '50대 사용'],
@@ -192,8 +190,8 @@
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
-                width: 1800,
-                height: 900,
+                // width: 800,
+                // height: 600,
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 bar:{
                     groupWidth: '70%'
@@ -308,19 +306,24 @@
     </script>
 </head>
 <body>
-<table>
-    <tr>
-        <td><div id="lineChart" style="width:800px; height:600px;"></div></td>
-        <td><div id="lineChart2" style="width:800px; height:600px;"></div></td>
-    </tr>
-
-    <tr>
-        <td colspan="2"><div id="ColumnChart1"></div></td>
-    </tr>
-    <tr>
-        <td><button id="b1" disabled>prev</button><button id="b2">next</button><button id="b3">zoom</button></td>
-    </tr>
-
-</table>
+<div class="charts_box">
+    <div class="lineChartDiv">
+        <div id="lineChart"></div>
+    </div>
+    <div class="lineChartDiv2">
+        <div id="lineChart2"></div>
+    </div>
+    <div class="columnchart">
+        <div id="ColumnChart1"></div>
+        <div class="charts_button">
+            <button id="b1" class="ColumnChart_button" disabled>prev</button>
+            <button id="b2" class="ColumnChart_button">next</button>
+            <button id="b3" class="ColumnChart_button">zoom</button>
+        </div>
+    </div>
+<%--    <div class="columnchart_button">--%>
+<%--        <button id="b1" disabled>prev</button><button id="b2">next</button><button id="b3">zoom</button>--%>
+<%--    </div>--%>
+</div>
 </body>
 </html>
