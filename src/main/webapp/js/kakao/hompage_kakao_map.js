@@ -152,7 +152,13 @@ function displayArea2(coordinates, name) {
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
     kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
         console.log(name);
-        abc(name);
+        switch (name) {
+            case("서울"):
+                $(".logo_image").attr('src', '../../../image/homeImages/제로페이1.jpg');
+                $(".info_info1").text('서울');
+                break;
+            default: break;
+        }
     });
 }
 

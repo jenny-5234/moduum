@@ -47,39 +47,63 @@
                                      src="/image/introImages/gyunggi1-1.png">
                             </div>
                             <div class="sub_menuinfo_text">
-                                <span>가맹점 찾기</span>
+                                <ul class="sub_info">
+                                    <li class="info_title">발행 주체</li>
+                                    <span class="info_info1"></span>
+                                </ul>
+                                <ul class="sub_info">
+                                    <li class="info_title">사용처</li>
+                                    <span class="info_info2"></span>
+                                </ul>
+                                <ul class="sub_info">
+                                    <li class="info_title">제한업소 </li>
+                                    <span class="info_info3"></span>
+                                </ul>
+                                <ul class="sub_info">
+                                    <li class="info_title">고객센터 </li>
+                                    <span class="info_info4"></span>
+                                </ul>
                             </div>
                         </div>
+
                         <div class="sub_menuinfo_bottom">
                             <div class="sub_menuinfo_btn">
-                                <a id="hompage_button"
-                                   onclick="location.href='/map/mapsearch'">
-                                    <%--<img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">
-                                    <span>홈페이지</span>--%>
+                                <a class="map_hompage_button" id="map_Btn">
+                                    <%--                                   onclick="location.href='/map/mapsearch'">--%>
+                                    <%--                                    <img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">--%>
+                                    <%--                                    <span>홈페이지</span>--%>
                                     <div style="">
                                         <div class="younglot_1">
-                                            <img src="/image/homeImages/home.png" style="width: 35%; height: auto;">
+                                            <img src="/image/homeImages/home.png" style="width: 23%; height: auto;">
                                         </div>
                                         <div class="younglot_2">
                                             <span>홈페이지</span>
                                         </div>
                                     </div>
                                 </a>
-                                <div id="map_button"
-                                     onclick="location.href='/map/mapsearch'">
-                                    <img src="/image/homeImages/address.png" style="width: 10%; height: auto;">
-                                    가맹점 찾기
-                                </div>
+
+                                <a class="map_hompage_button" onclick="location.href='/map/mapsearch'">
+                                    <div style="">
+                                        <div class="younglot_1">
+                                            <img src="/image/homeImages/address.png" style="width: 23%; height: auto;">
+                                        </div>
+                                        <div class="younglot_2">
+                                            <span> 가맹점 찾기</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="graph_box">
                     <h4>현황 그래프</h4>
                     <hr>
                     <img src="/image/homeImages/testgraph1.png"/>
                 </div>
             </div>
+
         </section>
 
         <section class="sub_bottom_box">

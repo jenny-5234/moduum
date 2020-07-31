@@ -28,7 +28,7 @@ public class HomeController {
 
         model.addAttribute("newstop5", newstop5);
 
-        return "home";
+        return "testhome";
     }
 
     @RequestMapping(value = "/mainhome")
@@ -47,6 +47,6 @@ public class HomeController {
 
         model.addAttribute("newstop5", newstop5);
 
-        return "testhome";
+        return "home";
     }
 }
