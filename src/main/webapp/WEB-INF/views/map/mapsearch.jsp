@@ -13,7 +13,8 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
 <%--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,17 +29,7 @@
 <%--    <link rel="stylesheet" href="../../../css/navbar.css">--%>
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
-<%--    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">--%>
-
-    <%
-        request.setCharacterEncoding("UTF-8");
-        String location = request.getParameter("location");
-
-    %>
 </head>
-<script>
-    var toto = <%=location%>;
-</script>
 <body>
 <%--<div class="nav_container">
     <div class="menubar">
@@ -56,32 +47,34 @@
         <div class="option">
             <div>
                 <div>
+                    <span class="logo" id="logo"><a href="../"><img src="/image/homeImages/modum-logo.png" style="width: 340px;"></a></span>
+                    <hr>
                     <%-- 선택한 지역을 regionSelection()에 전달 --%>
                     <form onsubmit="regionSelection(); return false;">
                         <select id="area" class="custom-select">
                             <option value="none" selected>지역선택</option>
-                            <option value="서울">서울</option>
-                            <option value="경기도">경기도</option>
-                            <option value="인천">인천</option>
-                            <option value="대전">대전</option>
-                            <option value="대구">대구</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="울산광역시">울산광역시</option>
                             <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="경기도">경기도</option>
                             <option value="강원도">강원도</option>
                             <option value="충청북도">충청북도</option>
                             <option value="충청남도">충청남도</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
                             <option value="경상북도">경상북도</option>
                             <option value="경상남도">경상남도</option>
-                            <option value="부산광역시">부산광역시</option>
-                            <option value="울산광역시">울산광역시</option>
-                            <option value="전라북도">전라북도</option>
-                            <option value="광주광역시">광주광역시</option>
-                            <option value="전라남도">전라남도</option>
-                            <option value="제주도">제주도</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
                         </select>
                         <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="clustercleared" name="clustercleared">
-                            <label class="custom-control-label" for="clustercleared" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">클러스터</label>
-                            <img src="../../../css/kakao/KakaoTalk_20200720_170423777.png" style="width: 15px; height: 15px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">
+                            <label class="custom-control-label" for="clustercleared">클러스터</label>
+                            <img src="../../../css/kakao/Help_icon.png" style="width: 20px; height: 20px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">
                             <%--                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">?</a>--%>
                         </div>
 <%--                        <button type="submit" class="">선택</button>--%>

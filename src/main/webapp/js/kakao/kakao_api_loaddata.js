@@ -68,24 +68,24 @@ function regionSelection() {
             // 선택했을 때 마커, 폴리곤, itemElement, page, 클러스터를 초기화
             initialization();
             break;
-        case("서울"):
-            getjson('../../../location/seouldetail.json', '서울');
+        case("서울특별시"):
+            getjson('../../../location/seouldetail.json', '서울특별시');
             panTo(37.566833213145486, 126.97865508601613);
             break;
         case("경기도"):
             getjson('../../../location/ggidodetail.json', '경기도');
             panTo(37.552246098709894, 127.08265827817051);
             break;
-        case("인천"):
-            getjson('../../../location/incheon.json', '인천');
+        case("인천광역시"):
+            getjson('../../../location/incheon.json', '인천광역시');
             panTo(37.45601575635058, 126.70526932805312);
             break;
-        case("대전"):
-            getjson('../../../location/daejeon.json', '대전');
+        case("대전광역시"):
+            getjson('../../../location/daejeon.json', '대전광역시');
             panTo(36.35054566698088, 127.38483209496621);
             break;
-        case("대구"):
-            getjson('../../../location/daegu.json', '대구');
+        case("대구광역시"):
+            getjson('../../../location/daegu.json', '대구광역시');
             panTo(35.87139021883816, 128.60180236999602);
             break;
         case("세종특별자치시"):
@@ -132,8 +132,8 @@ function regionSelection() {
             getjson('../../../location/jeollanamdo수정.json', '전라남도');
             panTo(34.81609068924449, 126.46278335953988);
             break;
-        case("제주도"):
-            getjson('../../../location/jeju.json', '제주도');
+        case("제주특별자치도"):
+            getjson('../../../location/jeju.json', '제주도특별자치도');
             panTo(33.48892014636885, 126.49822643823065);
             break;
         default:
