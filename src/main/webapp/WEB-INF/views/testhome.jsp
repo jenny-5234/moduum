@@ -33,7 +33,7 @@
         <section class="sub_top_container">
             <div class="map_box">
                 <div id="map" style="width:100%;height:710px;position:relative;overflow:hidden;"></div>
-                <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
+                <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
             </div>
 
             <div class="info_graph_box">
@@ -99,7 +99,7 @@
                                     </div>
                                 </a>
 
-                                <a class="map_hompage_button" onclick="location.href='/map/mapsearch'">
+                                <a class="map_hompage_button">
                                     <div style="">
                                         <div class="younglot_1">
                                             <img src="/image/homeImages/address.png" style="width: 23%; height: auto;">

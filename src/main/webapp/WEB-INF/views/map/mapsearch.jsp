@@ -31,6 +31,10 @@
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
 </head>
 <body>
+<%
+    // TODO: 영웅다영님이 고쳐주실거
+    String region = request.getParameter("region");
+%>
 <%--<div class="nav_container">
     <div class="menubar">
         <%@include file="../navbar.jsp" %>
@@ -105,5 +109,15 @@
 <script src="../../../js/kakao/kakao_api_loaddata.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_api_pagechange.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>
+<script>
+    var region = "<%=region%>";
+    // console.log(region);
+    if (region === "null") {
+        regionSelection("none");
+    }
+    else {
+        regionSelection(region);
+    }
+</script>
 </body>
 </html>

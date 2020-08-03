@@ -346,13 +346,13 @@ function removeMarker() {
 }
 
 // 입력받은 좌표로 부드럽게 이동
-function panTo(lat, lng) {
+function panTo(lat, lng, lev) {
     // 이동할 위도 경도 위치를 생성합니다
     var moveLatLon = new kakao.maps.LatLng(lat, lng);
     // var level = map.getLevel();
     // 지도 중심을 부드럽게 이동시킵니다
     // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-    map.setLevel('11');
+    map.setLevel(lev);
     map.panTo(moveLatLon);
 }
 
