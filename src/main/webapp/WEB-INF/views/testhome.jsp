@@ -44,25 +44,42 @@
                         <div class="sub_menuinfo_top">
                             <div class="sub_menuinfo_logo">
                                 <img class="logo_image"
-                                     src="/image/introImages/gyunggi1-1.png">
+                                     src="/image/logoImage/경기도.png">
                             </div>
                             <div class="sub_menuinfo_text">
-                                <ul class="sub_info">
-                                    <li class="info_title">발행 주체</li>
-                                    <span class="info_info1"></span>
-                                </ul>
-                                <ul class="sub_info">
-                                    <li class="info_title">사용처</li>
-                                    <span class="info_info2"></span>
-                                </ul>
-                                <ul class="sub_info">
-                                    <li class="info_title">제한업소 </li>
-                                    <span class="info_info3"></span>
-                                </ul>
-                                <ul class="sub_info">
-                                    <li class="info_title">고객센터 </li>
-                                    <span class="info_info4"></span>
-                                </ul>
+                                <div class="sub_info">
+                                    <div class="yahoo1">
+                                        <div class="info_title">발행 주체</div>
+                                    </div>
+                                    <div class="yahoo2">
+                                        <div class="info_info1"></div>
+                                    </div>
+                                </div>
+                                <div class="sub_info">
+                                    <div class="yahoo1">
+                                        <div class="info_title">사용처</div>
+                                    </div>
+                                    <div class="yahoo2">
+                                        <div class="info_info2"></div>
+                                    </div>
+                                </div>
+                                <div class="sub_info">
+                                    <div class="yahoo1">
+                                        <div class="info_title">제한업소</div>
+                                    </div>
+                                    <div class="yahoo2">
+                                        <div class="info_info3"></div>
+                                    </div>
+                                </div>
+                                <div class="sub_info">
+                                    <div class="yahoo1">
+                                        <div class="info_title">고객센터</div>
+                                    </div>
+                                    <div class="yahoo2">
+                                        <div class="info_info4"></div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

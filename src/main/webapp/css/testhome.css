@@ -98,35 +98,27 @@ h4 {
 }
 
 .sub_menuinfo_logo {
-    width: 35%;
+    width: 200px;
     height: auto;
     text-align: center;
     float: left;
 }
 
 .logo_image {
-    width: 60%;
+    width: 70%;
     height: auto;
-    padding: 10px;
+    /* padding: 10px; */
+    margin-top: 20px;
 }
 
 .sub_menuinfo_text {
-    width: 50%;
+    width: 70%;
     height: auto;
     margin-top: 15px;
-    padding-left: 20px;
+    padding-left: 10px;
     float: left;
 }
-.sub_info {
-    width: 50%;
-    height: 40px;
-    font-size: 18px;
-    list-style: none;
-    position: relative;
-}
-.info_title{
-    margin-left: 10px;
-}
+
 .info_title:before{
     content: '';
     display: block;
@@ -137,12 +129,45 @@ h4 {
     left: 1px;
     top: 8px;
 }
+.info_info1, .info_info2, .info_info3, .info_info4{
+    width: 100%;
+    height: 30px;
+    margin-left: 30px;
+}
 .younglot_1 {
     width: 40%;
     height: 50px;
     float: left;
     margin-top: 5px;
     text-align: right;
+}
+
+
+
+
+.sub_info {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    list-style: none;
+    position: relative;
+}
+
+.yahoo1{
+    width : 30%;
+    height: 40px;
+}
+
+.info_title{
+    float: left;
+    width: 100px;
+    margin-left: 15px;
+    /*display: block;*/
+}
+
+.yahoo2{
+    width : 50%;
+    height: 40px;
 }
 
 .younglot_2 {

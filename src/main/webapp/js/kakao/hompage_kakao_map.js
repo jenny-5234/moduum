@@ -154,10 +154,48 @@ function displayArea2(coordinates, name) {
         console.log(name);
         switch (name) {
             case("서울"):
-                $(".logo_image").attr('src', '../../../image/homeImages/제로페이1.jpg');
-                $(".info_info1").text('서울');
+                $(".logo_image").attr('src', '../../../image/logoImage/서울.png');
+                $(".info_info1").text('서울특별시');
+                $(".info_info2").text('제로페이 스티커가 붙어있는 소상공인 가맹점');
+                $(".info_info3").text(' ');
+                $(".info_info4").text('1670-0582');
                 break;
-            default: break;
+
+            case("인천"):
+                $(".logo_image").attr('src', '../../../image/logoImage/인천.png');
+                $(".info_info1").text('인천광역시');
+                $(".info_info2").text('인천에 사업자 등록을 한 점포(약 17만 5천개)');
+                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓,일부 프랜차이즈 직영점');
+                $(".info_info4").text('1811-8668 | 1899-4118');
+                break;
+
+            case("경기도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/경기도.png');
+                $(".info_info1").text('경기도 31개 시·군');
+                $(".info_info2").text(' 발행지역 해당 시 · 군 지역내에 등록된 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 기업형 슈퍼마켓, 유흥주점 제외');
+                $(".info_info4").text('코나아이 고객센터(1899-7997)');
+                break;
+
+            case("세종특별자치시"):
+                $(".logo_image").attr('src', '../../../image/logoImage/세종.jpg');
+                $(".info_info1").text('세종특별자치시');
+                $(".info_info2").text('세종지역 내 IC카드 단말기가 설치된 점포');
+                $(".info_info3").text('대형마트, 기업형슈퍼마켓, 유흥·사행업소,일부 프랜차이즈 직영점');
+                $(".info_info4").text('1577-5628');
+                break;
+
+            case("부산"):
+                $(".logo_image").attr('src', '../../../image/logoImage/부산.png');
+                $(".info_info1").text('부산광역시');
+                $(".info_info2").text('사업장이 부산광역시인 신용카드 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 프랜차이즈 직영점,\n' +' 주소가 부산이 아닌 사업장');
+                $(".info_info4").text('1577-1432');
+                break;
+
+            default:
+                break;
+
         }
     });
 }
