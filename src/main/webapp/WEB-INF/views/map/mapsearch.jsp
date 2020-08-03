@@ -13,7 +13,8 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
 <%--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,7 +29,6 @@
 <%--    <link rel="stylesheet" href="../../../css/navbar.css">--%>
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_polygon.css">
     <link rel="stylesheet" type="text/css" href="../../../css/kakao/kakao_api_search.css">
-<%--    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">--%>
 </head>
 <body>
 <%--<div class="nav_container">
@@ -47,6 +47,8 @@
         <div class="option">
             <div>
                 <div>
+                    <span class="logo" id="logo"><a href="../"><img src="/image/homeImages/modum-logo.png" style="width: 340px;"></a></span>
+                    <hr>
                     <%-- 선택한 지역을 regionSelection()에 전달 --%>
                     <form onsubmit="regionSelection(); return false;">
                         <select id="area" class="custom-select">
@@ -71,8 +73,8 @@
                         </select>
                         <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="clustercleared" name="clustercleared">
-                            <label class="custom-control-label" for="clustercleared" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">클러스터</label>
-                            <img src="../../../css/kakao/KakaoTalk_20200720_170423777.png" style="width: 15px; height: 15px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">
+                            <label class="custom-control-label" for="clustercleared">클러스터</label>
+                            <img src="../../../css/kakao/Help_icon.png" style="width: 20px; height: 20px";  data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">
                             <%--                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="경기도만 가능합니다">?</a>--%>
                         </div>
 <%--                        <button type="submit" class="">선택</button>--%>
