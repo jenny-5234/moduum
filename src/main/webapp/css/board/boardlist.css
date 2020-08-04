@@ -104,6 +104,7 @@ body {
     background-position: 225px center;
     background-repeat: no-repeat;
     background-image: none;
+    cursor:pointer;
 }
 
 .nav_li:hover {
