@@ -127,7 +127,7 @@ function regionSelection(city) {
             break;
         case("광주광역시"):
             getjson('../../../location/gwangju.json', '광주광역시');
-            panTo(35.160108723530996, 126.85163269066601,11);
+            panTo(35.160108723530996, 126.85163269066601,8);
             break;
         case("전라남도"):
             getjson('../../../location/jeollanamdo수정.json', '전라남도');

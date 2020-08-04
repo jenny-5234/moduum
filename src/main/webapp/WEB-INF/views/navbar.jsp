@@ -41,11 +41,11 @@
 
             </ul>
         </li>
-        <li class="top-menu" style="width: 16%"><span><a class="main-menu" href="/notice/noticeList">고객지원</a></span>
-            <ul class="dept01" style="width: 16%">
-                <li class="dept01_li"><a class="sub-menu" href="/notice/noticeList">공지사항</a></li>
-                <li class="dept01_li"><a class="sub-menu" href="/board/boardlist">정보마당</a></li>
-                <li class="dept01_li"><a class="sub-menu" href="/mail/feedback">문의사항</a></li>
+        <li class="navbar_top-menu" style="width: 16%"><span><a class="navbar_main-menu" href="/notice/noticeList">고객지원</a></span>
+            <ul class="navbar_dept01" style="width: 16%">
+                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/notice/noticeList">공지사항</a></li>
+                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/board/boardlist">정보마당</a></li>
+                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/mail/feedback">문의사항</a></li>
             </ul>
         </li>
         </li>

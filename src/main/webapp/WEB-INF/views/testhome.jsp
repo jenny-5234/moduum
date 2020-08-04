@@ -85,7 +85,7 @@
 
                         <div class="sub_menuinfo_bottom">
                             <div class="sub_menuinfo_btn">
-                                <a class="map_hompage_button" id="map_Btn">
+                                <a class="homepage_button" id="home_Btn" href="#">
                                     <%--                                   onclick="location.href='/map/mapsearch'">--%>
                                     <%--                                    <img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">--%>
                                     <%--                                    <span>홈페이지</span>--%>
@@ -99,7 +99,7 @@
                                     </div>
                                 </a>
 
-                                <a class="map_hompage_button">
+                                <a class="map_button" id="map_Btn">
                                     <div style="">
                                         <div class="younglot_1">
                                             <img src="/image/homeImages/address.png" style="width: 23%; height: auto;">

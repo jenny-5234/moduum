@@ -26,7 +26,6 @@ $.getJSON('../../../location/allv3.json', function (geojson) {
 });
 
 
-
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 /*function displayMarker(locPosition, message) {
 
@@ -162,14 +161,16 @@ function displayArea2(coordinates, name) {
                 $(".info_info2").text('제로페이 스티커가 붙어있는 소상공인 가맹점');
                 $(".info_info3").text(' ');
                 $(".info_info4").text('1670-0582');
+                $(".homepage_button").attr("href", "https://www.zeropay.or.kr/main.do");
                 break;
 
             case("인천광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/인천.png');
                 $(".info_info1").text('인천광역시');
                 $(".info_info2").text('인천에 사업자 등록을 한 점포(약 17만 5천개)');
-                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓,일부 프랜차이즈 직영점');
+                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 일부 프랜차이즈 직영점');
                 $(".info_info4").text('1811-8668 | 1899-4118');
+                $(".homepage_button").attr("href", "https://incheoneum.or.kr/");
                 break;
 
             case("경기도"):
@@ -178,22 +179,70 @@ function displayArea2(coordinates, name) {
                 $(".info_info2").text(' 발행지역 해당 시 · 군 지역내에 등록된 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 기업형 슈퍼마켓, 유흥주점 제외');
                 $(".info_info4").text('코나아이 고객센터(1899-7997)');
+                $(".homepage_button").attr("href", "http://www.gmoney.or.kr/");
                 break;
 
             case("세종특별자치시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/세종.jpg');
                 $(".info_info1").text('세종특별자치시');
                 $(".info_info2").text('세종지역 내 IC카드 단말기가 설치된 점포');
-                $(".info_info3").text('대형마트, 기업형슈퍼마켓, 유흥·사행업소,일부 프랜차이즈 직영점');
+                $(".info_info3").text('대형마트, 기업형슈퍼마켓, 유흥·사행업소, 일부 프랜차이즈 직영점');
                 $(".info_info4").text('1577-5628');
+                $(".homepage_button").attr("href", "https://www.sejong.go.kr/life/sub07_01.do");
                 break;
 
             case("부산광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/부산.png');
                 $(".info_info1").text('부산광역시');
                 $(".info_info2").text('사업장이 부산광역시인 신용카드 가맹점');
-                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 프랜차이즈 직영점,\n' +' 주소가 부산이 아닌 사업장');
+                $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 프랜차이즈 직영점');
                 $(".info_info4").text('1577-1432');
+                $(".homepage_button").attr("href", "https://busandong100.or.kr:447/w/main.asp#none");
+                break;
+
+            case("대전"):
+                $(".logo_image").attr('src', '../../../image/logoImage/대전.png');
+                $(".info_info1").text('대전광역시');
+                $(".info_info2").text('대전 내 IC카드 단말기 사용 점포');
+                $(".info_info3").text('백화점 대규모 점포, 유흥·사행업소, 온라인 결제 등 일부는 제외');
+                $(".info_info4").text('1661-9645');
+                $(".homepage_button").attr("href", "https://www.ontongdaejeon.kr/main.do");
+                break;
+
+            case("대구"):
+                $(".logo_image").attr('src', '../../../image/logoImage/대구.png');
+                $(".info_info1").text('대구광역시 | 대구은행');
+                $(".info_info2").text('대구 내 카드 단말기 설치된 가맹점 어디든 이용 가능');
+                $(".info_info3").text('온라인업종, 백화점, 대형마트, 유흥, 사행성 업종');
+                $(".info_info4").text('BDG대구은행 고객센터(1566-5050)');
+                $(".homepage_button").attr("href", "http://xn--2e0bu9hsujd1k8xofxc.kr/");
+                break;
+
+            case("광주광역시"):
+                $(".logo_image").attr('src', '../../../image/logoImage/광주.png');
+                $(".info_info1").text('광주광역시 | 광주은행');
+                $(".info_info2").text('광주광역시 소재 9만여개 가맹업소 (비씨카드 등록된 가맹점 주소 기준)');
+                $(".info_info3").text('백화점, 대형마트, 기업형 SSM, 유흥업소, 온라인 가맹점');
+                $(".info_info4").text('광주은행 카드헬프센터 ☎ 1577-3650');
+                $(".homepage_button").attr("href", "https://www.gwangju.go.kr/contentsView.do?pageId=www320");
+                break;
+
+            case("울산광역시"):
+                $(".logo_image").attr('src', '../../../image/logoImage/울산.jpg');
+                $(".info_info1").text('울산광역시');
+                $(".info_info2").text('울산시 내 모든 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 사행성업체, 주유소, 종합병원 ');
+                $(".info_info4").text('1899-6946');
+                $(".homepage_button").attr("href", "http://www.ulsan.go.kr/economy/intro");
+                break;
+
+            case("강원도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/강원도.jpg');
+                $(".info_info1").text('강원도 | 제로페이 ');
+                $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소, 세탁소 등 도내 강원상품권 사용점');
+                $(".info_info3").text('');
+                $(".info_info4").text('033-249-3389, 3219');
+                $(".homepage_button").attr("href", "https://gwgc.gwd.go.kr/");
                 break;
 
             default:
@@ -205,7 +254,7 @@ function displayArea2(coordinates, name) {
 }
 
 function sendValue(val) {
-    $(".map_hompage_button").on('click', function () {
+    $(".map_button").on('click', function () {
         location.href = "/map/mapsearch?region=" + val;
     });
 }
