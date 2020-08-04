@@ -1,6 +1,7 @@
 package com.test02.Controller;
 
 import com.test02.Dto.Chart2Dto;
+import com.test02.Dto.Chart3Dto;
 import com.test02.Dto.ChartDto;
 import com.test02.Dto.SpendDataDto;
 import com.test02.Service.ChartServiceImpl;
@@ -27,9 +28,10 @@ public class ChartController {
     ChartServiceImpl chartService;
 
     @RequestMapping("/chartlist")
-    public String chartlist(Model model, @ModelAttribute("chartDto") ChartDto chartDto, Chart2Dto chart2Dto) {
+    public String chartlist(Model model, @ModelAttribute("chartDto") ChartDto chartDto, Chart2Dto chart2Dto, Chart3Dto chart3Dto) {
         List<ChartDto> chart = chartService.getChartValue(chartDto);
         model.addAttribute("chart", chart);
+
 
         List<Chart2Dto> chart2 = chartService.getChart2Value(chart2Dto);
 
@@ -46,6 +48,16 @@ public class ChartController {
 
         //model 에 박음
         model.addAttribute("chart2", spendDataDtos);
+
+        List<Chart3Dto> chart3 = chartService.getChart3Value(chart3Dto);
+        model.addAttribute("chart3", chart3);
+
+        List<Chart3Dto> chart4 = chartService.getChart4Value(chart3Dto);
+        model.addAttribute("chart4", chart4);
+
+        List<Chart3Dto> chart5 = chartService.getChart5Value(chart3Dto);
+        model.addAttribute("chart5", chart5);
+
 
         return "chart/chartlist";
     }

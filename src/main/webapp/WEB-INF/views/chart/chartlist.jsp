@@ -20,12 +20,13 @@
 <%--    <script type="text/javascript" src="ajax-sample.js"></script>--%>
     <link rel="stylesheet" href="/css/chart.css">
     <script type="text/javascript">
-        // google.load("visualization", "1", {packages:["corechart"]});
-        // google.charts.load('current',{'packages':['corechart']});
         google.charts.load('current',{'packages':['corechart','bar','line']});
         google.setOnLoadCallback(drawChart);
         google.setOnLoadCallback(drawChart2);
         google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+        google.charts.setOnLoadCallback(drawChart5);
+        google.charts.setOnLoadCallback(drawChart6);
 
         function drawChart(){
             var data = google.visualization.arrayToDataTable([
@@ -41,14 +42,12 @@
             date_format.format(data, 0);
 
             var options = {
-                title: '지역화폐 사용량',
+                title: '지역화폐 사용량 및 충전량',
                 pointSize: 3,
                 backgroundColor: 'white',
-                // width: 800,
-                // height: 600,
-                animation: {startup: true, duration: 1000, easing: 'in'},
+                animation: {startup: true, duration: 1000, easing: 'in'},   // 그래프 에니메이션
                 titleTextStyle:{
-                    color: "#BDBDBD"
+                    color: "black",
                 },
                 series:{    // 선 색상
                     0:{
@@ -78,7 +77,7 @@
                     },
                     baselineColor:"black"
                 },
-                legend:{    // 항목
+                legend:{    // 항목(범례)
                     textStyle:{
                         fontSize: 11,
                         color: "#8C8C8C"
@@ -93,7 +92,7 @@
         }
 
         function drawChart2(){
-            var data2 = google.visualization.arrayToDataTable([
+            var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대 사용','20대 사용', '30대사용', '40대사용', '50대 사용'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
                 ['${chart2.date}', ${chart2.age_20}, ${chart2.age_30}, ${chart2.age_40}, ${chart2.age_50}, ${chart2.age_60}]
@@ -103,16 +102,14 @@
             ]);
 
             var date_format = new google.visualization.DateFormat('yyyy-MM');
-            date_format.format(data2, 0);
+            date_format.format(data, 0);
 
-            var options2 = {
+            var options = {
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
-                // width: 800,
-                // height: 600,
                 titleTextStyle:{
-                    color: "#BDBDBD"
+                    color: "black"
                 },
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 series:{    // 선 색상
@@ -154,12 +151,13 @@
                         fontSize: 9,
                         color: "#8C8C8C"
                     },
+                    viewWindow: {min:0, max:10},
                     gridlines:{ // 중간선
                         color: "#F6F6F6"
                     },
                     baselineColor:"black"
                 },
-                legend:{    // 항목
+                legend:{    // 항목(범례)
                     textStyle:{
                         fontSize: 11,
                         color: "#8C8C8C"
@@ -168,13 +166,63 @@
 
             };
 
-            var chart2 = new google.visualization.LineChart(document.getElementById('lineChart2'));
+            var prevButton = document.getElementById('b4');
+            var nextButton = document.getElementById('b5');
+            var changeZoomButton = document.getElementById('b6');
+            var MAX = 29;
 
-            chart2.draw(data2, google.charts.Line.convertOptions(options2));
+            var chart = new google.visualization.LineChart(document.getElementById('lineChart2'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+
+            drawChart();
+
+            function drawChart(){
+                // 버튼 사용 이벤트
+                prevButton.disabled = true;
+                nextButton.disabled = true;
+                changeZoomButton.disabled = true;
+
+                // 버튼사용시 그래프의 변화
+                google.visualization.events.addListener(chart, 'ready',
+                    function() {
+                        prevButton.disabled = options.hAxis.viewWindow.min <= 0;
+                        nextButton.disabled = options.hAxis.viewWindow.max >= MAX;
+                        changeZoomButton.disabled = false;
+                    });
+                chart.draw(data, options);
+            }
+
+            // 버튼 클릭시 칼럼이 3개씩 넘어감
+            prevButton.onclick = function(){
+                options.hAxis.viewWindow.min -= 6;
+                options.hAxis.viewWindow.max -= 6;
+                drawChart();
+            }
+
+            nextButton.onclick = function(){
+                options.hAxis.viewWindow.min += 6;
+                options.hAxis.viewWindow.max += 6;
+                drawChart();
+            }
+
+            // 확대 및 축소 이벤트
+            var zoomed = false;
+            changeZoomButton.onclick = function(){
+                if(zoomed){
+                    options.hAxis.viewWindow.min = 0;
+                    options.hAxis.viewWindow.max = 10;
+                }else{
+                    options.hAxis.viewWindow.min = 0;
+                    options.hAxis.viewWindow.max = MAX;
+                }
+                zoomed = !zoomed;
+                drawChart();
+            }
         }
 
         function drawChart3(){
-            var data3 = google.visualization.arrayToDataTable([
+            var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대 사용','20대 사용', '30대사용', '40대사용', '50대 사용'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
                 ['${chart2.date}', ${chart2.age_20}, ${chart2.age_30}, ${chart2.age_40}, ${chart2.age_50}, ${chart2.age_60}]
@@ -184,20 +232,18 @@
             ]);
 
             var date_format = new google.visualization.DateFormat('yyyy-MM');
-            date_format.format(data3, 0);
+            date_format.format(data, 0);
 
-            var options3 = {
+            var options = {
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
-                // width: 800,
-                // height: 600,
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 bar:{
                     groupWidth: '70%'
                 },
                 titleTextStyle:{
-                    color: "#BDBDBD"
+                    color: "black"
                 },
                 series:{    // 선 색상
                     0:{
@@ -258,48 +304,151 @@
             var changeZoomButton = document.getElementById('b3');
             var MAX = 29;
 
-            var chart3 = new google.visualization.ColumnChart(document.getElementById('ColumnChart1'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart1'));
 
-            drawChart4();
+            drawChart();
 
-            function drawChart4(){
+            function drawChart(){
+                // 버튼 사용 이벤트
                 prevButton.disabled = true;
                 nextButton.disabled = true;
                 changeZoomButton.disabled = true;
 
-                google.visualization.events.addListener(chart3, 'ready',
+                // 버튼사용시 그래프의 변화
+                google.visualization.events.addListener(chart, 'ready',
                     function() {
-                        prevButton.disabled = options3.hAxis.viewWindow.min <= 0;
-                        nextButton.disabled = options3.hAxis.viewWindow.max >= MAX;
+                        prevButton.disabled = options.hAxis.viewWindow.min <= 0;
+                        nextButton.disabled = options.hAxis.viewWindow.max >= MAX;
                         changeZoomButton.disabled = false;
                     });
-                chart3.draw(data3, options3);
+                chart.draw(data, options);
             }
 
+            // 버튼 클릭시 칼럼이 3개씩 넘어감
             prevButton.onclick = function(){
-                options3.hAxis.viewWindow.min -= 3;
-                options3.hAxis.viewWindow.max -= 3;
-                drawChart4();
+                options.hAxis.viewWindow.min -= 3;
+                options.hAxis.viewWindow.max -= 3;
+                drawChart();
             }
 
             nextButton.onclick = function(){
-                options3.hAxis.viewWindow.min += 3;
-                options3.hAxis.viewWindow.max += 3;
-                drawChart4();
+                options.hAxis.viewWindow.min += 3;
+                options.hAxis.viewWindow.max += 3;
+                drawChart();
             }
 
+            // 확대 및 축소 이벤트
             var zoomed = false;
             changeZoomButton.onclick = function(){
                 if(zoomed){
-                    options3.hAxis.viewWindow.min = 0;
-                    options3.hAxis.viewWindow.max = 7;
+                    options.hAxis.viewWindow.min = 0;
+                    options.hAxis.viewWindow.max = 7;
                 }else{
-                    options3.hAxis.viewWindow.min = 0;
-                    options3.hAxis.viewWindow.max = MAX;
+                    options.hAxis.viewWindow.min = 0;
+                    options.hAxis.viewWindow.max = MAX;
                 }
                 zoomed = !zoomed;
-                drawChart4();
+                drawChart();
             }
+        }
+
+        function drawChart4(){
+            var data = google.visualization.arrayToDataTable([
+                ['사용패턴', '총사용량'],
+                <c:forEach items="${chart3}" var="chart3" varStatus="status">
+                ['${chart3.category}', ${chart3.spend}]
+                <c:if test="${not st.last}">,
+                </c:if>
+                </c:forEach>
+            ]);
+
+            var options = {
+                title: '남성 지역화폐 사용패턴',
+            };
+
+            var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart4.draw(data, options);
+        }
+
+        function drawChart5(){
+            var data = google.visualization.arrayToDataTable([
+                ['사용패턴', '총사용량'],
+                <c:forEach items="${chart4}" var="chart4" varStatus="status">
+                ['${chart4.category}', ${chart4.spend}]
+                <c:if test="${not st.last}">,
+                </c:if>
+                </c:forEach>
+            ]);
+
+            var options = {
+                title: '여성 지역화폐 사용패턴',
+            };
+
+            var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+            chart5.draw(data, options);
+        }
+
+        function drawChart6(){
+            var data = google.visualization.arrayToDataTable([
+                ['사용패턴', '총사용량'],
+                <c:forEach items="${chart5}" var="chart5" varStatus="status">
+                ['${chart5.category}', ${chart5.spend}]
+                <c:if test="${not st.last}">,
+                </c:if>
+                </c:forEach>
+            ]);
+
+            var options = {
+                title: '패턴별 사용빈도',
+                pointSize: 3,
+                backgroundColor: 'white',
+                // width: 800,
+                // height: 600,
+                animation: {startup: true,duration: 1000,easing: 'in' },
+                bar:{
+                    groupWidth: '35%'
+                },
+                titleTextStyle:{
+                    color: "black"
+                },
+                series:{
+                    0: {
+                        color: '#0054FF'
+                    }
+                },
+                vAxis:{ // 세로
+                    title: "사용량",
+                    titleTextStyle: {color:"#8C8C8C", fontSize:10},
+                    textStyle:{
+                        fontSize: 9,
+                        color: "#8C8C8C"
+                    },
+                    gridlines:{ // 중간선
+                        color: "#F6F6F6"
+                    },
+                    baselineColor:"black" // 하단선
+                },
+                hAxis: { // 가로
+                    textStyle:{
+                        fontSize: 9,
+                        color: "#8C8C8C"
+                    },
+                    gridlines:{ // 중간선
+                        color: "#F6F6F6"
+                    },
+                    baselineColor:"black",
+                },
+                legend:{    // 항목
+                    position: 'none'    // 범례안보임
+                }
+
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart2'));
+
+            chart.draw(data, options);
         }
 
 
@@ -311,9 +460,9 @@
         <div id="lineChart"></div>
     </div>
     <div class="lineChartDiv2">
-        <div id="lineChart2"></div>
+        <div id="ColumnChart2"></div>
     </div>
-    <div class="columnchart">
+    <div class="columnchartDiv">
         <div id="ColumnChart1"></div>
         <div class="charts_button">
             <button id="b1" class="ColumnChart_button" disabled>prev</button>
@@ -321,9 +470,20 @@
             <button id="b3" class="ColumnChart_button">zoom</button>
         </div>
     </div>
-<%--    <div class="columnchart_button">--%>
-<%--        <button id="b1" disabled>prev</button><button id="b2">next</button><button id="b3">zoom</button>--%>
-<%--    </div>--%>
+    <div class="columnchart2Div">
+        <div id="lineChart2"></div>
+        <div class="charts_button">
+            <button id="b4" class="ColumnChart_button" disabled>prev</button>
+            <button id="b5" class="ColumnChart_button">next</button>
+            <button id="b6" class="ColumnChart_button">zoom</button>
+        </div>
+    </div>
+    <div class="piechartDiv">
+        <div id="piechart"></div>
+    </div>
+    <div class="piechart2Div">
+        <div id="piechart2"></div>
+    </div>
 </div>
 </body>
 </html>
