@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  SQL Mapping 설정 -->
+<mapper namespace="chart">
+    <select id="getChartValue" resultType="ChartDto">
+        select test_predict_spend.date, spend, charge
+        from test_predict_spend, test_predict_charge
+        where test_predict_spend.date = test_predict_charge.date;
+    </select>
+</mapper>
