@@ -25,6 +25,7 @@
         }
     </script>
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <title>Title</title>
 
 

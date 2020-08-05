@@ -24,8 +24,8 @@
         </li>
         <li class="navbar_top-menu" style="width: 16%"><span><a class="navbar_main-menu">현황</a></span>
             <ul class="navbar_dept01" style="width: 16%">
-                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="#">현황</a></li>
-                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="#">분석 및 예측</a></li>
+                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/chart/chartlist">분석 및 예측</a></li>
+                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/chart/chartlist">현황</a></li>
 
             </ul>
         </li>

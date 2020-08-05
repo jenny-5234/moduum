@@ -13,6 +13,8 @@
                    type="com.test02.Dto.BoardDto"/>
         <typeAlias alias="NewsDto"
                    type="com.test02.Dto.NewsDto"/>
+        <typeAlias alias="IntroDto"
+                   type="com.test02.Dto.IntroDto"/>
         <typeAlias alias="ChartDto"
                    type="com.test02.Dto.ChartDto"/>
         <typeAlias alias="Chart2Dto"
@@ -27,6 +29,7 @@
         <mapper resource="mybatis/mappers/Board.xml"/>
         <mapper resource="mybatis/mappers/Notice.xml"/>
         <mapper resource="mybatis/mappers/News.xml"/>
+        <mapper resource="mybatis/mappers/Intro.xml"/>
         <mapper resource="mybatis/mappers/Chart.xml"/>
         <mapper resource="mybatis/mappers/Chart2.xml"/>
         <mapper resource="mybatis/mappers/Chart3.xml"/>
