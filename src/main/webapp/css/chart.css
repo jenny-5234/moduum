@@ -17,13 +17,13 @@ body {
 }
 
 .GFD{
-    width: 1800px;
+    width: 1400px;
     height: auto;
     margin: 0 auto;
 }
 
 .chart_div{
-    width: 1400px;
+    width: 900px;
     height: 1800px;
     margin-left: 50px;
     min-height: 500px;
@@ -49,21 +49,22 @@ body {
 
 .lineChartDiv2{
     float: left;
-    width: 50%;
+    width: 100%;
     height: 400px;
+    padding-top: 10px;
 }
 
 .columnchartDiv{
-    overflow: hidden;
     float: left;
-    width: 50%;
+    width: 100%;
     height: 400px;
+    padding-top: 10px;
 }
 
 .columnchart2Div{
     overflow: hidden;
     float: left;
-    width: 40%;
+    width: 100%;
     height: 400px;
 }
 
@@ -80,7 +81,7 @@ body {
 }
 
 #lineChart{
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
 

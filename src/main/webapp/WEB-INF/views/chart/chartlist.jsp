@@ -61,7 +61,7 @@
                     title: "사용량(1,000원단위)",
                     titleTextStyle: {color:"#8C8C8C", fontSize:10},
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -72,7 +72,7 @@
                 hAxis: { // 가로
                     format:"yyyy-MM",
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -143,7 +143,7 @@
                         max: 1800000
                     },
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -154,7 +154,7 @@
                 hAxis: { // 가로
                     format:"yyyy-MM",
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     viewWindow: {min:0, max:10},
@@ -279,7 +279,7 @@
                         max: 1800000
                     },
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -290,7 +290,7 @@
                 hAxis: { // 가로
                     format:"yyyy-MM",
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -441,7 +441,7 @@
                     title: "사용량",
                     titleTextStyle: {color:"#8C8C8C", fontSize:10},
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -451,7 +451,7 @@
                 },
                 hAxis: { // 가로
                     textStyle:{
-                        fontSize: 9,
+                        fontSize: 12,
                         color: "#8C8C8C"
                     },
                     gridlines:{ // 중간선
@@ -510,6 +510,14 @@
                 <div class="lineChartDiv">
                     <div id="lineChart"></div>
                 </div>
+                <div class="lineChartDiv2">
+                    <div id="lineChart2"></div>
+                    <div class="charts_button">
+                        <button id="b4" class="ColumnChart_button" disabled>prev</button>
+                        <button id="b5" class="ColumnChart_button">next</button>
+                        <button id="b6" class="ColumnChart_button">zoom</button>
+                    </div>
+                </div>
                 <div class="columnchartDiv">
                     <div id="ColumnChart1"></div>
                     <div class="charts_button">
@@ -518,27 +526,19 @@
                         <button id="b3" class="ColumnChart_button">zoom</button>
                     </div>
                 </div>
-                <div class="columnchart2Div">
-                    <div id="lineChart2"></div>
-                    <div class="charts_button">
-                        <button id="b4" class="ColumnChart_button" disabled>prev</button>
-                        <button id="b5" class="ColumnChart_button">next</button>
-                        <button id="b6" class="ColumnChart_button">zoom</button>
-                    </div>
-                </div>
             </div>
-            <div class="AnalysisDiv" id="div2">
+            <div class="AnalysisDiv">
                 <h4 class="Dda1">
                     <span>현황</span>
                 </h4>
                 <hr class="linecolor">
-                <div class="piechartDiv">
+                <div class="piechartDiv" id="div2">
                     <div id="piechart"></div>
                 </div>
                 <div class="piechart2Div">
                     <div id="piechart2"></div>
                 </div>
-                <div class="lineChartDiv2">
+                <div class="columnchart2Div">
                     <div id="ColumnChart2"></div>
                 </div>
             </div>
