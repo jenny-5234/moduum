@@ -13,6 +13,8 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
 map.setDraggable(false);
 map.setZoomable(false);
 
+var latlng = new kakao.maps.LatLng(35.84422370300031, 127.66131429456038);
+
 $.getJSON('../../../location/allv3.json', function (geojson) {
     var data = geojson.features;
     var coordinates = [];    // 좌표 저장할 배열
@@ -104,8 +106,6 @@ function displayArea2(coordinates, name) {
     });
     if (name === '광주광역시') {
         toto = tempPath;
-        console.log(tempPath);
-        console.log(toto);
     }
     // path에 광주광역시랑 전라남도가 포함 되어야 함
     else if (name === '전라남도') {
@@ -259,28 +259,11 @@ function sendValue(val) {
     });
 }
 
-// function abc(name) {
-//     switch (name) {
-//         case(??): break;
-//     }
-// }
-
-/*window.addEventListener("load", getGeoLocation);
+// window.addEventListener("load", getGeoLocation);
 // window.addEventListener("resize", getGeoLocation);
 window.onresize = function (event) {
-    if (locPosition) {
+    /*if (locPosition) {
         displayMarker(locPosition, message);
-    }
-}*/
-
-/*
-kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-
-    // 클릭한 위도, 경도 정보를 가져옵니다
-    // var latlng = mouseEvent.latLng;
-    var latlng = map.getCenter();
-    console.log(latlng);
-    // console.log(latlng.getLat());
-    // console.log(latlng.getLng());
-
-});*/
+    }*/
+    map.setCenter(latlng);
+}

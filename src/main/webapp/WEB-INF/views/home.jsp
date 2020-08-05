@@ -46,7 +46,7 @@
         </div>
         <div class="box_insert">
             <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-            <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
+            <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
             <%--        </div>--%>
             <%--        <div class="map_button">--%>
             <%--            <button id="button_effect" onclick="location.href='/map/mapsearch?location=\'서울\''">가맹점 찾기</button>--%>
