@@ -264,17 +264,41 @@ function displayArea2(coordinates, name) {
 
             case("전라북도"):
                 $(".logo_image").attr('src', '../../../image/logoImage/전북.jpg');
-                $(".info_info1").text('충청남도 도내 시·군');
-                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info1").text('전라북도 도내 시·군');
+                $(".info_info2").text('발행 지역 내에 있는 모든 가맹점');
                 $(".info_info3").text('온라인쇼핑몰, 백화점, 대형마트(이마트, 홈플러스 등), 유흥업소');
-                $(".info_info4").text('충청남도 경제실 소상공기업과 (041-635-3444)');
-                $(".homepage_button").attr("href", "http://www.chungnam.go.kr/search.do");
+                $(".info_info4").text('');
+                $(".homepage_button").attr("href", "http://www.jeonbuk.go.kr/index.jeonbuk");
                 break;
 
+            case("전라남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/전남지역화폐.png');
+                $(".info_info1").text('전라남도 도내 시·군');
+                $(".info_info2").text('전라남도 내 IC카드 결제가 가능한 모든 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
+                $(".info_info4").text('');
+                $(".homepage_button").attr("href", "https://www.jeonnam.go.kr/contentsView.do?menuId=jeonnam0501090400");
+                break;
+
+            case("경상북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/경북.jpg');
+                $(".info_info1").text('경상북도 도내 시·군');
+                $(".info_info2").text('경상북도 내 IC카드 결제 가맹점(대구에서도 사용가능)');
+                $(".info_info3").text('전자매장, 유흥업소,일부 대형마트, 백화점');
+                $(".info_info4").text('경상북도 일자리경제실 민생경제과 054-880-2656');
+                $(".homepage_button").attr("href", "https://www.gb.go.kr/Main/index.html");
+                break;
+
+            case("경상남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/경남.jpg');
+                $(".info_info1").text('경상남도 도내 시·군');
+                $(".info_info2").text('경상남도 내 IC카드 결제가 가능한 모든 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
+                $(".info_info4").text('일자리경제국 소상공인정책과 055-211-3411');
+                $(".homepage_button").attr("href", "http://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000110014005001");
+                break;
             default:
-                $(".homepage_button").attr("href", "/map/mapsearch");
                 break;
-
         }
         sendValue(name);
     });
@@ -282,7 +306,9 @@ function displayArea2(coordinates, name) {
 
 function sendValue(val) {
     $(".map_button").on('click', function () {
-        location.href = "/map/mapsearch?region=" + val;
+        if (val) {
+            $(".map_button").attr('href', '/map/mapsearch?region=' + val);
+        }
     });
 }
 

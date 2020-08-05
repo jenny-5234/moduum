@@ -99,7 +99,7 @@
                                     </div>
                                 </a>
 
-                                <a class="map_button" id="map_Btn">
+                                <a class="map_button" id="map_Btn" href="map/mapsearch">
                                     <div style="">
                                         <div class="younglot_1">
                                             <img src="/image/homeImages/address.png" style="width: 23%; height: auto;">
