@@ -22,7 +22,7 @@ import java.util.Properties;
 
 @RequestMapping("/mail")
 @Controller
-public class MailController {
+public class MailController{
 
     @RequestMapping(value = "/feedback")
     public String feedbackmail() {
