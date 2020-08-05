@@ -22,10 +22,10 @@
                 <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/intro">발급 방법</a></li>
             </ul>
         </li>
-        <li class="navbar_top-menu" style="width: 16%"><span><a class="navbar_main-menu">현황</a></span>
+        <li class="navbar_top-menu" style="width: 16%" onclick="location.href='/chart/chartlist'"><span><a class="navbar_main-menu" >현황</a></span>
             <ul class="navbar_dept01" style="width: 16%">
-                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/chart/chartlist">분석 및 예측</a></li>
-                <li class="navbar_dept01_li"><a class="navbar_sub-menu" href="/chart/chartlist">현황</a></li>
+                <li class="navbar_dept01_li" onclick="location.href='/chart/chartlist'"><a class="navbar_sub-menu" >분석 및 예측</a></li>
+                <li class="navbar_dept01_li" onclick="location.href='/chart/chartlist'"><a class="navbar_sub-menu">현황</a></li>
 
             </ul>
         </li>
