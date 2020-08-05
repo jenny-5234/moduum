@@ -116,6 +116,7 @@
         regionSelection("none");
     }
     else {
+        $("#area").val(region).prop("selected", true);
         regionSelection(region);
     }
 </script>
