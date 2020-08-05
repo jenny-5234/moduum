@@ -61,7 +61,6 @@ $(document).ready(function () {
 
 function regionSelection(city) {
     var selectedCity = city;
-
     switch (selectedCity) {
         case("none" || " "):
             // 선택했을 때 마커, 폴리곤, itemElement, page, 클러스터를 초기화
