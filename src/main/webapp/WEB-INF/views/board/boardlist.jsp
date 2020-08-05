@@ -38,7 +38,7 @@
                     <li class="nav_li" onclick="location.href='/board/boardlist'">
                         정보마당
                     </li>
-                    <li class="nav_li">
+                    <li class="nav_li" onclick="location.href='/mail/feedback'">
                         문의사항
                     </li>
                 </ul>

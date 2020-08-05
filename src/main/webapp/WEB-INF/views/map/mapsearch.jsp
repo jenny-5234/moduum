@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +31,7 @@
 </head>
 <body>
 <%
-    // TODO: 영웅다영님이 고쳐주실거
-    String region = request.getParameter("region");
+    String region = request.getParameter("region")==null ? "none" : request.getParameter("region");
 %>
 <%--<div class="nav_container">
     <div class="menubar">
@@ -44,7 +42,6 @@
 <div class="map_wrap">
     <%-- 지도의 크기 지정 height:500px --%>
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-        <%--     TODO: 메뉴 접기 버튼 만들기   --%>
         <input type="button" id="shadowclose" class="toggle" value="<"/>
     <%-- 검색 창 관련 --%>
     <div id="menu_wrap" class="bg_white">
@@ -110,15 +107,8 @@
 <script src="../../../js/kakao/kakao_api_pagechange.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>
 <script>
-    var region = "<%=region%>";
-    // console.log(region);
-    if (region === "null") {
-        regionSelection("none");
-    }
-    else {
-        $("#area").val(region).prop("selected", true);
-        regionSelection(region);
-    }
+    $("#area").val("<%=region%>").prop("selected", true);
+    regionSelection("<%=region%>");
 </script>
 </body>
 </html>

@@ -1,7 +1,10 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(35.84422370300031, 127.66131429456038), // 지도의 중심좌표 37.49461890613009, 127.02760319558533
-        level: 13 // 지도의 확대 레벨
+        level: 13, // 지도의 확대 레벨
+        disableDoubleClick: true,
+        draggable: false,
+        scrollwheel: false
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption),
@@ -9,9 +12,6 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
     customOverlay = new kakao.maps.CustomOverlay({}),
     // 닫을 수 있는 인포윈도우 객체 생성
     infowindow = new kakao.maps.InfoWindow({zIndex: 1});
-
-map.setDraggable(false);
-map.setZoomable(false);
 
 var latlng = new kakao.maps.LatLng(35.84422370300031, 127.66131429456038);
 
@@ -153,7 +153,6 @@ function displayArea2(coordinates, name) {
 
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
     kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
-        console.log(name);
         switch (name) {
             case("서울특별시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/서울.png');
@@ -237,7 +236,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("강원도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/강원도.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/강원.jpg');
                 $(".info_info1").text('강원도 | 제로페이 ');
                 $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소, 세탁소 등 도내 강원상품권 사용점');
                 $(".info_info3").text('');
@@ -245,9 +244,61 @@ function displayArea2(coordinates, name) {
                 $(".homepage_button").attr("href", "https://gwgc.gwd.go.kr/");
                 break;
 
-            default:
+            case("충청북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/충북.png');
+                $(".info_info1").text('충청북도 도내 시·군');
+                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info3").text('');
+                $(".info_info4").text('충청북도 경제기업과 (043-220-3254)');
+                $(".homepage_button").attr("href", "http://www1.chungbuk.go.kr/intro/index.html");
                 break;
 
+            case("충청남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/충남.jpg');
+                $(".info_info1").text('충청남도 도내 시·군');
+                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info3").text('');
+                $(".info_info4").text('충청남도 경제실 소상공기업과 (041-635-3444)');
+                $(".homepage_button").attr("href", "http://www.chungnam.go.kr/search.do");
+                break;
+
+            case("전라북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/전북.jpg');
+                $(".info_info1").text('전라북도 도내 시·군');
+                $(".info_info2").text('발행 지역 내에 있는 모든 가맹점');
+                $(".info_info3").text('온라인쇼핑몰, 백화점, 대형마트(이마트, 홈플러스 등), 유흥업소');
+                $(".info_info4").text('');
+                $(".homepage_button").attr("href", "http://www.jeonbuk.go.kr/index.jeonbuk");
+                break;
+
+            case("전라남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/전남지역화폐.png');
+                $(".info_info1").text('전라남도 도내 시·군');
+                $(".info_info2").text('전라남도 내 IC카드 결제가 가능한 모든 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
+                $(".info_info4").text('');
+                $(".homepage_button").attr("href", "https://www.jeonnam.go.kr/contentsView.do?menuId=jeonnam0501090400");
+                break;
+
+            case("경상북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/경북.jpg');
+                $(".info_info1").text('경상북도 도내 시·군');
+                $(".info_info2").text('경상북도 내 IC카드 결제 가맹점(대구에서도 사용가능)');
+                $(".info_info3").text('전자매장, 유흥업소,일부 대형마트, 백화점');
+                $(".info_info4").text('경상북도 일자리경제실 민생경제과 054-880-2656');
+                $(".homepage_button").attr("href", "https://www.gb.go.kr/Main/index.html");
+                break;
+
+            case("경상남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/경남.jpg');
+                $(".info_info1").text('경상남도 도내 시·군');
+                $(".info_info2").text('경상남도 내 IC카드 결제가 가능한 모든 가맹점');
+                $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
+                $(".info_info4").text('일자리경제국 소상공인정책과 055-211-3411');
+                $(".homepage_button").attr("href", "http://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000110014005001");
+                break;
+            default:
+                break;
         }
         sendValue(name);
     });
@@ -255,7 +306,9 @@ function displayArea2(coordinates, name) {
 
 function sendValue(val) {
     $(".map_button").on('click', function () {
-        location.href = "/map/mapsearch?region=" + val;
+        if (val) {
+            $(".map_button").attr('href', '/map/mapsearch?region=' + val);
+        }
     });
 }
 

@@ -14,64 +14,10 @@
     <script src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/board/boardwrite.css">
 
     <title>글쓰기</title>
 
-    <style>
-        body {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .container {
-            margin: 0 auto;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            text-align: center;
-            width: 80%;
-        }
-
-        .box-title {
-            font-size: 1.5em;
-            margin: 3%;
-        }
-
-        .formTable {
-            width: 100%;
-        }
-
-        .label {
-            border-radius: 10px;
-            background-color: rgba(153, 197, 243, 0.5);
-            width: 20%;
-            padding: 7px;
-        }
-
-        .button {
-            text-align: right;
-            margin: 10px;
-        }
-
-        #saveBtn {
-            padding: 2px;
-            font-size: 15px;
-            background-color: white;
-            color: black;
-            border: 2px solid dodgerblue;
-            transition-duration: 0.4s;
-        }
-
-        #saveBtn:hover {
-            background-color: dodgerblue;
-            color: white;
-        }
-
-        .textbox {
-            width: 100%;
-
-        }
-
-    </style>
 </head>
 <body>
 

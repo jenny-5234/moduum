@@ -67,6 +67,13 @@ html, body {
 /* 검색 버튼 */
 #menu_wrap .option button {
     margin-left: 5px;
+    background: #6fa9e8;
+    /* font-size: 12px; */
+    color: white;
+    border-style: none;
+    padding: 2px;
+    border-radius: 7px;
+    width: 50px;
 }
 
 #placesList li {
