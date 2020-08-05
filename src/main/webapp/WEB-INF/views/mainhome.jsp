@@ -54,7 +54,7 @@
 <%--                            <h4>지도 검색</h4>--%>
 <%--                            <hr>--%>
                             <div id="map" style="width:100%;height:630px;position:relative;overflow:hidden;"></div>
-                            <script type="text/javascript" src="../../js/kakao/hompage_kakao_map.js"></script>
+                            <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
                         </div>
                         <div class="mapinfo_box">
                             <h4>지역화폐</h4>

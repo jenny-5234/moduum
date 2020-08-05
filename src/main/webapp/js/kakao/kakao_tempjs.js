@@ -17,6 +17,7 @@
 
 // 데이터를 넣을 때 콘솔에 json으로 출력함
 var gunpo_str = "";
+
 function makejson(places) {
     for (var i = 0; i < places.length; i++) {
         var gunpo = {

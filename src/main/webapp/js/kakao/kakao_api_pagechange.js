@@ -53,8 +53,6 @@ function displayPlaces2(places) {
                         // map.setBounds(bounds);      // 선택한 위치로 지도를 이동
                         map.setCenter(new kakao.maps.LatLng(y, x));
                         map.setLevel(3);
-                    } else {
-                        console.log("없어");
                     }
                     closeLoadingWithMask();
                 }, 1);
@@ -85,8 +83,6 @@ function displayPlaces2(places) {
 
 // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
 function displayPagination2(pagination, totalPage, current, data) {
-    console.log("페이지:" + current);
-    console.log("totalPage:" + totalPage);
     var paginationEl = document.getElementById('pagination'),
         // fragment 생성
         firstPagefragment = document.createDocumentFragment(),
@@ -134,7 +130,6 @@ function displayPagination2(pagination, totalPage, current, data) {
         }
         // 첫페이지를 클릭했을 때
         firstPage.onclick = (function () {
-            console.log("첫페이지로 이동");
             pagegroup = 1;
             current = 1;
             lastPage = 5;
@@ -153,19 +148,14 @@ function displayPagination2(pagination, totalPage, current, data) {
                     lastPage = totalPage - (totalPage % 5);
                 }
                 pagegroup -= 5;
-                console.log("이전");
                 current = pagegroup;
                 SelectedDataPaging(data, current, pagination);
-            } else {
-                console.log("이전 페이지 없음");
             }
         });
         // 다음 페이지를 눌렀을 때
         nextPage.onclick = (function () {
-            console.log(pagegroup);
             // lastPage에 5를 더했을 때 총 페이지보다 작은 경우
             if (lastPage + 5 < totalPage) {
-                console.log("다음" + pagegroup);
                 pagegroup += 5;
                 lastPage += 5;
             } else {
@@ -185,7 +175,6 @@ function displayPagination2(pagination, totalPage, current, data) {
                         lastPage = totalPage;
                         break;
                 }
-                console.log("다음페이지 없음");
             }
             current = pagegroup;
             SelectedDataPaging(data, current, pagination);
@@ -208,15 +197,12 @@ function displayPagination2(pagination, totalPage, current, data) {
                     break;
             }
             current = pagegroup;
-            console.log(lastPage);
             // pagegroup + 4 가 총 페이지보다 작은 경우
             if (pagegroup + 4 < totalPage) {
-                console.log("마지막");
                 SelectedDataPaging(data, current, pagination);
             } else {
                 lastPage = totalPage;
                 current = totalPage;
-                console.log("걸렸네");
                 SelectedDataPaging(data, current, pagination);
             }
         });
@@ -258,8 +244,6 @@ function SelectedDataPaging(data, current, jsonPath) {
         // data에 값이 존재하면 itemE에 push 함
         if (data[i] != null) {
             itemE.push(data[i]);
-        } else {
-            console.log("없음");
         }
     }
     displayPlaces2(itemE);

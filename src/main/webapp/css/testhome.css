@@ -301,7 +301,11 @@ h4 {
     border: 2px solid #47a8d1;
 }
 
-.news_top5_hyper:link, .news_top5_hyper:hover, .news_top5_hyper:visited {
+.news_top5_hyper:hover{
+    text-decoration: underline;
+}
+
+.news_top5_hyper {
     color: black;
     text-decoration: none;
 }

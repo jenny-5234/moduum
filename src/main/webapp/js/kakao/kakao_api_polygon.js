@@ -36,7 +36,7 @@ function getjson(polygonPath, city) {
             coordinates = val.geometry.coordinates;     // coordinates 에 좌표 저장
             name = val.properties.SIG_KOR_NM;       // name 에 시 이름 저장
             if (index + 1 < data.length) {  // data.length를 초과하여 가져오지 않는다
-                var nextValname = data[index+1].properties.SIG_KOR_NM;  // 다음 index의 시 이름을 변수에 저장
+                var nextValname = data[index + 1].properties.SIG_KOR_NM;  // 다음 index의 시 이름을 변수에 저장
             }
             displayArea(coordinates, name, city, nextValname);       // displayArea 에 좌표, 시 이름, 도시 이름, 다음 시 이름을 전달
         });
@@ -50,22 +50,7 @@ var path = [];            // 폴리곤 그려줄 path
 
 // 행정구역 폴리곤 지도에 표시
 function displayArea(coordinates, name, city, nextValname) {
-    var points = [];        // 중심좌표 구하기 위한 지역구 좌표들
-
-    // 좌표 length 만큼 반복
-    /*$.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
-        var point = new Object();       // point 오브젝트 생성
-        point.x = coordinate[1];        // 위도 정보
-        point.y = coordinate[0];        // 경도 정보
-        points.push(point);     // points에 point 를 푸쉬
-        path.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));            // new kakao.maps.LatLng가 없으면 인식을 못해서 path 배열에 추가
-    });*/
-
     $.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
-        /*var point = new Object();       // point 오브젝트 생성
-        point.x = coordinate[1];        // 위도 정보
-        point.y = coordinate[0];        // 경도 정보
-        points.push(point);     // points에 point 를 푸쉬*/
         tempPath.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));            // 다중 폴리곤을 위해 좌표를 임시로 푸쉬한다
     });
     path.push(tempPath);        // path 에 임시로 저장한 좌표를 푸쉬한다
@@ -255,10 +240,6 @@ function displayArea(coordinates, name, city, nextValname) {
                 polygonSelectCheck = name;
                 cityName = city;
             }
-            // 선택했던 폴리곤과 선택한 폴리곤의 이름이 같은 경우
-            else {
-                console.log("미실행");
-            }
             // 폴리곤을 선택했을 때 열려있던 커스텀 오버레이를 닫는다
             closeOverlay();
         });
@@ -286,9 +267,6 @@ function makecluster(path, x, y, maplevel) {
             LoadingWithMask();
             // 클러스터를 생성할 json을 jquery를 이용해 불러온다
             $.getJSON(path, function (data) {
-                // 전에 있던 Element와 페이지를 지운다
-                // var listEl = document.getElementById('placesList');
-
                 // 가져온 json 파일을 이용해 마커 생성
                 var markers = data.map(function (each) {
                     var marker = new kakao.maps.Marker({
@@ -306,12 +284,10 @@ function makecluster(path, x, y, maplevel) {
                 clusterer.addMarkers(markers);
                 // 로딩 화면 종료
                 closeLoadingWithMask();
-                console.log("로딩 완료");
                 SelectedDataPaging(data, 1, path);
             });
         }, 1000);
-    }
-    else {
+    } else {
         $.getJSON(path, function (data) {
             SelectedDataPaging(data, 1, path);
         });
@@ -349,7 +325,6 @@ function removeMarker() {
 function panTo(lat, lng, lev) {
     // 이동할 위도 경도 위치를 생성합니다
     var moveLatLon = new kakao.maps.LatLng(lat, lng);
-    // var level = map.getLevel();
     // 지도 중심을 부드럽게 이동시킵니다
     // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.setLevel(lev);
