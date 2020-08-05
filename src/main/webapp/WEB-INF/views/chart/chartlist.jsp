@@ -19,6 +19,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <%--    <script type="text/javascript" src="ajax-sample.js"></script>--%>
     <link rel="stylesheet" href="/css/chart.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <script type="text/javascript">
         google.charts.load('current',{'packages':['corechart','bar','line']});
         google.setOnLoadCallback(drawChart);
@@ -45,9 +46,11 @@
                 title: '지역화폐 사용량 및 충전량',
                 pointSize: 3,
                 backgroundColor: 'white',
+                chartArea: { width: '75%', height: '80%'},
                 animation: {startup: true, duration: 1000, easing: 'in'},   // 그래프 에니메이션
                 titleTextStyle:{
                     color: "black",
+                    fontSize: 20
                 },
                 series:{    // 선 색상
                     0:{
@@ -89,11 +92,12 @@
             var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
+            window.addEventListener('resize',drawChart,false);
         }
 
         function drawChart2(){
             var data = google.visualization.arrayToDataTable([
-                ['날짜', '10대 사용','20대 사용', '30대사용', '40대사용', '50대 사용'],
+                ['날짜', '10대','20대', '30대', '40대', '50대'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
                 ['${chart2.date}', ${chart2.age_20}, ${chart2.age_30}, ${chart2.age_40}, ${chart2.age_50}, ${chart2.age_60}]
                 <c:if test="${not st.last}">,
@@ -108,8 +112,10 @@
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
+                chartArea: { width: '70%', height: '80%'},
                 titleTextStyle:{
-                    color: "black"
+                    color: "black",
+                    fontSize: 20
                 },
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 series:{    // 선 색상
@@ -191,6 +197,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
+                window.addEventListener('resize',drawChart2,false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -223,7 +230,7 @@
 
         function drawChart3(){
             var data = google.visualization.arrayToDataTable([
-                ['날짜', '10대 사용','20대 사용', '30대사용', '40대사용', '50대 사용'],
+                ['날짜', '10대', '20대', '30대', '40대', '50대'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
                 ['${chart2.date}', ${chart2.age_20}, ${chart2.age_30}, ${chart2.age_40}, ${chart2.age_50}, ${chart2.age_60}]
                 <c:if test="${not st.last}">,
@@ -238,12 +245,14 @@
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
+                chartArea: { width: '75%', height: '80%'},
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 bar:{
                     groupWidth: '70%'
                 },
                 titleTextStyle:{
-                    color: "black"
+                    color: "black",
+                    fontSize: 20
                 },
                 series:{    // 선 색상
                     0:{
@@ -322,6 +331,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
+                window.addEventListener('resize',drawChart3,false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -364,11 +374,16 @@
 
             var options = {
                 title: '남성 지역화폐 사용패턴',
+                titleTextStyle:{
+                    color: "black",
+                    fontSize: 20
+                }
             };
 
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart4.draw(data, options);
+            window.addEventListener('resize',drawChart4,false);
         }
 
         function drawChart5(){
@@ -383,11 +398,16 @@
 
             var options = {
                 title: '여성 지역화폐 사용패턴',
+                titleTextStyle:{
+                    color: "black",
+                    fontSize: 20
+                }
             };
 
             var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart5.draw(data, options);
+            window.addEventListener('resize',drawChart5,false);
         }
 
         function drawChart6(){
@@ -402,20 +422,19 @@
 
             var options = {
                 title: '패턴별 사용빈도',
-                pointSize: 3,
                 backgroundColor: 'white',
-                // width: 800,
-                // height: 600,
+                chartArea: { width: '75%', height: '80%'},
                 animation: {startup: true,duration: 1000,easing: 'in' },
                 bar:{
                     groupWidth: '35%'
                 },
                 titleTextStyle:{
-                    color: "black"
+                    color: "black",
+                    fontSize: 20
                 },
                 series:{
                     0: {
-                        color: '#0054FF'
+                        color: '#f18f18'
                     }
                 },
                 vAxis:{ // 세로
@@ -449,40 +468,81 @@
             var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart2'));
 
             chart.draw(data, options);
+            window.addEventListener('resize',drawChart6,false);
         }
 
+        // 페이지 내에 div이동
+        function fnMove(seq){
+            var offset = $("#div" + seq).offset();
+            $('html, body').animate({scrollTop : offset.top}, 400);
+        }
 
     </script>
 </head>
 <body>
-<div class="charts_box">
-    <div class="lineChartDiv">
-        <div id="lineChart"></div>
-    </div>
-    <div class="lineChartDiv2">
-        <div id="ColumnChart2"></div>
-    </div>
-    <div class="columnchartDiv">
-        <div id="ColumnChart1"></div>
-        <div class="charts_button">
-            <button id="b1" class="ColumnChart_button" disabled>prev</button>
-            <button id="b2" class="ColumnChart_button">next</button>
-            <button id="b3" class="ColumnChart_button">zoom</button>
+
+<%--네비게이션 불러오기--%>
+<div class="menubar">
+    <%@include file="/WEB-INF/views/navbar.jsp" %>
+</div>
+
+<div class="description_chart">
+    <div class="GFD">
+        <nav class="side_nav" img src="/image/introImages/side_navbar.png">
+            <h2 class="side_nav_img">
+                <p>현황</p>
+            </h2>
+            <ul class="nav_ul">
+                <li class="nav_li" onclick="fnMove('1')">
+                    분석 및 예측
+                </li>
+                <li class="nav_li" onclick="fnMove('2')">
+                    현황
+                </li>
+            </ul>
+        </nav>
+        <div class="chart_div">
+            <div class="predictDiv" id="div1">
+                <h4 class="Dda1">
+                    <span>분석 및 예측</span>
+                </h4>
+                <hr class="linecolor">
+                <div class="lineChartDiv">
+                    <div id="lineChart"></div>
+                </div>
+                <div class="columnchartDiv">
+                    <div id="ColumnChart1"></div>
+                    <div class="charts_button">
+                        <button id="b1" class="ColumnChart_button" disabled>prev</button>
+                        <button id="b2" class="ColumnChart_button">next</button>
+                        <button id="b3" class="ColumnChart_button">zoom</button>
+                    </div>
+                </div>
+                <div class="columnchart2Div">
+                    <div id="lineChart2"></div>
+                    <div class="charts_button">
+                        <button id="b4" class="ColumnChart_button" disabled>prev</button>
+                        <button id="b5" class="ColumnChart_button">next</button>
+                        <button id="b6" class="ColumnChart_button">zoom</button>
+                    </div>
+                </div>
+            </div>
+            <div class="AnalysisDiv" id="div2">
+                <h4 class="Dda1">
+                    <span>현황</span>
+                </h4>
+                <hr class="linecolor">
+                <div class="piechartDiv">
+                    <div id="piechart"></div>
+                </div>
+                <div class="piechart2Div">
+                    <div id="piechart2"></div>
+                </div>
+                <div class="lineChartDiv2">
+                    <div id="ColumnChart2"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="columnchart2Div">
-        <div id="lineChart2"></div>
-        <div class="charts_button">
-            <button id="b4" class="ColumnChart_button" disabled>prev</button>
-            <button id="b5" class="ColumnChart_button">next</button>
-            <button id="b6" class="ColumnChart_button">zoom</button>
-        </div>
-    </div>
-    <div class="piechartDiv">
-        <div id="piechart"></div>
-    </div>
-    <div class="piechart2Div">
-        <div id="piechart2"></div>
     </div>
 </div>
 </body>

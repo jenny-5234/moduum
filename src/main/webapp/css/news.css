@@ -2,45 +2,75 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.menubar{
     width: 90%;
     margin: 0 auto;
 }
+
 .container {
     margin-top: 5%;
     margin-bottom: 3%;
-    width: 80%;
+    width: 70%;
     height: auto;
 }
-.wrapper {
-    width: 400px;
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 4px;
+
+.YL {
+    width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.description_intro {
+    width: 100%;
+    height: 1000px;
+
+}
+
+.description_intro_auto {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.news-section {
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 70%;
 }
 
 .mainlist {
     text-align: center;
     font-size: 15px;
-    background: #ebf2f8;
+    background: #f7df96;
     font-weight: bold;
 }
+
 td[id="newsId"] {
-    width: 5%;
+    width: 10%;
 }
+
 td[id="title"] {
-    width: 75%;
+    width: 70%;
 }
+
 td[id="date"] {
     width: 20%;
 }
+
 tr[class="newslist"] {
     text-align: center;
 }
+
 tr[class="newslist"] td[class="listTitle"] {
     text-align: left;
     cursor: pointer;
 }
+
 h1 {
     font-size: 20px;
     font-weight: bold;
@@ -49,7 +79,6 @@ h1 {
 
 /* ------------------------------ PAGINTION BEGIN ------------------------------ */
 .pager {
-    margin: 0 0 3.75rem;
     font-size: 0;
     text-align: center;
 }

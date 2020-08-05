@@ -13,6 +13,7 @@
     <title>정보마당</title>
     <link rel="stylesheet" href="/css/notice/noticelist.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <%--    <script src="/js/bootstrap.js"/>--%>
 
 </head>
