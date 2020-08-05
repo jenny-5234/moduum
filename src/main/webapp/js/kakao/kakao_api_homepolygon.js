@@ -1,7 +1,10 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(35.84422370300031, 127.66131429456038), // 지도의 중심좌표 37.49461890613009, 127.02760319558533
-        level: 13 // 지도의 확대 레벨
+        level: 13, // 지도의 확대 레벨
+        disableDoubleClick: true,
+        draggable: false,
+        scrollwheel: false
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption),
@@ -9,9 +12,6 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
     customOverlay = new kakao.maps.CustomOverlay({}),
     // 닫을 수 있는 인포윈도우 객체 생성
     infowindow = new kakao.maps.InfoWindow({zIndex: 1});
-
-map.setDraggable(false);
-map.setZoomable(false);
 
 var latlng = new kakao.maps.LatLng(35.84422370300031, 127.66131429456038);
 

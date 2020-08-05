@@ -21,7 +21,7 @@
 </div>
 <div class="container">
     <h4>메일 보내기</h4>
-    <form action="/mailSender" method="post">
+    <form action="/mail/mailSender" method="post">
         <div align="center"><!-- 제목 -->
             <input type="text" name="title" size="120" style="width:100%" placeholder="제목을 입력해주세요" class="form-control" >
         </div>
