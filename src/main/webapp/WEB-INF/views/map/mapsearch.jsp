@@ -32,7 +32,7 @@
 </head>
 <body>
 <%
-    String region = request.getParameter("region")=="null" ? "none" : request.getParameter("region");
+    String region = request.getParameter("region")==null ? "none" : request.getParameter("region");
 %>
 <%--<div class="nav_container">
     <div class="menubar">
@@ -108,15 +108,6 @@
 <script src="../../../js/kakao/kakao_api_pagechange.js" type="text/javascript"></script>
 <script src="../../../js/kakao/kakao_tempjs.js" type="text/javascript"></script>
 <script>
-    /*var region = "<%=region%>";
-    // console.log(region);
-    if (region === "null") {
-        regionSelection("none");
-    }
-    else {
-        $("#area").val(region).prop("selected", true);
-        regionSelection(region);
-    }*/
     $("#area").val("<%=region%>").prop("selected", true);
     regionSelection("<%=region%>");
 </script>
