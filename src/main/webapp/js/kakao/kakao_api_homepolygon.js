@@ -237,7 +237,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("강원도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/강원도.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/강원.jpg');
                 $(".info_info1").text('강원도 | 제로페이 ');
                 $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소, 세탁소 등 도내 강원상품권 사용점');
                 $(".info_info3").text('');
@@ -245,7 +245,35 @@ function displayArea2(coordinates, name) {
                 $(".homepage_button").attr("href", "https://gwgc.gwd.go.kr/");
                 break;
 
+            case("충청북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/충북.png');
+                $(".info_info1").text('충청북도 도내 시·군');
+                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info3").text('');
+                $(".info_info4").text('충청북도 경제기업과 (043-220-3254)');
+                $(".homepage_button").attr("href", "http://www1.chungbuk.go.kr/intro/index.html");
+                break;
+
+            case("충청남도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/충남.jpg');
+                $(".info_info1").text('충청남도 도내 시·군');
+                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info3").text('');
+                $(".info_info4").text('충청남도 경제실 소상공기업과 (041-635-3444)');
+                $(".homepage_button").attr("href", "http://www.chungnam.go.kr/search.do");
+                break;
+
+            case("전라북도"):
+                $(".logo_image").attr('src', '../../../image/logoImage/전북.jpg');
+                $(".info_info1").text('충청남도 도내 시·군');
+                $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
+                $(".info_info3").text('온라인쇼핑몰, 백화점, 대형마트(이마트, 홈플러스 등), 유흥업소');
+                $(".info_info4").text('충청남도 경제실 소상공기업과 (041-635-3444)');
+                $(".homepage_button").attr("href", "http://www.chungnam.go.kr/search.do");
+                break;
+
             default:
+                $(".homepage_button").attr("href", "/map/mapsearch");
                 break;
 
         }
