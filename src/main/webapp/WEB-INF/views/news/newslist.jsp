@@ -30,6 +30,8 @@
             </nav>
 
             <div class="news-section">
+                <h4 cladd="Dda1">최신뉴스</h4>
+                <hr>
                 <div style="text-align: left; padding-bottom: 3px;">
                     총 뉴스 수 : ${pagination.listCnt }
                 </div>
