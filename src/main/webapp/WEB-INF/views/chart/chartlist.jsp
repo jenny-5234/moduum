@@ -502,6 +502,7 @@
             </ul>
         </nav>
         <div class="chart_div">
+            <div class="predictDiv">
                 <h4 class="Dda1" id="div1">
                     <span>분석 및 예측</span>
                 </h4>
@@ -525,6 +526,8 @@
                         <button id="b3" class="ColumnChart_button">zoom</button>
                     </div>
                 </div>
+            </div>
+            <div class="AnalysisDiv">
                 <h4 class="Dda1">
                     <span>현황</span>
                 </h4>
@@ -538,6 +541,7 @@
                 <div class="columnchart2Div">
                     <div id="ColumnChart2"></div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

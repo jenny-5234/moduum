@@ -165,26 +165,3 @@ tr[class="boardlist"] td[class="listTitle"] {
     background-color: #f4cb0b;
     color: white;
 }
-/*--------- footer------------*/
-footer {
-    width: 100%;
-    background-color: #e8c687bf;
-    height: 150px;
-    float: left;
-    margin-top: 15px;
-    border-top: 2px solid #f3c36d;
-}
-
-.foo_div1 {
-    text-align: center;
-}
-
-.foo_div1 span {
-    font-size: 15px;
-    color: black;
-}
-
-.foo_div1 p {
-    margin-top: 5px;
-    color: black;
-}

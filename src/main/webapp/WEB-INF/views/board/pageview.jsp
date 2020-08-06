@@ -68,6 +68,11 @@
     </div>
 </div>
 
+<footer>
+    <jsp:include page="../footer.jsp"/>
+</footer>
+
+</body>
 <script>
     $(function () {
         $('#d_btn').click(function () {
@@ -93,5 +98,4 @@
         })
     })
 </script>
-</body>
 </html>
