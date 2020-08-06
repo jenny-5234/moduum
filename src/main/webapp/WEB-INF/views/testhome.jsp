@@ -18,6 +18,111 @@
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/testhome.css">
     <link rel="stylesheet" type="text/css" href="../../css/kakao/kakao_api_polygon.css">
+
+    <%--    구글차트 라이브러리--%>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current',{'packages':['corechart','bar','line']});
+        google.charts.setOnLoadCallback(drawpiechart);
+        google.charts.setOnLoadCallback(drawlinechart);
+
+        function drawlinechart(){
+            var data = google.visualization.arrayToDataTable([
+                ['날짜', '사용량', '충전량'],
+                <c:forEach items="${chart}" var="chart" varStatus="status">
+                ['${chart.date}', ${chart.spend}, ${chart.charge}]
+                <c:if test="${not st.last}">,
+                </c:if>
+                </c:forEach>
+            ]);
+
+            var date_format = new google.visualization.DateFormat('yyyy-MM');
+            date_format.format(data, 0);
+
+            var options = {
+                title: '지역화폐 사용량 및 충전량',
+                pointSize: 0,
+                backgroundColor: 'white',
+                chartArea: {width: '65%', height: '60%'},
+                animation: {startup: true, duration: 1000, easing: 'in'},   // 그래프 에니메이션
+                titleTextStyle:{
+                    color: "black",
+                    fontSize: 15
+                },
+                series:{    // 선 색상
+                    0:{
+                        color: '#12EAFF'
+                    },
+                    1:{
+                        color: '#65FF5E'
+                    }
+                },
+                vAxis:{ // 세로
+                    title: "사용량(1,000원단위)",
+                    titleTextStyle: {color:"#8C8C8C", fontSize:10},
+                    textStyle:{
+                        fontSize: 9,
+                        color: "#8C8C8C"
+                    },
+                    gridlines:{ // 중간선
+                        color: "#F6F6F6"
+                    },
+                    baselineColor:"black" // 하단선
+                },
+                hAxis: { // 가로
+                    format:"yyyy-MM",
+                    textStyle:{
+                        fontSize: 9,
+                        color: "#8C8C8C"
+                    },
+                    gridlines:{ // 중간선
+                        color: "#F6F6F6"
+                    },
+                    baselineColor:"black"
+                },
+                legend:{    // 항목(범례)
+                    textStyle:{
+                        fontSize: 9,
+                        color: "#8C8C8C"
+                    }
+                }
+
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
+
+            chart.draw(data, options);
+            window.addEventListener('resize',drawlinechart,false);
+        }
+
+        function drawpiechart(){
+            var data = google.visualization.arrayToDataTable([
+                ['사용패턴', '총사용량'],
+                <c:forEach items="${chart3}" var="chart3" varStatus="status">
+                ['${chart3.category}', ${chart3.spend}]
+                <c:if test="${not st.last}">,
+                </c:if>
+                </c:forEach>
+            ]);
+
+            var options = {
+                title: '지역화폐 사용패턴',
+                titleTextStyle:{
+                    color: "black",
+                    fontSize: 15
+                },
+                chartArea: {right: 0, left: 0, width: '70%', height:'70%'}
+            };
+
+            var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart4.draw(data, options);
+            window.addEventListener('resize',drawpiechart,false);
+        }
+
+    </script>
+
+
     <title>지역화폐 모둠전</title>
 
 </head>
@@ -117,7 +222,14 @@
                 <div class="graph_box">
                     <h4>현황 그래프</h4>
                     <hr>
-                    <img src="/image/homeImages/testgraph1.png"/>
+                    <div class="chart_box_div">
+                        <div class="chart_div">
+                            <div id="lineChart"></div>
+                        </div>
+                        <div class="chart_div">
+                            <div id="piechart"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
