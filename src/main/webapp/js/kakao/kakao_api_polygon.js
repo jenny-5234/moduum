@@ -50,7 +50,12 @@ var path = [];            // 폴리곤 그려줄 path
 
 // 행정구역 폴리곤 지도에 표시
 function displayArea(coordinates, name, city, nextValname) {
+    var points = [];
     $.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
+        var point = new Object();
+        point.x = coordinate[1];
+        point.y = coordinate[0];
+        points.push(point);
         tempPath.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));            // 다중 폴리곤을 위해 좌표를 임시로 푸쉬한다
     });
     path.push(tempPath);        // path 에 임시로 저장한 좌표를 푸쉬한다
@@ -104,8 +109,18 @@ function displayArea(coordinates, name, city, nextValname) {
             // 선택했던 폴리곤과 선택한 폴리곤의 이름이 다른 경우
             $("#area").prop("value", "none");
             if (polygonSelectCheck != name) {
-                if (city == "경기도") {
-                    polygon.setOptions({fillColor: '#fff'});
+                if (city === '경기도') {
+                    if (clusterchecked) {
+                        polygon.setOptions({fillColor: '#fff'});
+                    }
+                    else {
+                        var level = map.getLevel() - 2;
+                        map.setLevel(level, {
+                            anchor: centroid(points), animate: {
+                                duration: 350
+                            }
+                        });
+                    }
                 }
                 switch (name) {
                     case("김포시"):
@@ -246,6 +261,23 @@ function displayArea(coordinates, name, city, nextValname) {
         path = [];  // 다음 값을 위해 초기화
     }
     tempPath = [];  // 다음 값을 위해 초기화
+}
+
+function centroid (points) {
+    var i, j, len, p1, p2, f, area, x, y;
+
+    area = x = y = 0;
+
+    for (i = 0, len = points.length, j = len - 1; i < len; j = i++) {
+        p1 = points[i];
+        p2 = points[j];
+
+        f = p1.y * p2.x - p2.y * p1.x;
+        x += (p1.x + p2.x) * f;
+        y += (p1.y + p2.y) * f;
+        area += f * 3;
+    }
+    return new kakao.maps.LatLng(x / area, y / area);
 }
 
 // 클러스터 생성
