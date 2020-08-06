@@ -37,11 +37,11 @@
         </li>
         <li class="navbar_top-menu" style="width: 16%" onclick="location.href='/news/newslist'"><span><a class="navbar_main-menu">뉴스 및 이슈</a></span>
             <ul class="navbar_dept01" style="width: 16%">
-                <li class="navbar_dept01_li" onclick="location.href='/news/newslist'"><a class="navbar_sub-menu" href="/news/newslist">뉴스</a></li>
+                <li class="navbar_dept01_li" onclick="location.href='/news/newslist'"><a class="navbar_sub-menu">뉴스</a></li>
 
             </ul>
         </li>
-        <li class="navbar_top-menu" style="width: 16%"  onclick="location.href='/notice/noticeList'"><span><a class="navbar_main-menu">고객지원</a></span>
+        <li class="navbar_top-menu" style="width: 16%" ><span><a class="navbar_main-menu" href="/notice/noticeList">고객지원</a></span>
             <ul class="navbar_dept01" style="width: 16%">
                 <li class="navbar_dept01_li" onclick="location.href='/notice/noticeList'"><a class="navbar_sub-menu">공지사항</a></li>
                 <li class="navbar_dept01_li" onclick="location.href='/board/boardlist'"><a class="navbar_sub-menu">정보마당</a></li>
