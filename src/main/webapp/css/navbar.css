@@ -44,6 +44,7 @@
     float: left;
     width: 15%;
     line-height: 40px;
+    cursor: pointer;
 }
 
 .navbar_main-menu {
@@ -51,10 +52,9 @@
     text-decoration: none;
 }
 
-.navbar_-menu:hover {
+.navbar_main-menu:hover {
     color: #f4cb0b;
 }
-
 
 .navbar_menu01 span {
     font-size: 27px;
@@ -73,6 +73,7 @@
     /*border-bottom: 1px solid #ccc;*/
     background: #fff;
     border-bottom: 1px solid #f4cb0b;
+    cursor: pointer;
 }
 
 .navbar_dept01_li {

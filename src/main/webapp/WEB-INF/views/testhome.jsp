@@ -17,6 +17,7 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/testhome.css">
+    <link rel="stylesheet" href="/css/tptp.css">
     <link rel="stylesheet" type="text/css" href="../../css/kakao/kakao_api_polygon.css">
 
     <%--    구글차트 라이브러리--%>
@@ -265,8 +266,14 @@
         </section>
     </div>
 </section>
+<div id="chat">
+    <button type="button" class="chat_fixed">
+<%--        <img src="" class="idk"/>--%>
+    </button>
+</div>
 <footer>
     <jsp:include page="footer.jsp"/>
 </footer>
+
 </body>
 </html>

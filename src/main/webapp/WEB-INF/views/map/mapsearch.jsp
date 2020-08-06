@@ -42,6 +42,9 @@
 <div class="map_wrap">
     <%-- 지도의 크기 지정 height:500px --%>
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+        <div class="custom_typecontrol radius_border">
+            <span id="btnRoadmap" class="selected_btn" onclick="getGeoLocation()">현재 위치</span>
+        </div>
         <input type="button" id="shadowclose" class="toggle" value="<"/>
     <%-- 검색 창 관련 --%>
     <div id="menu_wrap" class="bg_white">
