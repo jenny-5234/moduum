@@ -59,6 +59,12 @@
         <button type="button" id="saveBtn">확인</button>
     </div>
 </div>
+
+<footer>
+    <jsp:include page="../footer.jsp"/>
+</footer>
+
+</body>
 <script type="text/javascript">
     $(document).ready(function () {
         // 전역변수 선언
@@ -116,7 +122,5 @@
     };
 
 </script>
-
-</body>
 </html>
 

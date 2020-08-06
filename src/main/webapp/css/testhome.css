@@ -324,27 +324,3 @@ h4 {
     color: black;
     text-decoration: none;
 }
-
-/*---------------------------footer-------------------------------*/
-footer {
-    width: 100%;
-    background-color: #f3eed6;
-    height: 150px;
-    float: left;
-    /*margin-top: 15px;*/
-    border-top: 3px solid #f3c36d;
-}
-
-.foo_div1 {
-    text-align: center;
-}
-
-.foo_div1 span {
-    font-size: 15px;
-    color: black;
-}
-
-.foo_div1 p {
-    margin-top: 5px;
-    color: black;
-}

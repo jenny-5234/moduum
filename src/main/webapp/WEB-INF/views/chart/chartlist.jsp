@@ -502,8 +502,8 @@
             </ul>
         </nav>
         <div class="chart_div">
-            <div class="predictDiv" id="div1">
-                <h4 class="Dda1">
+            <div class="predictDiv">
+                <h4 class="Dda1" id="div1">
                     <span>분석 및 예측</span>
                 </h4>
                 <hr class="linecolor">
@@ -545,5 +545,8 @@
         </div>
     </div>
 </div>
+<footer>
+    <jsp:include page="../footer.jsp"/>
+</footer>
 </body>
 </html>

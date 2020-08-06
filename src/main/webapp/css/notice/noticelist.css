@@ -164,26 +164,3 @@ tr[class="noticelist"] td[class="listTitle"] {
 /*}*/
 
 
-/*--------footer--------*/
-footer {
-    width: 100%;
-    background-color: transparent;
-    height: 150px;
-    float: left;
-    margin-top: 15px;
-    border-top: 2px solid #f4cb0b;;
-}
-
-.foo_div1 {
-    text-align: center;
-}
-
-.foo_div1 span {
-    font-size: 15px;
-    color: black;
-}
-
-.foo_div1 p {
-    margin-top: 5px;
-    color: black;
-}
