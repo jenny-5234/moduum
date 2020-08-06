@@ -120,6 +120,12 @@
     </form>
 
 </div>
+
+<footer>
+    <jsp:include page="../footer.jsp"/>
+</footer>
+
+</body>
 <script type="text/javascript">
     $(document).ready(function () {
         var oEditors = [];
@@ -146,5 +152,4 @@
     });
 
 </script>
-</body>
 </html>
