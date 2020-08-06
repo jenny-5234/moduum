@@ -1,0 +1,51 @@
+/*---------------------------footer-------------------------------*/
+.foo_div1 {
+    background-color: white;
+}
+
+.footer_wrap {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 160px;
+}
+
+.foot_img{
+    width: 20%;
+    float: left;
+}
+
+.copy_box{
+    width: 70%;
+    float: left;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.foot_ul{
+    display: block;
+    list-style: none;
+}
+
+.foot_ul li{
+    float: left;
+    margin-left: 10px;
+}
+
+.hyperlink{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.hyperlink:visited{
+    color: black;
+    text-decoration: none;
+}
+
+
+.item{
+    font-style: normal;
+    font-size: 13px;
+    color: #636363;
+}
