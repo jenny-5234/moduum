@@ -22,14 +22,14 @@
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <script type="text/javascript">
         google.charts.load('current',{'packages':['corechart','bar','line']});
-        google.setOnLoadCallback(drawChart);
-        google.setOnLoadCallback(drawChart2);
-        google.charts.setOnLoadCallback(drawChart3);
-        google.charts.setOnLoadCallback(drawChart4);
-        google.charts.setOnLoadCallback(drawChart5);
-        google.charts.setOnLoadCallback(drawChart6);
+        google.setOnLoadCallback(drawlinechart);
+        google.setOnLoadCallback(drawlinechart2);
+        google.charts.setOnLoadCallback(drawcolumnchart);
+        google.charts.setOnLoadCallback(drawpiechart);
+        google.charts.setOnLoadCallback(drawpiechart2);
+        google.charts.setOnLoadCallback(drawcolumnchart2);
 
-        function drawChart(){
+        function drawlinechart(){
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '사용량', '충전량'],
                 <c:forEach items="${chart}" var="chart" varStatus="status">
@@ -92,10 +92,10 @@
             var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
-            window.addEventListener('resize',drawChart,false);
+            window.addEventListener('resize',drawlinechart,false);
         }
 
-        function drawChart2(){
+        function drawlinechart2(){
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대','20대', '30대', '40대', '50대'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
@@ -197,7 +197,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                window.addEventListener('resize',drawChart2,false);
+                window.addEventListener('resize',drawlinechart2,false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -228,7 +228,7 @@
             }
         }
 
-        function drawChart3(){
+        function drawcolumnchart(){
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대', '20대', '30대', '40대', '50대'],
                 <c:forEach items="${chart2}" var="chart2" varStatus="status">
@@ -331,7 +331,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                window.addEventListener('resize',drawChart3,false);
+                window.addEventListener('resize',drawChart,false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -362,7 +362,7 @@
             }
         }
 
-        function drawChart4(){
+        function drawpiechart(){
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
                 <c:forEach items="${chart3}" var="chart3" varStatus="status">
@@ -383,10 +383,10 @@
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart4.draw(data, options);
-            window.addEventListener('resize',drawChart4,false);
+            window.addEventListener('resize',drawpiechart,false);
         }
 
-        function drawChart5(){
+        function drawpiechart2(){
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
                 <c:forEach items="${chart4}" var="chart4" varStatus="status">
@@ -407,10 +407,10 @@
             var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart5.draw(data, options);
-            window.addEventListener('resize',drawChart5,false);
+            window.addEventListener('resize',drawpiechart2,false);
         }
 
-        function drawChart6(){
+        function drawcolumnchart2(){
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
                 <c:forEach items="${chart5}" var="chart5" varStatus="status">
@@ -468,7 +468,7 @@
             var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart2'));
 
             chart.draw(data, options);
-            window.addEventListener('resize',drawChart6,false);
+            window.addEventListener('resize',drawcolumnchart2,false);
         }
 
         // 페이지 내에 div이동
