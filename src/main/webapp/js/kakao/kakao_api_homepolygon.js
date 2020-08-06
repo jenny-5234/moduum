@@ -199,7 +199,7 @@ function displayArea2(coordinates, name) {
                 $(".homepage_button").attr("href", "https://busandong100.or.kr:447/w/main.asp#none");
                 break;
 
-            case("대전"):
+            case("대전광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/대전.png');
                 $(".info_info1").text('대전광역시');
                 $(".info_info2").text('대전 내 IC카드 단말기 사용 점포');
@@ -208,7 +208,7 @@ function displayArea2(coordinates, name) {
                 $(".homepage_button").attr("href", "https://www.ontongdaejeon.kr/main.do");
                 break;
 
-            case("대구"):
+            case("대구광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/대구.png');
                 $(".info_info1").text('대구광역시 | 대구은행');
                 $(".info_info2").text('대구 내 카드 단말기 설치된 가맹점 어디든 이용 가능');

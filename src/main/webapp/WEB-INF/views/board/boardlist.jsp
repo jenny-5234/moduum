@@ -45,7 +45,8 @@
             </nav>
 
             <div class="board-section">
-
+                <h4 cladd="Dda1">정보마당</h4>
+                <hr>
                 <div class="search_box" style="align : right">
                     <div class="form-group row justify-content-center">
                         <div class="w100" style="padding-right:10px">
@@ -65,7 +66,7 @@
                     </div>
                 </div>
 
-                <div style="text-align: left; padding-bottom: 3px;">
+                <div style="text-align: left; padding-bottom: 5px;">
                     총 게시글 수 : ${pagination.listCnt }
                 </div>
                 <form id="Board">
