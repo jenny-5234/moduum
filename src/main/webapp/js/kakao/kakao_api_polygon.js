@@ -36,7 +36,7 @@ function getjson(polygonPath, city) {
             coordinates = val.geometry.coordinates;     // coordinates 에 좌표 저장
             name = val.properties.SIG_KOR_NM;       // name 에 시 이름 저장
             if (index + 1 < data.length) {  // data.length를 초과하여 가져오지 않는다
-                var nextValname = data[index+1].properties.SIG_KOR_NM;  // 다음 index의 시 이름을 변수에 저장
+                var nextValname = data[index + 1].properties.SIG_KOR_NM;  // 다음 index의 시 이름을 변수에 저장
             }
             displayArea(coordinates, name, city, nextValname);       // displayArea 에 좌표, 시 이름, 도시 이름, 다음 시 이름을 전달
         });
@@ -49,29 +49,19 @@ var tempPath = [];          // 임시로 폴리곤을 넣어둘 변수(다중 �
 var path = [];            // 폴리곤 그려줄 path
 
 // 행정구역 폴리곤 지도에 표시
-function displayArea(coordinates, name, city, tname) {
-    var points = [];        // 중심좌표 구하기 위한 지역구 좌표들
-
-    // 좌표 length 만큼 반복
-    /*$.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
-        var point = new Object();       // point 오브젝트 생성
-        point.x = coordinate[1];        // 위도 정보
-        point.y = coordinate[0];        // 경도 정보
-        points.push(point);     // points에 point 를 푸쉬
-        path.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));            // new kakao.maps.LatLng가 없으면 인식을 못해서 path 배열에 추가
-    });*/
-
+function displayArea(coordinates, name, city, nextValname) {
+    var points = [];
     $.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
-        /*var point = new Object();       // point 오브젝트 생성
-        point.x = coordinate[1];        // 위도 정보
-        point.y = coordinate[0];        // 경도 정보
-        points.push(point);     // points에 point 를 푸쉬*/
+        var point = new Object();
+        point.x = coordinate[1];
+        point.y = coordinate[0];
+        points.push(point);
         tempPath.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));            // 다중 폴리곤을 위해 좌표를 임시로 푸쉬한다
     });
     path.push(tempPath);        // path 에 임시로 저장한 좌표를 푸쉬한다
 
     // 현재 시 이름이 다음 시이름과 다르면
-    if (name != tname) {
+    if (name != nextValname) {
         // 다각형을 생성합니다
         var polygon = new kakao.maps.Polygon({
             map: map, // 다각형을 표시할 지도 객체
@@ -117,9 +107,20 @@ function displayArea(coordinates, name, city, tname) {
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             // 선택했던 폴리곤과 선택한 폴리곤의 이름이 다른 경우
+            $("#area").prop("value", "none");
             if (polygonSelectCheck != name) {
-                if (city == "경기도") {
-                    polygon.setOptions({fillColor: '#fff'});
+                if (city === '경기도') {
+                    if (clusterchecked) {
+                        polygon.setOptions({fillColor: '#fff'});
+                    }
+                    else {
+                        var level = map.getLevel() - 2;
+                        map.setLevel(level, {
+                            anchor: centroid(points), animate: {
+                                duration: 350
+                            }
+                        });
+                    }
                 }
                 switch (name) {
                     case("김포시"):
@@ -252,10 +253,7 @@ function displayArea(coordinates, name, city, tname) {
                 }
                 // 선택한 폴리곤의 이름을 저장한다
                 polygonSelectCheck = name;
-            }
-            // 선택했던 폴리곤과 선택한 폴리곤의 이름이 같은 경우
-            else {
-                console.log("미실행");
+                cityName = city;
             }
             // 폴리곤을 선택했을 때 열려있던 커스텀 오버레이를 닫는다
             closeOverlay();
@@ -263,6 +261,23 @@ function displayArea(coordinates, name, city, tname) {
         path = [];  // 다음 값을 위해 초기화
     }
     tempPath = [];  // 다음 값을 위해 초기화
+}
+
+function centroid (points) {
+    var i, j, len, p1, p2, f, area, x, y;
+
+    area = x = y = 0;
+
+    for (i = 0, len = points.length, j = len - 1; i < len; j = i++) {
+        p1 = points[i];
+        p2 = points[j];
+
+        f = p1.y * p2.x - p2.y * p1.x;
+        x += (p1.x + p2.x) * f;
+        y += (p1.y + p2.y) * f;
+        area += f * 3;
+    }
+    return new kakao.maps.LatLng(x / area, y / area);
 }
 
 // 클러스터 생성
@@ -283,10 +298,7 @@ function makecluster(path, x, y, maplevel) {
             // 로딩 화면 보여줌
             LoadingWithMask();
             // 클러스터를 생성할 json을 jquery를 이용해 불러온다
-            $.get(path, function (data) {
-                // 전에 있던 Element와 페이지를 지운다
-                var listEl = document.getElementById('placesList');
-
+            $.getJSON(path, function (data) {
                 // 가져온 json 파일을 이용해 마커 생성
                 var markers = data.map(function (each) {
                     var marker = new kakao.maps.Marker({
@@ -304,13 +316,11 @@ function makecluster(path, x, y, maplevel) {
                 clusterer.addMarkers(markers);
                 // 로딩 화면 종료
                 closeLoadingWithMask();
-                console.log("로딩 완료");
                 SelectedDataPaging(data, 1, path);
             });
         }, 1000);
-    }
-    else {
-        $.get(path, function (data) {
+    } else {
+        $.getJSON(path, function (data) {
             SelectedDataPaging(data, 1, path);
         });
 
@@ -344,13 +354,12 @@ function removeMarker() {
 }
 
 // 입력받은 좌표로 부드럽게 이동
-function panTo(lat, lng) {
+function panTo(lat, lng, lev) {
     // 이동할 위도 경도 위치를 생성합니다
     var moveLatLon = new kakao.maps.LatLng(lat, lng);
-    // var level = map.getLevel();
     // 지도 중심을 부드럽게 이동시킵니다
     // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-    map.setLevel('11');
+    map.setLevel(lev);
     map.panTo(moveLatLon);
 }
 
@@ -365,7 +374,7 @@ function LoadingWithMask() {
     var loadingImg = '';
 
     loadingImg += "<div id='loading-image'>";
-    loadingImg += " <img src='/css/kakao/Rippleslow.gif'/>";
+    loadingImg += " <img src='../../css/kakao/Rippleslow.gif'/>";
     loadingImg += "</div>";
 
     //화면에 레이어 추가
@@ -391,4 +400,30 @@ function LoadingWithMask() {
 function closeLoadingWithMask() {
     $('#mask, #loading-image').hide();
     $('#mask, #loading-image').empty();
+}
+
+function getGeoLocation() {
+    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+    if (navigator.geolocation) {
+
+        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            var lat = position.coords.latitude, // 위도
+                lon = position.coords.longitude; // 경도
+
+            locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+
+            // 마커와 인포윈도우를 표시합니다
+            map.setLevel(3);
+            map.panTo(locPosition);
+        });
+
+    } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+        locPosition = new kakao.maps.LatLng(37.49461890613009, 127.02760319558533);
+
+        map.setLevel(3);
+        map.panTo(locPosition);
+    }
 }

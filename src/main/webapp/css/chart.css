@@ -1,0 +1,203 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: "Noto Sans KR", sans-serif !important;
+    /*width: 90%;*/
+    margin: 0 auto;
+}
+
+.menubar{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.description_chart{
+    width: 100%;
+    margin: 0 auto;
+    height: 2300px;
+}
+
+.GFD{
+    width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.chart_div{
+    width: 900px;
+    height: 100%;
+    margin-left: 50px;
+    min-height: 500px;
+    padding-left: 0px;
+    background-color: #fff;
+    float: left;
+}
+.predictDiv{
+    width: 100%;
+    height: 1270px;
+}
+
+.AnalysisDiv{
+    width: 100%;
+    height: 1030px;
+}
+
+.lineChartDiv{
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+
+.lineChartDiv2{
+    float: left;
+    width: 100%;
+    height: 400px;
+    padding-top: 10px;
+}
+
+.columnchartDiv{
+    float: left;
+    width: 100%;
+    height: 400px;
+    padding-top: 10px;
+}
+
+.columnchart2Div{
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+
+.piechartDiv{
+    float: left;
+    width: 50%;
+    height: 400px;
+}
+
+.piechart2Div{
+    float: left;
+    width: 50%;
+    height: 400px;
+}
+
+#lineChart{
+    width: 100%;
+    height: 100%;
+}
+
+#lineChart2{
+    width: 100%;
+    height: 90%;
+}
+
+#ColumnChart1{
+    width: 100%;
+    height: 90%;
+}
+
+#piechart{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#piechart2{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#ColumnChart2{
+    width: 100%;
+    height: 100%;
+}
+.charts_button{
+    height: 10%;
+    text-align: center;
+}
+.charts_button button{
+    border: 1px solid #f18f18;
+    color:white;
+    background-color: #f18f18;
+    padding: 5px;
+}
+#b1, #b4{
+    margin-right: -6px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#b2, #b5{
+    margin-right: -7px;
+}
+#b3, #b6{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.charts_button button:hover{
+    background-color: rgba(0,0,0,0);
+    color: #f18f18;
+}
+
+.Dda1 {
+    padding-left: 20px;
+    font-size: 25px;
+    line-height: 24px;
+    color: #222;
+    margin-top: 16px;
+}
+
+.Dda1::before {
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 12px;
+    margin-left: -16px;
+    margin-right: 8px;
+    border: 3px solid #f18f18;
+}
+
+.linecolor{
+    margin-top: 10px; margin-bottom: 10px;
+    background-color: #f18f18;
+    height: 1px;
+    border: 0px;
+}
+
+.side_nav {
+    width: 260px;
+    float: left;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+/*반응형*/
+/*@media (max-width: 1080px) {*/
+/*    .charts_box{*/
+/*        width: 75%;*/
+/*    }*/
+/*    .lineChartDiv{*/
+/*        float: none;*/
+/*    }*/
+
+/*    .columnchart2Div{*/
+/*        float: none;*/
+/*    }*/
+
+/*    .columnchartDiv{*/
+/*        float: none;*/
+/*    }*/
+
+/*    .lineChartDiv2{*/
+/*        float: none;*/
+/*    }*/
+
+/*    .piechartDiv{*/
+/*        float: none;*/
+/*    }*/
+
+/*    .piechart2Div{*/
+/*        float: none;*/
+/*    }*/
+/*}*/

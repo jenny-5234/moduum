@@ -12,13 +12,13 @@ var clusterchecked = false;
 
 // 폴리곤을 클릭했을 때 똑같은걸 다시 클릭했는지 체크하기 위한 변수 및 선택한 폴리곤에서 검색을 위함
 var polygonSelectCheck = "";
+var cityName = "";
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
-    console.log("왜 안닫혀");
+    $("#area").prop("value", "none");
     closeOverlay();     // 검색을 했을 때 마커의 정보 오버레이가 열려있는걸 닫는다.
     var keyword = document.getElementById('keyword').value;     // 검색 텍스트 박스에 입력된 값을 keyword에 저장한다.
-    // console.clear(); // 데이터 넣을 때 필요한 콘솔 초기화
     // 키워드 앞뒤가 공백인 경우
     if (!keyword.replace(/^\s+|\s+$/g, '')) {
         alert('키워드를 입력해주세요!');
@@ -27,7 +27,7 @@ function searchPlaces() {
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
     // 폴리곤을 선택한 경우 그 지역을 기준으로 검색
     if (polygonSelectCheck) {
-        ps.keywordSearch(polygonSelectCheck + keyword + "긴급재난지원금", placesSearchCB, {});
+        ps.keywordSearch(cityName + polygonSelectCheck + keyword + "긴급재난지원금", placesSearchCB, {});
     } else {
         deletePolygon(polygons);        // 지도에 표시한 폴리곤을 제거한다
         polygons = [];       // 폴리곤 초기화
@@ -72,7 +72,6 @@ function displayPlaces(places) {
     removeMarker();
     // 클러스터 제거
     clusterer.clear();
-    // makejson(places);
     for (var i = 0; i < places.length; i++) {
         // 마커를 생성하고 지도에 표시합니다
         var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),        // 검색한 결과에서 위도 경도를 placePosition에 저장
@@ -100,12 +99,6 @@ function displayPlaces(places) {
             };
 
             itemEl.onmouseover = function () {
-                /*if (!clustercheck) {
-                    console.log()
-                    map.setCenter(new kakao.maps.LatLng(y, x));
-                    map.setLevel(3);
-                    displayInfowindow(marker, place_name, road_address_name, address_name, phone, place_url, id, x, y);
-                }*/
             };
 
             itemEl.onmouseout = function () {
@@ -245,8 +238,6 @@ function displayInfowindow(marker, place_name, road_address_name, address_name, 
             '                       <div class="ellipsis">' + road_address_name + '</div>' +
             '                       <div class="jibun">' + address_name + '</div>' +
             '                           <div class="contact">' + phone + '</div>' +
-            // '                           <span class="ICON-middot"></span>' +
-            // '                           <div class="detail"><a href="#" onclick="ps.keywordSearch(\'' + place_name + '\', placesSearchCB);" class="link">상세보기</a></div>' +
             '                           <span class="ICON-middot"></span>' +
             '                           <div class="searchdirections"><a href="https://map.kakao.com/link/to/' + place_name + ',' + y + ',' + x + '" target="_blank" class="link">길찾기</a></div>' +
             '                       </div>' +

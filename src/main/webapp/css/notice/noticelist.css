@@ -1,0 +1,179 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: "Noto Sans KR", sans-serif !important;
+    /*width: 90%;*/
+    /*height: auto;*/
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.container {
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 70%;
+}
+
+.YL {
+    width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.description_intro {
+    width: 100%;
+    height: 1000px;
+
+}
+
+.description_intro_auto {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.board-section {
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 70%;
+}
+.mainlist {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background: #f7df96;
+}
+.Dda1 {
+    padding-left: 20px;
+    font-size: 25px;
+    line-height: 24px;
+    color: #222;
+    margin-top: 16px;
+}
+
+.Dda1::before {
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 12px;
+    margin-left: -16px;
+    margin-right: 8px;
+    border: 3px solid #f18f18;
+}
+
+td[id="noticeid"] {
+    width: 10%;
+}
+
+td[id="title"] {
+    width: 55%;
+}
+
+td[id="writer"] {
+    width: 10%;
+}
+
+td[id="date"] {
+    width: 15%;
+}
+
+td[id="count"] {
+    width: 10%;
+}
+
+tr[class="noticelist"] {
+    text-align: center;
+}
+
+tr[class="noticelist"] td[class="listTitle"] {
+    text-align: left;
+    cursor: pointer;
+}
+
+/* ------------------------------ PAGINTION BEGIN ------------------------------ */
+.pager {
+    font-size: 0;
+    text-align: center;
+}
+.pager__item {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0 2px;
+}
+.pager__item.active .pager__link {
+    background-color: #ffb74d;
+    border-color: #ffb74d;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pager__link {
+    position: relative;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    width: 2.625rem;
+    height: 2.625rem;
+    line-height: 2.625rem;
+    margin-left: -1px;
+    color: #2f3640;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.pager__link:hover, .pager__link:focus, .pager__link:active {
+    background-color: #ffb74d;
+    border-color: #ffb74d;
+    color: #fff;
+    text-decoration: none;
+}
+/*.pager__link:hover svg path, .pager__link:focus svg path, .pager__link:active svg path {*/
+/*    fill: #fff;*/
+/*}*/
+.pager .pager__item.active + .pager__item .pager__link, .pager .pager__item:hover + .pager__item .pager__link {
+    border-left-color: #ffb74d;
+}
+
+@media screen and (max-width: 576px) {
+    .pager__item {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .pager__item.active, .pager__item:first-of-type, .pager__item:last-of-type, .pager__item:nth-of-type(2), .pager__item:nth-last-of-type(2) {
+        position: initial;
+        top: initial;
+        left: initial;
+    }
+    .pager__item.active + li {
+        position: initial;
+        top: initial;
+        left: initial;
+    }
+}
+/* ------------------------------ PAGINTION END ------------------------------ */
+
+.button {
+    text-align: right;
+    margin: 10px;
+}
+
+.write_btn {
+    padding: 2px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border: 2px solid #f4cb0b;
+    transition-duration: 0.4s;
+}
+
+.write_btn:hover {
+    background-color: #f4cb0b;
+    color: white;
+}
+
+

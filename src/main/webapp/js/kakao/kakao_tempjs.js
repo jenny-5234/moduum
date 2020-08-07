@@ -4,19 +4,20 @@
 // });
 
 // 클릭시 좌표를 콘솔에 출력
-kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+/*kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 
     // 클릭한 위도, 경도 정보를 가져옵니다
-    var latlng = mouseEvent.latLng;
-    // var latlng = map.getCenter();
+    // var latlng = mouseEvent.latLng;
+    var latlng = map.getCenter();
+    console.log(latlng);
+    // console.log(latlng.getLat());
+    // console.log(latlng.getLng());
 
-    console.log(latlng.getLat());
-    console.log(latlng.getLng());
-
-});
+});*/
 
 // 데이터를 넣을 때 콘솔에 json으로 출력함
 var gunpo_str = "";
+
 function makejson(places) {
     for (var i = 0; i < places.length; i++) {
         var gunpo = {

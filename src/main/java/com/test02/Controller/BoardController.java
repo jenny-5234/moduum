@@ -2,6 +2,8 @@ package com.test02.Controller;
 
 import com.test02.Dto.BoardDto;
 import com.test02.Dto.Pagination;
+
+//import com.test02.Dto.Search;
 import com.test02.Service.BoardServiceImpl;
 import lombok.SneakyThrows;
 //import lombok.extern.slf4j.Slf4j;
@@ -31,19 +33,24 @@ public class BoardController {
     @GetMapping("/boardlist")
     public String boardList(@ModelAttribute("boardDto") BoardDto boardDto,
                             @RequestParam(required = false, defaultValue = "1") int curPage,
+                            @RequestParam(required = false, defaultValue = "title") String searchType,
+                            @RequestParam(defaultValue =" ") String keyword,
                             Model model) throws Exception {
+
+//        Search search = new Search();
+//        search.setSearchType(searchType);
+//        search.setKeyword(keyword);
 
         // 전체 게시글 개수
         int listCnt = boardService.getBoardListCnt(boardDto);
 
         Pagination pagination = new Pagination(listCnt, curPage);
 
-//        System.out.println(pagination);
-//        System.out.println(pagination.getStartIndex());
 
         boardDto.setStartIndex(pagination.getStartIndex());
         boardDto.setCntPerPage(pagination.getPageSize());
         boardDto.setCurPage(pagination.getCurPage());
+
 
         List<BoardDto> board = boardService.getBoardList(boardDto);
 

@@ -2,7 +2,7 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif !important;
-    width: 90%;
+    /*width: 90%;*/
     margin: 0 auto;
 }
 
@@ -15,83 +15,6 @@ body {
     width: 100%;
     margin: 0 auto;
 
-}
-
-.side_nav {
-    width: 260px;
-    float: left;
-    padding-bottom: 40px;
-    padding-left: 90px;
-    margin-top: 30px;
-}
-
-.side_nav_img {
-    text-align: center;
-    padding-top: 70px;
-    height: 100px;
-    font-size: 26px;
-    position: relative;
-    color: #000;
-    background-image: url("../image/introImages/side_navbar.png");
-    background-repeat: no-repeat;
-    font-weight: 800;
-    font-family: 'Noto Sans KR';
-    font-weight: 600;
-
-}
-
-.sidebar__h2 {
-    text-align: center;
-    padding-top: 70px;
-    height: 100px;
-    font-size: 26px;
-    position: relative;
-    color: #000;
-    background-color: #fff;
-    font-weight: 800;
-    font-family: 'Noto Sans KR';
-    font-weight: 600;
-    border: 5px solid #f3c36d;
-    border-radius: 10px;
-}
-
-.nav_ul {
-    color: #333;
-    font-size: 1.3rem;
-    font-family: inherit;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    list-style: none;
-    border-top: 1px solid #ddd;
-}
-
-.nav_li {
-    list-style: none;
-    font-family: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    text-decoration: none;
-    display: block;
-    padding-left: 20px;
-    height: 55px;
-    line-height: 55px;
-    border: 1px solid #dddddd;
-    border-top: 0;
-    font-size: 18px;
-    transition: all 0.3s ease 0s;
-    color: #111;
-    background-position: 225px center;
-    background-repeat: no-repeat;
-    background-image: none;
-}
-
-.nav_li:hover {
-    background: #f7df71;
-    color: black;
-    font-weight: bold;
 }
 
 .intorduce {
@@ -190,7 +113,7 @@ body {
     height: auto;
     float: left;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .image_div {
@@ -236,7 +159,7 @@ body {
     border-radius: 10px;
     background-color: #f18f18;
     border: none;
-    color: #FFFFFF;
+    color: black;
     text-align: center;
     font-size: 18px;
     padding: 10px;
@@ -244,6 +167,7 @@ body {
     transition: all 0.5s;
     cursor: pointer;
     margin: 10px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 .url-button span {
@@ -284,11 +208,12 @@ body {
     width: 30px;
     height: 30px;
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 70px;
+    bottom: 70px;
     z-index: 1000;
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
 
 #up_button:focus {
@@ -299,28 +224,4 @@ body {
 .upbutton_img {
     width: 100%;
     opacity: 20%;
-}
-
-/*footer*/
-footer {
-    width: 100%;
-    background-color: transparent;
-    height: 150px;
-    float: left;
-    margin-top: 15px;
-    border-top: 2px solid #f3c36d;
-}
-
-.foo_div1 {
-    text-align: center;
-}
-
-.foo_div1 span {
-    font-size: 15px;
-    color: black;
-}
-
-.foo_div1 p {
-    margin-top: 5px;
-    color: black;
 }

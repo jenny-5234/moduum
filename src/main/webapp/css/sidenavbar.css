@@ -1,0 +1,74 @@
+.side_nav {
+    width: 260px;
+    float: left;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+.side_nav_img {
+    text-align: center;
+    padding-top: 70px;
+    height: 100px;
+    font-size: 26px;
+    position: relative;
+    color: #000;
+    background-image: url("../image/introImages/side_navbar.png");
+    background-repeat: no-repeat;
+    font-family: 'Noto Sans KR';
+    font-weight: 600;
+}
+
+.sidebar__h2 {
+    text-align: center;
+    padding-top: 70px;
+    height: 100px;
+    font-size: 26px;
+    position: relative;
+    color: #000;
+    background-color: #fff;
+    font-family: 'Noto Sans KR';
+    font-weight: 600;
+    border: 5px solid #f3c36d;
+    border-radius: 10px;
+}
+
+.nav_ul {
+    color: #333;
+    font-size: 1.3rem;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border-top: 1px solid #ddd;
+}
+
+.nav_li {
+    list-style: none;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    display: block;
+    padding-left: 20px;
+    height: 55px;
+    line-height: 55px;
+    border: 1px solid #dddddd;
+    border-top: 0;
+    font-size: 18px;
+    transition: all 0.3s ease 0s;
+    color: #111;
+    background-position: 225px center;
+    background-repeat: no-repeat;
+    background-image: none;
+    cursor:pointer;
+}
+
+.nav_li:hover {
+    background: #f7df71;
+    color: black;
+    font-weight: bold;
+}

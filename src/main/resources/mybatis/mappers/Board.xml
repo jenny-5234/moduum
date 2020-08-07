@@ -11,13 +11,14 @@
         select BoardId, B_Writer, B_Title, B_Date, B_Count
         from Board
 
-	</select>
+    </select>
 
     <!--    페이징-->
     <!-- 총 게시글 갯수 출력 -->
     <select id="getBoardListCnt" parameterType="int" resultType="int">
-	    SELECT COUNT(*)
-	    FROM BOARD
+        SELECT COUNT(*)
+        FROM BOARD
+
     </select>
 
     <!-- 페이징 처리 후 게시글 조회 -->
