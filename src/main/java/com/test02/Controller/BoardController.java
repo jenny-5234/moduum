@@ -46,11 +46,9 @@ public class BoardController {
 
         Pagination pagination = new Pagination(listCnt, curPage);
 
-
         boardDto.setStartIndex(pagination.getStartIndex());
         boardDto.setCntPerPage(pagination.getPageSize());
         boardDto.setCurPage(pagination.getCurPage());
-
 
         List<BoardDto> board = boardService.getBoardList(boardDto);
 
@@ -179,6 +177,40 @@ public class BoardController {
         boardService.delete(boardId);
 
         return "redirect:/board/boardlist";
+    }
+
+    // 6. 게시글 검색
+    @PostMapping(value = "search.do")
+    public String searchList(@ModelAttribute("boardDto") BoardDto boardDto,
+                            @RequestParam(required = false, defaultValue = "1") int curPage,
+                            Model model,HttpServletRequest request) throws Exception {
+
+        String searchType = request.getParameter("searchType");
+        String keyWord = request.getParameter("keyWord");
+
+        List<BoardDto> searchList;
+
+
+        if(searchType == null){
+            searchList = boardService.getBoardList(boardDto);
+        }else if(searchType.equals("title")) {
+            searchList = boardService.getSearchList_Title(boardDto,keyWord);
+        }else if(searchType.equals("writer")){
+            searchList = boardService.getSearchList_Writer(boardDto,keyWord);
+        }else {
+            searchList = boardService.getBoardList(boardDto);
+        }
+
+        Pagination pagination = new Pagination(searchList.size(), curPage);
+
+        boardDto.setStartIndex(pagination.getStartIndex());
+        boardDto.setCntPerPage(pagination.getPageSize());
+        boardDto.setCurPage(pagination.getCurPage());
+
+        model.addAttribute("board", searchList);
+        model.addAttribute("pagination", pagination);
+
+        return "/board/boardlist";
     }
 
 }

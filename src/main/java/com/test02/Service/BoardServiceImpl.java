@@ -75,6 +75,17 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.delete(BoardId);
     }
 
+    @Override
+    public List<BoardDto> getSearchList_Title(BoardDto boardDto, String keyWord) throws Exception {
+        return boardDao.getSearchList_Title(boardDto, keyWord);
+    }
+
+    @Override
+    public List<BoardDto> getSearchList_Writer(BoardDto boardDto, String keyWord) throws Exception {
+        return boardDao.getSearchList_Writer(boardDto, keyWord);
+    }
+
+
 }
 
 

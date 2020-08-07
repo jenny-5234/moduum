@@ -20,6 +20,10 @@ h4 {
     font-size: 20px;
 }
 
+.nav_container{
+    width: 100%;
+    height: auto;
+}
 
 .container {
     width: 100%;

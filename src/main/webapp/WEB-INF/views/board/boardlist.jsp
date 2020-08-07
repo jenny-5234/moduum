@@ -45,27 +45,36 @@
             </nav>
 
             <div class="board-section">
-                <h4 cladd="Dda1">정보마당</h4>
-                <hr>
-                <div class="search_box" style="align : right">
-                    <div class="form-group row justify-content-center">
-                        <div class="w100" style="padding-right:10px">
+                <h4 class="Dda1">정보마당</h4>
+                <hr style="margin: 10px 0px 10px 0px;">
+                <div class="form-group row justify-content-end">
+                    <form action="search.do" method="post">
+                        <div class="w100" style="padding-right:10px; float:left;">
                             <select class="form-control form-control-sm" name="searchType" id="searchType">
-
                                 <option value="title">제목</option>
-                                <option value="content">내용</option>
                                 <option value="writer">작성자</option>
                             </select>
                         </div>
-                        <div class="w300" style="padding-right:10px">
-                            <input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
-                        </div>
-                        <div>
-                            <button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
-                        </div>
-                    </div>
+                        <input type="text" class="form-control form-control-sm" name="keyWord" id="keyWord" placeholder="키워드">
+                        <button type="submit" id="search_Btn">검색</button>
+                    </form>
                 </div>
-
+                <%-- <div class="search_box" style="align : right">
+                     <div class="form-group row justify-content-center">
+                         <div class="w100" style="padding-right:10px">
+                             <select class="form-control form-control-sm" name="searchType" id="searchType">
+                                 <option value="title">제목</option>
+                                 <option value="writer">작성자</option>
+                             </select>
+                         </div>
+                         <div class="w300" style="padding-right:10px">
+                             <input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
+                         </div>
+                         <div>
+                             <button type= "submit" class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
+                         </div>
+                     </div>
+                 </div>--%>
                 <div style="text-align: left; padding-bottom: 5px;">
                     총 게시글 수 : ${pagination.listCnt }
                 </div>
