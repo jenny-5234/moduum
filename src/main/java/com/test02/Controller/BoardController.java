@@ -190,7 +190,6 @@ public class BoardController {
 
         List<BoardDto> searchList;
 
-
         if(searchType == null){
             searchList = boardService.getBoardList(boardDto);
         }else if(searchType.equals("title")) {
@@ -200,6 +199,7 @@ public class BoardController {
         }else {
             searchList = boardService.getBoardList(boardDto);
         }
+        Collections.reverse(searchList);
 
         Pagination pagination = new Pagination(searchList.size(), curPage);
 
