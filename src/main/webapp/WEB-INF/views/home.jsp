@@ -52,10 +52,10 @@
                 },
                 series:{    // 선 색상
                     0:{
-                        color: '#12EAFF'
+                        color: '#ffa303'
                     },
                     1:{
-                        color: '#65FF5E'
+                        color: '#5e6eff'
                     }
                 },
                 vAxis:{ // 세로

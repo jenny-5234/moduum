@@ -15,7 +15,7 @@
 <footer class="foo_div1">
     <div class="footer_wrap">
         <div class="foot_img">
-            <img src="/image/homeImages/modum-logo2_bg.jpg" style="width: 80%;" alt="모둠전"/>
+            <img src="/image/homeImages/modum-logo2_bg.jpg" style="width: 100%;" alt="모둠전"/>
         </div>
         <div class="copy_box">
             <ul class="foot_ul">
