@@ -6,13 +6,13 @@
 // });
 
 $(".navbar_Menu").mouseover(function () {
-    // $(".navbar_dept01").stop().fadeIn(300);
-    $(".navbar_dept01").stop().fadeTo(200, 1.0);
+    $(".navbar_dept01").stop().fadeIn(300);
+    // $(".navbar_dept01").stop().fadeTo(200, 1.0);
 });
 
 $(".navbar_Menu").mouseout(function () {
-    // $(".navbar_dept01").stop().fadeOut(300);
-    $(".navbar_dept01").stop().fadeTo(200, 0);
+    $(".navbar_dept01").stop().fadeOut(300);
+    // $(".navbar_dept01").stop().fadeTo(200, 0);
 });
 
 // $(".navbar_Menu").hover(function() {

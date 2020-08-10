@@ -220,7 +220,7 @@ function displayArea2(coordinates, name) {
             case("광주광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/광주.png');
                 $(".info_info1").text('광주광역시 | 광주은행');
-                $(".info_info2").text('광주광역시 소재 9만여개 가맹업소 (비씨카드 등록된 가맹점 주소 기준)');
+                $(".info_info2").text('비씨카드 등록된 광주시 9만여개 가맹업소');
                 $(".info_info3").text('백화점, 대형마트, 기업형 SSM, 유흥업소, 온라인 가맹점');
                 $(".info_info4").text('광주은행 카드헬프센터 ☎ 1577-3650');
                 $(".homepage_button").attr("href", "https://www.gwangju.go.kr/contentsView.do?pageId=www320");
@@ -238,7 +238,7 @@ function displayArea2(coordinates, name) {
             case("강원도"):
                 $(".logo_image").attr('src', '../../../image/logoImage/강원.jpg');
                 $(".info_info1").text('강원도 | 제로페이 ');
-                $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소, 세탁소 등 도내 강원상품권 사용점');
+                $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소 등 도내 강원상품권 사용점');
                 $(".info_info3").text('');
                 $(".info_info4").text('033-249-3389, 3219');
                 $(".homepage_button").attr("href", "https://gwgc.gwd.go.kr/");

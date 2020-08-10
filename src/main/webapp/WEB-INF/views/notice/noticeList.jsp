@@ -46,9 +46,9 @@
             </nav>
 
             <div class="board-section">
-                <h4 cladd="Dda1">공지사항</h4>
-                <hr>
-                <div style="text-align: right; padding-bottom: 5px;">
+                <h4 class="Dda1">공지사항</h4>
+                <hr style="margin: 10px 0px 10px 0px;">
+                <div style="text-align: left; padding-bottom: 5px;">
                     총 게시글 수 : ${pagination.listCnt }
                 </div>
                 <form id="Board">

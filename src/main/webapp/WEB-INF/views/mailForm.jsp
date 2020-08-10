@@ -44,16 +44,16 @@
             </nav>
 
             <div class="mail_box">
-                <h4 cladd="Dda1">문의사항</h4>
-                <hr>
+                <h4 class="Dda1">문의사항</h4>
+                <hr style="margin: 10px 0px 10px 0px;">
                 <form action="/mail/mailSender" method="post">
                     <div align="center"><!-- 제목 -->
-                        <input type="text" name="title" size="120" style="width:100%" placeholder="제목을 입력해주세요"
+                        <input type="text" name="title" size="120" style="width :98%" placeholder="제목을 입력해주세요"
                                class="form-control">
                     </div>
                     <p>
                     <div align="center"><!-- 내용 -->
-                        <textarea name="content" cols="120" rows="12" style="width:100%; resize:none"
+                        <textarea name="content" cols="120" rows="12" style="width:98%; resize:none"
                                   class="form-control">이름 : &#10;이메일 :  &#10;내용 : </textarea>
                     </div>
                     <p>

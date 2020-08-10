@@ -1,6 +1,8 @@
 /*---------------------------footer-------------------------------*/
 .foo_div1 {
-    background-color: white;
+    /*background-color: white;*/
+    background-color: #ffe5c5;
+    height: 200px;
 }
 
 .footer_wrap {

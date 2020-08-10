@@ -31,8 +31,8 @@
 
             <div class="news-section">
                 <h4 cladd="Dda1">최신뉴스</h4>
-                <hr>
-                <div style="text-align: left; padding-bottom: 3px;">
+                <hr style="margin: 10px 0px 10px 0px;">
+                <div style="text-align: left; padding-bottom: 5px;">
                     총 뉴스 수 : ${pagination.listCnt }
                 </div>
                 <form id="News">

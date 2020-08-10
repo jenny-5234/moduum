@@ -47,9 +47,12 @@
 
     <!--    조회수 증가-->
     <update id="increaseCount" parameterType="java.lang.Integer">
-        UPDATE Board
-        SET B_Count = B_Count + 1
+        <![CDATA[
+        UPDATE  Board
+        Set B_Count = (CASE WHEN (B_Count < 2147483647)  THEN B_Count + 1
+        ELSE B_Count END)
         WHERE BoardId = #{BoardId}
+        ]]>
     </update>
 
     <!--    게시글 삭제-->
@@ -65,4 +68,16 @@
             B_Context = #{B_Context}
         WHERE BoardId = #{BoardId}
     </update>
+
+    <select id="getSearchList_Title" resultType="BoardDto" parameterType="string">
+        select BoardId, B_Writer, B_Title, B_Date, B_Count
+        from Board
+        WHERE B_Title LIKE '%'+#{keyWord}+'%'
+    </select>
+
+    <select id="getSearchList_Writer" resultType="BoardDto" parameterType="string">
+        select BoardId, B_Writer, B_Title, B_Date, B_Count
+        from Board
+        WHERE B_Writer LIKE '%'+#{keyWord}+'%'
+    </select>
 </mapper>

@@ -3,6 +3,7 @@ package com.test02.Service;
 import com.test02.Dto.BoardDto;
 import com.test02.Dto.Pagination;
 import org.springframework.stereotype.Service;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
@@ -28,5 +29,8 @@ public interface BoardService {
     // 게시글 삭제
     public int delete(int BoardId);
 
-}
+    // 검색 게시글 조회
+    List<BoardDto> getSearchList_Title(BoardDto boardDto, String keyWord) throws Exception;
 
+    List<BoardDto> getSearchList_Writer(BoardDto boardDto, String keyWord) throws Exception;
+}
