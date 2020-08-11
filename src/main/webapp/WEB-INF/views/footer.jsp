@@ -31,7 +31,7 @@
             </ul>
             <br>
             <ul class="foot_ul">
-                <li class="item">Copyright 2019. ZZEONZAENG. All rights reserved.</li>
+                <li class="item">Copyright 2020. ZZEONZAENG. All rights reserved.</li>
             </ul>
         </div>
     </div>
