@@ -160,3 +160,9 @@ tr[class="boardlist"] td[class="listTitle"] {
     background-color: #f4cb0b;
     color: white;
 }
+
+@media (max-width: 1200px) {
+    .side_nav {
+        display: none;
+    }
+}
