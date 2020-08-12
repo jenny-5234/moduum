@@ -78,26 +78,30 @@
 <script>
     $(function () {
         $('#d_btn').click(function () {
-            var password = prompt("비밀번호")
+            var password = prompt("비밀번호");
 
             if (password == ${boardDto.b_Password}) {
-                location.href = '/board/delete.do?boardId=${boardDto.boardId}'
-            } else {
-                alert("다시 입력해주세요")
+                location.href = '/board/delete.do?boardId=${boardDto.boardId}';
+            } else if (password == null) {
             }
-        })
-    })
+            else {
+                alert("비밀번호가 올바르지 않습니다");
+            }
+        });
+    });
 
     $(function () {
         $('#m_btn').click(function () {
-            var password = prompt("비밀번호")
+            var password = prompt("비밀번호");
 
             if (password == ${boardDto.b_Password}) {
-                location.href = '/board/modify?boardId=${boardDto.boardId}'
-            } else {
-                alert("다시 입력해주세요")
+                location.href = '/board/modify?boardId=${boardDto.boardId}';
+            } else if (password == null) {
             }
-        })
-    })
+            else {
+                alert("비밀번호가 올바르지 않습니다.");
+            }
+        });
+    });
 </script>
 </html>
