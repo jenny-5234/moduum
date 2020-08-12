@@ -62,9 +62,10 @@ $(document).ready(function () {
 function regionSelection(city) {
     var selectedCity = city;
     switch (selectedCity) {
-        case("none" || " "):
+        case("none"):
             // 선택했을 때 마커, 폴리곤, itemElement, page, 클러스터를 초기화
             initialization();
+            panTo(36.47454125155807, 127.33001353138884, 12);
             break;
         case("서울특별시"):
             getjson('../../../location/seouldetail.json', '서울특별시');

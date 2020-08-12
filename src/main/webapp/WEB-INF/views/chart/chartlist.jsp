@@ -514,10 +514,8 @@
         <div class="chart_div">
             <div class="predictDiv" id="div1">
                 <section id="chart1">
-                    <h4 class="Dda1">
-                        <span>분석 및 예측</span>
-                    </h4>
-                    <hr class="linecolor">
+                    <h4 style="font-size: 1.5rem; font-weight: 500;">분석 및 예측</h4>
+                    <hr style="margin: 10px 0px 10px 0px;">
                     <div class="lineChartDiv">
                         <div id="lineChart"></div>
                     </div>
@@ -542,10 +540,8 @@
 
             <div class="AnalysisDiv">
                 <section id="chart2">
-                    <h4 class="Dda1">
-                        <span>현황</span>
-                    </h4>
-                    <hr class="linecolor">
+                    <h4 style="font-size: 1.5rem; font-weight: 500;">현황</h4>
+                    <hr style="margin: 10px 0px 10px 0px;">
                     <div class="piechartDiv" id="div2">
                         <div id="piechart"></div>
                     </div>

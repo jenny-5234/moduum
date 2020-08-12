@@ -14,63 +14,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/board/boardmodify.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <title>게시글 수정</title>
 
-    <style>
-        body{
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .container {
-            margin: 0 auto;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            text-align: center;
-            width: 70%;
-        }
-
-        .formTable {
-            width: 100%;
-        }
-
-        .label {
-            border-radius: 10px;
-            background-color: rgba(153, 197, 243, 0.5);
-            width: 20%;
-            padding: 7px;
-        }
-
-        .textbox {
-            width: 100%;
-
-        }
-
-        .container[id="saveBtn"] {
-            text-align: center;
-        }
-
-        .button {
-            text-align: right;
-            margin: 10px;
-        }
-
-        #modifyBtn {
-            padding: 2px;
-            font-size: 15px;
-            background-color: white;
-            color: black;
-            border: 2px solid dodgerblue;
-            transition-duration: 0.4s;
-        }
-
-        #modifyBtn:hover {
-            background-color: dodgerblue;
-            color: white;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -83,26 +30,28 @@
 
 <div class="container">
     <div class="box-header">
-        <h3 class="box-title">게시판 수정</h3>
+        <h4>게시판 수정</h4>
+        <hr>
     </div>
+
     <form name="modify-form" method="post" enctype="multipart/form-data" action="/board/update.do">
         <table class="formTable">
             <tr>
                 <td class="label">글 번호</td>
-                <td class="form-control">${boardDto.boardId}</td>
+                <td class="form-control" style="display: table-cell;">${boardDto.boardId}</td>
                 <input type="hidden" name="BoardId" id="BoardId" value="${boardDto.boardId}"/>
             </tr>
             <tr>
                 <td class="label"> 작성일자</td>
-                <td class="form-control"> ${boardDto.b_Date}</td>
+                <td class="form-control" style="display: table-cell;"> ${boardDto.b_Date}</td>
             </tr>
             <tr>
                 <td class="label">조회수</td>
-                <td class="form-control">${boardDto.b_Count}</td>
+                <td class="form-control" style="display: table-cell;">${boardDto.b_Count}</td>
             </tr>
             <tr>
                 <td class="label">작성자</td>
-                <td class="form-control">${boardDto.b_Writer}</td>
+                <td class="form-control" style="display: table-cell;">${boardDto.b_Writer}</td>
             </tr>
             <tr>
                 <td class="label">제목</td>

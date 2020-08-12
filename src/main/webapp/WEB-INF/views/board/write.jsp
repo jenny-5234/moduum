@@ -13,8 +13,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/board/boardwrite.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
 
     <title>글쓰기</title>
 
@@ -27,7 +27,8 @@
 
 <div class="container">
     <div class="box-header">
-        <h3 class="box-title">글 작성하기</h3>
+        <h4>글 작성하기</h4>
+        <hr>
     </div>
     <form id="insert_Form" name="insert_Form" method="post" enctype="multipart/form-data" action="/board/insert.do">
         <table class="formTable">

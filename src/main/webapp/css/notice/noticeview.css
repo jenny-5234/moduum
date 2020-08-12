@@ -7,7 +7,6 @@ body {
     margin: 0 auto !important;
     padding: 0 !important;
 }
-
 .container {
     margin: 0 auto;
     margin-top: 3%;
@@ -19,12 +18,7 @@ body {
 .box-header {
     margin: 10px;
 }
-/*.box-title{*/
-/*    font-weight: bold;*/
-/*}*/
-/*.hr {*/
-/*    margin: 30px 0px 30px 0px;*/
-/*}*/
+
 .view {
     width: 100%;
 }
@@ -51,7 +45,7 @@ body {
     margin: 10px;
 }
 
-.page_btn {
+.list_Btn {
     padding: 2px;
     width: 60px;
     font-size: 15px;
@@ -62,6 +56,6 @@ body {
     transition-duration: 0.4s;
 }
 
-.page_btn:hover {
+.list_Btn:hover {
     background-color: #f3ba10;
 }

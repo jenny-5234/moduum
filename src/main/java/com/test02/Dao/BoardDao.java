@@ -55,5 +55,15 @@ public class BoardDao {
         return BoardId;
     }
 
+    // 7. 게시글 검색
+    public List<BoardDto> getSearchList_Title(BoardDto boardDto, String keyWord) throws Exception{
+        return sqlSession.selectList(  namespace + ".getSearchList_Title", keyWord);
+    }
+
+    public List<BoardDto> getSearchList_Writer(BoardDto boardDto, String keyWord) throws Exception{
+        return sqlSession.selectList(  namespace + ".getSearchList_Writer", keyWord);
+    }
+
+
 }
 

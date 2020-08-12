@@ -53,10 +53,10 @@
                 },
                 series:{    // 선 색상
                     0:{
-                        color: '#12EAFF'
+                        color: '#ffa303'
                     },
                     1:{
-                        color: '#65FF5E'
+                        color: '#5e6eff'
                     }
                 },
                 vAxis:{ // 세로
@@ -193,7 +193,7 @@
 
                         <div class="sub_menuinfo_bottom">
                             <div class="sub_menuinfo_btn">
-                                <a class="homepage_button" id="home_Btn" href="#">
+                                <a class="homepage_button" id="home_Btn" href="#" target="_blank">
                                     <%--                                   onclick="location.href='/map/mapsearch'">--%>
                                     <%--                                    <img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">--%>
                                     <%--                                    <span>홈페이지</span>--%>
