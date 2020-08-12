@@ -270,7 +270,14 @@
     </div>
 </section>
 <div id="chat">
-    <button type="button" class="chat_fixed">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (document.body.offsetHeight) - 1200;
+            window.open("chat","실시간채팅창", "width=555, height=660, left="+xPos+", top="+yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()"/>
 <%--        <img src="" class="idk"/>--%>
     </button>
 </div>

@@ -15,7 +15,7 @@
 <footer class="foo_div1">
     <div class="footer_wrap">
         <div class="foot_img">
-            <img src="/image/homeImages/modum-logo2_bg.jpg" style="width: 100%;" alt="모둠전"/>
+            <img src="/image/homeImages/modum-logo2_bg.jpg" style="width:350px; height: 200px;" alt="모둠전"/>
         </div>
         <div class="copy_box">
             <ul class="foot_ul">
@@ -26,12 +26,16 @@
             <br><br>
             <ul class="foot_ul">
                 <li class="item">서울특별시 서초구 서초동 서초대로74길 33 비트 4층</li>
-                <li class="item">|</li>
+<%--                <li class="item">|</li>--%>
+<%--                <li class="item">고객센터 010-2088-5234(평일 09:00 ~ 18:00)</li>--%>
+            </ul>
+            <br>
+            <ul class="foot_ul">
                 <li class="item">고객센터 010-2088-5234(평일 09:00 ~ 18:00)</li>
             </ul>
             <br>
             <ul class="foot_ul">
-                <li class="item">Copyright 2020. ZZEONZAENG. All rights reserved.</li>
+                <li class="item2">Copyright 2020. ZZEONZAENG. All rights reserved.</li>
             </ul>
         </div>
     </div>
