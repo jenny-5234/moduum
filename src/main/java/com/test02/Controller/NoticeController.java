@@ -67,6 +67,45 @@ public class NoticeController {
         return "redirect:/notice/noticeList";
     }
 
+    // 4. 게시글 수정
+    @GetMapping(value = "/modify")
+    public String update(@RequestParam(value = "noticeId") int noticeId, Model model) throws Exception {
+        NoticeDto noticeDto = noticeService.pageModifyDetail(noticeId);
+        model.addAttribute("noticeDto", noticeDto);
+        return "/notice/modify";
+    }
+
+    @PostMapping(value = "update.do")
+    public String updateDo(NoticeDto noticeDto, Model model,
+                           @RequestParam(value = "NoticeId") int noticeId,
+                           @RequestParam(defaultValue = "1") int curPage) throws Exception {
+
+        int listCnt = noticeService.getNoticeListCnt(noticeDto);
+
+        Pagination pagination = new Pagination(listCnt, curPage);
+
+        noticeDto.setStartIndex(pagination.getStartIndex());
+        noticeDto.setCntPerPage(pagination.getPageSize());
+        noticeDto.setCurPage(pagination.getCurPage());
+
+        noticeService.update(noticeDto);
+
+        model.addAttribute("notice", noticeService.getNoticeList(noticeDto));
+        model.addAttribute("pagination", pagination);
+
+        System.out.println(noticeService.pageModifyDetail(noticeId));
+        return "redirect:/notice/noticeList";
+    }
+
+    // 5. 게시글 삭제
+    @SneakyThrows
+    @GetMapping(value = "delete.do")
+    public String delete(@RequestParam(value = "noticeId", required = false) int noticeId) {
+        noticeService.delete(noticeId);
+
+        return "redirect:/notice/noticeList?curPage=1";
+    }
+
     //스마트 에디터 이미지 파일 업로드 기능
     @SneakyThrows
     @PostMapping(value = "/fileupload.do")

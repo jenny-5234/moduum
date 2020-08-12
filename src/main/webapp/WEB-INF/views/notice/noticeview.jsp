@@ -62,6 +62,13 @@
 
     <div class="buttons">
         <button type="button" class="list_Btn" name="curPage" onclick="location.href='/notice/noticeList?curPage=1'">목록</button>
+        <%
+            String admin = (String) session.getAttribute("adminid");
+            if (admin != null) {
+        %>
+        <button type="button" class="list_Btn" id="d_btn">삭제</button>
+        <button type="button" class="list_Btn" id="m_btn">수정</button>
+        <%}%>
     </div>
 </div>
 
@@ -70,4 +77,30 @@
 </footer>
 
 </body>
+<script>
+    $(function () {
+        $('#d_btn').click(function () {
+
+            <%
+                if (admin != null) {
+            %>
+            if (confirm("삭제하시겠습니까?") == true) {
+                location.href = '/notice/delete.do?noticeId=${noticeDto.noticeId}';
+            }
+            <%}%>
+        });
+    });
+
+    $(function () {
+        $('#m_btn').click(function () {
+            <%
+                if (admin != null) {
+            %>
+            if (confirm("수정하시겠습니까?") == true) {
+                location.href = '/notice/modify?noticeId=${noticeDto.noticeId}';
+            }
+            <%}%>
+        });
+    });
+</script>
 </html>

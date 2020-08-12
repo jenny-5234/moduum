@@ -48,4 +48,18 @@
         SET N_Count = N_Count + 1
         WHERE NoticeId = #{NoticeId}
     </update>
+
+    <!--    게시글 삭제-->
+    <delete id="delete" parameterType="int">
+        DELETE FROM Notice
+        WHERE NoticeId = #{NoticeId}
+    </delete>
+
+    <!--    게시글 수정-->
+    <update id="update" parameterType="NoticeDto">
+        UPDATE Notice
+        SET N_Title = #{N_Title},
+            N_Context = #{N_Context}
+        WHERE NoticeId = #{NoticeId}
+    </update>
 </mapper>
