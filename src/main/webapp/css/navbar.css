@@ -23,11 +23,12 @@
 }
 
 
-.block{
+.block {
     float: left;
     width: 5%;
     height: 90px;
 }
+
 .navbar_top-menu1 {
     height: 50px;
 }
@@ -100,3 +101,67 @@
 .navbar_mapImage {
     width: 65%;
 }
+
+@media screen and (max-width: 1400px) {
+    .navbar_Menu {
+        height: auto;
+    }
+
+    .navbar_menu01 {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .navbar_dept01_li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+
+    .navbar_sub-menu {
+        border-bottom: 1px solid #576979;
+        border-right: 1px solid #576979;
+    }
+
+    .navbar_Menu #pull {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .navbar_Menu {
+        width: 100%;
+        margin: auto;
+        position: relative;
+        margin-bottom: 0px;
+        text-align: center;
+        height: 30px;
+    }
+
+    .navbar_menu01 {
+        display: none;
+        height: auto;
+    }
+
+    .navbar_Menu #pull {
+        display: block;
+        background-color: #f4cb0b;
+        width: 100%;
+        position: relative;
+    }
+
+    .navbar_Menu #pull:after {
+        content: "";
+        /*background: url('/image/open-menu.png') no-repeat;*/
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+}
+

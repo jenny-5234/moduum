@@ -130,7 +130,10 @@
 <body>
 <div class="nav_container">
     <div class="menubar">
-        <%@include file="navbar.jsp" %>
+        <jsp:include page="navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="intro1.jsp" />
     </div>
 </div>
 
