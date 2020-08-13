@@ -97,7 +97,6 @@ var polygons = [];
 var tempPath = [];          // 임시로 폴리곤을 넣어둘 변수(다중 폴리곤)
 var path = [];            // 폴리곤 그려줄 path
 var toto = [];
-var ttemp = "";
 
 function displayArea2(coordinates, name) {
     $.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.

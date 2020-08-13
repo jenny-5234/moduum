@@ -112,6 +112,14 @@
         display: block;
         height: auto;
     }
+    .navbar_Menu {
+        height: 60px;
+        width: 100%;
+    }
+    .navbar_top-menu {
+        height: 100px;
+        margin-top: 2%;
+    }
 
     .navbar_dept01_li {
         width: 50%;

@@ -9,26 +9,30 @@ ul {
 
 .sidenav_logo_image {
     width: 100%;
-    height: 80px;
-    border-bottom: 1px solid #5d5050;
+    height: 60px;
+    background: white;
+    border-bottom: 1px solid #000000;
 }
 
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     left: 0;
-    background-color: #f7df96;
+    background-color: #fff8ec;
     overflow-x: hidden;
     transition: 0.5s;
-    /*padding-top: 45px;*/
+    /* padding-top: 45px; */
     overflow-y: hidden;
 }
 
 .sub_nav {
-    padding: 8px 8px 8px 32px;
+    width: 100%;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding: 0 30px;
     text-decoration: none;
     font-size: 25px;
     color: #585050;
@@ -36,18 +40,19 @@ ul {
     transition: 0.3s;
     font-weight: bold;
 }
-
 .sub_nav:hover {
-    color: #f1f1f1;
+    color: #000000;
+    font-weight: 900;
 }
 
 .menu1:hover {
-    color: #f1f1f1;
+    background: wheat;
+    color: #000000;
 }
 
 .sidenav a[class='closebtn'] {
     position: absolute;
-    top: 10px;
+    top: -10px;
     right: 10px;
     font-size: 36px;
     /*margin-left: 50px;*/
@@ -59,24 +64,25 @@ ul {
 }
 
 .sidenav a[class='closebtn']:hover {
-    color: #f1f1f1;
+    color: #f4cb0b;
 }
-.sidenav a[class='closebtn']:active, .sidenav a[class='closebtn']:visited{
+
+.sidenav a[class='closebtn']:active, .sidenav a[class='closebtn']:visited {
     text-decoration: none;
 }
 
-.sub_nav {
-    width: 100%;
-    line-height: 60px;
-    /*background: #000;*/
-    /*color: #fff;*/
-    box-sizing: border-box;
-    padding: 0 10px;
+.open_Btn {
+    font-size: 30px;
+    cursor: pointer;
+    float: left;
+    margin-left: 15px;
 }
 
+
 .sub_menu {
-    display: none;
-    padding-left: 40px;
+    /*display: none;*/
+    /*padding-left: 70px;*/
+    text-align: center;
 }
 
 .accordion-box {
@@ -87,20 +93,36 @@ ul {
 
 .menu1 {
     line-height: 40px;
-    font-size: 18px;
+    font-size: 19px;
     transition: 0.3s;
 }
 
-.open_menu{
+.open_menu {
     text-align: center;
+    width: 100%;
+    height: 50px;
 }
 
-@media screen and (max-height: 450px) {
+.open_menu_logo {
+    width: 20%;
+    margin-top: 7px;
+}
+
+@media screen and (max-height: 600px) {
     .sidenav {
         padding-top: 15px;
     }
 
     .sidenav a {
         font-size: 18px;
+    }
+    .open_menu {
+        text-align: center;
+        width: 100%;
+        height: 50px;
+    }
+    .open_menu_logo {
+        width: 25%;
+        margin-top: 10px;
     }
 }

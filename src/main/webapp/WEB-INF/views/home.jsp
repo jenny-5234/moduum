@@ -133,7 +133,7 @@
         <jsp:include page="navbar.jsp" />
     </div>
     <div class="sidenavbar">
-        <jsp:include page="intro1.jsp" />
+        <jsp:include page="sidebar.jsp" />
     </div>
 </div>
 
@@ -141,7 +141,7 @@
     <div class="sub_container">
         <section class="sub_top_container">
             <div class="map_box">
-                <div id="map" style="width:100%;height:710px;position:relative;overflow:hidden;"></div>
+                <div id="map" ></div>
                 <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
             </div>
 

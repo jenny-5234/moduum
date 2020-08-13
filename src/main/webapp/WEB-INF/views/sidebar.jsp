@@ -24,14 +24,14 @@
 
 <div id="mySidenav" class="sidenav">
     <div class="sidenav_logo_image">
-        <img src="/image/homeImages/modum-logo.png" style="width: 85%"/>
+        <img src="/image/homeImages/modum-logo.png" style="width: 80%;"/>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     </div>
 
     <div class="accordion-box">
         <ul class="list">
             <li>
-                <div class="sub_nav">지역화폐란?</div>
+                <div class="sub_nav">지역화폐란?   </div>
                 <div class="sub_menu">
                     <div class="menu1" onclick="location.href='/intro#scroll1'">지역화폐 소개</div>
                     <div class="menu1" onclick="location.href='/intro#scroll2'">지역화폐 장점</div>
@@ -64,9 +64,9 @@
         </ul>
     </div>
 </div>
-<span style="font-size:30px;cursor:pointer;float: left;" onclick="openNav()">&#9776;</span>
+<span class="open_Btn" onclick="openNav()">&#9776;</span>
 <div class="open_menu">
-    <img src="/image/homeImages/modum-logo1.png" style="width: 25%">
+    <img src="/image/homeImages/modum-logo1.png" class="open_menu_logo">
 </div>
 
 </body>

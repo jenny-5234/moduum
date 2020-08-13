@@ -1,6 +1,5 @@
 package com.test02.Controller;
 
-import com.test02.Dto.IntroDto;
 import com.test02.Service.IntroServiceImpl;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -8,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
 
 
 @Controller
@@ -30,7 +27,7 @@ public class IntroController {
     @GetMapping(value = "/intro1")
     public String pageDetail1(Model model) {
         model.addAttribute("intro1", introService.getIntroHash());
-        return "intro1";
+        return "sidebar";
     }
 
     @SneakyThrows
