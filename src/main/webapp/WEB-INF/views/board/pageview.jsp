@@ -84,17 +84,17 @@
                 if (admin != null) {
             %>
                     if (confirm("삭제하시겠습니까?") == true) {
-                        location.href = '/board/delete.do?boardId=${boardDto.boardId}'
+                        location.href = '/board/delete.do?boardId=${boardDto.boardId}';
                     } else {
 
                     }
                 <%} else {%>
-                    var password = prompt("비밀번호")
-                    if (password == ${boardDto.b_Password}) {
-                        location.href = '/board/delete.do?boardId=${boardDto.boardId}'
+                    var password = prompt("비밀번호");
+                    if (password == "${boardDto.b_Password}") {
+                        location.href = '/board/delete.do?boardId=${boardDto.boardId}';
                     } else if (password == null) {}
                     else {
-                        alert("다시 입력해주세요");
+                        alert("비밀번호가 올바르지 않습니다.");
                     }
                 <%}%>
         });
@@ -104,7 +104,7 @@
         $('#m_btn').click(function () {
             var password = prompt("비밀번호")
 
-            if (password == ${boardDto.b_Password}) {
+            if (password == "${boardDto.b_Password}") {
                 location.href = '/board/modify?boardId=${boardDto.boardId}';
             } else if (password == null) {}
             else {

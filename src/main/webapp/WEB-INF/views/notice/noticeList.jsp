@@ -107,25 +107,12 @@
                 </form>
                 <%
                     String admin = (String) session.getAttribute("adminid");
-
-                    if (admin == null) {
+                    if (admin != null) {
                 %>
-                <div class="button">
-                    <button type="button" class="write_btn" style="display: none"
-                            onclick="location.href='/notice/notice_write'">글쓰기
-                    </button>
-                </div>
-                <%} else if (admin.equals("modumadmin")) { %>
-                <div class="button">
-                    <button type="button" class="write_btn" onclick="location.href='/notice/notice_write'">글쓰기</button>
-                </div>
-                <% } else {%>
-                <div class="button">
-                    <button type="button" class="write_btn" style="display: none"
-                            onclick="location.href='/notice/notice_write'">글쓰기
-                    </button>
-                </div>
-                <% } %>
+                    <div class="button">
+                        <button type="button" class="write_btn" onclick="location.href='/notice/notice_write'">글쓰기</button>
+                    </div>
+                <%}%>
 
             </div>
         </div>

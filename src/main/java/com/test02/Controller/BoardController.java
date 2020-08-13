@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.*;
 
@@ -173,9 +174,18 @@ public class BoardController {
     // 5. 게시글 삭제
     @SneakyThrows
     @GetMapping(value = "delete.do")
-    public String delete(@RequestParam(value = "boardId", required = false) int boardId) {
-        boardService.delete(boardId);
+    public String delete(@RequestParam(value = "boardId", required = false) int boardId, HttpSession session, HttpServletResponse response) {
+        // TODO: 권한 없으면 삭제 X
 
+        if (session.getAttribute("auth") == null) {
+            System.out.println("NOOOOOOOOOOOOOOOOOOOOOOOOOO");
+        }
+        else {
+            System.out.println("delete" + session.getAttribute("auth"));
+            boardService.delete(boardId);
+            session.removeAttribute("auth");
+        }
+        System.out.println("final" + session.getAttribute("auth"));
         return "redirect:/board/boardlist";
     }
 

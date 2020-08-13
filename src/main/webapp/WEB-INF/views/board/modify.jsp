@@ -21,7 +21,10 @@
 </head>
 
 <body>
-
+<%
+    String admin = (String) session.getAttribute("adminid");
+    if (admin == null) { response.sendRedirect("/board/boardlist"); }
+%>
 
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>

@@ -75,7 +75,7 @@
 <body>
 <%
     String admin = (String) session.getAttribute("adminid");
-    if (admin == null) { response.sendRedirect("/"); }
+    if (admin == null) { response.sendRedirect("/admin"); }
 %>
 
 <div class="menubar">

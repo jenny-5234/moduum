@@ -55,20 +55,23 @@ public class MailController{
                 return new javax.mail.PasswordAuthentication(un, pw);
             }
         });
-        session.setDebug(true); //for debug
-        Message mimeMessage = new MimeMessage(session); //MimeMessage 생성
-        mimeMessage.setFrom(new InternetAddress("public@modumj.duckdns.org")); //발신자 셋팅 , 보내는 사람의 이메일주소를 한번 더 입력합니다. 이때는 이메일 풀 주소를 다 작성해주세요.
-        mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient)); //수신자셋팅 //.TO 외에 .CC(참조) .BCC(숨은참조) 도 있음
-
-        mimeMessage.setSubject(MimeUtility.encodeText(subject, "UTF-8", "B")); //제목셋팅
-        mimeMessage.setText(body); //내용셋팅0
-        Transport.send(mimeMessage); //javax.mail.Transport.send() 이용 }
-        response.setContentType("text/html; charset=UTF-8");
-
         PrintWriter out = response.getWriter();
+        response.setContentType("text/html; charset=UTF-8");
+        try {
+            session.setDebug(true); //for debug
+            Message mimeMessage = new MimeMessage(session); //MimeMessage 생성
+            mimeMessage.setFrom(new InternetAddress("public@modumj.duckdns.org")); //발신자 셋팅 , 보내는 사람의 이메일주소를 한번 더 입력합니다. 이때는 이메일 풀 주소를 다 작성해주세요.
+            mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient)); //수신자셋팅 //.TO 외에 .CC(참조) .BCC(숨은참조) 도 있음
 
-        out.println("<script>alert('소중한 의견 감사합니다.'); location.href='/';</script>");
+            mimeMessage.setSubject(MimeUtility.encodeText(subject, "UTF-8", "B")); //제목셋팅
+            mimeMessage.setText(body); //내용셋팅0
+            Transport.send(mimeMessage); //javax.mail.Transport.send() 이용 }
 
-        out.flush();
+            out.println("<script>alert('소중한 의견 감사합니다.'); location.href='/';</script>");
+
+            out.flush();
+        } catch (MessagingException e) {
+            out.println("<script>alert('죄송합니다 현재 문의 사항 보내기를 할 수 없습니다.'); location.href='/mail/feedback';</script>");
+        }
     }
 }
