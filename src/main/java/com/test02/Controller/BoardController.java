@@ -186,7 +186,7 @@ public class BoardController {
 
         PrintWriter out = response.getWriter();
 
-        out.println("<script>alert('올바르지 않은 접근입니다'); location.href='/board/boardlist'</script>");
+        out.println("<script>alert('잘못된 접근입니다'); location.href='/board/boardlist'</script>");
         out.flush();
     }
 
