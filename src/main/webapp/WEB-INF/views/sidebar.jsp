@@ -25,7 +25,7 @@
 <div id="mySidenav" class="sidenav">
     <div class="sidenav_logo_image">
         <img src="/image/homeImages/modum-logo.png" style="width: 80%;"/>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav(); closeMask();">&times;</a>
     </div>
 
     <div class="accordion-box">
@@ -64,7 +64,7 @@
         </ul>
     </div>
 </div>
-<span class="open_Btn" onclick="openNav()">&#9776;</span>
+<span class="open_Btn" onclick="openNav(); mask();">&#9776;</span>
 <div class="open_menu">
     <img src="/image/homeImages/modum-logo1.png" class="open_menu_logo">
 </div>

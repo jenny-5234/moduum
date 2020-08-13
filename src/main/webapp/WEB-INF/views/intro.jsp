@@ -32,8 +32,13 @@
 </head>
 <body>
 
-<div class="menubar">
-    <%@include file="/WEB-INF/views/navbar.jsp" %>
+<div class="nav_container">
+    <div class="menubar">
+        <jsp:include page="navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="sidebar.jsp" />
+    </div>
 </div>
 
 <section class="description_intro">

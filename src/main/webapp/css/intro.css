@@ -10,7 +10,14 @@ body {
 /*    width: 100%;*/
 /*    margin: 0 auto;*/
 /*}*/
+.nav_container {
+    width: 100%;
+    height: auto;
+}
 
+.sidenavbar {
+    display: none;
+}
 .description_intro {
     width: 100%;
     margin: 0 auto;
@@ -224,4 +231,15 @@ body {
 .upbutton_img {
     width: 100%;
     opacity: 20%;
+}
+
+@media (max-width: 900px) {
+
+    .menubar {
+        display: none;
+    }
+
+    .sidenavbar {
+        display: block;
+    }
 }

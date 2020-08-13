@@ -64,4 +64,16 @@
     .foot_img{
         display: none;
     }
+    .foo_div1 {
+        background-color: #ffe5c5;
+        height: 180px;
+    }
 }
+
+@media (max-width: 900px){
+  .foo_div1 {
+         background-color: #ffe5c5;
+         height: 180px;
+     }
+}
+
