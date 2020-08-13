@@ -85,7 +85,7 @@
                 if (admin != null) {
             %>
             if (confirm("삭제하시겠습니까?") == true) {
-                location.href = '/notice/delete.do?noticeId=${noticeDto.noticeId}';
+                sendPost();
             }
             <%}%>
         });
@@ -102,5 +102,13 @@
             <%}%>
         });
     });
+
+    function sendPost() {
+        var form = document.createElement('form');
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', '/notice/delete.do?noticeId=${noticeDto.noticeId}');
+        document.body.appendChild(form);
+        form.submit();
+    }
 </script>
 </html>

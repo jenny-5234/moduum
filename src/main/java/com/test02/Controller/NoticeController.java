@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
 
@@ -99,11 +101,22 @@ public class NoticeController {
 
     // 5. 게시글 삭제
     @SneakyThrows
-    @GetMapping(value = "delete.do")
+    @RequestMapping(value = "delete.do", method = RequestMethod.POST)
     public String delete(@RequestParam(value = "noticeId", required = false) int noticeId) {
         noticeService.delete(noticeId);
 
         return "redirect:/notice/noticeList?curPage=1";
+    }
+
+    @SneakyThrows
+    @RequestMapping(value = "delete.do", method = RequestMethod.GET)
+    public void getDelete(HttpServletResponse response) {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<script>alert('올바르지 않은 접근입니다'); location.href='/notice/noticeList'</script>");
+        out.flush();
     }
 
     //스마트 에디터 이미지 파일 업로드 기능
