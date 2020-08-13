@@ -1,5 +1,7 @@
-*{ box-sizing: border-box;}
-.chat_log{ width: 100%; height: 640px; overflow-y: auto; padding-left: 10px; border: 1px solid;}
+*{box-sizing: border-box;}
+.chatting_size{ width:540px; height: 600px;}
+.chatting_size form{ width: auto;}
+.chat_log{ width: 100%; height: 100%; overflow-y: auto; padding-left: 10px; border: 1px solid;}
 .name{ width: 13%; height: 30px; border: 1px solid; text-align: center; float: left;}
 .message{ width: 77%; height: 30px; border: 1px solid; float: left;}
 .chat_button{ width: 10%; height: 30px; float: left;}

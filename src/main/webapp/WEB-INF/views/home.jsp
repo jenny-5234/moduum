@@ -27,6 +27,7 @@
         google.charts.setOnLoadCallback(drawpiechart);
         google.charts.setOnLoadCallback(drawlinechart);
 
+        // 사용량, 충전량 예측 및 분석(선그래프)
         function drawlinechart(){
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '사용량', '충전량'],
@@ -96,6 +97,7 @@
             window.addEventListener('resize',drawlinechart,false);
         }
 
+        // 모든 성별 사용패턴 분석(파이차트)
         function drawpiechart(){
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
@@ -271,7 +273,14 @@
     </div>
 </section>
 <div id="chat">
-    <button type="button" class="chat_fixed">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (document.body.offsetHeight) - 1200;
+            window.open("chat","실시간채팅창", "width=555, height=660, left="+xPos+", top="+yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()"/>
 <%--        <img src="" class="idk"/>--%>
     </button>
 </div>

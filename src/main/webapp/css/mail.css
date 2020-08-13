@@ -40,3 +40,9 @@ h4 {
     float: left;
 }
 
+
+@media (max-width: 1200px) {
+    .side_nav {
+        display: none;
+    }
+}
