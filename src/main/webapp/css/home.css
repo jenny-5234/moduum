@@ -66,6 +66,7 @@ h4 {
 #map {
     width: 100%;
     height: 710px;
+    position: relative;
 }
 
 .info_graph_box {
@@ -270,6 +271,7 @@ h4 {
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #eaeaea;
+    box-sizing: border-box;
 }
 
 .news_box {
@@ -356,6 +358,25 @@ h4 {
     .container {
         width: 100%;
         height: 1100px;
+    }
+    .sub_bottom_box {
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 1%;
+        border-radius: 10px;
+    }
+    .m_text_list {
+        width: 100%;
+        padding: 4px;
+        font-size: 14px;
+    }
+    .sub_menuinfo_text {
+        width: 50%;
+        height: auto;
+        margin-top: 15px;
+        padding-left: 10px;
+        float: left;
     }
 
 }

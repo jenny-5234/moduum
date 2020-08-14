@@ -233,8 +233,14 @@ body {
     opacity: 20%;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1200px) and (min-width: 1px) {
+    .side_nav{
+        display: none;
+    }
 
+}
+@media (max-width: 900px) {
+    .in
     .menubar {
         display: none;
     }
