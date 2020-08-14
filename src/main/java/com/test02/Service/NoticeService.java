@@ -18,4 +18,12 @@ public interface NoticeService {
 
     // 게시글 작성
     public void insert(NoticeDto noticeDto) throws Exception;
+
+    // 게시글 수정
+    public void update(NoticeDto noticeDto) throws  Exception;
+
+    public NoticeDto pageModifyDetail(int NoticeId);
+
+    // 게시글 삭제
+    public int delete(int NoticeId);
 }

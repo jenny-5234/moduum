@@ -20,7 +20,19 @@
 
 </head>
 <body>
+<%
+    String strReferer = request.getHeader("referer");
 
+    if(strReferer == null){
+%>
+<script language="javascript">
+    alert("정상적인 경로를 통해 다시 접근해 주십시오.");
+    document.location.href="return jsp or URL";
+</script>
+<%
+        return;
+    }
+%>
 <div class="menubar">
     <%@include file="/WEB-INF/views/navbar.jsp" %>
 </div>
@@ -78,30 +90,48 @@
 <script>
     $(function () {
         $('#d_btn').click(function () {
-            var password = prompt("비밀번호");
 
-            if (password == ${boardDto.b_Password}) {
-                location.href = '/board/delete.do?boardId=${boardDto.boardId}';
-            } else if (password == null) {
-            }
-            else {
-                alert("비밀번호가 올바르지 않습니다");
-            }
+            <%
+                String admin = (String) session.getAttribute("adminid");
+                if (admin != null) {
+            %>
+                    if (confirm("삭제하시겠습니까?") == true) {
+                        location.href = '/board/delete.do?boardId=${boardDto.boardId}';
+                    } else {
+
+                    }
+                <%} else {%>
+                    var password = prompt("비밀번호");
+                    if (password == "${boardDto.b_Password}") {
+                        <%--location.href = '/board/delete.do?boardId=${boardDto.boardId}';--%>
+                        sendPost()
+                    } else if (password == null) {}
+                    else {
+                        alert("비밀번호가 올바르지 않습니다.");
+                    }
+                <%}%>
         });
     });
 
     $(function () {
         $('#m_btn').click(function () {
-            var password = prompt("비밀번호");
+            var password = prompt("비밀번호")
 
-            if (password == ${boardDto.b_Password}) {
+            if (password == "${boardDto.b_Password}") {
                 location.href = '/board/modify?boardId=${boardDto.boardId}';
-            } else if (password == null) {
-            }
+            } else if (password == null) {}
             else {
                 alert("비밀번호가 올바르지 않습니다.");
             }
         });
     });
+
+    function sendPost() {
+        var form = document.createElement('form');
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', '/board/delete.do?boardId=${boardDto.boardId}');
+        document.body.appendChild(form);
+        form.submit();
+    }
 </script>
 </html>

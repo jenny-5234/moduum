@@ -23,7 +23,7 @@
 <body>
 <%
     String admin = (String) session.getAttribute("adminid");
-    if (admin == null) { response.sendRedirect("/board/boardlist"); }
+    if (admin == null) { response.sendRedirect("/admin"); }
 %>
 
 <div class="menubar">
@@ -37,34 +37,34 @@
         <hr>
     </div>
 
-    <form name="modify-form" method="post" enctype="multipart/form-data" action="/board/update.do">
+    <form name="modify-form" method="post" enctype="multipart/form-data" action="/notice/update.do">
         <table class="formTable">
             <tr>
                 <td class="label">글 번호</td>
-                <td class="form-control" style="display: table-cell;">${boardDto.boardId}</td>
-                <input type="hidden" name="BoardId" id="BoardId" value="${boardDto.boardId}"/>
+                <td class="form-control" style="display: table-cell;">${noticeDto.noticeId}</td>
+                <input type="hidden" name="NoticeId" id="NoticeId" value="${noticeDto.noticeId}"/>
             </tr>
             <tr>
                 <td class="label"> 작성일자</td>
-                <td class="form-control" style="display: table-cell;"> ${boardDto.b_Date}</td>
+                <td class="form-control" style="display: table-cell;"> ${noticeDto.n_Date}</td>
             </tr>
             <tr>
                 <td class="label">조회수</td>
-                <td class="form-control" style="display: table-cell;">${boardDto.b_Count}</td>
+                <td class="form-control" style="display: table-cell;">${noticeDto.n_Count}</td>
             </tr>
             <tr>
                 <td class="label">작성자</td>
-                <td class="form-control" style="display: table-cell;">${boardDto.b_Writer}</td>
+                <td class="form-control" style="display: table-cell;">${noticeDto.n_Writer}</td>
             </tr>
             <tr>
                 <td class="label">제목</td>
-                <td><input class="form-control" name="B_Title" id="b_Title" style="width: 100%;"
-                                            value="${boardDto.b_Title}"/></td>
+                <td><input class="form-control" name="N_Title" id="n_Title" style="width: 100%;"
+                                            value="${noticeDto.n_Title}"/></td>
             </tr>
         </table>
         <tr class="textbox">
-       <textarea name="B_Context" id="smartEditor" rows="10" cols="100"
-                 style="width:100%; height:600px;"> ${boardDto.b_Context} </textarea>
+       <textarea name="N_Context" id="smartEditor" rows="10" cols="100"
+                 style="width:100%; height:600px;"> ${noticeDto.n_Context} </textarea>
         </tr>
         <div class="button">
             <input type="submit" id="modifyBtn" value="수정하기"/>

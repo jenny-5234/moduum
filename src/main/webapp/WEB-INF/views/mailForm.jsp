@@ -49,7 +49,7 @@
                 <form action="/mail/mailSender" method="post">
                     <div align="center"><!-- 제목 -->
                         <input type="text" name="title" size="120" style="width :98%" placeholder="제목을 입력해주세요"
-                               class="form-control">
+                               class="form-control" required>
                     </div>
                     <p>
                     <div align="center"><!-- 내용 -->

@@ -39,4 +39,13 @@ public class NoticeDao {
     public void insert(NoticeDto noticeDto) throws Exception {
         sqlSession.insert(namespace + ".insert", noticeDto);
     }
+    // 5. 게시글 삭제
+    public int delete(int NoticeId) throws Exception {
+        sqlSession.delete(namespace + ".delete", NoticeId);
+        return NoticeId;
+    }
+    // 6. 게시글 수정
+    public void update(NoticeDto noticeDto) throws Exception {
+        sqlSession.update(namespace + ".update", noticeDto);
+    }
 }

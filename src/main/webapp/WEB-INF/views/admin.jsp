@@ -19,7 +19,7 @@
 
     <input type="password" name="adminpwd" id="adminpwd" placeholder="비밀번호">
 
-    <button type="submit">뭐왜</button>
+    <button type="submit">로그인</button>
 </form>
 <button type="button"  style="display: none;" onclick="<%session.invalidate();%> location.href='/'">로그아웃</button>
 

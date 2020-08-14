@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
 
@@ -65,6 +67,56 @@ public class NoticeController {
         noticeService.insert(noticeDto);
 
         return "redirect:/notice/noticeList";
+    }
+
+    // 4. 게시글 수정
+    @GetMapping(value = "/modify")
+    public String update(@RequestParam(value = "noticeId") int noticeId, Model model) throws Exception {
+        NoticeDto noticeDto = noticeService.pageModifyDetail(noticeId);
+        model.addAttribute("noticeDto", noticeDto);
+        return "/notice/modify";
+    }
+
+    @PostMapping(value = "update.do")
+    public String updateDo(NoticeDto noticeDto, Model model,
+                           @RequestParam(value = "NoticeId") int noticeId,
+                           @RequestParam(defaultValue = "1") int curPage) throws Exception {
+
+        int listCnt = noticeService.getNoticeListCnt(noticeDto);
+
+        Pagination pagination = new Pagination(listCnt, curPage);
+
+        noticeDto.setStartIndex(pagination.getStartIndex());
+        noticeDto.setCntPerPage(pagination.getPageSize());
+        noticeDto.setCurPage(pagination.getCurPage());
+
+        noticeService.update(noticeDto);
+
+        model.addAttribute("notice", noticeService.getNoticeList(noticeDto));
+        model.addAttribute("pagination", pagination);
+
+        System.out.println(noticeService.pageModifyDetail(noticeId));
+        return "redirect:/notice/noticeList";
+    }
+
+    // 5. 게시글 삭제
+    @SneakyThrows
+    @RequestMapping(value = "delete.do", method = RequestMethod.POST)
+    public String delete(@RequestParam(value = "noticeId", required = false) int noticeId) {
+        noticeService.delete(noticeId);
+
+        return "redirect:/notice/noticeList?curPage=1";
+    }
+
+    @SneakyThrows
+    @RequestMapping(value = "delete.do", method = RequestMethod.GET)
+    public void getDelete(HttpServletResponse response) {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<script>alert('잘못된 접근입니다'); location.href='/notice/noticeList'</script>");
+        out.flush();
     }
 
     //스마트 에디터 이미지 파일 업로드 기능

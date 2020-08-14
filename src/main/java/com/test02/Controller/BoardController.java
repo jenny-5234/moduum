@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.*;
 
@@ -172,15 +173,25 @@ public class BoardController {
 
     // 5. 게시글 삭제
     @SneakyThrows
-    @GetMapping(value = "delete.do")
+    @RequestMapping(value = "delete.do", method = RequestMethod.POST)
     public String delete(@RequestParam(value = "boardId", required = false) int boardId) {
         boardService.delete(boardId);
-
         return "redirect:/board/boardlist";
     }
 
+    @SneakyThrows
+    @RequestMapping(value = "delete.do", method = RequestMethod.GET)
+    public void getDelete(HttpServletResponse response) {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<script>alert('잘못된 접근입니다'); location.href='/board/boardlist'</script>");
+        out.flush();
+    }
+
     // 6. 게시글 검색
-    @PostMapping(value = "search.do")
+    @RequestMapping(value = "search.do", method = RequestMethod.POST)
     public String searchList(@ModelAttribute("boardDto") BoardDto boardDto,
                             @RequestParam(required = false, defaultValue = "1") int curPage,
                             Model model,HttpServletRequest request) throws Exception {
