@@ -10,4 +10,36 @@
         from test_predict_spend, test_predict_charge
         where test_predict_spend.date = test_predict_charge.date;
     </select>
+
+    <select id="getChart2Value" resultType="Chart2Dto" parameterType="int">
+        SELECT Date
+        , sum(CASE WHEN age = 1 THEN Spend END) 'age_20'
+        , sum(CASE WHEN age = 2 THEN Spend END) 'age_30'
+        , sum(CASE WHEN age = 3 THEN Spend END) 'age_40'
+        , sum(CASE WHEN age = 4 THEN Spend END) 'age_50'
+        , sum(CASE WHEN age = 5 THEN Spend END) 'age_60'
+        FROM test_predict_age_spend2
+        GROUP BY date
+    </select>
+
+    <select id="getChart3Value" resultType="Chart3Dto" parameterType="string">
+        select Sex,BusinessType as Category, sum(TotalPayment) as Spend
+        from (SELECT Sex,
+                 (CASE
+                      WHEN BusinessType in ('광학제품', '기타', '회원제형태') THEN '기타'
+                      WHEN BusinessType in ('의류', '신변잡화', '자동차 판매', '주방용구', '연료판매', '건축자제', '가구', '사무통신', '직물', '전기제품') THEN '쇼핑'
+                      WHEN BusinessType in ('숙박업', '레저업소', '레저용품', '여행') THEN '여행'
+                      WHEN BusinessType in ('서적문구', '학원') THEN '교육'
+                      WHEN BusinessType in ('기타의료기관', '병원', '보건위생', '의원', '약국') THEN '의료'
+                      WHEN BusinessType in ('문화취미') THEN '문화/취미'
+                      WHEN BusinessType in ('수리서비스', '용역서비스', '자동차', '정비유지') THEN '서비스'
+                      WHEN BusinessType in ('음료식품', '건강식품', '일반휴게음식', '농업') THEN '음식'
+                      WHEN BusinessType in ('유통업', '영리', '유통업', '비영리') THEN '유통업'
+                      ELSE '기타 ' END) as 'BusinessType',
+                 sum(TotalPayment) as'TotalPayment'
+            FROM TP_MWMN_ACCTO_CNSMP_PTTRN
+            GROUP BY Sex, BusinessType) a
+        GROUP BY Sex, BusinessType
+        HAVING Sex = ${sex};
+    </select>
 </mapper>

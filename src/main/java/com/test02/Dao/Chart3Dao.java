@@ -14,15 +14,8 @@ public class Chart3Dao {
 
     private static String namespace = "chart3";
 
-    public List<Chart3Dto> getChart3Value(Chart3Dto chart3Dto) throws Exception{
-        return sqlSession.selectList( namespace + ".getChart3Value", chart3Dto);
+    public List<Chart3Dto> getChart3Value(Chart3Dto chart3Dto, String sex) throws Exception{
+        return sqlSession.selectList( namespace + ".getChart3Value", sex);
     }
 
-    public List<Chart3Dto> getChart4Value(Chart3Dto chart3Dto) throws Exception{
-        return sqlSession.selectList(namespace + ".getChart4Value", chart3Dto);
-    }
-
-    public List<Chart3Dto> getChart5Value(Chart3Dto chart3Dto) throws Exception{
-        return sqlSession.selectList(namespace + ".getChart5Value", chart3Dto);
-    }
 }

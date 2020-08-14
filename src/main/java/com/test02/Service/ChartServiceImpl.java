@@ -34,24 +34,12 @@ public class ChartServiceImpl implements ChartService {
     @SneakyThrows
     @Override
     public List<Chart2Dto> getChart2Value(Chart2Dto chart2Dto){
-        return chart2Dao.getChart2Value(chart2Dto);
+        return chartDao.getChart2Value(chart2Dto);
     }
 
     @SneakyThrows
     @Override
-    public List<Chart3Dto> getChart3Value(Chart3Dto chart3Dto){
-        return chart3Dao.getChart3Value(chart3Dto);
-    }
-
-    @SneakyThrows
-    @Override
-    public List<Chart3Dto> getChart4Value(Chart3Dto chart3Dto){
-        return chart3Dao.getChart4Value(chart3Dto);
-    }
-
-    @SneakyThrows
-    @Override
-    public List<Chart3Dto> getChart5Value(Chart3Dto chart3Dto){
-        return chart3Dao.getChart5Value(chart3Dto);
+    public List<Chart3Dto> getChart3Value(Chart3Dto chart3Dto, String sex){
+        return chartDao.getChart3Value(chart3Dto, sex);
     }
 }

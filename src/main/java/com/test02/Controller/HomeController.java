@@ -35,8 +35,10 @@ public class HomeController {
         List<ChartDto> chart = chartService.getChartValue(chartDto);
         model.addAttribute("chart", chart);
 
-        List<Chart3Dto> chart3 = chartService.getChart5Value(chart3Dto);
-        model.addAttribute("chart3", chart3);
+
+        List<Chart3Dto> chart3_M = chartService.getChart3Value(chart3Dto, "M");
+        List<Chart3Dto> chart3_F = chartService.getChart3Value(chart3Dto, "F");
+        model.addAttribute("chart3", chart3_M.addAll(chart3_F));
 
         return "home";
     }

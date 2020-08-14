@@ -18,4 +18,6 @@ public class Chart2Dao {
     public List<Chart2Dto> getChart2Value(Chart2Dto chart2Dto) throws Exception{
         return sqlSession.selectList( namespace + ".getChart2Value", chart2Dto);
     }
+
+
 }
