@@ -494,3 +494,7 @@ html, body {
 .custom_zoomcontrol span:first-child {
     border-bottom: 1px solid #bfbfbf;
 }
+
+@media (max-width: 600px) {
+    
+}

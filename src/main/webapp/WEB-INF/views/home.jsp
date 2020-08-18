@@ -13,7 +13,7 @@
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/home.css">
@@ -114,7 +114,7 @@
                     color: "black",
                     fontSize: 15
                 },
-                chartArea: {right: 0, left: 0, width: '70%', height:'70%'}
+                chartArea: {right: 0, left: 0, width: '70%', height:'63%'}
             };
 
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -132,7 +132,10 @@
 <body>
 <div class="nav_container">
     <div class="menubar">
-        <%@include file="navbar.jsp" %>
+        <jsp:include page="navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="sidebar.jsp" />
     </div>
 </div>
 
@@ -140,7 +143,7 @@
     <div class="sub_container">
         <section class="sub_top_container">
             <div class="map_box">
-                <div id="map" style="width:100%;height:710px;position:relative;overflow:hidden;"></div>
+                <div id="map" ></div>
                 <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
             </div>
 
@@ -193,7 +196,7 @@
 
                         <div class="sub_menuinfo_bottom">
                             <div class="sub_menuinfo_btn">
-                                <a class="homepage_button" id="home_Btn" href="#" target="_blank">
+                                <a class="homepage_button" id="home_Btn" target="_blank">
                                     <%--                                   onclick="location.href='/map/mapsearch'">--%>
                                     <%--                                    <img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">--%>
                                     <%--                                    <span>홈페이지</span>--%>

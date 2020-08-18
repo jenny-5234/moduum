@@ -96,8 +96,7 @@ function getGeoLocation() {
 var polygons = [];
 var tempPath = [];          // 임시로 폴리곤을 넣어둘 변수(다중 폴리곤)
 var path = [];            // 폴리곤 그려줄 path
-var toto = [];
-var ttemp = "";
+var tempPolygon = [];
 
 function displayArea2(coordinates, name) {
     $.each(coordinates[0], function (index, coordinate) {        // console.log(coordinates)를 확인해보면 보면 [0]번째에 배열이 주로 저장이 됨.  그래서 [0]번째 배열에서 꺼내줌.
@@ -105,11 +104,11 @@ function displayArea2(coordinates, name) {
 
     });
     if (name === '광주광역시') {
-        toto = tempPath;
+        tempPolygon = tempPath;
     }
     // path에 광주광역시랑 전라남도가 포함 되어야 함
     else if (name === '전라남도') {
-        path.push(toto);
+        path.push(tempPolygon);
     }
     path.push(tempPath);
     // 다각형을 생성합니다
