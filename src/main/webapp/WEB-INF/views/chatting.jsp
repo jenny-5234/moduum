@@ -24,7 +24,7 @@
     <form id="chat">
         <input id="name" class="name" type="text"/>  <!--nickname 영역 -->
         <input id="message" class="message" type="text" placeholder="메세지를 입력해주세요."/>    <!--message입력 영역 -->
-        <%--    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->--%>
+        <!--전송 영역 -->--%>
         <input type="submit" class="chat_button" value="전송"/>
     </form>
 </div>

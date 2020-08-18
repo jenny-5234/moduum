@@ -2,14 +2,9 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif !important;
-    /*width: 90%;*/
     margin: 0 auto;
 }
 
-/*.container {*/
-/*    width: 100%;*/
-/*    margin: 0 auto;*/
-/*}*/
 .nav_container {
     width: 100%;
     height: auto;
@@ -234,7 +229,7 @@ body {
     opacity: 20%;
 }
 
-
+/*--------------------반응형-----------------*/
 @media screen and (max-width: 1200px) and (min-width: 1px) {
     .side_nav {
         display: none;

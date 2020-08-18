@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/css/chat.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/scrollTop.js"></script>
-    <%--    <script src="/js/bootstrap.js"/>--%>
 
 </head>
 <body>
@@ -34,7 +33,6 @@
 <section class="description_intro">
     <div class="YL">
         <div class="description_intro_auto">
-            <%--    <div class="container">--%>
             <nav class="side_nav" img src="/image/introImages/side_navbar.png">
                 <h2 class="side_nav_img">
                     <p>고객지원</p>

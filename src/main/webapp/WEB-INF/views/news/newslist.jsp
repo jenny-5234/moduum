@@ -57,9 +57,6 @@
 
                                 <td class="listTitle"
                                     onclick="window.open('${dto.originallink}');">${dto.title}</td>
-
-            <%--                    <td>${dto.description}</td>--%>
-            <%--                    <td>${dto.originallink}</td>--%>
                                 <td>${dto.date}</td>
                             </tr>
                         </c:forEach>

@@ -1,4 +1,3 @@
-
 body {
     font-family: "Lato", sans-serif;
 }
@@ -24,7 +23,6 @@ ul {
     background-color: #fff8ec;
     overflow-x: hidden;
     transition: 0.5s;
-    /* padding-top: 45px; */
     overflow-y: hidden;
     cursor: pointer;
 }
@@ -42,6 +40,7 @@ ul {
     font-weight: bold;
     cursor: pointer;
 }
+
 .sub_nav:hover {
     color: #000000;
     font-weight: 900;
@@ -59,8 +58,6 @@ ul {
     top: -10px;
     right: 10px;
     font-size: 36px;
-    /*margin-left: 50px;*/
-    /*padding: 8px 8px 8px 32px;*/
     text-decoration: none;
     color: #818181;
     display: block;
@@ -87,8 +84,6 @@ ul {
 
 
 .sub_menu {
-    /*display: none;*/
-    /*padding-left: 70px;*/
     text-align: center;
 }
 
@@ -125,11 +120,13 @@ ul {
     .sidenav a {
         font-size: 18px;
     }
+
     .open_menu {
         text-align: center;
         width: 100%;
         height: 50px;
     }
+
     .open_menu_logo {
         width: 25%;
         margin-top: 10px;

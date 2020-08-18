@@ -28,7 +28,7 @@ public class HomeController {
 
     @RequestMapping(value = "/")
     public String index(@ModelAttribute("mainDto") NewsDto newsDto, Chart3Dto chart3Dto, ChartDto chartDto,
-                        Model model) throws Exception{
+                        Model model) throws Exception {
         List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
         model.addAttribute("newstop5", newstop5);
 
@@ -41,33 +41,4 @@ public class HomeController {
 
         return "home";
     }
-
-//    @RequestMapping(value = "/mainhome")
-//    public String index1(@ModelAttribute("mainDto") NewsDto newsDto, Chart3Dto chart3Dto, ChartDto chartDto,
-//                        Model model) throws Exception{
-//        List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
-//        model.addAttribute("newstop5", newstop5);
-//
-//        List<ChartDto> chart = chartService.getChartValue(chartDto);
-//        model.addAttribute("chart", chart);
-//
-//        List<Chart3Dto> chart3 = chartService.getChart5Value(chart3Dto);
-//        model.addAttribute("chart3", chart3);
-//
-//        return "mainhome";
-//    }
-//    @RequestMapping(value = "/testhome")
-//    public String index2(@ModelAttribute("mainDto") NewsDto newsDto, Chart3Dto chart3Dto, ChartDto chartDto,
-//                         Model model) throws Exception{
-//        List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
-//        model.addAttribute("newstop5", newstop5);
-//
-//        List<ChartDto> chart = chartService.getChartValue(chartDto);
-//        model.addAttribute("chart", chart);
-//
-//        List<Chart3Dto> chart3 = chartService.getChart5Value(chart3Dto);
-//        model.addAttribute("chart3", chart3);
-//
-//        return "home";
-//    }
 }

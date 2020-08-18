@@ -108,7 +108,6 @@
                         <span>어디서 구매할 수 있나요?</span>
                     </h5>
                     <p class="left">
-                        <%--                    <td>${intro.get("intro4")}</td>--%>
                     <div class="purchase">
                         <div class="purchase-list">
                             <div class="image_div">
@@ -204,13 +203,5 @@
 </footer>
 
 </body>
-<%--<script type="text/javascript">--%>
-<%--    $(function () {--%>
-<%--        $('.nav_li').click(function () {--%>
-<%--            $('.nav_li').removeClass();--%>
-<%--            $(this).addClass('on');--%>
-<%--        })--%>
-<%--    })--%>
-<%--</script>--%>
 </html>
 

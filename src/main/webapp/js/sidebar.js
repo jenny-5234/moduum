@@ -13,7 +13,7 @@ $(".sub_nav").on('click', function () {
 
 function mask() {
     var maskHeight = $(document).height();
-    var maskWidth = $(document).width();//window.document.body.clientWidth;
+    var maskWidth = $(document).width();
 
     var mask = "<div id='mask' style='position:absolute; z-index:2; background-color:#000000; display:none; left:0; top:0;'>" +
         "</div>";
@@ -35,11 +35,3 @@ function closeMask() {
     $('#mask').hide();
     $('#mask').empty();
 }
-
-//
-// $(document).on('mouseover', '.sub_nav', function() {
-//     $('.sub_menu').stop().slideDown(300);
-// });
-// $(document).on('mouseout', '.navbar_Menu', function () {
-//         $('.sub_menu').stop().slideUp(300);
-// });

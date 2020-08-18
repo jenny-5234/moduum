@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: BIT
@@ -6,6 +5,7 @@
   Time: 오전 10:34
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -200,9 +200,6 @@
                         <div class="sub_menuinfo_bottom">
                             <div class="sub_menuinfo_btn">
                                 <a class="homepage_button" id="home_Btn" target="_blank">
-                                    <%--                                   onclick="location.href='/map/mapsearch'">--%>
-                                    <%--                                    <img src="/image/homeImages/home.png" style="width: 10%; height: auto; ">--%>
-                                    <%--                                    <span>홈페이지</span>--%>
                                     <div style="">
                                         <div class="younglot_1">
                                             <img src="/image/homeImages/home.png" style="width: 23%; height: auto;">
