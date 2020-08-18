@@ -8,14 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>실시간 채팅창</title>
+    <title>실시간 채팅창 | 모둠전</title>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/chatting.css">
 </head>
 <body>
-
 <%--node.js 서버 포트 열고 난후 실행--%>
 
 <div class="chatting_size">
@@ -25,7 +24,7 @@
     <form id="chat">
         <input id="name" class="name" type="text"/>  <!--nickname 영역 -->
         <input id="message" class="message" type="text" placeholder="메세지를 입력해주세요."/>    <!--message입력 영역 -->
-    <%--    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->--%>
+        <%--    <input type="submit" class="chat_button" value="전송"/>    <!--전송 영역 -->--%>
         <input type="submit" class="chat_button" value="전송"/>
     </form>
 </div>

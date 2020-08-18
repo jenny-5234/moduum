@@ -150,17 +150,21 @@ function displayArea2(coordinates, name) {
         customOverlay.setMap(null);     // 커스텀 오버레이를 지도에서 제거합니다
     });
 
+
     // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다
     kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
+        $(".sub_menuinfo_logo1").css('display', 'none');
+        $(".sub_menuinfo_logo").css('display', 'block');
+        $(".sub_menuinfo_text").css('display','block');
         switch (name) {
             case("서울특별시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/서울.png');
-                $(".info_info1").text('서울특별시');
-                $(".info_info2").text('제로페이 스티커가 붙어있는 소상공인 가맹점');
-                $(".info_info3").text(' ');
-                $(".info_info4").text('1670-0582');
-                $(".homepage_button").attr("href", "https://www.zeropay.or.kr/main.do");
-                break;
+                    $(".logo_image").attr('src', '../../../image/logoImage/서울.png');
+                    $(".info_info1").text('서울특별시');
+                    $(".info_info2").text('제로페이 스티커가 붙어있는 소상공인 가맹점');
+                    $(".info_info3").text(' ');
+                    $(".info_info4").text('1670-0582');
+                    $(".homepage_button").attr("href", "https://www.zeropay.or.kr/main.do");
+                    break;
 
             case("인천광역시"):
                 $(".logo_image").attr('src', '../../../image/logoImage/인천.png');
@@ -319,3 +323,15 @@ window.onresize = function (event) {
     }*/
     map.setCenter(latlng);
 }
+
+$(document).ready(function(){
+    // $(".sub_menuinfo_logo1").css('width','70%','float','left');
+    // $(".sub_menuinfo_logo").append("<img src='/image/logoImage/서울.png'>");
+    $(".sub_menuinfo_logo").css('display', 'none');
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/서울.png' style='width: 20%; margin-top: 20px;' >");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/경기도.png' style='width: 20%; margin-top: 20px;' >");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/인천.png' style='width: 20%; margin-top: 20px;'>");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/부산.png' style='width: 20%;  margin-top: 20px;'>");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/대구.png' style='width: 20%;  margin-top: 20px;'>");
+
+});

@@ -19,9 +19,9 @@
         </div>
         <div class="copy_box">
             <ul class="foot_ul">
-                <li><a href="#" class="hyperlink"><strong>위치정보의 보호 및 이용처리 방침</strong></a></li>
+                <li><strong>위치정보의 보호 및 이용처리 방침</strong></li>
                 <li> | </li>
-                <li><a href="#" class="hyperlink">이메일 무단 수집 거부</a></li>
+                <li>이메일 무단 수집 거부</li>
             </ul>
             <br><br>
             <ul class="foot_ul">

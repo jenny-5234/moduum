@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/css/sidebar.css">
 <head>
 
-    <title>Title</title>
+    <title>사이드네비게이션 | 모둠전</title>
 
 </head>
 <body>

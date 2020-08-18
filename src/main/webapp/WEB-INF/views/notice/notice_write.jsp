@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
 
-    <title>글쓰기</title>
+    <title>공지사항 쓰기 | 모둠전</title>
 
     <style>
 

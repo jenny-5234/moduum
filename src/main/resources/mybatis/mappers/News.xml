@@ -10,7 +10,7 @@
     <select id="getNewsList" resultType="NewsDto">
         select newsId, title, description, originallink, date
         from news
-
+        order by date desc
 	</select>
 
     <!--    페이징-->
@@ -51,7 +51,8 @@
     </select>
 
     <select id="selecttop5" resultType="newsDto">
-        SELECT TOP 5 *
+        SELECT TOP 7 *
         FROM news
+        order by date desc
     </select>
 </mapper>

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/board/boardwrite.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
 
-    <title>글쓰기</title>
+    <title>정보마당 글쓰기 | 모둠전</title>
 
 </head>
 <body>

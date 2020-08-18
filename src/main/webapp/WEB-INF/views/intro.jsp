@@ -18,7 +18,6 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <script src="/js/scrollTop.js"></script>
-
     <script>
         function fnMove(seq) {
             var offset = $("#div" + seq).offset();
@@ -27,8 +26,9 @@
     </script>
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
+    <title>지역 화폐 안내 | 모둠전</title>
     <link rel="stylesheet" href="/css/chat.css">
-    <title>Title</title>
+
 
 
 </head>

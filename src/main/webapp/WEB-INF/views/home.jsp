@@ -127,7 +127,7 @@
     </script>
 
 
-    <title>지역화폐 모둠전</title>
+    <title>모둠전</title>
 
 </head>
 <body>
@@ -156,7 +156,9 @@
                         <div class="sub_menuinfo_top">
                             <div class="sub_menuinfo_logo">
                                 <img class="logo_image"
-                                     src="/image/logoImage/경기도.png">
+                                     src="/image/logoImage/서울.png">
+                            </div>
+                            <div class="sub_menuinfo_logo1">
                             </div>
                             <div class="sub_menuinfo_text">
                                 <div class="sub_info">

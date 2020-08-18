@@ -13,7 +13,7 @@
 <%--<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>--%>
 <html>
 <head>
-    <title>muchinchart</title>
+    <title>현황 및 분석 | 모둠전</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- google chart script-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

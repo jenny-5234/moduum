@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/board/boardmodify.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <title>게시글 수정</title>
+    <title>공지사항 수정 | 모둠전</title>
 
 </head>
 
