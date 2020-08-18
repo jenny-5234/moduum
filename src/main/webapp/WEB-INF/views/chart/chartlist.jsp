@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
+<%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
+<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
+<%--<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>--%>
 <html>
 <head>
     <title>muchinchart</title>
@@ -29,6 +29,7 @@
         google.charts.setOnLoadCallback(drawpiechart2);
         google.charts.setOnLoadCallback(drawcolumnchart2);
 
+        // 사용량, 충전량 예측 및 분석 (선그래프)
         function drawlinechart() {
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '사용량', '충전량'],
@@ -92,9 +93,10 @@
             var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
-            window.addEventListener('resize', drawlinechart, false);
+            // window.addEventListener('resize', drawlinechart, false);
         }
 
+        // 연령별 사용빈도 예측 및 분석 (선그래프)
         function drawlinechart2() {
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대', '20대', '30대', '40대', '50대'],
@@ -112,7 +114,7 @@
                 title: '연령별 사용빈도',
                 pointSize: 3,
                 backgroundColor: 'white',
-                chartArea: {width: '70%', height: '80%'},
+                chartArea: {width: '75%', height: '80%'},
                 titleTextStyle: {
                     color: "black",
                     fontSize: 20
@@ -138,10 +140,6 @@
                 vAxis: { // 세로
                     title: "사용빈도",
                     titleTextStyle: {color: "#8C8C8C", fontSize: 10},
-                    viewWindow: {
-                        min: 0,
-                        max: 1800000
-                    },
                     textStyle: {
                         fontSize: 12,
                         color: "#8C8C8C"
@@ -197,7 +195,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                window.addEventListener('resize', drawlinechart2, false);
+                // window.addEventListener('resize', drawlinechart2, false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -228,6 +226,7 @@
             }
         }
 
+        // 연령별 사용빈도 예측 및 분석 (막대그래프)
         function drawcolumnchart() {
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '10대', '20대', '30대', '40대', '50대'],
@@ -274,10 +273,10 @@
                 vAxis: { // 세로
                     title: "사용빈도",
                     titleTextStyle: {color: "#8C8C8C", fontSize: 10},
-                    viewWindow: {
-                        min: 0,
-                        max: 1800000
-                    },
+                    // viewWindow: {
+                    //     min: 0,
+                    //     max: 1800000
+                    // },
                     textStyle: {
                         fontSize: 12,
                         color: "#8C8C8C"
@@ -331,7 +330,7 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                window.addEventListener('resize', drawChart, false);
+                // window.addEventListener('resize', drawChart, false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -362,6 +361,7 @@
             }
         }
 
+        // 남성 사용패턴 분석 (파이차트)
         function drawpiechart() {
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
@@ -383,9 +383,10 @@
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart4.draw(data, options);
-            window.addEventListener('resize', drawpiechart, false);
+            // window.addEventListener('resize', drawpiechart, false);
         }
 
+        // 여성 사용패턴 분석 (파이차트)
         function drawpiechart2() {
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
@@ -407,9 +408,10 @@
             var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart5.draw(data, options);
-            window.addEventListener('resize', drawpiechart2, false);
+            // window.addEventListener('resize', drawpiechart2, false);
         }
 
+        // 모든 성별 사용패턴 분석 (막대그래프)
         function drawcolumnchart2() {
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
@@ -468,7 +470,7 @@
             var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart2'));
 
             chart.draw(data, options);
-            window.addEventListener('resize', drawcolumnchart2, false);
+            // window.addEventListener('resize', drawcolumnchart2, false);
         }
 
         // 페이지 내에 div이동
@@ -477,6 +479,14 @@
             $('html, body').animate({scrollTop: offset.top}, 400);
         }
 
+        $(window).resize(function(){
+            drawcolumnchart();
+            drawcolumnchart2();
+            drawlinechart();
+            drawlinechart2();
+            drawpiechart();
+            drawpiechart2();
+        });
     </script>
 </head>
 <body>
@@ -504,10 +514,8 @@
         <div class="chart_div">
             <div class="predictDiv" id="div1">
                 <section id="chart1">
-                    <h4 class="Dda1">
-                        <span>분석 및 예측</span>
-                    </h4>
-                    <hr class="linecolor">
+                    <h4 style="font-size: 1.5rem; font-weight: 500;">분석 및 예측</h4>
+                    <hr style="margin: 10px 0px 10px 0px;">
                     <div class="lineChartDiv">
                         <div id="lineChart"></div>
                     </div>
@@ -532,10 +540,8 @@
 
             <div class="AnalysisDiv">
                 <section id="chart2">
-                    <h4 class="Dda1">
-                        <span>현황</span>
-                    </h4>
-                    <hr class="linecolor">
+                    <h4 style="font-size: 1.5rem; font-weight: 500;">현황</h4>
+                    <hr style="margin: 10px 0px 10px 0px;">
                     <div class="piechartDiv" id="div2">
                         <div id="piechart"></div>
                     </div>
