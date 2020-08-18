@@ -31,8 +31,5 @@
         <mapper resource="mybatis/mappers/News.xml"/>
         <mapper resource="mybatis/mappers/Intro.xml"/>
         <mapper resource="mybatis/mappers/Chart.xml"/>
-        <mapper resource="mybatis/mappers/Chart2.xml"/>
-        <mapper resource="mybatis/mappers/Chart3.xml"/>
-        <mapper resource="mybatis/mappers/Intro.xml"/>
     </mappers>
 </configuration>
