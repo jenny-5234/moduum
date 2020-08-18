@@ -18,6 +18,7 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <script src="/js/scrollTop.js"></script>
+
     <script>
         function fnMove(seq) {
             var offset = $("#div" + seq).offset();
@@ -26,6 +27,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
+    <link rel="stylesheet" href="/css/chat.css">
     <title>Title</title>
 
 
@@ -185,7 +187,18 @@
         <img src="/image/introImages/up-arrow.png" class="upbutton_img"/>
     </button>
 </div>
-
+<div id="chat">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (document.body.offsetHeight) - 2100;
+            window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()">
+        <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
+    </button>
+</div>
 <footer>
     <jsp:include page="footer.jsp"/>
 </footer>

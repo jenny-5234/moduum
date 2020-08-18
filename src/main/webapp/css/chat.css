@@ -1,0 +1,14 @@
+.chat_fixed {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 70px;
+    bottom: 40px;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.chatbutton_img{
+    width: 100%;
+}

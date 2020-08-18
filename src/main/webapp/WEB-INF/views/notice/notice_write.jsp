@@ -18,10 +18,7 @@
     <title>글쓰기</title>
 
     <style>
-        body{
-            width: 90%;
-            margin: 0 auto;
-        }
+
         .container {
             margin: 0 auto;
             margin-top: 3%;

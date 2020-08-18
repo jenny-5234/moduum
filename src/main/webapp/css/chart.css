@@ -170,6 +170,32 @@ body {
     padding-left: 50px;
     margin-top: 30px;
 }
+.button_div {
+    clear: both;
+    text-align: right;
+}
+
+#up_button {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 70px;
+    bottom: 70px;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#up_button:focus {
+    outline: 0;
+}
+
+.upbutton_img {
+    width: 100%;
+    opacity: 20%;
+}
+
 
 /*반응형*/
 @media (max-width: 1500px){

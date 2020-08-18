@@ -20,6 +20,9 @@
     <%--    <script type="text/javascript" src="ajax-sample.js"></script>--%>
     <link rel="stylesheet" href="/css/chart.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="/js/scrollTop.js"></script>
+
     <script type="text/javascript">
         google.charts.load('current', {'packages': ['corechart', 'bar', 'line']});
         google.setOnLoadCallback(drawlinechart);
@@ -556,6 +559,25 @@
         </div>
     </div>
 </div>
+
+<div class="button_div">
+    <button type="button" id="up_button">
+        <img src="/image/introImages/up-arrow.png" class="upbutton_img"/>
+    </button>
+</div>
+<div id="chat">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (document.body.offsetHeight) - 2100;
+            window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()">
+        <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
+    </button>
+</div>
+
 <footer>
     <jsp:include page="../footer.jsp"/>
 </footer>

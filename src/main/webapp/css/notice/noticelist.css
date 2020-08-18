@@ -75,6 +75,33 @@ tr[class="noticelist"] td[class="listTitle"] {
     cursor: pointer;
 }
 
+.button_div {
+    clear: both;
+    text-align: right;
+}
+
+#up_button {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 70px;
+    bottom: 70px;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#up_button:focus {
+    outline: 0;
+}
+
+
+.upbutton_img {
+    width: 100%;
+    opacity: 20%;
+}
+
 /* ------------------------------ PAGINTION BEGIN ------------------------------ */
 .pager {
     font-size: 0;
