@@ -1,8 +1,8 @@
 .chat_fixed {
-    width: 30px;
+    width: 60px;
     height: 30px;
     position: fixed;
-    right: 70px;
+    right: 50px;
     bottom: 40px;
     z-index: 1000;
     border: none;
