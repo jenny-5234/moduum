@@ -108,7 +108,7 @@ ul {
     margin-top: 7px;
 }
 
-@media screen and (max-height: 600px) {
+@media (max-height: 600px) {
     .sidenav {
         padding-top: 15px;
     }

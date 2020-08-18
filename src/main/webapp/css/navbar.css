@@ -112,24 +112,25 @@
         display: block;
         height: auto;
     }
+
     .navbar_Menu {
-        height: 60px;
+        /*height: 60px;*/
         width: 100%;
     }
+
     .navbar_top-menu {
         height: 100px;
         margin-top: 2%;
     }
 
     .navbar_dept01_li {
-        width: 50%;
+        width: 100%;
         float: left;
         position: relative;
     }
 
     .navbar_sub-menu {
-        border-bottom: 1px solid #576979;
-        border-right: 1px solid #576979;
+        font-size: 15px;
     }
 
     .navbar_Menu #pull {
@@ -146,7 +147,7 @@
         position: relative;
         margin-bottom: 0px;
         text-align: center;
-        height: 30px;
+        /*height: 30px;*/
     }
 
     .navbar_menu01 {

@@ -73,7 +73,7 @@
                         <p class="left">
                         <td>${intro.get("intro1")}</td>
                         <div class="intro1_img">
-                            <img src="/image/introImages/zeropay.png"/>
+                            <img src="/image/introImages/zeropay.png" class="intro1Image"/>
                         </div>
                         </p>
                     </section>
