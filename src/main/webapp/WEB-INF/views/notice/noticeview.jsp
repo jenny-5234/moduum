@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/notice/noticeview.css"/>
     <link rel="stylesheet" href="/css/bootstrap.css">
 
-    <title>Title</title>
+    <title>공지사항 상세보기 | 모둠전</title>
 
 </head>
 <body>

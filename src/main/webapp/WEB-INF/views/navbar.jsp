@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <title> 지역화폐 modum </title>
+    <title> 네비게이션 | 모둠전 </title>
     <link rel="stylesheet" href="/css/navbar.css">
 </head>
 

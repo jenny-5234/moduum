@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>뉴스 및 이슈</title>
+    <title>뉴스 및 이슈 | 모둠전</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/news.css">
     <link rel="stylesheet" href="/css/sidenavbar.css">

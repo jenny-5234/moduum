@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Kakao 지도 시작하기</title>
+    <title>가맹점 찾기 | 모둠전</title>
     <%-- 반응형 웹 --%>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">

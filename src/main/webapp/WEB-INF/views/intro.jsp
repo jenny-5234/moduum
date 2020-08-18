@@ -26,7 +26,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
-    <title>Title</title>
+    <title>지역 화폐 안내 | 모둠전</title>
 
 
 </head>

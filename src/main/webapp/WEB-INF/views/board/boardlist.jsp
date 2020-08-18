@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html style="margin: 0 !important; padding: 0 !important;">
 <head>
-    <title>정보마당</title>
+    <title>정보마당 | 모둠전</title>
     <link rel="stylesheet" href="/css/board/boardlist.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">

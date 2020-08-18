@@ -104,7 +104,7 @@
 
 @media screen and (max-width: 1400px) {
     .navbar_Menu {
-        height: auto;
+        /*height: auto;*/
     }
 
     .navbar_menu01 {
