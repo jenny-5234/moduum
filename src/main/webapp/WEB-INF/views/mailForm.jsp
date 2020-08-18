@@ -18,9 +18,13 @@
 <body>
 <div class="nav_container">
     <div class="menubar">
-        <%@include file="navbar.jsp" %>
+        <jsp:include page="navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="sidebar.jsp" />
     </div>
 </div>
+
 
 <section class="description_intro">
     <div class="YL">

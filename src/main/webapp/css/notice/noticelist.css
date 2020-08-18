@@ -14,6 +14,14 @@ body {
     margin-left: 50px;
     width: 70%;
 }
+.nav_container {
+    width: 100%;
+    height: auto;
+}
+
+.sidenavbar {
+    display: none;
+}
 
 .YL {
     width: 1400px;
@@ -73,6 +81,33 @@ tr[class="noticelist"] {
 tr[class="noticelist"] td[class="listTitle"] {
     text-align: left;
     cursor: pointer;
+}
+
+.button_div {
+    clear: both;
+    text-align: right;
+}
+
+#up_button {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 70px;
+    bottom: 70px;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#up_button:focus {
+    outline: 0;
+}
+
+
+.upbutton_img {
+    width: 100%;
+    opacity: 20%;
 }
 
 /* ------------------------------ PAGINTION BEGIN ------------------------------ */
@@ -142,6 +177,17 @@ tr[class="noticelist"] td[class="listTitle"] {
 @media (max-width: 1200px) {
     .side_nav {
         display: none;
+    }
+}
+@media (max-width: 900px) {
+
+
+    .menubar {
+        display: none;
+    }
+
+    .sidenavbar {
+        display: block;
     }
 }
 /* ------------------------------ PAGINTION END ------------------------------ */

@@ -14,15 +14,23 @@
     <link rel="stylesheet" href="/css/board/boardlist.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/scrollTop.js"></script>
     <%--    <script src="/js/bootstrap.js"></script>--%>
 
 </head>
 <body>
 
-
-<div class="menubar">
-    <%@include file="/WEB-INF/views/navbar.jsp" %>
+<div class="nav_container">
+    <div class="menubar">
+        <jsp:include page="../../views/navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="../../views/sidebar.jsp" />
+    </div>
 </div>
+
 <section class="description_intro">
     <div class="YL">
         <div class="description_intro_auto">
@@ -139,6 +147,24 @@
         </div>
     </div>
 </section>
+
+<div class="button_div">
+    <button type="button" id="up_button">
+        <img src="/image/introImages/up-arrow.png" class="upbutton_img"/>
+    </button>
+</div>
+<div id="chat">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (window.screen.height / 2) - 400;
+            window.open("/chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()">
+        <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
+    </button>
+</div>
 
 <footer>
     <jsp:include page="../footer.jsp"/>

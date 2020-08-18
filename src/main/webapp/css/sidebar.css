@@ -26,6 +26,7 @@ ul {
     transition: 0.5s;
     /* padding-top: 45px; */
     overflow-y: hidden;
+    cursor: pointer;
 }
 
 .sub_nav {
@@ -39,15 +40,18 @@ ul {
     display: block;
     transition: 0.3s;
     font-weight: bold;
+    cursor: pointer;
 }
 .sub_nav:hover {
     color: #000000;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .menu1:hover {
     background: wheat;
     color: #000000;
+    cursor: pointer;
 }
 
 .sidenav a[class='closebtn'] {
@@ -61,14 +65,17 @@ ul {
     color: #818181;
     display: block;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .sidenav a[class='closebtn']:hover {
     color: #f4cb0b;
+    cursor: pointer;
 }
 
 .sidenav a[class='closebtn']:active, .sidenav a[class='closebtn']:visited {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .open_Btn {
@@ -95,6 +102,7 @@ ul {
     line-height: 40px;
     font-size: 19px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .open_menu {
@@ -106,6 +114,7 @@ ul {
 .open_menu_logo {
     width: 20%;
     margin-top: 7px;
+    cursor: pointer;
 }
 
 @media (max-height: 600px) {
@@ -124,5 +133,6 @@ ul {
     .open_menu_logo {
         width: 25%;
         margin-top: 10px;
+        cursor: pointer;
     }
 }

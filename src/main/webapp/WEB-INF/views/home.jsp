@@ -17,18 +17,19 @@
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f389b62ab24856e4ae992dfc8a85562&libraries=services,clusterer"></script>
     <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/tptp.css">
+    <link rel="stylesheet" href="/css/chat.css">
     <link rel="stylesheet" type="text/css" href="../../css/kakao/kakao_api_polygon.css">
+    <script src="/js/scrollTop.js"></script>
 
     <%--    구글차트 라이브러리--%>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current',{'packages':['corechart','bar','line']});
+        google.charts.load('current', {'packages': ['corechart', 'bar', 'line']});
         google.charts.setOnLoadCallback(drawpiechart);
         google.charts.setOnLoadCallback(drawlinechart);
 
         // 사용량, 충전량 예측 및 분석(선그래프)
-        function drawlinechart(){
+        function drawlinechart() {
             var data = google.visualization.arrayToDataTable([
                 ['날짜', '사용량', '충전량'],
                 <c:forEach items="${chart}" var="chart" varStatus="status">
@@ -47,43 +48,43 @@
                 backgroundColor: 'white',
                 chartArea: {width: '65%', height: '60%'},
                 animation: {startup: true, duration: 1000, easing: 'in'},   // 그래프 에니메이션
-                titleTextStyle:{
+                titleTextStyle: {
                     color: "black",
                     fontSize: 15
                 },
-                series:{    // 선 색상
-                    0:{
+                series: {    // 선 색상
+                    0: {
                         color: '#ffa303'
                     },
-                    1:{
+                    1: {
                         color: '#5e6eff'
                     }
                 },
-                vAxis:{ // 세로
+                vAxis: { // 세로
                     title: "사용량(1,000원단위)",
-                    titleTextStyle: {color:"#8C8C8C", fontSize:10},
-                    textStyle:{
+                    titleTextStyle: {color: "#8C8C8C", fontSize: 10},
+                    textStyle: {
                         fontSize: 9,
                         color: "#8C8C8C"
                     },
-                    gridlines:{ // 중간선
+                    gridlines: { // 중간선
                         color: "#F6F6F6"
                     },
-                    baselineColor:"black" // 하단선
+                    baselineColor: "black" // 하단선
                 },
                 hAxis: { // 가로
-                    format:"yyyy-MM",
-                    textStyle:{
+                    format: "yyyy-MM",
+                    textStyle: {
                         fontSize: 9,
                         color: "#8C8C8C"
                     },
-                    gridlines:{ // 중간선
+                    gridlines: { // 중간선
                         color: "#F6F6F6"
                     },
-                    baselineColor:"black"
+                    baselineColor: "black"
                 },
-                legend:{    // 항목(범례)
-                    textStyle:{
+                legend: {    // 항목(범례)
+                    textStyle: {
                         fontSize: 9,
                         color: "#8C8C8C"
                     }
@@ -94,11 +95,11 @@
             var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
-            window.addEventListener('resize',drawlinechart,false);
+            window.addEventListener('resize', drawlinechart, false);
         }
 
         // 모든 성별 사용패턴 분석(파이차트)
-        function drawpiechart(){
+        function drawpiechart() {
             var data = google.visualization.arrayToDataTable([
                 ['사용패턴', '총사용량'],
                 <c:forEach items="${chart3}" var="chart3" varStatus="status">
@@ -110,17 +111,17 @@
 
             var options = {
                 title: '지역화폐 사용패턴',
-                titleTextStyle:{
+                titleTextStyle: {
                     color: "black",
                     fontSize: 15
                 },
-                chartArea: {right: 0, left: 0, width: '70%', height:'63%'}
+                chartArea: {right: 0, left: 0, width: '70%', height: '63%'}
             };
 
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart4.draw(data, options);
-            window.addEventListener('resize',drawpiechart,false);
+            window.addEventListener('resize', drawpiechart, false);
         }
 
     </script>
@@ -132,10 +133,10 @@
 <body>
 <div class="nav_container">
     <div class="menubar">
-        <jsp:include page="navbar.jsp" />
+        <jsp:include page="navbar.jsp"/>
     </div>
     <div class="sidenavbar">
-        <jsp:include page="sidebar.jsp" />
+        <jsp:include page="sidebar.jsp"/>
     </div>
 </div>
 
@@ -143,7 +144,7 @@
     <div class="sub_container">
         <section class="sub_top_container">
             <div class="map_box">
-                <div id="map" ></div>
+                <div id="map"></div>
                 <script type="text/javascript" src="../../js/kakao/kakao_api_homepolygon.js"></script>
             </div>
 
@@ -254,7 +255,7 @@
                 <div class="news_box">
                     <div class="news_list">
                         <h4 class="tit1">최신 뉴스</h4>
-                            <a href="/news/newslist" class="more">더보기</a>
+                        <a href="/news/newslist" class="more">더보기</a>
                         <hr>
                         <ul class="m_text_list">
                             <c:forEach var="dto" items="${newstop5}" varStatus="status">
@@ -274,16 +275,21 @@
         </section>
     </div>
 </section>
+<div class="button_div">
+    <button type="button" id="up_button">
+        <img src="/image/introImages/up-arrow.png" class="upbutton_img"/>
+    </button>
+</div>
 <div id="chat">
     <script>
         function showchat() {
             var xPos = (document.body.offsetWidth) - 655;
-            var yPos = (document.body.offsetHeight) - 1200;
-            window.open("chat","실시간채팅창", "width=555, height=660, left="+xPos+", top="+yPos);
+            var yPos = (window.screen.height / 2) - 400;
+            window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
         }
     </script>
-    <button type="button" class="chat_fixed" onclick="showchat()"/>
-<%--        <img src="" class="idk"/>--%>
+    <button type="button" class="chat_fixed" onclick="showchat()">
+        <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
     </button>
 </div>
 <footer>

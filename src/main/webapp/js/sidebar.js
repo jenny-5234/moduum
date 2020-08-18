@@ -5,6 +5,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+$(".sub_menu").hide();
 
 $(".sub_nav").on('click', function () {
     $(this).next(".sub_menu").slideToggle(100);

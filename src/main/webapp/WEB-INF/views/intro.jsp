@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="/css/intro.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <title>지역 화폐 안내 | 모둠전</title>
+    <link rel="stylesheet" href="/css/chat.css">
+
 
 
 </head>
@@ -185,7 +187,18 @@
         <img src="/image/introImages/up-arrow.png" class="upbutton_img"/>
     </button>
 </div>
-
+<div id="chat">
+    <script>
+        function showchat() {
+            var xPos = (document.body.offsetWidth) - 655;
+            var yPos = (window.screen.height / 2) - 400;
+            window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
+        }
+    </script>
+    <button type="button" class="chat_fixed" onclick="showchat()">
+        <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
+    </button>
+</div>
 <footer>
     <jsp:include page="footer.jsp"/>
 </footer>

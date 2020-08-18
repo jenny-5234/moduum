@@ -234,6 +234,7 @@ body {
     opacity: 20%;
 }
 
+
 @media screen and (max-width: 1200px) and (min-width: 1px) {
     .side_nav {
         display: none;
