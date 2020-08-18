@@ -21,8 +21,6 @@
                    type="com.test02.Dto.Chart2Dto"/>
         <typeAlias alias="Chart3Dto"
                    type="com.test02.Dto.Chart3Dto"/>
-        <typeAlias alias="IntroDto"
-                   type="com.test02.Dto.IntroDto"/>
     </typeAliases>
 
     <!-- SQL과 매핑을 위한 매핑정보 xml -->
