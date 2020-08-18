@@ -14,6 +14,14 @@ body {
     width: 70%;
     height: auto;
 }
+.nav_container {
+    width: 100%;
+    height: auto;
+}
+
+.sidenavbar {
+    display: none;
+}
 .form-group {
   margin-bottom: 0px;
 }
@@ -212,5 +220,14 @@ tr[class="boardlist"] td[class="listTitle"] {
 @media (max-width: 1200px) {
     .side_nav {
         display: none;
+    }
+}
+@media (max-width: 900px) {
+    .menubar {
+        display: none;
+    }
+
+    .sidenavbar {
+        display: block;
     }
 }

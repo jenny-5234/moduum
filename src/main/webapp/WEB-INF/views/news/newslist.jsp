@@ -19,8 +19,13 @@
     <script src="/js/scrollTop.js"></script>
 </head>
 <body>
-<div class="menubar">
-    <%@include file="/WEB-INF/views/navbar.jsp" %>
+<div class="nav_container">
+    <div class="menubar">
+        <jsp:include page="../../views/navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="../../views/sidebar.jsp" />
+    </div>
 </div>
 
 <section class="description_intro">
@@ -97,7 +102,7 @@
     <script>
         function showchat() {
             var xPos = (document.body.offsetWidth) - 655;
-            var yPos = (document.body.offsetHeight) - 2100;
+            var yPos = (window.screen.height / 2) - 400;
             window.open("/chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
         }
     </script>

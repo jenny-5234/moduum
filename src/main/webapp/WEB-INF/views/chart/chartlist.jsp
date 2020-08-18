@@ -495,8 +495,13 @@
 <body>
 
 <%--네비게이션 불러오기--%>
-<div class="menubar">
-    <%@include file="/WEB-INF/views/navbar.jsp" %>
+<div class="nav_container">
+    <div class="menubar">
+        <jsp:include page="../../views/navbar.jsp" />
+    </div>
+    <div class="sidenavbar">
+        <jsp:include page="../../views/sidebar.jsp" />
+    </div>
 </div>
 
 <div class="description_chart">
@@ -569,8 +574,8 @@
     <script>
         function showchat() {
             var xPos = (document.body.offsetWidth) - 655;
-            var yPos = (document.body.offsetHeight) - 2100;
-            window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
+            var yPos = (window.screen.height / 2) - 400;
+            window.open("/chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
         }
     </script>
     <button type="button" class="chat_fixed" onclick="showchat()">

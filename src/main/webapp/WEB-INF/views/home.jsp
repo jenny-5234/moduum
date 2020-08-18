@@ -284,7 +284,7 @@
     <script>
         function showchat() {
             var xPos = (document.body.offsetWidth) - 655;
-            var yPos = (document.body.offsetHeight) - 1200;
+            var yPos = (window.screen.height / 2) - 400;
             window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
         }
     </script>
