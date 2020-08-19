@@ -182,7 +182,7 @@ h1 {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .menubar {
         display: none;
     }
