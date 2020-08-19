@@ -85,7 +85,7 @@
                 if (admin != null) {
             %>
             if (confirm("삭제하시겠습니까?") == true) {
-                sendPost();
+                sendPost('/notice/delete.do?noticeId=${noticeDto.noticeId}');
             }
             <%}%>
         });
@@ -97,16 +97,16 @@
                 if (admin != null) {
             %>
             if (confirm("수정하시겠습니까?") == true) {
-                location.href = '/notice/modify?noticeId=${noticeDto.noticeId}';
+                sendPost('/notice/modify?noticeId=${noticeDto.noticeId}');
             }
             <%}%>
         });
     });
 
-    function sendPost() {
+    function sendPost(link) {
         var form = document.createElement('form');
         form.setAttribute('method', 'post');
-        form.setAttribute('action', '/notice/delete.do?noticeId=${noticeDto.noticeId}');
+        form.setAttribute('action', link);
         document.body.appendChild(form);
         form.submit();
     }

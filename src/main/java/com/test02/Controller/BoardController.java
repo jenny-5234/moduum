@@ -142,11 +142,22 @@ public class BoardController {
     }
 
     // 4. 게시글 수정
-    @GetMapping(value = "/modify")
+    @RequestMapping(value = "/modify", method = RequestMethod.POST)
     public String update(@RequestParam(value = "boardId") int boardId, Model model) throws Exception {
         BoardDto boardDto = boardService.pageModifyDetail(boardId);
         model.addAttribute("boardDto", boardDto);
         return "/board/modify";
+    }
+
+    // 4. 게시글 수정
+    @RequestMapping(value = "/modify", method = RequestMethod.GET)
+    public void update(@RequestParam(value = "boardId") int boardId, HttpServletResponse response) throws Exception {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<script>alert('잘못된 접근입니다'); location.href='/board/boardlist'</script>");
+        out.flush();
     }
 
     @PostMapping(value = "update.do")

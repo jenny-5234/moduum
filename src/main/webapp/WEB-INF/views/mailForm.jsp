@@ -29,7 +29,6 @@
 <section class="description_intro">
     <div class="YL">
         <div class="description_intro_auto">
-            <%--    <div class="container">--%>
             <nav class="side_nav" img src="/image/introImages/side_navbar.png">
                 <h2 class="side_nav_img">
                     <p>고객지원</p>

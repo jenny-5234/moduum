@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: jenny
   Date: 2020-06-17
@@ -23,7 +23,12 @@
 <body>
 <%
     String admin = (String) session.getAttribute("adminid");
-    if (admin == null) { response.sendRedirect("/board/boardlist"); }
+    if (admin != null) {
+        PrintWriter printWriter = response.getWriter();
+        response.setContentType("text/html; charset=UTF-8");
+        printWriter.println("<script>alert('사용자의 게시글은 수정할 수 없습니다.'); location.href='/board/boardlist';</script>");
+        printWriter.flush();
+    }
 %>
 
 <div class="menubar">

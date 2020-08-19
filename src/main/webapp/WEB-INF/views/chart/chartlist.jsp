@@ -7,17 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
-<%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
-<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
-<%--<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>--%>
 <html>
 <head>
     <title>현황 및 분석 | 모둠전</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- google chart script-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <%--    <script type="text/javascript" src="ajax-sample.js"></script>--%>
     <link rel="stylesheet" href="/css/chart.css">
     <link rel="stylesheet" type="text/css" href="/css/sidenavbar.css">
     <link rel="stylesheet" href="/css/chat.css">
@@ -96,7 +91,6 @@
             var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
-            // window.addEventListener('resize', drawlinechart, false);
         }
 
         // 연령별 사용빈도 예측 및 분석 (선그래프)
@@ -198,7 +192,6 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                // window.addEventListener('resize', drawlinechart2, false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -276,10 +269,6 @@
                 vAxis: { // 세로
                     title: "사용빈도",
                     titleTextStyle: {color: "#8C8C8C", fontSize: 10},
-                    // viewWindow: {
-                    //     min: 0,
-                    //     max: 1800000
-                    // },
                     textStyle: {
                         fontSize: 12,
                         color: "#8C8C8C"
@@ -333,7 +322,6 @@
                         changeZoomButton.disabled = false;
                     });
                 chart.draw(data, options);
-                // window.addEventListener('resize', drawChart, false);
             }
 
             // 버튼 클릭시 칼럼이 3개씩 넘어감
@@ -386,7 +374,6 @@
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart4.draw(data, options);
-            // window.addEventListener('resize', drawpiechart, false);
         }
 
         // 여성 사용패턴 분석 (파이차트)
@@ -411,7 +398,6 @@
             var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart5.draw(data, options);
-            // window.addEventListener('resize', drawpiechart2, false);
         }
 
         // 모든 성별 사용패턴 분석 (막대그래프)
@@ -473,7 +459,6 @@
             var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChart2'));
 
             chart.draw(data, options);
-            // window.addEventListener('resize', drawcolumnchart2, false);
         }
 
         // 페이지 내에 div이동

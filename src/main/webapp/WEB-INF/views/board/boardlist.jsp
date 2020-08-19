@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/css/chat.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/scrollTop.js"></script>
-    <%--    <script src="/js/bootstrap.js"></script>--%>
 
 </head>
 <body>
@@ -34,7 +33,6 @@
 <section class="description_intro">
     <div class="YL">
         <div class="description_intro_auto">
-            <%--    <div class="container">--%>
             <nav class="side_nav" img src="/image/introImages/side_navbar.png">
                 <h2 class="side_nav_img">
                     <p>고객지원</p>
@@ -67,22 +65,6 @@
                         <button type="submit" id="search_Btn">검색</button>
                     </form>
                 </div>
-                <%-- <div class="search_box" style="align : right">
-                     <div class="form-group row justify-content-center">
-                         <div class="w100" style="padding-right:10px">
-                             <select class="form-control form-control-sm" name="searchType" id="searchType">
-                                 <option value="title">제목</option>
-                                 <option value="writer">작성자</option>
-                             </select>
-                         </div>
-                         <div class="w300" style="padding-right:10px">
-                             <input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
-                         </div>
-                         <div>
-                             <button type= "submit" class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
-                         </div>
-                     </div>
-                 </div>--%>
                 <div style="text-align: left; padding-bottom: 5px;">
                     총 게시글 수 : ${pagination.listCnt }
                 </div>

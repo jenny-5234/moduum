@@ -70,11 +70,21 @@ public class NoticeController {
     }
 
     // 4. 게시글 수정
-    @GetMapping(value = "/modify")
+    @RequestMapping(value = "/modify", method = RequestMethod.POST)
     public String update(@RequestParam(value = "noticeId") int noticeId, Model model) throws Exception {
         NoticeDto noticeDto = noticeService.pageModifyDetail(noticeId);
         model.addAttribute("noticeDto", noticeDto);
         return "/notice/modify";
+    }
+
+    @RequestMapping(value = "/modify", method = RequestMethod.GET)
+    public void update(@RequestParam(value = "noticeId") int noticeId, HttpServletResponse response) throws Exception {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<script>alert('잘못된 접근입니다'); location.href='/notice/noticeList'</script>");
+        out.flush();
     }
 
     @PostMapping(value = "update.do")

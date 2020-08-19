@@ -8,7 +8,6 @@
 .footer_wrap {
     width: 100%;
     margin: 0 auto;
-    /*position: relative;*/
     min-height: 160px;
 }
 
@@ -26,7 +25,6 @@
 }
 
 .foot_ul {
-    /*display: block;*/
     list-style: none;
 }
 
