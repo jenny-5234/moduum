@@ -15,7 +15,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption),
 
 var latlng = new kakao.maps.LatLng(35.84422370300031, 127.66131429456038);
 
-$.getJSON('../../../location/allv3.json', function (geojson) {
+$.getJSON('../../../location/all.json', function (geojson) {
     var data = geojson.features;
     var coordinates = [];    // 좌표 저장할 배열
     var name = '';            // 행정 구 이름
@@ -51,7 +51,7 @@ $.getJSON('../../../location/allv3.json', function (geojson) {
     // 지도 중심좌표를 접속위치로 변경합니다
     // map.setCenter(locPosition);
 
-    $.getJSON('../../../location/allv3.json', function (geojson) {
+    $.getJSON('../../../location/all.json', function (geojson) {
         var data = geojson.features;
         var coordinates = [];    // 좌표 저장할 배열
         var name = '';            // 행정 구 이름
@@ -158,7 +158,7 @@ function displayArea2(coordinates, name) {
         $(".sub_menuinfo_text").css('display','block');
         switch (name) {
             case("서울특별시"):
-                    $(".logo_image").attr('src', '../../../image/logoImage/서울.png');
+                    $(".logo_image").attr('src', '../../../image/logoImage/seoul.png');
                     $(".info_info1").text('서울특별시');
                     $(".info_info2").text('제로페이 스티커가 붙어있는 소상공인 가맹점');
                     $(".info_info3").text(' ');
@@ -167,7 +167,7 @@ function displayArea2(coordinates, name) {
                     break;
 
             case("인천광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/인천.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/incheon.png');
                 $(".info_info1").text('인천광역시');
                 $(".info_info2").text('인천에 사업자 등록을 한 점포(약 17만 5천개)');
                 $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 일부 프랜차이즈 직영점');
@@ -176,7 +176,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("경기도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/경기도.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/gyeonggido.png');
                 $(".info_info1").text('경기도 31개 시·군');
                 $(".info_info2").text(' 발행지역 해당 시 · 군 지역내에 등록된 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 기업형 슈퍼마켓, 유흥주점 제외');
@@ -185,7 +185,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("세종특별자치시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/세종.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/sejong.jpg');
                 $(".info_info1").text('세종특별자치시');
                 $(".info_info2").text('세종지역 내 IC카드 단말기가 설치된 점포');
                 $(".info_info3").text('대형마트, 기업형슈퍼마켓, 유흥·사행업소, 일부 프랜차이즈 직영점');
@@ -194,7 +194,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("부산광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/부산.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/busan.png');
                 $(".info_info1").text('부산광역시');
                 $(".info_info2").text('사업장이 부산광역시인 신용카드 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 기업형슈퍼마켓, 프랜차이즈 직영점');
@@ -203,7 +203,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("대전광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/대전.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/daejeon.png');
                 $(".info_info1").text('대전광역시');
                 $(".info_info2").text('대전 내 IC카드 단말기 사용 점포');
                 $(".info_info3").text('백화점 대규모 점포, 유흥·사행업소, 온라인 결제 등 일부는 제외');
@@ -212,7 +212,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("대구광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/대구.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/daegu.png');
                 $(".info_info1").text('대구광역시 | 대구은행');
                 $(".info_info2").text('대구 내 카드 단말기 설치된 가맹점 어디든 이용 가능');
                 $(".info_info3").text('온라인업종, 백화점, 대형마트, 유흥, 사행성 업종');
@@ -221,7 +221,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("광주광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/광주.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/gwangju.png');
                 $(".info_info1").text('광주광역시 | 광주은행');
                 $(".info_info2").text('비씨카드 등록된 광주시 9만여개 가맹업소');
                 $(".info_info3").text('백화점, 대형마트, 기업형 SSM, 유흥업소, 온라인 가맹점');
@@ -230,7 +230,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("울산광역시"):
-                $(".logo_image").attr('src', '../../../image/logoImage/울산.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/ulsan.jpg');
                 $(".info_info1").text('울산광역시');
                 $(".info_info2").text('울산시 내 모든 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 사행성업체, 주유소, 종합병원 ');
@@ -239,7 +239,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("강원도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/강원.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/gangwondo.jpg');
                 $(".info_info1").text('강원도 | 제로페이 ');
                 $(".info_info2").text('전통시장, 음식점, 슈퍼마켓, 주유소 등 도내 강원상품권 사용점');
                 $(".info_info3").text('');
@@ -248,7 +248,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("충청북도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/충북.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/chungcheongbukdo.png');
                 $(".info_info1").text('충청북도 도내 시·군');
                 $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
                 $(".info_info3").text('');
@@ -257,7 +257,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("충청남도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/충남.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/chungcheongnamdo.jpg');
                 $(".info_info1").text('충청남도 도내 시·군');
                 $(".info_info2").text('전통시장과 소매점 등 시·군 등록 가맹점');
                 $(".info_info3").text('');
@@ -266,7 +266,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("전라북도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/전북.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/jeollabukdo.jpg');
                 $(".info_info1").text('전라북도 도내 시·군');
                 $(".info_info2").text('발행 지역 내에 있는 모든 가맹점');
                 $(".info_info3").text('온라인쇼핑몰, 백화점, 대형마트(이마트, 홈플러스 등), 유흥업소');
@@ -275,7 +275,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("전라남도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/전남지역화폐.png');
+                $(".logo_image").attr('src', '../../../image/logoImage/jeollanamdo.png');
                 $(".info_info1").text('전라남도 도내 시·군');
                 $(".info_info2").text('전라남도 내 IC카드 결제가 가능한 모든 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
@@ -284,7 +284,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("경상북도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/경북.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/gyeongsangbukdo.jpg');
                 $(".info_info1").text('경상북도 도내 시·군');
                 $(".info_info2").text('경상북도 내 IC카드 결제 가맹점(대구에서도 사용가능)');
                 $(".info_info3").text('전자매장, 유흥업소,일부 대형마트, 백화점');
@@ -293,7 +293,7 @@ function displayArea2(coordinates, name) {
                 break;
 
             case("경상남도"):
-                $(".logo_image").attr('src', '../../../image/logoImage/경남.jpg');
+                $(".logo_image").attr('src', '../../../image/logoImage/gyeongsangnamdo.jpg');
                 $(".info_info1").text('경상남도 도내 시·군');
                 $(".info_info2").text('경상남도 내 IC카드 결제가 가능한 모든 가맹점');
                 $(".info_info3").text('백화점, 대형마트, 유흥업소, 기업형슈퍼마켓 등');
@@ -326,12 +326,12 @@ window.onresize = function (event) {
 
 $(document).ready(function(){
     // $(".sub_menuinfo_logo1").css('width','70%','float','left');
-    // $(".sub_menuinfo_logo").append("<img src='/image/logoImage/서울.png'>");
+    // $(".sub_menuinfo_logo").append("<img src='/image/logoImage/seoul.png'>");
     $(".sub_menuinfo_logo").css('display', 'none');
-    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/서울.png' style='width: 20%; margin-top: 20px;' >");
-    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/경기도.png' style='width: 20%; margin-top: 20px;' >");
-    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/인천.png' style='width: 20%; margin-top: 20px;'>");
-    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/부산.png' style='width: 20%;  margin-top: 20px;'>");
-    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/대구.png' style='width: 20%;  margin-top: 20px;'>");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/seoul.png' style='width: 20%; margin-top: 20px;' >");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/gyeonggido.png' style='width: 20%; margin-top: 20px;' >");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/incheon.png' style='width: 20%; margin-top: 20px;'>");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/busan.png' style='width: 20%;  margin-top: 20px;'>");
+    $(".sub_menuinfo_logo1").append("<img src='/image/logoImage/daegu.png' style='width: 20%;  margin-top: 20px;'>");
 
 });

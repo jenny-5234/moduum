@@ -128,7 +128,7 @@ function regionSelection(city) {
             panTo(35.160108723530996, 126.85163269066601, 8);
             break;
         case("전라남도"):
-            getjson('../../../location/jeollanamdo수정.json', '전라남도');
+            getjson('../../../location/jeollanamdo.json', '전라남도');
             panTo(34.81609068924449, 126.46278335953988, 11);
             break;
         case("제주특별자치도"):

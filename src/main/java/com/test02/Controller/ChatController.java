@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ChatController {
     @RequestMapping("/chat")
     public String chat(){
-        return "/chatting";
+        return "redirect:http://groupbattle.duckdns.org:8892/chat";
     }
 }

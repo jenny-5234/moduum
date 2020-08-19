@@ -29,10 +29,10 @@
     </form>
 </div>
 
-<script src="http://14.32.18.180:3000/socket.io/socket.io.js"></script>
+<script src="http://groupbattle.duckdns.org:3000/socket.io/socket.io.js"></script>
 <script>
     $(document).ready(function () {
-        var socket = io("http://14.32.18.180:3000");
+        var socket = io("http://groupbattle.duckdns.org:3000");
 
         $('#chat').on('submit', function(e){
             socket.emit('send message', $('#name').val(), $('#message').val());

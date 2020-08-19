@@ -156,7 +156,7 @@
                         <div class="sub_menuinfo_top">
                             <div class="sub_menuinfo_logo">
                                 <img class="logo_image"
-                                     src="/image/logoImage/서울.png">
+                                     src="/image/logoImage/seoul.png">
                             </div>
                             <div class="sub_menuinfo_logo1">
                             </div>
