@@ -1,13 +1,7 @@
 package com.test02.Controller;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeUtility;
+import javax.mail.*;
+import javax.mail.internet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,7 +26,6 @@ public class MailController{
     @SneakyThrows
     @RequestMapping(value = "/mailSender")
     public void mailSender(HttpServletRequest request, HttpServletResponse response) { // 네이버일 경우 smtp.naver.com 을 입력합니다. // Google일 경우 smtp.gmail.com 을 입력합니다.
-
         String host = "smtp.modumj.duckdns.org";
         final String username = "public"; //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요.
         final String password = "zusdhkd"; //네이버 이메일 비밀번호를 입력해주세요.
@@ -59,12 +52,11 @@ public class MailController{
         response.setContentType("text/html; charset=UTF-8");
         try {
             session.setDebug(true); //for debug
-            Message mimeMessage = new MimeMessage(session); //MimeMessage 생성
+            MimeMessage mimeMessage = new MimeMessage(session); //MimeMessage 생성
             mimeMessage.setFrom(new InternetAddress("public@modumj.duckdns.org")); //발신자 셋팅 , 보내는 사람의 이메일주소를 한번 더 입력합니다. 이때는 이메일 풀 주소를 다 작성해주세요.
             mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient)); //수신자셋팅 //.TO 외에 .CC(참조) .BCC(숨은참조) 도 있음
-
             mimeMessage.setSubject(MimeUtility.encodeText(subject, "UTF-8", "B")); //제목셋팅
-            mimeMessage.setText(body); //내용셋팅0
+            mimeMessage.setText(body, "UTF-8"); //내용셋팅0
             Transport.send(mimeMessage); //javax.mail.Transport.send() 이용 }
 
             out.println("<script>alert('소중한 의견 감사합니다.'); location.href='/';</script>");
