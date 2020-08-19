@@ -285,7 +285,7 @@
             window.open("chat", "실시간채팅창", "width=555, height=660, left=" + xPos + ", top=" + yPos);
         }
     </script>
-    <button type="button" class="chat_fixed" onclick="showchat()">
+    <button type="button" class="chat_fixed" onclick="showchat()" onfocus="blur()">
         <img src="/image/homeImages/chat.png" class="chatbutton_img"/>
     </button>
 </div>

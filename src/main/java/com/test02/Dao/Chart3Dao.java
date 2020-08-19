@@ -14,6 +14,7 @@ public class Chart3Dao {
 
     private static String namespace = "chart3";
 
+    // 넣어둔 값 가져오기
     public List<Chart3Dto> getChart3Value(Chart3Dto chart3Dto) throws Exception{
         return sqlSession.selectList( namespace + ".getChart3Value", chart3Dto);
     }
