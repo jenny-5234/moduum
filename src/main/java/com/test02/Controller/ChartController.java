@@ -18,8 +18,7 @@ import java.util.List;
 @RequestMapping("/chart")
 @Controller
 public class ChartController {
-
-    @Autowired
+    /*@Autowired
     ServletContext servletContext;
 
     @Autowired
@@ -54,6 +53,6 @@ public class ChartController {
 
 
         return "chart/chartlist";
-    }
+    }*/
 }
 

@@ -23,6 +23,7 @@ import java.util.*;
 @Controller
 //@Slf4j
 public class BoardController {
+/*
 
     @Autowired
     ServletContext servletContext;
@@ -234,5 +235,6 @@ public class BoardController {
 
         return "/board/boardlist";
     }
+*/
 
 }

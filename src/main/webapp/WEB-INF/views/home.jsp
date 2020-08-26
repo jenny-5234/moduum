@@ -23,7 +23,7 @@
 
     <%--    구글차트 라이브러리--%>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         google.charts.load('current', {'packages': ['corechart', 'bar', 'line']});
         google.charts.setOnLoadCallback(drawpiechart);
         google.charts.setOnLoadCallback(drawlinechart);
@@ -124,7 +124,7 @@
             window.addEventListener('resize', drawpiechart, false);
         }
 
-    </script>
+    </script>--%>
 
 
     <title>모둠전</title>
@@ -255,10 +255,10 @@
                         <a href="/news/newslist" class="more">더보기</a>
                         <hr>
                         <ul class="m_text_list">
-                            <c:forEach var="dto" items="${newstop5}" varStatus="status">
+                            <%--<c:forEach var="dto" items="${newstop5}" varStatus="status">
                                 <li><a href="${dto.originallink}" target="_blank"
                                        class="news_top5_hyper">${dto.title}</a></li>
-                            </c:forEach>
+                            </c:forEach>--%>
                         </ul>
                     </div>
                 </div>
