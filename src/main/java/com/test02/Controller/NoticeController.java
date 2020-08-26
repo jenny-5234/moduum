@@ -20,7 +20,6 @@ import java.util.UUID;
 @RequestMapping("/notice")
 @Controller
 public class NoticeController {
-/*
     @Autowired
     NoticeServiceImpl noticeService;
 
@@ -186,5 +185,5 @@ public class NoticeController {
             e.printStackTrace();
         }
         return "redirect:" + return1 + return2 + return3;
-    }*/
+    }
 }
