@@ -23,7 +23,7 @@
 
     <%--    구글차트 라이브러리--%>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <%--<script type="text/javascript">
+    <script type="text/javascript">
         google.charts.load('current', {'packages': ['corechart', 'bar', 'line']});
         google.charts.setOnLoadCallback(drawpiechart);
         google.charts.setOnLoadCallback(drawlinechart);
@@ -124,7 +124,7 @@
             window.addEventListener('resize', drawpiechart, false);
         }
 
-    </script>--%>
+    </script>
 
 
     <title>모둠전</title>

@@ -32,12 +32,12 @@ public class HomeController {
         List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
         model.addAttribute("newstop5", newstop5);
 
-        /*List<ChartDto> chart = chartService.getChartValue(chartDto);
+        List<ChartDto> chart = chartService.getChartValue(chartDto);
         model.addAttribute("chart", chart);
 
-        List<Chart3Dto> chart3 = chartService.getChart3Value(chart3Dto, "'M'");
-        List<Chart3Dto> chart4 = chartService.getChart3Value(chart3Dto, "'F'");
-        model.addAttribute("chart3", chart3);*/
+//        List<Chart3Dto> chart3 = chartService.getChart3Value(chart3Dto, "'M'");
+//        List<Chart3Dto> chart4 = chartService.getChart3Value(chart3Dto, "'F'");
+//        model.addAttribute("chart3", chart3);
 
         return "home";
     }
