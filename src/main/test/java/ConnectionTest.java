@@ -12,9 +12,9 @@ public class ConnectionTest {
 //    private static final String DRIVER ="oracle.jdbc.driver.OracleDriver";
 
     private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static final String URL = "jdbc:sqlserver://14.32.18.226:1433;database=YL;";
-    private static final String USER = "as";
-    private static final String PW = "1234";
+    private static final String URL = "jdbc:sqlserver://modumjeon.duckdns.org:1433;";
+    private static final String USER = "sa";
+    private static final String PW = "@Modum1234";
 
     @Test
     public void testConnection() throws Exception {
