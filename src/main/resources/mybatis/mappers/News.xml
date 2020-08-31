@@ -37,7 +37,7 @@
         WHERE newsId = #{newsId}
     </select>
 
-<!--    이전글-->
+    <!--    이전글-->
     <select id="selectback" resultType="newsDto">
         SELECT *
         FROM news

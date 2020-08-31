@@ -3,10 +3,9 @@ package com.test02.Controller;
 import com.test02.Dto.BoardDto;
 import com.test02.Dto.Pagination;
 
-//import com.test02.Dto.Search;
+
 import com.test02.Service.BoardServiceImpl;
 import lombok.SneakyThrows;
-//import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ import java.util.*;
 
 @RequestMapping("/board")
 @Controller
-//@Slf4j
+
 public class BoardController {
 
     @Autowired

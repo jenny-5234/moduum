@@ -20,7 +20,6 @@ import java.util.UUID;
 @RequestMapping("/notice")
 @Controller
 public class NoticeController {
-
     @Autowired
     NoticeServiceImpl noticeService;
 
