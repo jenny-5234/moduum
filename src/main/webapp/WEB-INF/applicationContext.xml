@@ -22,7 +22,7 @@
     <!--    DataSource는 JDBC의 커넥션을 처리하는 기능을 가지고 있기 때문에 데이터베이스와 연동 작업에 반드시 필요하다.-->
     <bean id="mssqlDatasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="url" value="jdbc:sqlserver://modumjeon.duckdns.org:1433;"/>
+        <property name="url" value="jdbc:sqlserver://modumjeon.duckdns.org:1433;database=YL1"/>
         <property name="username" value="sa"/>
         <property name="password" value="@Modum1234"/>
     </bean>

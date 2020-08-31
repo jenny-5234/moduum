@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@modumjeon.duckdns.org" uuid="0b63e313-fd19-4898-9780-2091a8c8917c">
+    <data-source source="LOCAL" name="YL1@modumjeon.duckdns.org" uuid="0b63e313-fd19-4898-9780-2091a8c8917c">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://modumjeon.duckdns.org:1433</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://modumjeon.duckdns.org:1433;database=YL1</jdbc-url>
     </data-source>
   </component>
 </project>
