@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("/news")
 @Controller
 public class NewsController {
-/*
+
 
     @Autowired
     ServletContext servletContext;
@@ -44,13 +44,12 @@ public class NewsController {
 
         return "/news/newslist";
     }
-*/
 
     // 3. 뉴스 상세보기
-//    @GetMapping(value = "/newsview")
-//    public String newsDetail(@RequestParam int newsId, Model model){
-//        NewsDto newsDto = newsService.newsDetail(newsId);
-//        model.addAttribute("newsDto", newsDto);
-//        return "/news/newsview";
-//    }
+@GetMapping(value = "/newsview")
+    public String newsDetail(@RequestParam int newsId, Model model){
+        NewsDto newsDto = newsService.newsDetail(newsId);
+        model.addAttribute("newsDto", newsDto);
+        return "/news/newsview";
+    }
 }
