@@ -29,10 +29,10 @@ public class HomeController {
     @RequestMapping(value = "/")
     public String index(@ModelAttribute("mainDto") NewsDto newsDto, Chart3Dto chart3Dto, ChartDto chartDto,
                         Model model) throws Exception {
-        /*List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
+        List<NewsDto> newstop5 = newsService.selecttop5(newsDto);
         model.addAttribute("newstop5", newstop5);
 
-        List<ChartDto> chart = chartService.getChartValue(chartDto);
+        /*List<ChartDto> chart = chartService.getChartValue(chartDto);
         model.addAttribute("chart", chart);
 
         List<Chart3Dto> chart3 = chartService.getChart3Value(chart3Dto, "'M'");

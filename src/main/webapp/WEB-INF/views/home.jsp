@@ -255,10 +255,10 @@
                         <a href="/news/newslist" class="more">더보기</a>
                         <hr>
                         <ul class="m_text_list">
-                            <%--<c:forEach var="dto" items="${newstop5}" varStatus="status">
+                            <c:forEach var="dto" items="${newstop5}" varStatus="status">
                                 <li><a href="${dto.originallink}" target="_blank"
                                        class="news_top5_hyper">${dto.title}</a></li>
-                            </c:forEach>--%>
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
