@@ -29,10 +29,10 @@
     </form>
 </div>
 
-<script src="http://modumjeon.duckdns.org:3000/socket.io/socket.io.js"></script>
+<script src="https://modumjeon.duckdns.org:3000/socket.io/socket.io.js"></script>
 <script>
     $(document).ready(function () {
-        var socket = io("http://modumjeon.duckdns.org:3000");
+        var socket = io("https://modumjeon.duckdns.org:3000");
 
         $('#chat').on('submit', function(e){
             socket.emit('send message', $('#name').val(), $('#message').val());
@@ -51,7 +51,7 @@
         socket.on('change name', function(name){
             $('#name').val(name);
         });
-    })
+    });
 </script>
 </body>
 </html>
