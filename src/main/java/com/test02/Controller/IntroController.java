@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @Slf4j
 public class IntroController {
-/*
     @Autowired
     IntroServiceImpl introService;
 
@@ -20,5 +19,5 @@ public class IntroController {
     public String pageDetail(Model model) {
         model.addAttribute("intro", introService.getIntroHash());
         return "intro";
-    }*/
+    }
 }
